@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The repository pattern · SAPfans.io</title>
+<meta name="description" content="Eleven rules for a conformant repository, each with the cost of ignoring it. Provider-neutral and free to take.">
+<meta property="og:title" content="The repository pattern · SAPfans.io">
+<meta property="og:description" content="Eleven rules for a conformant repository, each with the cost of ignoring it. Provider-neutral and free to take.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head><body>
+<header><div class="bar">
+<a class="brand" href="index.html">SAPfans<span>.io</span></a>
+<nav><a href="index.html">Doctrine</a><a href="heritage.html">Heritage</a><a href="practitioners.html">Practitioners</a><a href="pattern.html" class='on'>Pattern</a></nav>
+</div></header>
+<main class="wrap">
+
+<span class="pill">Free to take</span>
+<h1>The repository pattern</h1>
+<p class="lede">Eleven rules. Each one names the cost of ignoring it, because each cost was
+actually paid.</p>
+<p class="meta">Published for practitioners to use in their own work, for any client, at any
+employer, with or without attribution. Adapt it, strip the branding, make it yours.</p>
+<hr>
+<p><b>Every repository in this estate obeys this. No exceptions, including this one.</b></p>
+<p>The pattern is not bureaucracy. Each rule below exists because its absence has already cost something measurable, and the cost is named next to the rule.</p>
+<h2>The skeleton</h2>
+<pre><code>&lt;repo>/
+├── README.md                  what this is, who it serves, its actual visibility
+├── LICENSE-NOTICE.md          rights and restrictions
+├── .canon/
+│   └── POINTER.md             the contract this repository obeys
+├── docs/                      the published reading — Pages surface, PDFs
+├── registry/
+│   └── PROVENANCE.md          every input: what, whence, when, hash
+├── data/                      the record, or the manifest that indexes it
+└── scripts/                   anything runnable</code></pre>
+<p>Copy it from <a href="https://github.com/EVEglyphDesign/sapfans-io/tree/main/templates/repo-skeleton"><code>templates/repo-skeleton/</code></a> or let <a href="https://github.com/EVEglyphDesign/sapfans-io/blob/main/scripts/new-repo.sh"><code>scripts/new-repo.sh</code></a> do it.</p>
+<h2>The eleven rules</h2>
+<h3>1. One lane, one repository</h3>
+<p>A repository serves exactly one subject. If you cannot say what it is of in a single sentence, it is two repositories.</p>
+<p><i>Cost of ignoring it:</i> two repositories in this account — <code>eve-glyph-edu-health</code> and <code>glyph-capture-eduhealth</code> — carry the same fourteen files, the same ingest workflow and the same README. One lane, two records, neither authoritative.</p>
+<h3>2. Names must differ by more than one character</h3>
+<p>Before creating a repository, run <code>gh repo list EVEglyphDesign --limit 200 | grep -i <stem></code>.</p>
+<p><i>Cost of ignoring it:</i> <code>dmz-open-ai</code> and <code>dmzopen-ai</code> are different works in different lanes with different visibility. Every reference to either is now ambiguous.</p>
+<h3>3. The README states the actual visibility</h3>
+<p>If it says public, <code>gh repo view --json visibility</code> must agree.</p>
+<p><i>Cost of ignoring it:</i> three repositories currently assert a posture they do not have. The README is the artefact a reader trusts, which makes a wrong one worse than a missing one.</p>
+<h3>4. <code>.canon/POINTER.md</code> exists, always</h3>
+<p>It is four lines. It tells any agent landing cold which contract binds this work.</p>
+<p><i>Cost of ignoring it:</i> 25 repositories in this account have no pointer. An agent landing in one of them has no way to discover the rules and will invent its own.</p>
+<h3>5. Under 100 MB</h3>
+<p>Bulk objects go to object storage; the repository holds the manifest.</p>
+<p><i>Cost of ignoring it:</i> two repositories hold 92% of all bytes in the account. Every clone pays for the warehouse.</p>
+<h3>6. Provenance in the same commit as the data</h3>
+<p>Never a follow-up commit. Follow-up commits do not happen.</p>
+<h3>7. Append, correct, supersede — never delete</h3>
+<p>No force-push. No history rewrite. No squashing another person's commits. On a push rejection, rebase. Superseded material gets a <code>SUPERSEDED-BY</code> line, not a deletion.</p>
+<h3>8. Secrets are persisted before they are used</h3>
+<p>A key is written to the secret store <b>in the same action that generates it</b>, before it encrypts anything. Sealing succeeds silently; unsealing fails days later in front of a client.</p>
+<h3>9. Committed and pushed, or it does not exist</h3>
+<p>Holding an unpushed commit while conversing is holding someone else's property hostage. The session is a scratchpad that will be thrown away without warning.</p>
+<h3>10. Output canon</h3>
+<p>PDF by default for anything a human reads as a document. Markdown only for things that are functionally markdown — READMEs, registers, provenance. Every PDF carries the watermark, the copyright line, a SHA-256 content hash, the Key ID, an ISO-8601 UTC timestamp and the closing mark. <b>Links are clickable markdown links</b> — a bare URL cannot be tapped on a phone, and that is a defect.</p>
+<h3>11. Dormancy is stated, not implied</h3>
+<p>If a lane is parked, say so in the README with a date. 65 repositories here have not been committed to since 2026-07-25. Most were parked deliberately; from outside, parked and abandoned look identical.</p>
+<h2>Naming</h2>
+<ul><li>Exactly <code>EVEglyphDesign</code> for the account. Prose form <code>EVEglyph Design</code>. Short form <code>EgD</code>. No invented variants.</li><li>Repositories: lowercase, hyphenated, subject first — <code>eve-hawkins-cdk-twin</code>, <code>paix-parish-platform</code>.</li><li>Do not append <code>-public</code> or <code>-private</code> to a name. Visibility changes; names should not.</li></ul>
+<h2>The look</h2>
+<p>If the repository publishes anything a client sees, it uses the house palette and nothing else.</p>
+<table><thead><tr><th>Role</th><th>Hex</th></tr></thead><tbody><tr><td>Cream</td><td><code>#fdfaf4</code></td></tr><tr><td>Cream 2</td><td><code>#f7f2e7</code></td></tr><tr><td>Ink</td><td><code>#1a1a1a</code></td></tr><tr><td>Line</td><td><code>#e7e1d3</code></td></tr><tr><td>Mute</td><td><code>#6b665c</code></td></tr><tr><td>Accent</td><td><code>#e87722</code></td></tr></tbody></table>
+<p>Fraunces for display, Inter for body. <b>Forbidden:</b> teal, navy-and-gold, generic dark dashboards, glassmorphism, space-scifi templates.</p>
+<h2>Classes</h2>
+<p>Declare the class in the README. It tells a reader what kind of thing they have found.</p>
+<table><thead><tr><th>Class</th><th>Meaning</th></tr></thead><tbody><tr><td><code>L0</code></td><td>Entry layer. The fixed landing point every agent reads first.</td></tr><tr><td><code>CANON</code></td><td>Doctrine. Changes here bind everything else.</td></tr><tr><td><code>VAULT</code></td><td>Restricted custody. Never public.</td></tr><tr><td><code>DATA</code></td><td>Bulk store. Should be an index into object storage.</td></tr><tr><td><code>SURFACE</code></td><td>Published surface with a live Pages address.</td></tr><tr><td><code>ACTIVE</code></td><td>Working lane with substance, no published surface.</td></tr><tr><td><code>STUB</code></td><td>Placeholder. Should not stay one for long.</td></tr></tbody></table>
+<h2>Check it</h2>
+<pre><code>bash scripts/check-canon.sh /path/to/repo</code></pre>
+<p>Run it before you ask for review. It is the same check that produced the deviation counts in <a href="https://github.com/EVEglyphDesign/sapfans-io/blob/main/registry/PUBLIC-REGISTER.md">the public register</a>.</p>
+<hr>
+<p><a class="btn" href="https://github.com/EVEglyphDesign/sapfans-io/tree/main/templates">Copy the templates</a>
+<a class="btn ghost" href="https://github.com/EVEglyphDesign/sapfans-io/blob/main/pattern/CLIENT-HANDOFF.md">Client handoff</a></p>
+
+</main>
+<footer><div class="wrap">
+<p>© 2026 EVEglyphDesign · EgD-SAPF-001 · Key ID EgD-KEY-2026-07 · 2026-08-02<br>
+Independent. Not affiliated with, endorsed by or sponsored by SAP SE or any service provider.<br>
+Held in the open at <a href="https://github.com/EVEglyphDesign/sapfans-io">the SAPfans.io repository</a> — clone it, it is yours.</p>
+<p class="accent">Pour le bien-être du peuple.</p>
+</div></footer>
+</body></html>

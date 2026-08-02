@@ -1,0 +1,45 @@
+repo,class,lane,size_mb,last_commit,url
+eve-glyph-boot-contract,CANON,"EVE Glyph core / canon",0.40,2026-08-02,https://github.com/EVEglyphDesign/eve-glyph-boot-contract
+umbrella-copyright-proof,EMPTY,"EVE Glyph core / canon",0.34,2026-07-25,https://github.com/EVEglyphDesign/umbrella-copyright-proof
+enterprise-grade-criteria,SURFACE,"EVE Glyph core / canon",0.21,2026-08-02,https://github.com/EVEglyphDesign/enterprise-grade-criteria
+agent-governance-ledger,CANON,"EVE Glyph core / canon",0.02,2026-07-31,https://github.com/EVEglyphDesign/agent-governance-ledger
+eveglyph-arrivals,ACTIVE,"EVE Glyph core / canon",0.00,2026-07-25,https://github.com/EVEglyphDesign/eveglyph-arrivals
+EVEglyphDesign,CANON,"EVE Glyph core / canon",0.00,2026-07-25,https://github.com/EVEglyphDesign/EVEglyphDesign
+paix-educational-game,SURFACE,"Education / games",3.79,2026-07-27,https://github.com/EVEglyphDesign/paix-educational-game
+eve-glyph-education-public,SURFACE,"Education / games",2.25,2026-07-25,https://github.com/EVEglyphDesign/eve-glyph-education-public
+game-universal-reference-model,SURFACE,"Education / games",1.56,2026-08-02,https://github.com/EVEglyphDesign/game-universal-reference-model
+eve-hyperloop,SURFACE,"Education / games",0.74,2026-07-25,https://github.com/EVEglyphDesign/eve-hyperloop
+godot-action-adventure-starter,SURFACE,"Education / games",0.43,2026-08-02,https://github.com/EVEglyphDesign/godot-action-adventure-starter
+Victoria,SURFACE,"Education / games",0.26,2026-07-25,https://github.com/EVEglyphDesign/Victoria
+carbon-engine-intake,SURFACE,"Education / games",0.12,2026-08-02,https://github.com/EVEglyphDesign/carbon-engine-intake
+starship-academy-demo,SURFACE,"Education / games",0.04,2026-07-25,https://github.com/EVEglyphDesign/starship-academy-demo
+eve-no-more-ivr,SURFACE,"Enterprise / SAP / DMZ",0.81,2026-07-31,https://github.com/EVEglyphDesign/eve-no-more-ivr
+dmzopen-ai,SURFACE,"Enterprise / SAP / DMZ",0.40,2026-07-25,https://github.com/EVEglyphDesign/dmzopen-ai
+NA-Nuclear-Utilities,SURFACE,"Enterprise / SAP / DMZ",0.09,2026-07-25,https://github.com/EVEglyphDesign/NA-Nuclear-Utilities
+godaddy-killer,SURFACE,"Enterprise / SAP / DMZ",0.05,2026-07-31,https://github.com/EVEglyphDesign/godaddy-killer
+epiq-revenue-leakage,SURFACE,"Epiq / Steel Cloud",0.19,2026-07-25,https://github.com/EVEglyphDesign/epiq-revenue-leakage
+epiq-audit-surface,STUB,"Epiq / Steel Cloud",0.02,2026-08-01,https://github.com/EVEglyphDesign/epiq-audit-surface
+eve-hawkins-telus-twin,DATA,"Hawkins / Peterbilt",1054.85,2026-07-31,https://github.com/EVEglyphDesign/eve-hawkins-telus-twin
+hawkins-twin-platform,SURFACE,"Hawkins / Peterbilt",1.18,2026-08-02,https://github.com/EVEglyphDesign/hawkins-twin-platform
+eve-hawkins-cdk-twin,SURFACE,"Hawkins / Peterbilt",0.99,2026-07-31,https://github.com/EVEglyphDesign/eve-hawkins-cdk-twin
+eve-vendor-sphere,SURFACE,"Hawkins / Peterbilt",0.62,2026-08-02,https://github.com/EVEglyphDesign/eve-vendor-sphere
+eve-hawkins-sovereign-enterprise,SURFACE,"Hawkins / Peterbilt",0.12,2026-07-28,https://github.com/EVEglyphDesign/eve-hawkins-sovereign-enterprise
+eve-dealer-parts-twin,EMPTY,"Hawkins / Peterbilt",0.05,2026-07-25,https://github.com/EVEglyphDesign/eve-dealer-parts-twin
+dicoe-partner-program,SURFACE,"Hawkins / Peterbilt",0.02,2026-07-25,https://github.com/EVEglyphDesign/dicoe-partner-program
+ark-midwest-watch,DATA,"Parish / community",639.04,2026-07-29,https://github.com/EVEglyphDesign/ark-midwest-watch
+paix-parish-platform,SURFACE,"Parish / community",35.96,2026-08-01,https://github.com/EVEglyphDesign/paix-parish-platform
+sanatana-community-platform,SURFACE,"Parish / community",1.51,2026-07-31,https://github.com/EVEglyphDesign/sanatana-community-platform
+paroisse-sainte-anne-des-pays-bas,SURFACE,"Parish / community",1.15,2026-07-25,https://github.com/EVEglyphDesign/paroisse-sainte-anne-des-pays-bas
+holy-trinity-caisse,SURFACE,"Parish / community",0.37,2026-07-25,https://github.com/EVEglyphDesign/holy-trinity-caisse
+lenexa-city-center-commons,SURFACE,"Parish / community",0.17,2026-08-02,https://github.com/EVEglyphDesign/lenexa-city-center-commons
+johnson-county-twin,SURFACE,"Parish / community",0.07,2026-07-29,https://github.com/EVEglyphDesign/johnson-county-twin
+icloud_photos_downloader,FORK,"Research / outreach",45.81,2026-07-25,https://github.com/EVEglyphDesign/icloud_photos_downloader
+freefred,SURFACE,"Research / outreach",1.01,2026-07-25,https://github.com/EVEglyphDesign/freefred
+eve-substack-archive,DATA,"Research / outreach",0.84,2026-08-01,https://github.com/EVEglyphDesign/eve-substack-archive
+jre-montreal-bridge,ACTIVE,"Research / outreach",0.06,2026-08-02,https://github.com/EVEglyphDesign/jre-montreal-bridge
+ark-peer-review-ledger,SURFACE,"Research / outreach",0.05,2026-07-25,https://github.com/EVEglyphDesign/ark-peer-review-ledger
+eve-cokins-lane,SURFACE,"Research / outreach",0.05,2026-08-01,https://github.com/EVEglyphDesign/eve-cokins-lane
+us-healthcare,SURFACE,"Research / outreach",0.02,2026-07-26,https://github.com/EVEglyphDesign/us-healthcare
+video-dispatch,SURFACE,"Research / outreach",0.01,2026-07-25,https://github.com/EVEglyphDesign/video-dispatch
+eve-datasphere-sovereign,DATA,"Sovereign data / twins",2.60,2026-08-01,https://github.com/EVEglyphDesign/eve-datasphere-sovereign
+data-liberation-kit,ACTIVE,"Sovereign data / twins",0.08,2026-07-31,https://github.com/EVEglyphDesign/data-liberation-kit

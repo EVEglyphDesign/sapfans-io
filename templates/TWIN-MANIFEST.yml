@@ -1,0 +1,44 @@
+# EVEglyphDesign twin manifest
+# Every twin repository carries one of these at its root.
+
+twin:
+  id: acme-fleet-twin              # matches the repository name
+  subject: >
+    Be specific. Not "Acme" — "Acme Logistics: the 412 tractors and 690 trailers
+    operated from the Moncton, Dieppe and Saint John yards."
+  class: DATA                      # L0 | CANON | VAULT | DATA | SURFACE | ACTIVE
+  visibility: private              # private by default; public only with written consent
+  owner: <named human>
+  client: <client legal name, or "internal">
+  created: YYYY-MM-DD
+
+canon:
+  contract: EgD-BOOT-001
+  pointer: .canon/POINTER.md
+  key_id: EgD-KEY-2026-07
+
+record:
+  location: data/                  # or: object-store
+  manifest: data/MANIFEST.csv      # required when location is object-store
+  size_policy: repository stays under 100 MB; bulk objects indexed, not committed
+
+sources:
+  provenance: registry/PROVENANCE.md
+  rule: >
+    Every input carries what it is, where it came from, when it was fetched, by whom,
+    and a SHA-256. Sources are preserved exactly as received. Derived files are
+    additional, never replacements.
+
+coverage:
+  knows:
+    - what this twin can currently answer
+  does_not_cover:
+    - state this honestly; it is the most useful field in the file
+
+surface:
+  docs: docs/
+  pages_url: ""                    # populate when published
+
+review:
+  last_verified: YYYY-MM-DD
+  cadence: quarterly

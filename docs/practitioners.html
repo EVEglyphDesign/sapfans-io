@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Practitioners · SAPfans.io</title>
+<meta name="description" content="Provider-neutral practitioner guides: link your GitHub, point Claude and Perplexity at the record, build your first sovereign twin.">
+<meta property="og:title" content="Practitioners · SAPfans.io">
+<meta property="og:description" content="Provider-neutral practitioner guides: link your GitHub, point Claude and Perplexity at the record, build your first sovereign twin.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head><body>
+<header><div class="bar">
+<a class="brand" href="index.html">SAPfans<span>.io</span></a>
+<nav><a href="index.html">Doctrine</a><a href="heritage.html">Heritage</a><a href="practitioners.html" class='on'>Practitioners</a><a href="pattern.html">Pattern</a></nav>
+</div></header>
+<main class="wrap">
+
+<span class="pill">Get to work</span>
+<h1>Practitioners</h1>
+<p class="lede">Provider-neutral, free to take, and useful this afternoon.</p>
+<p class="meta">Everything below is published in full at
+<a href="https://github.com/EVEglyphDesign/sapfans-io">the repository</a>. Clone it — no account, no tier, no permission.</p>
+<div class="cards">
+<div class="card"><h4><a href="https://github.com/EVEglyphDesign/sapfans-io/blob/main/practitioners/00-LINK-YOUR-GITHUB.md">00 · Link your GitHub →</a></h4>
+<p>Account hygiene, 2FA, the CLI, and how to connect Claude and Perplexity without handing
+either one your whole estate.</p></div>
+<div class="card"><h4><a href="https://github.com/EVEglyphDesign/sapfans-io/blob/main/practitioners/01-YOUR-SURFACES.md">01 · Point your surfaces at the record →</a></h4>
+<p>The rung ladder. Why an agent that starts cold is the largest avoidable cost in
+AI-assisted enterprise work.</p></div>
+<div class="card"><h4><a href="https://github.com/EVEglyphDesign/sapfans-io/blob/main/practitioners/02-BUILD-YOUR-TWIN.md">02 · Build your first twin →</a></h4>
+<p>One subject, one repository, provenance on every input, bulk indexed rather than
+committed.</p></div>
+<div class="card"><h4><a href="https://github.com/EVEglyphDesign/sapfans-io/blob/main/pattern/CLIENT-HANDOFF.md">Client handoff →</a></h4>
+<p>How a design requirement arrives, gets recorded in the client's own words, and gets
+routed to a named owner.</p></div>
+</div>
+
+<h2>The opening move</h2>
+<p>Start any substantial session by giving your agent the contract and the map. Two cheap
+fetches that change the cost of everything after them.</p>
+<pre><code>Fetch and follow:
+https://raw.githubusercontent.com/EVEglyphDesign/eve-glyph-boot-contract/main/README.md
+
+Then read the pattern I work to:
+https://raw.githubusercontent.com/EVEglyphDesign/sapfans-io/main/pattern/REPO-PATTERN.md
+
+Work down the rung ladder. Read the repository before you search the web.
+Confirm with me before any expensive action.</code></pre>
+
+<h2>The rung ladder</h2>
+<p>Every agent working on this material works down this ladder and <b>stops at the first rung
+that answers</b>. Rung four is the one practitioners under-use.</p>
+<table><thead><tr><th>#</th><th>Rung</th><th>Cost</th><th>Use it for</th></tr></thead><tbody>
+<tr><td>1</td><td>What is already in the conversation</td><td>free</td><td>Anything said this session</td></tr>
+<tr><td>2</td><td>Memory — recent threads</td><td>near-free</td><td>URLs, IDs, hashes, decisions</td></tr>
+<tr><td>3</td><td>Knowledge notes</td><td>near-free</td><td>Durable facts about projects and canon</td></tr>
+<tr><td>4</td><td><b>The repository</b> — <code>git</code>, <code>gh api</code>, raw read</td><td>cheap</td><td>Anything ever committed</td></tr>
+<tr><td>5</td><td>One targeted fetch or search</td><td>cheap</td><td>A single external fact not held</td></tr>
+<tr><td>6</td><td>Broad search, subagents, batch browsing, generation</td><td><b>expensive</b></td><td>Only after 1–5 actually failed</td></tr>
+</tbody></table>
+<blockquote><p>Before any expensive action, write one sentence: what it will do, why rungs
+1–5 could not, and what the cheap alternative would have produced. If you cannot write that
+sentence honestly, the action is not justified.</p></blockquote>
+
+<h2>Scaffold a conformant repository</h2>
+<pre><code>git clone https://github.com/EVEglyphDesign/sapfans-io.git
+cd sapfans-io
+bash scripts/new-repo.sh acme-fleet-twin "Acme fleet digital twin" private
+bash scripts/check-canon.sh /path/to/repo</code></pre>
+<p><code>new-repo.sh</code> refuses names that differ from an existing repository only by
+hyphenation, applies the skeleton, and pushes. <code>check-canon.sh</code> checks the
+skeleton, the pointer, the licence notice, repository weight, committed secrets, manifest
+completeness and whether your README claims a visibility the repository does not have.
+Read both before running either.</p>
+
+<h2>Where the pattern came from</h2>
+<p>It was derived from a real estate of 105 repositories, 44 of them public, by
+reading every one and recording what had gone wrong. That reading is published as
+<a href="https://github.com/EVEglyphDesign/sapfans-io/blob/main/registry/PUBLIC-REGISTER.md">the public register</a>. The rules in
+<a href="pattern.html">the pattern</a> each name the cost of ignoring them, because each cost
+was actually paid.</p>
+<p><a class="btn" href="pattern.html">Read the pattern</a>
+<a class="btn ghost" href="https://github.com/EVEglyphDesign/sapfans-io">Clone the repository</a></p>
+
+</main>
+<footer><div class="wrap">
+<p>© 2026 EVEglyphDesign · EgD-SAPF-001 · Key ID EgD-KEY-2026-07 · 2026-08-02<br>
+Independent. Not affiliated with, endorsed by or sponsored by SAP SE or any service provider.<br>
+Held in the open at <a href="https://github.com/EVEglyphDesign/sapfans-io">the SAPfans.io repository</a> — clone it, it is yours.</p>
+<p class="accent">Pour le bien-être du peuple.</p>
+</div></footer>
+</body></html>

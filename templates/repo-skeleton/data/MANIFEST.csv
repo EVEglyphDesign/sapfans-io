@@ -1,0 +1,2 @@
+object_key,bytes,sha256,retrieved,contains
+example/path/export-2026-07.csv.gz,184320112,sha256:0000000000000000000000000000000000000000000000000000000000000000,2026-07-31,"412 vehicles, July telematics, one row per vehicle-day"
