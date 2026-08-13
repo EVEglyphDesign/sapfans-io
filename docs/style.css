@@ -8,7 +8,9 @@ a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--accent)
  text-underline-offset:3px;text-decoration-thickness:1.5px}
 a:hover{color:var(--accent)}
 .wrap{max-width:760px;margin:0 auto;padding:0 24px}
-header{border-bottom:1px solid var(--line);background:var(--cream2)}
+header{border-bottom:1px solid var(--line);background:rgba(247,242,231,.96);
+ backdrop-filter:saturate(160%) blur(8px);-webkit-backdrop-filter:saturate(160%) blur(8px);
+ position:sticky;top:0;z-index:50}
 .bar{max-width:760px;margin:0 auto;padding:18px 24px;display:flex;flex-wrap:wrap;
  align-items:baseline;gap:6px 22px}
 .brand{font-family:Fraunces,Georgia,serif;font-weight:700;font-size:21px;letter-spacing:-.01em;
@@ -57,4 +59,35 @@ p code,li code,td code{background:var(--cream2);border:1px solid var(--line);pad
 footer{border-top:1px solid var(--line);margin-top:56px;padding:26px 0 40px;font-size:13px;
  color:var(--mute)}
 footer .accent{color:var(--accent)}
-@media(max-width:560px){body{font-size:16px}nav{margin-left:0;width:100%}}
+@media(max-width:560px){body{font-size:16px}nav{margin-left:0;width:100%}
+ .bar{padding:12px 20px}}
+
+/* Concentric drill-in — the canon on-ramp before any prose */
+.rings{margin:26px 0 8px;display:grid;grid-template-columns:minmax(220px,260px) 1fr;
+ gap:22px;align-items:center}
+.rings svg{width:100%;height:auto;display:block}
+.rings-legend{font-size:14.5px;line-height:1.55;color:var(--ink)}
+.rings-legend .row{display:flex;gap:10px;align-items:baseline;padding:8px 0;
+ border-bottom:1px dashed var(--line)}
+.rings-legend .row:last-child{border-bottom:0}
+.rings-legend .dot{flex:0 0 10px;width:10px;height:10px;border-radius:50%;
+ margin-top:8px;background:var(--accent)}
+.rings-legend .dot.mid{background:var(--ink);opacity:.55}
+.rings-legend .dot.outer{background:var(--mute);opacity:.55}
+.rings-legend b{font-family:Fraunces,Georgia,serif;font-weight:700}
+.rings-legend p{margin:2px 0 0;color:var(--mute);font-size:13.5px}
+@media(max-width:640px){.rings{grid-template-columns:1fr}
+ .rings svg{max-width:260px;margin:0 auto}}
+
+/* Drill-in card row — three-step triangulation under the diagram */
+.drill{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0 30px}
+.drill .step{background:var(--cream2);border:1px solid var(--line);padding:14px 16px;
+ position:relative}
+.drill .step .n{position:absolute;top:-10px;left:14px;background:var(--accent);
+ color:#fff;font-family:Fraunces,Georgia,serif;font-weight:700;font-size:13px;
+ width:22px;height:22px;border-radius:50%;display:grid;place-items:center;
+ letter-spacing:0}
+.drill .step h4{font-family:Fraunces,Georgia,serif;font-size:16px;margin:2px 0 4px;
+ font-weight:700;letter-spacing:-.005em}
+.drill .step p{font-size:13.5px;color:var(--mute);margin:0;line-height:1.5}
+@media(max-width:640px){.drill{grid-template-columns:1fr}}
