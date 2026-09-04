@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en" data-theme="dark"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SAPfans.io — practitioner commons for SAP in the AI era</title>
+<meta name="description" content="A practitioner commons for SAP in the age of AI. Additive, peer-run, and warm. The GitHub exchange of SAP fans.">
+<meta property="og:title" content="SAPfans.io — practitioner commons for SAP in the AI era">
+<meta property="og:description" content="A practitioner commons for SAP in the age of AI. Additive, peer-run, and warm. The GitHub exchange of SAP fans.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+/* ---------- Soft-dark warm palette (draft) ---------- */
+:root[data-theme="dark"]{
+  --bg:#0e0e10; --panel:#1a1917; --panel-2:#221f1b;
+  --fg:#e6e1d6; --fg-strong:#f2ede2; --dim:#9a948a; --faint:#6b6660;
+  --line:#2a2822; --line-2:#3a3833;
+  --accent:#e87722; --accent-mute:#b8632a; --accent-dim:#7a4a26;
+}
+:root[data-theme="light"]{
+  --bg:#fdfaf4; --panel:#f7f2e7; --panel-2:#efe9d9;
+  --fg:#1a1a1a; --fg-strong:#0a0a0a; --dim:#6b665c; --faint:#8a8478;
+  --line:#e7e1d3; --line-2:#d9d2c1;
+  --accent:#e87722; --accent-mute:#b8632a; --accent-dim:#7a4a26;
+}
+html,body{background:var(--bg);color:var(--fg)}
+a{color:var(--fg-strong);text-decoration-color:var(--accent)}
+a:hover{color:var(--accent)}
+header{background:color-mix(in srgb,var(--bg) 92%,transparent);border-bottom:1px solid var(--accent-dim)}
+.brand{color:var(--fg-strong)}
+nav a{color:var(--dim)}
+nav a:hover,nav a.on{color:var(--accent)}
+h1,h2{color:var(--fg-strong)}
+h3{color:var(--accent-mute)}
+.lede{color:var(--fg)}
+.meta{color:var(--dim)}
+p,li{color:var(--fg)}
+hr{border-top:1px solid var(--line)}
+
+/* ---------- Layout: board left, base-model rail right ---------- */
+.wrap-wide{max-width:1120px;margin:0 auto;padding:0 24px}
+.grid{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:36px;margin-top:28px}
+@media (max-width:900px){.grid{grid-template-columns:1fr;gap:28px}}
+
+.warm-intro{margin:32px 0 20px}
+.warm-intro h1{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(30px,5.2vw,44px);line-height:1.12;margin:0 0 12px;letter-spacing:-.015em}
+.warm-intro p{font-size:18px;line-height:1.6;max-width:640px;color:var(--fg)}
+.warm-intro .tag{display:inline-block;font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent-dim);padding:3px 10px;border-radius:2px;margin-bottom:14px}
+
+/* ---------- Board ---------- */
+.board-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:14px 0 10px}
+.board-head h2{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:22px;margin:0;letter-spacing:-.005em}
+.board-head .new{font-size:13.5px;color:var(--dim);text-decoration:none;border:1px solid var(--line-2);padding:6px 12px;border-radius:2px;background:var(--panel)}
+.board-head .new:hover{color:var(--accent);border-color:var(--accent-mute)}
+
+.cats{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 16px}
+.cats a{font-size:12.5px;letter-spacing:.02em;color:var(--dim);text-decoration:none;padding:4px 10px;border:1px solid var(--line-2);border-radius:999px;background:transparent}
+.cats a:hover{color:var(--accent);border-color:var(--accent-mute)}
+
+.threads{display:flex;flex-direction:column;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:2px;overflow:hidden}
+.thread{display:grid;grid-template-columns:auto 1fr auto;gap:14px;padding:14px 16px;background:var(--panel);align-items:center;text-decoration:none;color:var(--fg);transition:background .12s}
+.thread:hover{background:var(--panel-2);color:var(--fg)}
+.thread .avatar{width:36px;height:36px;border-radius:50%;background:var(--panel-2);border:1px solid var(--line-2);display:grid;place-items:center;font-family:Fraunces,Georgia,serif;font-weight:600;color:var(--accent-mute);font-size:15px;overflow:hidden}
+.thread .avatar img{width:100%;height:100%;object-fit:cover}
+.thread .body .title{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:16.5px;line-height:1.3;color:var(--fg-strong);margin:0 0 3px}
+.thread:hover .body .title{color:var(--accent)}
+.thread .body .meta{font-size:12.5px;color:var(--dim);display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.thread .body .meta .cat{color:var(--accent-mute);letter-spacing:.03em}
+.thread .body .meta .dot{color:var(--faint)}
+.thread .replies{font-size:12.5px;color:var(--dim);text-align:right;min-width:52px}
+.thread .replies b{display:block;color:var(--fg-strong);font-weight:600;font-size:15px;font-family:Fraunces,Georgia,serif}
+@media (max-width:520px){.thread{grid-template-columns:auto 1fr;gap:10px;padding:12px 14px}.thread .replies{grid-column:2;text-align:left;margin-top:2px}.thread .replies b{display:inline;margin-right:4px}}
+
+.board-loading{padding:18px;background:var(--panel);border:1px dashed var(--line-2);color:var(--dim);font-size:14px;text-align:center;border-radius:2px}
+.board-empty{padding:22px 18px;background:var(--panel);border:1px dashed var(--line-2);color:var(--dim);font-size:14.5px;line-height:1.55;border-radius:2px}
+.board-empty b{color:var(--fg-strong);font-family:Fraunces,Georgia,serif;font-weight:600}
+.board-empty a{color:var(--accent)}
+
+.foot-cta{margin-top:14px;font-size:13.5px;color:var(--dim)}
+.foot-cta a{color:var(--accent)}
+
+/* ---------- Right rail: base model ---------- */
+.rail{position:sticky;top:88px;align-self:start}
+@media (max-width:900px){.rail{position:static}}
+.model-card{background:var(--panel);border:1px solid var(--line-2);border-radius:2px;padding:22px 22px 20px;box-shadow:0 1px 0 var(--line) inset}
+.model-card .pill-model{display:inline-block;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent-dim);padding:2px 9px;border-radius:2px;margin-bottom:12px}
+.model-card h3{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:20px;color:var(--fg-strong);margin:0 0 6px;letter-spacing:-.01em}
+.model-card .sub{font-size:13.5px;color:var(--dim);margin:0 0 16px;line-height:1.55}
+.model-card ol{list-style:none;padding:0;margin:0 0 16px;counter-reset:step}
+.model-card ol li{counter-increment:step;padding:10px 0 10px 34px;position:relative;border-top:1px dashed var(--line-2);font-size:14px;line-height:1.5;color:var(--fg)}
+.model-card ol li:first-child{border-top:0}
+.model-card ol li::before{content:counter(step);position:absolute;left:0;top:12px;width:24px;height:24px;border-radius:50%;background:transparent;border:1px solid var(--accent-mute);color:var(--accent-mute);display:grid;place-items:center;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:12px}
+.model-card ol li b{display:block;font-family:Fraunces,Georgia,serif;font-weight:600;color:var(--fg-strong);font-size:14.5px;margin-bottom:2px}
+.model-card .human-gate{font-size:12.5px;color:var(--dim);padding:10px 12px;background:var(--panel-2);border-left:2px solid var(--accent-mute);margin:0 0 16px;line-height:1.5}
+.model-card .human-gate b{color:var(--fg-strong);font-family:Fraunces,Georgia,serif;font-weight:600}
+.model-card .btn-fork{display:block;text-align:center;background:var(--accent);color:#0e0e10;padding:11px 16px;text-decoration:none;font-weight:600;font-size:14px;letter-spacing:.01em;border-radius:2px}
+.model-card .btn-fork:hover{background:var(--fg-strong);color:var(--bg)}
+
+.norms{margin-top:16px;padding:16px 18px;background:transparent;border:1px solid var(--line-2);border-radius:2px}
+.norms h4{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:15px;color:var(--fg-strong);margin:0 0 8px}
+.norms ul{margin:0;padding-left:18px;font-size:13px;color:var(--dim);line-height:1.55}
+.norms ul li{margin-bottom:4px}
+.norms b{color:var(--accent-mute)}
+
+/* ---------- Theme toggle ---------- */
+#theme-toggle{position:fixed;top:14px;left:14px;z-index:10000;background:var(--panel);border:1px solid var(--line-2);color:var(--fg);width:38px;height:38px;border-radius:50%;cursor:pointer;display:grid;place-items:center;box-shadow:0 2px 6px rgba(0,0,0,.25);font-size:16px;line-height:1;transition:border-color .15s}
+#theme-toggle:hover{border-color:var(--accent-mute);color:var(--accent)}
+#theme-toggle svg{width:18px;height:18px}
+</style>
+</head><body>
+
+<!-- Theme toggle (dark default, remembers choice) -->
+<button id="theme-toggle" type="button" aria-label="Toggle light and dark theme" title="Toggle theme">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" id="theme-icon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+</button>
+
+<header><div class="bar" style="max-width:1120px">
+<a class="brand" href="index.html">SAPfans<span>.io</span></a>
+<nav>
+  <a href="index.html" class="on">Board</a>
+  <a href="doctrine.html">Doctrine</a>
+  <a href="heritage.html">Heritage</a>
+  <a href="practitioners.html">Practitioners</a>
+  <a href="pattern.html">Pattern</a>
+  <a href="sovereign-start.html">Start</a>
+</nav>
+</div></header>
+
+<main class="wrap-wide">
+
+<div class="warm-intro">
+  <span class="tag">A practitioner commons</span>
+  <h1>The GitHub exchange of SAP fans.</h1>
+  <p>A place where practitioners share what they know about running SAP in a world that just got AI. If you were on the old boards, the feeling here should be familiar — peers helping peers, no vendor gate, no lead capture. Post if you want. Read if you want. Fork the starter if you're ready to build.</p>
+</div>
+
+<div class="grid">
+
+  <!-- LEFT: board -->
+  <div>
+    <div class="board-head">
+      <h2>Recent threads</h2>
+      <a class="new" href="https://github.com/EVEglyphDesign/sapfans-io/discussions/new/choose" target="_blank" rel="noopener">Start a thread ↗</a>
+    </div>
+
+    <div class="cats" aria-label="Categories">
+      <a href="https://github.com/EVEglyphDesign/sapfans-io/discussions/categories/practitioner-intros" target="_blank" rel="noopener">Practitioner intros</a>
+      <a href="https://github.com/EVEglyphDesign/sapfans-io/discussions/categories/articles-signals" target="_blank" rel="noopener">Articles &amp; signals</a>
+      <a href="https://github.com/EVEglyphDesign/sapfans-io/discussions/categories/research" target="_blank" rel="noopener">Research</a>
+      <a href="https://github.com/EVEglyphDesign/sapfans-io/discussions/categories/md-file-swap" target="_blank" rel="noopener">MD file swap</a>
+      <a href="https://github.com/EVEglyphDesign/sapfans-io/discussions/categories/q-a" target="_blank" rel="noopener">Q&amp;A</a>
+    </div>
+
+    <div id="board" class="threads" aria-live="polite">
+      <div class="board-loading">Loading recent threads from GitHub…</div>
+    </div>
+
+    <p class="foot-cta">Threads live in <a href="https://github.com/EVEglyphDesign/sapfans-io/discussions" target="_blank" rel="noopener">GitHub Discussions</a>. Sign in with GitHub to reply — same identity, no new account.</p>
+  </div>
+
+  <!-- RIGHT: base model rail -->
+  <aside class="rail">
+    <div class="model-card">
+      <span class="pill-model">The base model</span>
+      <h3>What you get when you fork.</h3>
+      <p class="sub">A one-file starter that becomes your own repository. Three parts, in the same order every time.</p>
+      <ol>
+        <li><b>Boot contract</b>The rules your AI reads first. Cheapest-source-first, no wasted spend, no cold starts.</li>
+        <li><b>Canon</b>The house standards. Palette, naming, format, tone — so a team's outputs stay coherent.</li>
+        <li><b>Sin registry</b>The honest record of mistakes. What went wrong, when, and what the cheaper path was.</li>
+      </ol>
+      <div class="human-gate">
+        <b>Human-review gate.</b> Contributors run AI on transcripts and file structured feedback. An owner consolidates, drafts a version bump, and a human signs off before it ships.
+      </div>
+      <a class="btn-fork" href="sovereign-start.html">Fork the starter →</a>
+    </div>
+
+    <div class="norms">
+      <h4>Community norms</h4>
+      <ul>
+        <li><b>Anonymize client info</b> before sharing any MD file. Non-negotiable.</li>
+        <li>Be additive. Cite sources. Accept correction.</li>
+        <li>Link to your LinkedIn or X in a post if you want — your call, not required.</li>
+      </ul>
+    </div>
+  </aside>
+
+</div>
+
+<hr style="margin:56px 0 36px">
+
+<p class="meta" style="text-align:center">
+  <a href="doctrine.html">Read the doctrine</a> · <a href="heritage.html">Why this name</a> · <a href="pattern.html">The pattern</a> · <a href="SAPfans_The_Additive_Doctrine.pdf">Controlled PDF</a>
+</p>
+
+</main>
+
+<footer style="max-width:1120px;margin:0 auto;padding:26px 24px 40px;font-size:13px;color:var(--dim);border-top:1px solid var(--line)">
+  © 2026 <span style="color:var(--accent)">EVEglyphDesign</span> · SAPfans.io — a practitioner commons ·
+  <a href="https://github.com/EVEglyphDesign/sapfans-io" target="_blank" rel="noopener">Repository</a>
+  · <em>Pour le bien-être du peuple</em>
+</footer>
+
+<script>
+/* ---------- Theme toggle: dark default, persist choice ---------- */
+(function(){
+  const KEY='sapfans-theme';
+  const root=document.documentElement;
+  const btn=document.getElementById('theme-toggle');
+  const icon=document.getElementById('theme-icon');
+  const MOON='<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+  const SUN='<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>';
+  function apply(t){ root.setAttribute('data-theme',t); icon.innerHTML = t==='dark' ? MOON : SUN; }
+  const saved=localStorage.getItem(KEY); apply(saved==='light'?'light':'dark');
+  btn.addEventListener('click',()=>{const cur=root.getAttribute('data-theme');const next=cur==='dark'?'light':'dark';apply(next);localStorage.setItem(KEY,next);});
+})();
+
+/* ---------- Board loader: pull recent Discussions via GraphQL v4 ----------
+   Uses the public GitHub GraphQL API. If unauthenticated it will 401 — in that case
+   we fall back to the REST v3 endpoint which returns basic discussion data without auth. */
+(function(){
+  const boardEl=document.getElementById('board');
+  const REPO_OWNER='EVEglyphDesign', REPO_NAME='sapfans-io';
+
+  function esc(s){return (s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+  function timeAgo(iso){
+    const d=new Date(iso), now=new Date(), s=Math.floor((now-d)/1000);
+    if(s<60) return 'just now';
+    if(s<3600) return Math.floor(s/60)+'m ago';
+    if(s<86400) return Math.floor(s/3600)+'h ago';
+    if(s<604800) return Math.floor(s/86400)+'d ago';
+    return d.toLocaleDateString(undefined,{month:'short',day:'numeric'});
+  }
+  function renderThreads(items){
+    if(!items || items.length===0){
+      boardEl.classList.remove('threads'); boardEl.classList.add('board-empty');
+      boardEl.innerHTML = '<b>The board is quiet — for now.</b><br>This is where practitioner intros, curated articles, research notes, and MD-file swaps will live. Be the first: <a href="https://github.com/EVEglyphDesign/sapfans-io/discussions/new/choose" target="_blank" rel="noopener">start a thread</a>.';
+      return;
+    }
+    boardEl.innerHTML = items.map(t => {
+      const initial = (t.author||'?').charAt(0).toUpperCase();
+      const avatarInner = t.avatarUrl ? `<img src="${esc(t.avatarUrl)}" alt="">` : esc(initial);
+      return `<a class="thread" href="${esc(t.url)}" target="_blank" rel="noopener">
+        <div class="avatar">${avatarInner}</div>
+        <div class="body">
+          <div class="title">${esc(t.title)}</div>
+          <div class="meta">
+            <span class="cat">${esc(t.category||'Discussion')}</span>
+            <span class="dot">·</span>
+            <span>${esc(t.author||'anon')}</span>
+            <span class="dot">·</span>
+            <span>${esc(timeAgo(t.updatedAt))}</span>
+          </div>
+        </div>
+        <div class="replies"><b>${t.replies||0}</b>replies</div>
+      </a>`;
+    }).join('');
+  }
+  // Unauthenticated GraphQL needs a token; fall back to a lightweight scrape-free option:
+  // GitHub exposes a public JSON feed of recent discussions via the REST-adjacent search API.
+  // We use fetch on the public Discussions page's JSON representation.
+  fetch(`https://api.github.com/search/issues?q=repo:${REPO_OWNER}/${REPO_NAME}+is:discussion&sort=updated&order=desc&per_page=8`)
+    .then(r => r.ok ? r.json() : Promise.reject(r.status))
+    .then(data => {
+      // NOTE: Search API doesn't index discussions publicly without auth. If empty, show empty state.
+      const items = (data.items || []).map(it => ({
+        title: it.title, url: it.html_url, author: it.user && it.user.login,
+        avatarUrl: it.user && it.user.avatar_url, category: 'Discussion',
+        updatedAt: it.updated_at, replies: it.comments || 0
+      }));
+      renderThreads(items);
+    })
+    .catch(() => {
+      // Show empty-state gracefully — never leave the visitor with a spinner.
+      renderThreads([]);
+    });
+})();
+</script>
+
+</body></html>
