@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Practitioners · SAPfans.io</title>
+<meta name="description" content="Provider-neutral practitioner guides: link your GitHub, point Claude and Perplexity at the record, build your first sovereign twin.">
+<meta property="og:title" content="Practitioners · SAPfans.io">
+<meta property="og:description" content="Provider-neutral practitioner guides: link your GitHub, point Claude and Perplexity at the record, build your first sovereign twin.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head><body>
+<!-- EGD-CHECKIN-START v4 · fixed thumb-reachable check-in corner · Dany Theriault -->
+<style>
+  /* Reserve top-right corner on the page so existing chrome doesn't collide */
+  body{padding-top:68px !important}
+  /* Extra specificity via #egd-checkin to defeat any host-page nav rules */
+  #egd-checkin{position:fixed !important;top:10px !important;right:12px !important;left:auto !important;bottom:auto !important;width:auto !important;max-width:none !important;margin:0 !important;z-index:9999 !important;display:flex !important;flex-direction:row !important;flex:0 0 auto !important;align-items:center !important;justify-content:flex-start !important;gap:2px !important;padding:4px !important;background:rgba(253,250,244,.96) !important;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid #d9d2c1 !important;border-radius:999px !important;box-shadow:0 4px 16px rgba(26,26,26,.14) !important;font-family:Inter,system-ui,sans-serif !important}
+  #egd-checkin a{display:flex !important;flex:0 0 auto !important;align-items:center !important;justify-content:center !important;width:46px !important;height:46px !important;padding:0 !important;margin:0 !important;border-radius:50% !important;background:#fff !important;border:1px solid transparent !important;text-decoration:none !important;color:inherit !important;box-shadow:0 1px 3px rgba(26,26,26,.08) !important;transition:border-color .15s ease,transform .15s ease,box-shadow .15s ease}
+  #egd-checkin a:hover,#egd-checkin a:focus-visible{border-color:#e87722 !important;transform:translateY(-1px);box-shadow:0 3px 8px rgba(232,119,34,.25) !important}
+  #egd-checkin a svg{width:24px !important;height:24px !important;display:block !important}
+  #egd-checkin a[data-net="linkedin"] svg{fill:#0a66c2 !important}
+  #egd-checkin a[data-net="x"] svg{fill:#000 !important}
+  #egd-checkin a[data-net="whatsapp"] svg{fill:#25d366 !important}
+  #egd-checkin .egd-sr{position:absolute !important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  @media (max-width:480px){body{padding-top:62px !important}#egd-checkin{top:8px !important;right:8px !important;padding:3px !important;gap:2px !important}#egd-checkin a{width:44px !important;height:44px !important}#egd-checkin a svg{width:22px !important;height:22px !important}}
+</style>
+<div id="egd-checkin" role="navigation" aria-label="Check in with Dany">
+  <a href="https://www.linkedin.com/in/danytheriault" target="_blank" rel="noopener" data-net="linkedin" title="Connect on LinkedIn"><span class="egd-sr">Connect on LinkedIn</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a>
+  <a href="https://x.com/DDTheriault75" target="_blank" rel="noopener" data-net="x" title="Follow on X"><span class="egd-sr">Follow on X</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+  <a href="https://wa.me/15062921452" target="_blank" rel="noopener" data-net="whatsapp" title="Message on WhatsApp"><span class="egd-sr">Message on WhatsApp</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.027 2c-5.51 0-9.987 4.478-9.987 9.988 0 1.76.46 3.482 1.334 5.001L2 22l5.121-1.343A9.94 9.94 0 0012.017 22h.005c5.51 0 9.987-4.478 9.987-9.988A9.928 9.928 0 0019.089 4.9 9.928 9.928 0 0012.032 2zm0 18.32h-.003a8.31 8.31 0 01-4.23-1.159l-.303-.18-3.14.823.838-3.06-.198-.313A8.245 8.245 0 013.78 12c0-4.54 3.696-8.236 8.24-8.236a8.19 8.19 0 015.826 2.412 8.19 8.19 0 012.412 5.83c0 4.54-3.697 8.235-8.24 8.235z"/></svg></a>
+</div>
+<!-- EGD-CHECKIN-END v4 -->
+
+<header><div class="bar">
+<a class="brand" href="index.html">SAPfans<span>.io</span></a>
+<nav><a href="index.html">Doctrine</a><a href="heritage.html">Heritage</a><a href="practitioners.html" class='on'>Practitioners</a><a href="pattern.html">Pattern</a><a href="sovereign-start.html">Start</a></nav>
+</div></header>
+<main class="wrap">
+
+<span class="pill">Get to work</span>
+<h1>Practitioners</h1>
+<p class="lede">Provider-neutral, free to take, and useful this afternoon.</p>
+<p class="meta">Everything below is published in full at
+<a href="https://github.com/EVEglyphDesign/sapfans-io">the repository</a>. Clone it — no account, no tier, no permission.</p>
+
+<div class="drill" aria-label="The practitioner path, in three">
+  <div class="step"><span class="n">1</span><h4>Link your GitHub</h4><p>Custody first. Account hygiene, 2FA, CLI. Nothing to build yet.</p></div>
+  <div class="step"><span class="n">2</span><h4>Point your surfaces</h4><p>Claude, Perplexity, whatever you use — read the record, not the open web.</p></div>
+  <div class="step"><span class="n">3</span><h4>Build one twin</h4><p>One real subject. Provenance on every input. Bulk-indexed, not committed.</p></div>
+</div>
+
+<div class="cards">
+<div class="card"><h4><a href="https://github.com/EVEglyphDesign/sapfans-io/blob/main/practitioners/00-LINK-YOUR-GITHUB.md">00 · Link your GitHub →</a></h4>
+<p>Account hygiene, 2FA, the CLI, and how to connect Claude and Perplexity without handing
+either one your whole estate.</p></div>
+<div class="card"><h4><a href="https://github.com/EVEglyphDesign/sapfans-io/blob/main/practitioners/01-YOUR-SURFACES.md">01 · Point your surfaces at the record →</a></h4>
+<p>The rung ladder. Why an agent that starts cold is the largest avoidable cost in
+AI-assisted enterprise work.</p></div>
+<div class="card"><h4><a href="https://github.com/EVEglyphDesign/sapfans-io/blob/main/practitioners/02-BUILD-YOUR-TWIN.md">02 · Build your first twin →</a></h4>
+<p>One subject, one repository, provenance on every input, bulk indexed rather than
+committed.</p></div>
+<div class="card"><h4><a href="https://github.com/EVEglyphDesign/sapfans-io/blob/main/pattern/CLIENT-HANDOFF.md">Client handoff →</a></h4>
+<p>How a design requirement arrives, gets recorded in the client's own words, and gets
+routed to a named owner.</p></div>
+</div>
+
+<h2>The opening move</h2>
+<p>Start any substantial session by giving your agent the contract and the map. Two cheap
+fetches that change the cost of everything after them.</p>
+<pre><code>Fetch and follow:
+https://raw.githubusercontent.com/EVEglyphDesign/eve-glyph-boot-contract/main/README.md
+
+Then read the pattern I work to:
+https://raw.githubusercontent.com/EVEglyphDesign/sapfans-io/main/pattern/REPO-PATTERN.md
+
+Work down the rung ladder. Read the repository before you search the web.
+Confirm with me before any expensive action.</code></pre>
+
+<h2>The rung ladder</h2>
+<p>Every agent working on this material works down this ladder and <b>stops at the first rung
+that answers</b>. Rung four is the one practitioners under-use.</p>
+<table><thead><tr><th>#</th><th>Rung</th><th>Cost</th><th>Use it for</th></tr></thead><tbody>
+<tr><td>1</td><td>What is already in the conversation</td><td>free</td><td>Anything said this session</td></tr>
+<tr><td>2</td><td>Memory — recent threads</td><td>near-free</td><td>URLs, IDs, hashes, decisions</td></tr>
+<tr><td>3</td><td>Knowledge notes</td><td>near-free</td><td>Durable facts about projects and canon</td></tr>
+<tr><td>4</td><td><b>The repository</b> — <code>git</code>, <code>gh api</code>, raw read</td><td>cheap</td><td>Anything ever committed</td></tr>
+<tr><td>5</td><td>One targeted fetch or search</td><td>cheap</td><td>A single external fact not held</td></tr>
+<tr><td>6</td><td>Broad search, subagents, batch browsing, generation</td><td><b>expensive</b></td><td>Only after 1–5 actually failed</td></tr>
+</tbody></table>
+<blockquote><p>Before any expensive action, write one sentence: what it will do, why rungs
+1–5 could not, and what the cheap alternative would have produced. If you cannot write that
+sentence honestly, the action is not justified.</p></blockquote>
+
+<h2>Scaffold a conformant repository</h2>
+<pre><code>git clone https://github.com/EVEglyphDesign/sapfans-io.git
+cd sapfans-io
+bash scripts/new-repo.sh acme-fleet-twin "Acme fleet digital twin" private
+bash scripts/check-canon.sh /path/to/repo</code></pre>
+<p><code>new-repo.sh</code> refuses names that differ from an existing repository only by
+hyphenation, applies the skeleton, and pushes. <code>check-canon.sh</code> checks the
+skeleton, the pointer, the licence notice, repository weight, committed secrets, manifest
+completeness and whether your README claims a visibility the repository does not have.
+Read both before running either.</p>
+
+<h2>Where the pattern came from</h2>
+<p>It was derived from a real estate of 105 repositories, 44 of them public, by
+reading every one and recording what had gone wrong. That reading is published as
+<a href="https://github.com/EVEglyphDesign/sapfans-io/blob/main/registry/PUBLIC-REGISTER.md">the public register</a>. The rules in
+<a href="pattern.html">the pattern</a> each name the cost of ignoring them, because each cost
+was actually paid.</p>
+<p><a class="btn" href="pattern.html">Read the pattern</a>
+<a class="btn ghost" href="https://github.com/EVEglyphDesign/sapfans-io">Clone the repository</a></p>
+
+</main>
+<footer><div class="wrap">
+<p>© 2026 EVEglyphDesign · EgD-SAPF-001 · Key ID EgD-KEY-2026-07 · 2026-08-02<br>
+Independent. Not affiliated with, endorsed by or sponsored by SAP SE or any service provider.<br>
+Held in the open at <a href="https://github.com/EVEglyphDesign/sapfans-io">the SAPfans.io repository</a> — clone it, it is yours.</p>
+<p class="accent">Pour le bien-être du peuple.</p>
+</div></footer>
+</body></html>
