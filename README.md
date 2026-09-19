@@ -17,6 +17,7 @@ nothing to buy.
 |---|---|
 | **[The tutorial](docs/tutorial.html)** | From nothing to a working repository and harness. About an hour. Assumes you have never used GitHub |
 | **[Usage standards](docs/standards.html)** | For delivery leads and PMO — three spend classes, one test, and what to measure |
+| **[Repositories](docs/repos.html)** | A searchable directory of useful GitHub repositories, grouped by what they are for. Backed by one file: `docs/repos.json` |
 | **[Heritage](heritage/HERITAGE.md)** | Where the name comes from |
 
 ## The idea in three lines
