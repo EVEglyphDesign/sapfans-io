@@ -2,10 +2,10 @@
 <html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Additive Doctrine · SAPfans.io</title>
-<meta name="description" content="SAPfans.io — the next generation of SAP fans, in the sovereign domain. Additive, not substitutive. Mirror, never cannibalise. In conflict with none.">
-<meta property="og:title" content="The Additive Doctrine · SAPfans.io">
-<meta property="og:description" content="SAPfans.io — the next generation of SAP fans, in the sovereign domain. Additive, not substitutive. Mirror, never cannibalise. In conflict with none.">
+<title>SAPfans.io · Make your AI work accumulate</title>
+<meta name="description" content="You already use Claude, Copilot or Perplexity on your projects. This is how to point them at a GitHub repository so the work lands somewhere, the decisions are recorded, and the spend shows a return. Written by a functional consultant, for functional consultants.">
+<meta property="og:title" content="SAPfans.io · Make your AI work accumulate">
+<meta property="og:description" content="Point Claude, Copilot or Perplexity at a GitHub repository so the work lands, the decisions are recorded, and the spend shows a return.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,9 +14,7 @@
 </head><body>
 <!-- EGD-CHECKIN-START v4 · fixed thumb-reachable check-in corner · Dany Theriault -->
 <style>
-  /* Reserve top-right corner on the page so existing chrome doesn't collide */
   body{padding-top:68px !important}
-  /* Extra specificity via #egd-checkin to defeat any host-page nav rules */
   #egd-checkin{position:fixed !important;top:10px !important;right:12px !important;left:auto !important;bottom:auto !important;width:auto !important;max-width:none !important;margin:0 !important;z-index:9999 !important;display:flex !important;flex-direction:row !important;flex:0 0 auto !important;align-items:center !important;justify-content:flex-start !important;gap:2px !important;padding:4px !important;background:rgba(253,250,244,.96) !important;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid #d9d2c1 !important;border-radius:999px !important;box-shadow:0 4px 16px rgba(26,26,26,.14) !important;font-family:Inter,system-ui,sans-serif !important}
   #egd-checkin a{display:flex !important;flex:0 0 auto !important;align-items:center !important;justify-content:center !important;width:46px !important;height:46px !important;padding:0 !important;margin:0 !important;border-radius:50% !important;background:#fff !important;border:1px solid transparent !important;text-decoration:none !important;color:inherit !important;box-shadow:0 1px 3px rgba(26,26,26,.08) !important;transition:border-color .15s ease,transform .15s ease,box-shadow .15s ease}
   #egd-checkin a:hover,#egd-checkin a:focus-visible{border-color:#e87722 !important;transform:translateY(-1px);box-shadow:0 3px 8px rgba(232,119,34,.25) !important}
@@ -36,18 +34,24 @@
 
 <header><div class="bar">
 <a class="brand" href="index.html">SAPfans<span>.io</span></a>
-<nav><a href="index.html" class='on'>Doctrine</a><a href="heritage.html">Heritage</a><a href="practitioners.html">Practitioners</a><a href="pattern.html">Pattern</a><a href="sovereign-start.html">Start</a></nav>
+<nav><a href="index.html" class='on'>Start</a><a href="tutorial.html">Tutorial</a><a href="standards.html">Standards</a><a href="heritage.html">Heritage</a></nav>
 </div></header>
 <main class="wrap">
 
-<span class="pill">EgD-SAPF-001 · The paper</span>
-<h1>The Additive Doctrine</h1>
-<p class="lede">The next generation of SAP fans, in the sovereign domain.</p>
-<p class="meta">SAPfans in the sovereign domain — a practitioner charter for adding capability to the enterprise ledger without displacing it · 2026-08-02</p>
-<p><a class="btn" href="SAPfans_The_Additive_Doctrine.pdf">Read the controlled PDF</a>
-<a class="btn ghost" href="practitioners.html">Start building</a></p>
+<span class="pill">EgD-SAPF-001 r2 · Start here</span>
+<h1>Make the AI work accumulate</h1>
+<p class="lede">You already use Claude, Copilot or Perplexity on your projects. This is how to point them at a GitHub repository so the work lands somewhere, the decisions are recorded, and the spend shows a return.</p>
+<p class="meta">Written by a functional consultant, for functional consultants · 2026-09-18</p>
+<p><a class="btn" href="tutorial.html">Start the tutorial</a>
+<a class="btn ghost" href="standards.html">Set a usage standard</a></p>
 
-<section class="rings" aria-label="The doctrine, in one picture">
+<hr>
+
+<h2>The problem, in one paragraph</h2>
+<p>You ask Claude to work through a config decision. You get a good answer. You close the tab. Next week someone asks why the decision went that way, and the reasoning is gone — it was in a chat window nobody kept. So you ask again, and pay again, and get an answer that is slightly different from the first one. Multiply that across a project team and the tools have cost real money without leaving anything behind.</p>
+<p>Developers solved this a long time ago. They put the work in a repository. <b>The repository is the control unit</b> — it holds the decision, who made it, when, and what it was based on. That is all this site is suggesting: that the functional side of the project use the same control unit the technical side already uses, and point the AI tools at it.</p>
+
+<section class="rings" aria-label="The idea, in one picture">
 <svg viewBox="0 0 260 260" role="img" aria-label="Three concentric rings: the record inside, the practitioner around it, the vendor outside">
   <defs>
     <radialGradient id="core" cx="50%" cy="50%" r="50%">
@@ -64,76 +68,58 @@
   <text x="130" y="24"  text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#c8c8c8">vendor</text>
 </svg>
 <div class="rings-legend">
-  <div class="row"><span class="dot"></span><div><b>Inner — the record</b><p>The customer’s own operational history. Custody, read-only, in an open format.</p></div></div>
-  <div class="row"><span class="dot mid"></span><div><b>Mid — the practitioner</b><p>Mirrors what is needed. Builds twins and surfaces on top. Never writes back.</p></div></div>
-  <div class="row"><span class="dot outer"></span><div><b>Outer — the vendor</b><p>System of record, undisturbed. Additive, not substitutive. In conflict with none.</p></div></div>
+  <div class="row"><span class="dot"></span><div><b>Inner — the record</b><p>Your repository. The decisions, the analysis, the working papers. Yours, readable, in plain files.</p></div></div>
+  <div class="row"><span class="dot mid"></span><div><b>Mid — you</b><p>Where you and your AI tools work. Reads from the system, writes to the repository. Never writes back into the system.</p></div></div>
+  <div class="row"><span class="dot outer"></span><div><b>Outer — the system</b><p>SAP, or whatever the client runs. Untouched. This layer sits on top and changes nothing underneath.</p></div></div>
 </div>
 </section>
 
-<div class="drill" aria-label="How to read this paper">
-  <div class="step"><span class="n">1</span><h4>Read the claim</h4><p>Additive, mirror-only, in conflict with none. Two paragraphs, then decide.</p></div>
-  <div class="step"><span class="n">2</span><h4>Check the four tests</h4><p>Custody, portability, exit, continuity. Each fails independently.</p></div>
-  <div class="step"><span class="n">3</span><h4>Take the pattern</h4><p>Provider-neutral. Fork the repo, point your AI at the record, build one twin.</p></div>
+<div class="drill" aria-label="The three steps">
+  <div class="step"><span class="n">1</span><h4>Set up the repo</h4><p>One repository per workstream, with a shape the whole team recognises. Twenty minutes.</p></div>
+  <div class="step"><span class="n">2</span><h4>Add the harness</h4><p>One file of instructions your tools read automatically, so every session starts warm.</p></div>
+  <div class="step"><span class="n">3</span><h4>Set a usage standard</h4><p>Agree what the team spends on, and what a result looks like. Otherwise the bill grows without the output.</p></div>
 </div>
 
 <hr>
-<h2>Summary</h2>
-<p>This paper states the position SAPfans.io is built on, so that a practitioner can read it once and know whether they belong here.</p>
-<p>The enterprise ledger — SAP above all, but not SAP alone — is the accumulated record of how organisations actually run. It was built by engineers over five decades and it works. Nothing in this doctrine seeks to replace it, route around it, or embarrass it.</p>
-<p>What this doctrine seeks is the right to <b>add</b>. To mirror what is needed, read-only, into custody the customer controls, and to build the new-dimensional services that the ledger was never designed to provide — without write-back, without displacement of the system of record, and without asking anyone to abandon an investment that is working.</p>
-<p>That is the whole of it. Additive, not substitutive. Mirror, never cannibalise. <b>In conflict with none.</b></p><h2>Why now</h2>
-<p>Two things changed at once, and their combination is what makes this urgent rather than merely interesting.</p>
-<p>The first is that artificial intelligence made the enterprise ledger newly valuable. Not the software — the <i>record</i>. Decades of posted documents, master data, master recipes, plant maintenance histories and supplier behaviour are exactly the substrate that makes a reasoning model useful rather than plausible. Whoever holds that record in a form a model can read holds the leverage.</p>
-<p>The second is that the platforms noticed. The response across the industry has been to offer intelligence <i>inside</i> the platform boundary, on platform-operated infrastructure, at platform-set terms — and to describe the result as sovereign.</p>
-<p>It is worth being precise about what that word is being asked to carry. At SAP Sapphire in Madrid on 21 May 2026, the sovereign options presented were SAP-operated and in-region: European infrastructure, European jurisdiction, European models. That is a genuine and useful thing. It is <b>data residency</b>. It answers the question <i>where do the bytes sit.</i> It does not answer the question <b>who can move them, and on whose terms</b> — and that second question is <b>architectural sovereignty</b>. Conflating the two is the single most consequential imprecision in enterprise software today.</p><table><thead><tr><th></th><th>Data residency</th><th>Architectural sovereignty</th></tr></thead><tbody><tr><td>Question asked</td><td>Where do the bytes sit?</td><td>Who can move them, and on whose terms?</td></tr><tr><td>Satisfied by</td><td>In-region, vendor-operated infrastructure.</td><td>Customer-administered custody of a complete copy.</td></tr><tr><td>Survives vendor exit</td><td>No.</td><td>Yes.</td></tr><tr><td>Survives a terms change</td><td>No.</td><td>Yes.</td></tr><tr><td>Commonly called sovereign</td><td>Yes.</td><td>Yes.</td></tr><tr><td>Actually sovereign</td><td>No.</td><td>Yes.</td></tr></tbody></table><h2>The additive claim</h2>
-<p>The claim is narrow on purpose, because a narrow claim can be honoured by a vendor without loss, and a broad one cannot.</p>
-<p><b>We ask for read access to the record, and we give up every right that would threaten the vendor's position.</b> No write-back. No displacement of the system of record. No shadow ledger competing for authority. No claim that the platform is unnecessary — it plainly is necessary, and saying otherwise would be false as well as rude.</p>
-<p>In exchange, the practitioner gains the right to mirror what is needed into a store the customer owns, and to build on top of it. A supplier-call agent that raises the yield of an SAP capital asset the customer already paid for. A twin that answers a question the standard reporting layer was never shaped to answer. A model that reasons over the organisation's own history rather than a generic corpus.</p>
-<p>Every one of those makes the underlying platform <b>more</b> valuable, not less. A customer who can do more with their ledger renews it. That is why this is a non-disruption play and not a competitive one, and why it can be put to a vendor as an invitation rather than a demand.</p><h2>Sovereignty, stated precisely</h2>
-<p>Four tests. A deployment is architecturally sovereign when all four pass, and each one fails independently.</p>
-<p><b>Custody.</b> The customer holds a complete, current copy of their own record, in a store they administer, in an open format, without asking permission to read it.</p>
-<p><b>Portability.</b> The copy is loadable somewhere else. Canonical column names, documented semantics, plain DDL. If it only reloads into the system it came from, it is a hostage with a backup schedule.</p>
-<p><b>Exit.</b> Leaving is priced and possible. The cost of departure is known in advance and does not rise with the length of the relationship.</p>
-<p><b>Continuity.</b> If the vendor changed its terms tomorrow — or was acquired, or withdrew from the market — the organisation would still be able to answer questions about its own history.</p>
-<p>Note what is absent from those four. Nothing about jurisdiction, nothing about region, nothing about which flag flies over the datacentre. Those matter for other reasons. They are not this.</p><table><thead><tr><th>Test</th><th>Passes when</th></tr></thead><tbody><tr><td><b>Custody</b></td><td>A complete, current copy of the record, in a store the customer administers, in an open format, readable without permission.</td></tr><tr><td><b>Portability</b></td><td>The copy loads somewhere else. Canonical names, documented semantics, plain DDL. Not a backup — a destination.</td></tr><tr><td><b>Exit</b></td><td>The cost of leaving is known in advance and does not rise with tenure.</td></tr><tr><td><b>Continuity</b></td><td>If the vendor's terms changed tomorrow, the organisation could still answer questions about its own history.</td></tr></tbody></table><h2>What we do not do</h2>
-<p>This community keeps its critique aimed where it belongs, and the discipline is worth stating explicitly because it is easy to lose in a comment thread.</p>
-<p><b>We do not attack engineers.</b> The German engineering tradition that produced the enterprise ledger is one of the genuine achievements of industrial software, and the people who built it — and the architects, consultants and support staff who have kept it running for thirty years — are our colleagues, not our subject. Where there is criticism here, it is of executive lock-down provisions and licensing posture. Never of the craft.</p>
-<p><b>We do not attack service providers.</b> A practitioner arriving from a global integrator, a boutique, a customer's internal team, or their own single-person practice is the same practitioner. The pattern published here is deliberately provider-neutral: it requires no product, no partnership tier, and no permission from anyone's channel organisation. If your employer's methodology and this one disagree, follow your employer's and take what is useful.</p>
-<p><b>We do not fork the community.</b> SAP Community, the user groups, and the vendor's own forums do things this site will not attempt. Go there too.</p>
-<p><b>We do not publish client material.</b> Ever, in any form, however anonymised it feels.</p><h2>The heritage we are claiming</h2>
-<p>The name is not decoration and it is not nostalgia. It is a claim about what this is for.</p>
-<p>Before there was a vendor-run community, there were practitioners answering each other's questions on independent forums. SAPfans.com predated SAP's own developer network by several years — the SAP Developer Network was created in July 2003, and by then SAPfans had already been the place people went. A parallel site, sapfans.org, was set up in January 2000 specifically so consultants could reach each other and find work. The technical polish was lower than the vendor's later platform. The independence was total.</p>
-<p>And then a great deal of it was lost. Contemporary accounts of SAPfans.com note that its archive survived only in part, with material lost in server crashes because backups were not being kept. Years of practitioner knowledge — the accumulated debugging of a generation — evaporated because it lived on one machine that belonged to someone else.</p>
-<p>That is the lesson this site is built on, and it is the same lesson at enterprise scale. <b>A community that does not hold its own record does not have one.</b> Everything published here is committed to a public repository, hash-stamped, and clonable in full by anyone who wants it. If this site disappears tomorrow, every practitioner who cloned it still has all of it. That is not a technical preference. It is the entire point.</p><h2>What a practitioner does here</h2>
-<p>This is a working site, not a manifesto with a mailing list.</p>
-<p><b>Take the pattern.</b> The repository pattern, the twin structure, the provenance discipline and the handoff format are published in full and free to use. They were derived from an estate of 105 repositories and they encode mistakes already made, so that they do not have to be made again.</p>
-<p><b>Point your own AI surfaces at the record.</b> The largest avoidable cost in AI-assisted enterprise work is an agent that starts cold and searches the open web for something already committed to a repository it can read. The practitioner guide is a sequence for preventing that, and it works on any surface.</p>
-<p><b>Build a twin.</b> One real subject, one repository, provenance on every input, bulk indexed rather than committed. Start with something small that you own outright.</p>
-<p><b>Extend it.</b> This doctrine is expanded by practitioners, not by an editorial board. Corrections and additions arrive as pull requests and are merged under one rule: <b>append, correct, supersede — never delete.</b> The record is the asset. Erasure is the only unforgivable edit.</p><h2>The invitation to the vendors</h2>
-<p>Stated plainly, because vendors read these things and a demand is easy to dismiss while an invitation is not.</p>
-<p>We are not asking you to open your source, lower your prices, or concede a strategic position. We are asking for three specific relaxations, each of which costs you very little and returns a customer who stays.</p>
-<p><b>One.</b> Permit a customer to hold a complete read-only copy of their own operational record, in an open format, without a licence penalty for doing so.</p>
-<p><b>Two.</b> Document the semantics well enough that the copy is loadable elsewhere. Not helpfully — sufficiently.</p>
-<p><b>Three.</b> Price exit in advance, publicly, so that a customer's cost of leaving does not silently rise with their loyalty.</p>
-<p>A customer who knows they can leave and stays anyway is a stronger position than a customer who cannot leave. The first is a preference; the second is only a lock, and locks are what customers eventually route around.</p><h2>Closing</h2>
-<p>The enterprise ledger is a product of the commons, built by many hands over fifty years, and it is too important to be the private gate through which enterprise intelligence must pass. It is also too good to be discarded by people who have not understood what it does.</p>
-<p>Both of those are true at once. Holding them together is the whole discipline of this site.</p>
-<p>Additive, not substitutive. Mirror, never cannibalise. Custody with the customer. Critique aimed at provisions, never at practitioners. Expanded by whoever shows up with something true, regardless of the badge on their laptop.</p>
-<p>In conflict with none.</p>
+
+<h2>What a harness is</h2>
+<p>A harness is a small set of written instructions that your AI tools read before they do anything — the same instructions, every time, whichever tool you are using.</p>
+<p>Without one, every session starts cold. The tool does not know your project, your client's naming, what was already decided, or where to put the output. So it guesses, or it searches the internet for something already sitting in your repository. That is where most of the wasted spend goes — not on hard questions, but on re-deriving things you already had.</p>
+<p>With one, the tool opens the repository first, reads what has already been agreed, and writes its output back as a file rather than a message in a window. The kit is small — one file you edit, and the tool-specific files are generated from it so Claude, Copilot and Perplexity cannot end up following different rules.</p>
+<p><a class="btn" href="tutorial.html">See how it is set up</a></p>
+
+<h2>The point is the decisions</h2>
+<p>On a programme, the expensive thing is rarely the document. It is the decision the document was supposed to support — and the fact that six months later nobody can reconstruct why it went the way it did.</p>
+<p>So the thing worth capturing is not the transcript. It is the decision: what was chosen, what the alternatives were, what it rested on, and who agreed. That is a short file. It costs almost nothing to write and it is the only part anyone asks for later.</p>
+<blockquote><p>If the session were deleted right now, could someone rebuild the reasoning from the repository alone? If not, the work is not finished.</p></blockquote>
+
+<h2>Who this is for</h2>
+<p>Functional and business consultants. Process leads, analysts, PMO, solution architects on the functional side — people who are accountable for decisions rather than for code, and who are now using AI tools daily without a shared way of organising the output.</p>
+<p>You do not need to be a developer. The tutorial assumes you have never used GitHub, and the parts that are genuinely technical are done for you by a script.</p>
+
+<h2>What this is not</h2>
+<ul>
+<li><b>Not a methodology.</b> If your firm has one, follow it. This is a place to put work, not a way of doing it.</li>
+<li><b>Not a product.</b> Nothing to buy, nothing to sign, no partnership tier. GitHub's free plan is enough.</li>
+<li><b>Not a replacement for anything.</b> It sits on top of what the project already runs and changes nothing underneath.</li>
+<li><b>Not client material.</b> Nothing from a client engagement is published here, ever.</li>
+</ul>
+
 <hr>
+
+<h2>Join in, or just ask</h2>
+<p>This is one person's learning, shared so other people can do the same thing and improve on it. There is no list to join and no account to create beyond the GitHub one you will need anyway.</p>
 <div class="cards">
-<div class="card"><h4><a href="heritage.html">Heritage →</a></h4>
-<p>Why this name, and the one failure of the original we are obliged to correct.</p></div>
-<div class="card"><h4><a href="practitioners.html">Practitioners →</a></h4>
-<p>Access, AI surfaces, and your first twin. Provider-neutral, start today.</p></div>
-<div class="card"><h4><a href="pattern.html">The pattern →</a></h4>
-<p>Eleven rules, each with the cost of ignoring it. Free to take.</p></div>
+<div class="card"><h4><a href="https://github.com/EVEglyphDesign/sapfans-io/discussions">Introduce yourself</a></h4><p>Say what you work on and what you are trying to organise. Discussions, on the repository.</p></div>
+<div class="card"><h4><a href="https://github.com/EVEglyphDesign/sapfans-io/issues/new/choose">Ask a question</a></h4><p>Stuck on a step, or something here is wrong. Open an issue — the template asks the right things.</p></div>
+<div class="card"><h4><a href="https://www.linkedin.com/in/danytheriault">Just message me</a></h4><p>If GitHub is not where you want to start, LinkedIn works. Questions are welcome either way.</p></div>
 </div>
+<p>If you set this up for your own team and learn something, the useful thing is to say so — what worked, what did not, and what you would change. That is the whole of the ask.</p>
 
 </main>
 <footer><div class="wrap">
-<p>© 2026 EVEglyphDesign · EgD-SAPF-001 · Key ID EgD-KEY-2026-07 · 2026-08-02<br>
-Independent. Not affiliated with, endorsed by or sponsored by SAP SE or any service provider.<br>
+<p>© 2026 EVEglyphDesign · EgD-SAPF-001 r2 · Key ID EgD-KEY-2026-07 · 2026-09-18<br>
+Independent. Not affiliated with, endorsed by or sponsored by SAP SE or any service provider. SAP is a trademark of SAP SE.<br>
 Held in the open at <a href="https://github.com/EVEglyphDesign/sapfans-io">the SAPfans.io repository</a> — clone it, it is yours.</p>
 <p class="accent">Pour le bien-être du peuple.</p>
 </div></footer>
