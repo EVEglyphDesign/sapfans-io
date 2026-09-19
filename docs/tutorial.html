@@ -150,6 +150,15 @@ Revisit if: DSO moves past 45 days</pre>
 
 <hr>
 
+<h2>When the client's front door is Copilot Studio</h2>
+<p>Some clients already have an agent — a Copilot Studio agent in Teams, say — and it is not going anywhere. It does not read a <code>CLAUDE.md</code>. It calls <b>tools</b>.</p>
+<p>That changes where the harness sits, not what it does. The repository is still the record. The client's agent becomes a <i>caller</i> of it, through an MCP server you expose — three tools, read-only, each result carrying where it came from. The agent stays the interface the client knows; the record, the reasoning and the audit trail stay in the client's own custody.</p>
+<p>The one thing to write before anything else is the <b>tool contract</b>: what the three tools are, what they take, what they return, and the rule that they never widen access beyond what the client's platform already grants. It is a short file, it is committed to the project repository, and it is what everyone reads to know what the seam does.</p>
+<p><a class="btn ghost" href="https://github.com/EVEglyphDesign/sapfans-io/blob/main/templates/MCP-TOOL-CONTRACT.md">Copy the tool-contract template</a></p>
+<p>Three platform facts to check before you commit to it, all verified against Microsoft's documentation on 2026-09-19 and all liable to move: Copilot Studio requires <b>Streamable HTTP</b> transport (SSE was dropped after August 2025); it authenticates by API key or OAuth 2.0; and it reaches the server through Power Platform connectors, so the client's <b>DLP policy</b> has to allow it or the calls fail silently.</p>
+
+<hr>
+
 <h2>What to do next</h2>
 <div class="cards">
 <div class="card"><h4><a href="standards.html">Set a usage standard</a></h4><p>If this is for a team rather than just you, agree what gets spent on what before the bill arrives.</p></div>
