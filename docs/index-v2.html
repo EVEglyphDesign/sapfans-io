@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="en" data-theme="dark"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SAPfans.io — practitioner reference desk and bulletin board</title>
+<meta name="description" content="A searchable running list of the SAP material practitioners actually need: PMO execution, data security standards, AI usage standards, BDC and Datasphere, the semantic model, and connecting AI surfaces to SAP. Plus an open bulletin board.">
+<meta property="og:title" content="SAPfans.io — practitioner reference desk and bulletin board">
+<meta property="og:description" content="PMO execution, data security standards, AI usage standards, BDC/Datasphere and the semantic model — indexed, searchable, and kept current. Plus an open board.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root[data-theme="dark"]{
+  --bg:#0c0d10;--panel:#131519;--panel-2:#181b20;--panel-3:#1e2228;
+  --fg:#e8e9ec;--fg-strong:#fff;--dim:#a0a5ae;--faint:#6d737d;
+  --line:#22262d;--line-2:#2f343d;
+  --accent:#e87722;--accent-soft:#cf6f22;--accent-ghost:#2a1d12;
+}
+:root[data-theme="light"]{
+  --bg:#fff;--panel:#f6f7f9;--panel-2:#eef0f4;--panel-3:#e6e9ee;
+  --fg:#1b1e23;--fg-strong:#000;--dim:#555b65;--faint:#828892;
+  --line:#e2e5ea;--line-2:#d0d5dd;
+  --accent:#b8570f;--accent-soft:#9d4b0e;--accent-ghost:#fbeee2;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--fg);
+ font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+ font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--fg-strong);text-decoration:none}
+a:hover{color:var(--accent)}
+h1,h2,h3,h4{font-family:Inter,sans-serif;color:var(--fg-strong);letter-spacing:-.015em;margin:0}
+
+/* ---- sticky header ---- */
+header.site{position:sticky;top:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--line-2)}
+.bar{max-width:1280px;margin:0 auto;padding:0 20px;height:58px;display:flex;align-items:center;gap:22px}
+.brand{font-family:Fraunces,Georgia,serif;font-weight:700;font-size:19px;color:var(--fg-strong);white-space:nowrap}
+.brand span{color:var(--accent)}
+.bar nav{display:flex;gap:18px;font-size:14px;font-weight:500}
+.bar nav a{color:var(--dim);white-space:nowrap;padding:2px 0;border-bottom:2px solid transparent}
+.bar nav a:hover{color:var(--fg-strong)}
+.bar nav a.on{color:var(--fg-strong);border-bottom-color:var(--accent)}
+.search{margin-left:auto;position:relative;flex:0 1 300px;min-width:130px}
+.search input{width:100%;background:var(--panel);border:1px solid var(--line-2);border-radius:5px;
+ color:var(--fg);font-family:inherit;font-size:13.5px;padding:7px 28px 7px 31px;outline:none}
+.search input:focus{border-color:var(--accent-soft);background:var(--panel-2)}
+.search input::placeholder{color:var(--faint)}
+.search .ic{position:absolute;left:10px;top:50%;transform:translateY(-50%);width:13px;height:13px;
+ stroke:var(--faint);fill:none;stroke-width:2}
+.search .clr{position:absolute;right:7px;top:50%;transform:translateY(-50%);background:none;border:0;
+ color:var(--faint);cursor:pointer;font-size:15px;line-height:1;padding:2px 4px;display:none;font-family:inherit}
+.search .clr:hover{color:var(--accent)}
+.util{display:flex;align-items:center;gap:8px}
+.btn-sm{font-size:13px;font-weight:500;color:var(--dim);background:transparent;border:1px solid var(--line-2);
+ border-radius:5px;padding:6px 11px;cursor:pointer;font-family:inherit;white-space:nowrap;display:inline-block}
+.btn-sm:hover{color:var(--fg-strong);border-color:var(--accent-soft)}
+.btn-pri{background:var(--accent);border-color:var(--accent);color:#0c0d10;font-weight:600}
+.btn-pri:hover{background:var(--fg-strong);border-color:var(--fg-strong);color:var(--bg)}
+@media(max-width:900px){.bar{height:auto;padding:10px 16px;flex-wrap:wrap;gap:9px 16px}
+ .bar nav{order:3;width:100%;gap:15px;overflow-x:auto;scrollbar-width:none}
+ .bar nav::-webkit-scrollbar{display:none}.search{flex:1 1 150px}}
+
+/* ---- shell ---- */
+.shell{max-width:1280px;margin:0 auto;padding:0 20px;display:grid;
+ grid-template-columns:206px minmax(0,1fr);gap:40px;align-items:start}
+@media(max-width:1000px){.shell{grid-template-columns:1fr;gap:0}}
+aside.side{position:sticky;top:78px;padding:28px 0 40px}
+@media(max-width:1000px){aside.side{display:none}}
+.side h5{font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--faint);margin:0 0 9px;font-weight:600}
+.side ul{list-style:none;margin:0 0 24px;padding:0;border-left:1px solid var(--line-2)}
+.side li a{display:block;font-size:13px;color:var(--dim);padding:5px 0 5px 12px;margin-left:-1px;border-left:2px solid transparent}
+.side li a:hover{color:var(--fg-strong);border-left-color:var(--line-2)}
+.side li a.on{color:var(--accent);border-left-color:var(--accent)}
+.side .note{font-size:12px;color:var(--faint);line-height:1.5;border-top:1px solid var(--line);padding-top:13px}
+
+.content{padding:32px 0 60px;min-width:0}
+.intro{border-bottom:1px solid var(--line);padding-bottom:24px;margin-bottom:30px}
+.intro h1{font-size:clamp(24px,3.3vw,32px);line-height:1.2;margin-bottom:11px}
+.intro p{font-size:16px;color:var(--dim);max-width:680px;margin:0 0 9px}
+.intro p strong{color:var(--fg)}
+.kicker{display:inline-block;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;
+ color:var(--accent);font-weight:600;margin-bottom:10px}
+
+section{margin:0 0 50px;scroll-margin-top:78px}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap;
+ padding-bottom:9px;margin-bottom:16px;border-bottom:1px solid var(--line)}
+.sec-head h2{font-size:19.5px}
+.sec-head .sub{font-size:13px;color:var(--faint)}
+.sec-lede{font-size:14.8px;color:var(--dim);max-width:700px;margin:-4px 0 18px}
+
+/* ---- desk ---- */
+.grp{margin-bottom:24px}
+.grp h3{font-size:12.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--accent-soft);
+ margin-bottom:3px;font-weight:600}
+.grp .gl{font-size:13.2px;color:var(--faint);margin:0 0 10px;max-width:660px}
+.links{border:1px solid var(--line);border-radius:5px;overflow:hidden;background:var(--panel)}
+.row{display:grid;grid-template-columns:1fr auto;gap:6px 14px;align-items:start;padding:11px 15px;
+ border-top:1px solid var(--line)}
+.row:first-child{border-top:0}
+.row:hover{background:var(--panel-2)}
+.row .t{font-size:14.4px;font-weight:500;color:var(--fg-strong);line-height:1.35}
+.row:hover .t{color:var(--accent)}
+.row .d{font-size:12.9px;color:var(--dim);line-height:1.45;grid-column:1;max-width:640px}
+.src{font-size:10.5px;font-weight:600;letter-spacing:.03em;color:var(--faint);border:1px solid var(--line-2);
+ border-radius:3px;padding:2px 6px;white-space:nowrap;grid-row:1;grid-column:2}
+.row:hover .src{color:var(--accent-soft);border-color:var(--accent-soft)}
+@media(max-width:560px){.row{grid-template-columns:1fr}.src{grid-column:1;grid-row:auto;justify-self:start}}
+
+/* ---- board ---- */
+.postbar{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin-bottom:15px}
+.posts{border:1px solid var(--line);border-radius:5px;overflow:hidden;background:var(--panel)}
+.post{display:grid;grid-template-columns:32px 1fr auto;gap:12px;padding:11px 15px;
+ border-top:1px solid var(--line);align-items:start}
+.post:first-child{border-top:0}
+.post:hover{background:var(--panel-2)}
+.post .av{width:32px;height:32px;border-radius:5px;background:var(--panel-3);display:grid;place-items:center;
+ font-weight:600;font-size:13px;color:var(--accent-soft);overflow:hidden;margin-top:1px}
+.post .av img{width:100%;height:100%;object-fit:cover}
+.post .ti{font-size:14.4px;font-weight:500;color:var(--fg-strong);line-height:1.35}
+.post:hover .ti{color:var(--accent)}
+.post .ex{font-size:12.9px;color:var(--dim);line-height:1.45;margin-top:2px}
+.post .mt{font-size:12.2px;color:var(--faint);display:flex;gap:7px;flex-wrap:wrap;margin-top:3px}
+.post .mt .tag{color:var(--accent-soft);font-weight:500}
+.post .rp{font-size:12.2px;color:var(--faint);text-align:right;min-width:42px;margin-top:2px}
+.post .rp b{display:block;color:var(--fg);font-size:14.5px;font-weight:600}
+@media(max-width:560px){.post{grid-template-columns:32px 1fr}.post .rp{grid-column:2;text-align:left}.post .rp b{display:inline;margin-right:4px}}
+.empty{padding:24px 20px;text-align:center;color:var(--dim);font-size:14.2px;line-height:1.6}
+.empty b{display:block;color:var(--fg-strong);font-size:15.5px;margin-bottom:6px;font-weight:600}
+.empty ul{text-align:left;max-width:500px;margin:14px auto 0;padding-left:20px;font-size:13.4px}
+.empty li{margin-bottom:5px}
+.note-line{font-size:12.8px;color:var(--faint);margin-top:11px}
+.note-line a{color:var(--accent)}
+.noresult{padding:22px;text-align:center;color:var(--faint);font-size:14px;display:none}
+
+/* ---- cards / steps ---- */
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:13px;margin:17px 0}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:5px;padding:16px 17px}
+.card h4{font-size:14.2px;margin-bottom:5px}
+.card p{font-size:13.2px;color:var(--dim);margin:0;line-height:1.55}
+.steps{list-style:none;padding:0;margin:18px 0 0;counter-reset:s}
+.steps li{counter-increment:s;position:relative;padding:0 0 17px 40px;border-left:1px solid var(--line-2);margin-left:12px}
+.steps li:last-child{border-left-color:transparent;padding-bottom:0}
+.steps li::before{content:counter(s);position:absolute;left:-12px;top:-2px;width:25px;height:25px;border-radius:50%;
+ background:var(--bg);border:1px solid var(--accent-soft);color:var(--accent-soft);display:grid;place-items:center;
+ font-size:11.5px;font-weight:600}
+.steps li b{display:block;color:var(--fg-strong);font-size:14.2px;margin-bottom:2px;font-weight:600}
+.steps li span{font-size:13.2px;color:var(--dim);line-height:1.55}
+.callout{border-left:2px solid var(--accent);background:var(--panel);padding:12px 15px;font-size:13.2px;
+ color:var(--dim);margin:18px 0;border-radius:0 4px 4px 0}
+.callout b{color:var(--fg-strong)}
+
+footer.site{border-top:1px solid var(--line)}
+.foot{max-width:1280px;margin:0 auto;padding:20px 20px 42px;font-size:12.3px;color:var(--faint);
+ display:flex;gap:7px 16px;flex-wrap:wrap}
+.foot a{color:var(--dim)}
+.foot .acc{color:var(--accent)}
+</style>
+</head><body>
+
+<header class="site"><div class="bar">
+  <a class="brand" href="index.html">SAPfans<span>.io</span></a>
+  <nav id="topnav">
+    <a href="#desk" class="on">Reference desk</a>
+    <a href="#board">Board</a>
+    <a href="#repos">Repositories</a>
+    <a href="#about">About</a>
+  </nav>
+  <div class="search">
+    <svg class="ic" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input id="q" type="search" placeholder="Search the list…" autocomplete="off" aria-label="Search entries and posts">
+    <button class="clr" id="clr" type="button" aria-label="Clear search">×</button>
+  </div>
+  <div class="util">
+    <button class="btn-sm" id="theme-toggle" type="button">Light</button>
+    <a class="btn-sm btn-pri" href="https://github.com/EVEglyphDesign/sapfans-io/discussions/new/choose" target="_blank" rel="noopener">Post</a>
+  </div>
+</div></header>
+
+<div class="shell">
+
+<aside class="side">
+  <h5>Reference desk</h5>
+  <ul id="sidenav">
+    <li><a href="#pmo" class="on">PMO &amp; execution</a></li>
+    <li><a href="#sec">Data security standards</a></li>
+    <li><a href="#aistd">AI usage standards</a></li>
+    <li><a href="#bdc">BDC &amp; Datasphere</a></li>
+    <li><a href="#semantic">The semantic model</a></li>
+    <li><a href="#connect">Connecting AI to SAP</a></li>
+    <li><a href="#joule">Joule &amp; agentic SAP</a></li>
+    <li><a href="#tools">Tools to keep open</a></li>
+  </ul>
+  <h5>Community</h5>
+  <ul>
+    <li><a href="#board">The board</a></li>
+    <li><a href="#repos">Repositories</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+  <p class="note">A running list. Entries are added, corrected or superseded — never quietly removed. Reviewed weekly.</p>
+</aside>
+
+<main class="content">
+
+  <div class="intro">
+    <span class="kicker">A practitioner commons</span>
+    <h1>The SAP material that's actually worth your time — one searchable list.</h1>
+    <p>Aimed at the people who have to deliver: programme leads, functional consultants, data and integration specialists. The emphasis is on <strong>standards you have to comply with and material you can learn from</strong> — PMO execution, data security and protection, AI usage rules, Business Data Cloud and Datasphere, the semantic model, and how to connect an AI surface like Claude or Perplexity to an SAP estate without breaking either.</p>
+    <p>Marketing pages are excluded unless they carry the only authoritative statement of a policy or roadmap. Use the search box in the header to filter everything on this page at once.</p>
+  </div>
+
+  <section id="desk">
+    <div class="sec-head">
+      <h2>Reference desk</h2>
+      <span class="sub" id="deskcount">Reviewed 19 Sep 2026</span>
+    </div>
+
+    <div class="grp" id="pmo" data-g>
+      <h3>PMO and programme execution</h3>
+      <p class="gl">Method, roadmaps and release planning — the material you cite in a steering pack instead of an opinion.</p>
+      <div class="links">
+        <a class="row" href="https://pages.community.sap.com/topics/road-map-explorer" target="_blank" rel="noopener">
+          <span class="t">SAP Road Map Explorer</span><span class="src">community.sap.com</span>
+          <span class="d">What is planned, by release and product. Cite this rather than a vendor slide when a client asks whether a capability is coming.</span></a>
+        <a class="row" href="https://community.sap.com/t5/enterprise-resource-planning-blog-posts-by-sap/access-sap-activate-methodology-roadmaps-in-sap-road-map-viewer/ba-p/13304674" target="_blank" rel="noopener">
+          <span class="t">Access SAP Activate methodology roadmaps in SAP Road Map Viewer</span><span class="src">community.sap.com</span>
+          <span class="d">How to get at the Activate deliverables and accelerators. The entry point most PMOs never find.</span></a>
+        <a class="row" href="https://community.sap.com/t5/enterprise-resource-planning-blog-posts-by-sap/update-of-the-sap-activate-roadmap-for-sap-s-4hana-on-prem-upgrades-with/ba-p/13679242" target="_blank" rel="noopener">
+          <span class="t">SAP Activate roadmap update — on-prem upgrades with clean core</span><span class="src">community.sap.com</span>
+          <span class="d">Where clean core lands in an upgrade plan. This is the conversation that derails on-premise programmes.</span></a>
+        <a class="row" href="https://pages.community.sap.com/topics/activate/clean-core-erp" target="_blank" rel="noopener">
+          <span class="t">Clean Core ERP — SAP Community topic hub</span><span class="src">community.sap.com</span>
+          <span class="d">SAP's maintained hub. Use it to find current guidance instead of a two-year-old blog post.</span></a>
+        <a class="row" href="https://learning.sap.com/courses/managing-clean-core-for-sap-cloud-erp" target="_blank" rel="noopener">
+          <span class="t">Managing Clean Core for SAP Cloud ERP</span><span class="src">learning.sap.com</span>
+          <span class="d">Free course. The governance framing a PMO needs before the first extension request arrives.</span></a>
+        <a class="row" href="https://learning.sap.com/courses/practicing-clean-core-extensibility-for-sap-s-4hana-cloud" target="_blank" rel="noopener">
+          <span class="t">Practicing Clean Core Extensibility for SAP S/4HANA Cloud</span><span class="src">learning.sap.com</span>
+          <span class="d">The practical companion — where the extensibility tiers stop being abstract and start deciding your design.</span></a>
+        <a class="row" href="https://discovery-center.cloud.sap/" target="_blank" rel="noopener">
+          <span class="t">SAP Discovery Center — missions and reference architectures</span><span class="src">discovery-center.cloud.sap</span>
+          <span class="d">BTP services with cost estimators and reference architectures. The fastest sizing sanity check available to a PMO.</span></a>
+      </div>
+    </div>
+
+    <div class="grp" id="sec" data-g>
+      <h3>Data security and protection standards</h3>
+      <p class="gl">The binding technical standards. If you are putting an AI surface anywhere near an SAP system, read this group before the one below it.</p>
+      <div class="links">
+        <a class="row" href="https://help.sap.com/docs/btp/sap-btp-security-recommendations-c8a9bb59fe624f0981efa0eff2497d7d/sap-btp-security-recommendations" target="_blank" rel="noopener">
+          <span class="t">SAP BTP Security Recommendations</span><span class="src">help.sap.com</span>
+          <span class="d">The definitive checklist, maintained by SAP. Treat it as the baseline your design has to justify departing from.</span></a>
+        <a class="row" href="https://help.sap.com/docs/btp/sap-business-technology-platform/data-protection-and-privacy" target="_blank" rel="noopener">
+          <span class="t">Data Protection and Privacy — SAP BTP</span><span class="src">help.sap.com</span>
+          <span class="d">What BTP does and does not do for you on personal data. Required reading before a DPIA conversation.</span></a>
+        <a class="row" href="https://help.sap.com/docs/btp/sap-business-technology-platform/btp-security" target="_blank" rel="noopener">
+          <span class="t">Security — SAP Business Technology Platform</span><span class="src">help.sap.com</span>
+          <span class="d">The security documentation root: identity, authorisation, auditing, encryption.</span></a>
+        <a class="row" href="https://help.sap.com/docs/btp/best-practices/security-concepts" target="_blank" rel="noopener">
+          <span class="t">Security Concepts — SAP BTP Administrator's Guide</span><span class="src">help.sap.com</span>
+          <span class="d">The concepts behind the recommendations. Read once properly and the checklist stops feeling arbitrary.</span></a>
+        <a class="row" href="https://pages.community.sap.com/topics/btp-security" target="_blank" rel="noopener">
+          <span class="t">BTP Security — SAP Community topic hub</span><span class="src">community.sap.com</span>
+          <span class="d">Where the security notes and practitioner write-ups surface first.</span></a>
+      </div>
+    </div>
+
+    <div class="grp" id="aistd" data-g>
+      <h3>AI usage standards</h3>
+      <p class="gl">SAP's own published rules for how AI may be used. Clients increasingly ask you to align to these — quoting them by name is more persuasive than describing them.</p>
+      <div class="links">
+        <a class="row" href="https://www.sap.com/documents/2022/01/a8431b91-117e-0010-bca6-c68f7e60039b.html" target="_blank" rel="noopener">
+          <span class="t">SAP Global AI Ethics Policy</span><span class="src">sap.com</span>
+          <span class="d">The published policy document. The thing to cite when a client asks what standard you are working to.</span></a>
+        <a class="row" href="https://www.sap.com/documents/2023/03/7211ee96-647e-0010-bca6-c68f7e60039b.html" target="_blank" rel="noopener">
+          <span class="t">SAP AI Ethics Handbook</span><span class="src">sap.com</span>
+          <span class="d">How the policy is applied in practice, including the review process a project is expected to pass.</span></a>
+        <a class="row" href="https://www.sap.com/products/artificial-intelligence/ai-ethics.html" target="_blank" rel="noopener">
+          <span class="t">Responsible AI — SAP</span><span class="src">sap.com</span>
+          <span class="d">The current landing point for the guiding principles and governance bodies. Marketing wrapper, authoritative content.</span></a>
+      </div>
+    </div>
+
+    <div class="grp" id="bdc" data-g>
+      <h3>Business Data Cloud and Datasphere</h3>
+      <p class="gl">Go to the Help Portal first. The product pages are written for buyers; the implementers' answers are in the documentation.</p>
+      <div class="links">
+        <a class="row" href="https://help.sap.com/docs/business-data-cloud" target="_blank" rel="noopener">
+          <span class="t">SAP Business Data Cloud — Help Portal</span><span class="src">help.sap.com</span>
+          <span class="d">Authoritative documentation. Check what a "data product" actually is here before you commit to one in a design.</span></a>
+        <a class="row" href="https://help.sap.com/docs/SAP_DATASPHERE/be5967d099974c69b77f4549425ca4c0/8f9c3725cfe84e08b3e951e7af06ce57.html" target="_blank" rel="noopener">
+          <span class="t">Working with SAP Datasphere in SAP Business Data Cloud</span><span class="src">help.sap.com</span>
+          <span class="d">The page that answers "so how do these two actually relate?" — currently the most common question on the topic.</span></a>
+        <a class="row" href="https://help.sap.com/docs/SAP_DATASPHERE?locale=en-US" target="_blank" rel="noopener">
+          <span class="t">SAP Datasphere — Help Portal</span><span class="src">help.sap.com</span>
+          <span class="d">Full documentation set, including the modelling guidance most projects skip and later regret.</span></a>
+        <a class="row" href="https://help.sap.com/docs/portfolio-category/data-cloud" target="_blank" rel="noopener">
+          <span class="t">Data Cloud portfolio — documentation index</span><span class="src">help.sap.com</span>
+          <span class="d">The index across the whole data portfolio, for when you don't yet know which component owns the answer.</span></a>
+        <a class="row" href="https://pages.community.sap.com/topics/datasphere" target="_blank" rel="noopener">
+          <span class="t">SAP Datasphere — Community topic hub</span><span class="src">community.sap.com</span>
+          <span class="d">Release notes, practitioner posts and the quarterly what's-new round-ups.</span></a>
+      </div>
+    </div>
+
+    <div class="grp" id="semantic" data-g>
+      <h3>The semantic model beyond SAP</h3>
+      <p class="gl">Arguably the highest-leverage topic on this page. The SAP semantic layer is the one asset that makes the rest of the organisation's data legible — and it is finally becoming consumable outside SAP.</p>
+      <div class="links">
+        <a class="row" href="https://learning.sap.com/courses/guiding-ai-driven-transformation-as-an-sap-enterprise-architect/architecting-the-unified-semantic-layer-the-data-foundation" target="_blank" rel="noopener">
+          <span class="t">Architecting the Unified Semantic Layer — the data foundation</span><span class="src">learning.sap.com</span>
+          <span class="d">Free SAP Learning unit from the enterprise architect journey. The clearest statement of the target architecture.</span></a>
+        <a class="row" href="https://community.sap.com/t5/technology-blog-posts-by-sap/explore-and-reuse-sap-datasphere-models-from-databricks/ba-p/14482125" target="_blank" rel="noopener">
+          <span class="t">Explore and reuse SAP Datasphere models from Databricks</span><span class="src">community.sap.com</span>
+          <span class="d">The concrete proof that SAP semantics can be consumed outside SAP without re-modelling. Written by SAP.</span></a>
+        <a class="row" href="https://www.sap.com/assetdetail/2026/03/0262e6df-417f-0010-bca6-c68f7e60039b.html" target="_blank" rel="noopener">
+          <span class="t">Create a unified data model with semantic meaning in SAP Datasphere</span><span class="src">sap.com</span>
+          <span class="d">SAP's own explanation of the modelling approach, useful when you need to justify the effort to a sponsor.</span></a>
+        <a class="row" href="https://community.sap.com/t5/data-and-analytics-learning-group-blog-posts/my-26-year-bi-semantic-layer-journey-from-businessobjects-to-sap-s-cloud/ba-p/14355034" target="_blank" rel="noopener">
+          <span class="t">A 26-year BI semantic layer journey — BusinessObjects to SAP's cloud and AI future</span><span class="src">community.sap.com</span>
+          <span class="d">Practitioner history rather than product material. Valuable context for why this keeps being rebuilt.</span></a>
+      </div>
+    </div>
+
+    <div class="grp" id="connect" data-g>
+      <h3>Connecting Claude, Perplexity and other AI surfaces to SAP</h3>
+      <p class="gl">Model Context Protocol is how an external AI surface gets controlled, auditable access to an SAP system. This is the part most consultants have not read yet, and the part clients ask about first.</p>
+      <div class="links">
+        <a class="row" href="https://help.sap.com/docs/abap-cloud/abap-development-tools-for-visual-studio-code/mcp-tools" target="_blank" rel="noopener">
+          <span class="t">Model Context Protocol Tools — ABAP Development Tools for VS Code</span><span class="src">help.sap.com</span>
+          <span class="d">Official documentation. Start here rather than with a blog post.</span></a>
+        <a class="row" href="https://help.sap.com/docs/integration-suite/isuite-integrations-and-apis/model-context-protocol-mcp" target="_blank" rel="noopener">
+          <span class="t">MCP Server — SAP Integration Suite</span><span class="src">help.sap.com</span>
+          <span class="d">Official documentation for exposing integration content over MCP — the integration lane's version of the same story.</span></a>
+        <a class="row" href="https://community.sap.com/t5/technology-blog-posts-by-sap/public-release-of-the-mcp-server-for-sap-btp-administration/ba-p/14471692" target="_blank" rel="noopener">
+          <span class="t">Public release of the MCP server for SAP BTP administration</span><span class="src">community.sap.com</span>
+          <span class="d">A shipped, SAP-published MCP server. Concrete proof of the pattern rather than a concept piece.</span></a>
+        <a class="row" href="https://community.sap.com/t5/technology-blog-posts-by-sap/building-and-securing-mcp-servers-in-python-on-btp/ba-p/14354754" target="_blank" rel="noopener">
+          <span class="t">Building and securing MCP servers in Python on BTP</span><span class="src">community.sap.com</span>
+          <span class="d">The securing half is the half that matters. Read it before you agree to anything in a design workshop.</span></a>
+        <a class="row" href="https://community.sap.com/t5/artificial-intelligence-blogs-posts/building-and-deploying-your-first-mcp-server-on-sap-btp/ba-p/14443640" target="_blank" rel="noopener">
+          <span class="t">Building and deploying your first MCP server on SAP BTP</span><span class="src">community.sap.com</span>
+          <span class="d">Hands-on walkthrough. Worth doing once yourself so you can speak about it from experience, not from a deck.</span></a>
+        <a class="row" href="https://community.sap.com/t5/technology-blog-posts-by-sap/mcp-a-comprehensive-guide/ba-p/14238053" target="_blank" rel="noopener">
+          <span class="t">MCP: a comprehensive guide</span><span class="src">community.sap.com</span>
+          <span class="d">Background on the protocol itself, written for an SAP audience.</span></a>
+        <a class="row" href="https://api.sap.com/" target="_blank" rel="noopener">
+          <span class="t">SAP Business Accelerator Hub — APIs and events</span><span class="src">api.sap.com</span>
+          <span class="d">Every public API and event. The read-only surface an AI agent should be pointed at before anyone builds a custom interface.</span></a>
+      </div>
+    </div>
+
+    <div class="grp" id="joule" data-g>
+      <h3>Joule and agentic SAP</h3>
+      <p class="gl">What SAP is shipping in its own AI layer, and the difference between GA and roadmap.</p>
+      <div class="links">
+        <a class="row" href="https://news.sap.com/2026/07/sap-business-ai-release-highlights-q2-2026/" target="_blank" rel="noopener">
+          <span class="t">SAP Business AI — release highlights Q2 2026</span><span class="src">news.sap.com</span>
+          <span class="d">The quarterly statement of what actually shipped, as opposed to what was demoed. Fastest way to separate GA from roadmap.</span></a>
+        <a class="row" href="https://news.sap.com/2026/05/new-joule-studio-enterprise-scale-agentic-development/" target="_blank" rel="noopener">
+          <span class="t">Announcing new Joule Studio — enterprise-scale agentic development</span><span class="src">news.sap.com</span>
+          <span class="d">The Sapphire 2026 announcement. Where custom agents are meant to be built and governed.</span></a>
+        <a class="row" href="https://news.sap.com/2026/08/with-agentic-ai-abap-takes-evolution-to-the-next-level/" target="_blank" rel="noopener">
+          <span class="t">With agentic AI, ABAP takes evolution to the next level</span><span class="src">news.sap.com</span>
+          <span class="d">Relevant even if you never write ABAP — it sets the extensibility expectations your design will be judged against.</span></a>
+        <a class="row" href="https://community.sap.com/t5/technology-blog-posts-by-sap/our-2026-roadmap-for-joule-for-developers-abap-ai-capabilities/ba-p/14360358" target="_blank" rel="noopener">
+          <span class="t">Our 2026 roadmap for Joule for Developers — ABAP AI capabilities</span><span class="src">community.sap.com</span>
+          <span class="d">Written by the product group rather than marketing. Dates and sequencing you can plan against.</span></a>
+      </div>
+    </div>
+
+    <div class="grp" id="tools" data-g>
+      <h3>Tools to keep open</h3>
+      <p class="gl">Between them these answer most "does SAP already do this?" questions without a single call.</p>
+      <div class="links">
+        <a class="row" href="https://learning.sap.com/" target="_blank" rel="noopener">
+          <span class="t">SAP Learning</span><span class="src">learning.sap.com</span>
+          <span class="d">Free courses, learning journeys and certification paths. The successor to what people still call openSAP.</span></a>
+        <a class="row" href="https://community.sap.com/" target="_blank" rel="noopener">
+          <span class="t">SAP Community</span><span class="src">community.sap.com</span>
+          <span class="d">Go there too. This site does not replace it — the product groups post there first.</span></a>
+        <a class="row" href="https://help.sap.com/docs/business-accelerator-hub" target="_blank" rel="noopener">
+          <span class="t">Business Accelerator Hub — documentation</span><span class="src">help.sap.com</span>
+          <span class="d">How to actually use the hub, including the parts that need an S-user.</span></a>
+        <a class="row" href="https://community.sap.com/t5/what-s-new/sap-community-voice-ai-assisted-development-abap-cloud-community-updates/ba-p/14473584" target="_blank" rel="noopener">
+          <span class="t">SAP Community Voice — the community round-up</span><span class="src">community.sap.com</span>
+          <span class="d">A good weekly skim if you only read one thing.</span></a>
+      </div>
+    </div>
+
+    <div class="noresult" id="nodesk">No entries match that search.</div>
+  </section>
+
+  <section id="board">
+    <div class="sec-head">
+      <h2>The board</h2>
+      <span class="sub">A running list — newest first</span>
+    </div>
+    <p class="sec-lede">The most basic thing that works. Post your name and how to reach you, say you're interested in something, ask a question, drop a link. Everything stays on one list and the search box at the top filters it. Sign in with GitHub — the identity you already have, no new account.</p>
+
+    <div class="postbar">
+      <a class="btn-sm btn-pri" href="https://github.com/EVEglyphDesign/sapfans-io/discussions/new/choose" target="_blank" rel="noopener">Post to the board ↗</a>
+      <a class="btn-sm" href="https://github.com/EVEglyphDesign/sapfans-io/discussions" target="_blank" rel="noopener">See all posts ↗</a>
+    </div>
+
+    <div id="posts" class="posts">
+      <div class="empty"><b>The board is open and empty.</b>
+        Nobody has posted yet — which means the first few posts set the tone for everyone who arrives after.
+        <ul>
+          <li><b>Introduce yourself</b> — your lane, your region, how to reach you.</li>
+          <li><b>Say what you're after</b> — "I'm interested in BDC semantic reuse, who's done it?"</li>
+          <li><b>Offer something</b> — a link, a method, read access to a repository you maintain.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="noresult" id="nopost">No posts match that search.</div>
+    <p class="note-line">Posts are hosted in <a href="https://github.com/EVEglyphDesign/sapfans-io/discussions" target="_blank" rel="noopener">GitHub Discussions</a> and are public. <strong>Never post client data</strong> — anonymise before sharing anything from an engagement.</p>
+  </section>
+
+  <section id="repos">
+    <div class="sec-head"><h2>Working in repositories</h2></div>
+    <p class="sec-lede">Practitioners increasingly keep their working knowledge in a Git repository rather than a folder of documents. If you have not worked this way, this is what it means and why people on the board will ask you for one.</p>
+
+    <div class="cols">
+      <div class="card"><h4>One subject, one repository</h4>
+        <p>A programme, a product area, a method. Everything on that subject in one place, versioned, with a history of what changed and when.</p></div>
+      <div class="card"><h4>Provenance on every input</h4>
+        <p>Each document records where it came from — SAP Note, Help Portal page, workshop, extract. Six months later you can still defend the number.</p></div>
+      <div class="card"><h4>Readable by an AI surface</h4>
+        <p>Point Claude or Perplexity at the repository and it works from your record instead of guessing. This is the practical reason the format is spreading.</p></div>
+      <div class="card"><h4>Portable between employers</h4>
+        <p>Your method travels with you. The client's data does not — that stays in the client's estate, never in a repository you control.</p></div>
+    </div>
+
+    <h3 style="font-size:14.5px;margin:30px 0 0">Exchanging with other practitioners</h3>
+    <ol class="steps">
+      <li><b>Find the person, not the file</b><span>Someone posts about a model, a mapping or a method you need. The useful move is to contact them, not to hunt for a download.</span></li>
+      <li><b>Reach them on LinkedIn or WhatsApp</b><span>Most people list a contact in their post. Say which post you're coming from and what specifically you want — vague requests get ignored here as anywhere.</span></li>
+      <li><b>Ask for read access, not a copy</b><span>If the repository is private, ask to be added as a read-only collaborator. The owner keeps control, sees who has access, and can revoke it. An emailed zip has none of those properties.</span></li>
+      <li><b>Reciprocate</b><span>The people who get the most out of an exchange like this have something of their own to open up. Publish the method; keep the client material out of it.</span></li>
+    </ol>
+
+    <div class="callout"><b>One rule, no exceptions.</b> Client-identifiable material never goes into a shared repository or onto this board — not anonymised, not redacted, not "just the structure". If you are unsure whether something qualifies, it qualifies.</div>
+  </section>
+
+  <section id="about">
+    <div class="sec-head"><h2>About</h2></div>
+    <p class="sec-lede">SAPfans.io is a practitioner commons — run by practitioners, no vendor gate, no lead capture, no editorial board. It takes its name from the original SAPfans boards and tries to do the one thing they did better than anything that replaced them: let the people doing the work talk to each other directly.</p>
+    <div class="cols">
+      <div class="card"><h4>Additive, not substitutive</h4>
+        <p>Nothing here replaces the enterprise ledger, SAP Community or the user groups. Go there too.</p></div>
+      <div class="card"><h4>Independent of your employer</h4>
+        <p>Integrator, boutique, internal team or single-person practice — no partnership tier and nobody's permission required.</p></div>
+      <div class="card"><h4>Corrected, never deleted</h4>
+        <p>Entries are appended, corrected or superseded. Stale links are marked, not quietly removed.</p></div>
+    </div>
+    <p class="sec-lede" style="margin-top:18px">Suggest an addition by posting it on the board, or open a pull request against <a href="https://github.com/EVEglyphDesign/sapfans-io" target="_blank" rel="noopener" style="color:var(--accent)">the repository</a>.</p>
+  </section>
+
+</main>
+</div>
+
+<footer class="site"><div class="foot">
+  <span>© 2026 <span class="acc">EVEglyphDesign</span></span><span>·</span>
+  <a href="https://github.com/EVEglyphDesign/sapfans-io" target="_blank" rel="noopener">Repository</a><span>·</span>
+  <a href="doctrine.html">Doctrine</a><span>·</span>
+  <a href="heritage.html">Heritage</a><span>·</span>
+  <a href="pattern.html">Pattern</a><span>·</span>
+  <span><em>Pour le bien-être du peuple</em></span>
+</div></footer>
+
+<script>
+/* theme — control lives in the nav bar, not floating over the page */
+(function(){
+  var KEY='sapfans-theme',root=document.documentElement,btn=document.getElementById('theme-toggle');
+  function apply(t){root.setAttribute('data-theme',t);btn.textContent=(t==='dark'?'Light':'Dark');}
+  var saved=null;try{saved=localStorage.getItem(KEY);}catch(e){}
+  apply(saved==='light'?'light':'dark');
+  btn.addEventListener('click',function(){
+    var n=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    apply(n);try{localStorage.setItem(KEY,n);}catch(e){}
+  });
+})();
+
+/* scroll-spy */
+(function(){
+  var ids=['pmo','sec','aistd','bdc','semantic','connect','joule','tools','board','repos','about'];
+  var deskIds=['pmo','sec','aistd','bdc','semantic','connect','joule','tools'];
+  var links=[].slice.call(document.querySelectorAll('#sidenav a, #topnav a'));
+  function sync(){
+    var pos=window.scrollY+130,cur=null;
+    ids.forEach(function(id){var s=document.getElementById(id);
+      if(s&&s.getBoundingClientRect&&s.offsetTop<=pos)cur=id;});
+    if(!cur)cur=ids[0];
+    links.forEach(function(a){var h=a.getAttribute('href')||'';
+      a.classList.toggle('on',h==='#'+cur||(h==='#desk'&&deskIds.indexOf(cur)>-1));});
+  }
+  window.addEventListener('scroll',sync,{passive:true});sync();
+})();
+
+/* board — rendered from board.json, regenerated from GitHub Discussions by a scheduled job.
+   No live API call: an unauthenticated browser cannot read repo Discussions, and a spinner
+   that never resolves is worse than an honest empty state. */
+(function(){
+  var el=document.getElementById('posts');
+  function esc(s){return (s||'').replace(/[&<>"']/g,function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+  function ago(iso){var d=new Date(iso),s=Math.floor((Date.now()-d)/1000);
+    if(s<3600)return Math.max(1,Math.floor(s/60))+'m ago';
+    if(s<86400)return Math.floor(s/3600)+'h ago';
+    if(s<604800)return Math.floor(s/86400)+'d ago';
+    return d.toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'});}
+  fetch('board.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json():null;}).then(function(d){
+    var items=(d&&d.posts)||[];if(!items.length)return;
+    el.innerHTML=items.map(function(p){
+      var ini=(p.author||'?').charAt(0).toUpperCase();
+      var av=p.avatar?'<img src="'+esc(p.avatar)+'" alt="">':esc(ini);
+      return '<a class="post" href="'+esc(p.url)+'" target="_blank" rel="noopener">'+
+        '<span class="av">'+av+'</span><span>'+
+        '<span class="ti">'+esc(p.title)+'</span>'+
+        (p.excerpt?'<span class="ex">'+esc(p.excerpt)+'</span>':'')+
+        '<span class="mt"><span class="tag">'+esc(p.category||'Post')+'</span><span>·</span><span>'+
+        esc(p.author||'anon')+'</span><span>·</span><span>'+ago(p.updated)+'</span></span></span>'+
+        '<span class="rp"><b>'+(p.replies||0)+'</b>replies</span></a>';
+    }).join('');
+    if(window.__filter)window.__filter();
+  }).catch(function(){});
+})();
+
+/* one search box filters the whole page */
+(function(){
+  var q=document.getElementById('q'),clr=document.getElementById('clr');
+  var nodesk=document.getElementById('nodesk'),nopost=document.getElementById('nopost');
+  var count=document.getElementById('deskcount');
+  var total=document.querySelectorAll('#desk .row').length;
+  count.textContent='Reviewed 19 Sep 2026 · '+total+' entries';
+  function filter(){
+    var v=(q.value||'').trim().toLowerCase();
+    clr.style.display=v?'block':'none';
+    var shownDesk=0,shownPost=0;
+    [].forEach.call(document.querySelectorAll('#desk .row'),function(r){
+      var hit=!v||r.textContent.toLowerCase().indexOf(v)>-1;
+      r.style.display=hit?'':'none';if(hit)shownDesk++;
+    });
+    [].forEach.call(document.querySelectorAll('.grp[data-g]'),function(g){
+      var any=g.querySelector('.row:not([style*="none"])');
+      g.style.display=any?'':'none';
+    });
+    var posts=document.querySelectorAll('#posts .post');
+    if(posts.length){
+      [].forEach.call(posts,function(p){
+        var hit=!v||p.textContent.toLowerCase().indexOf(v)>-1;
+        p.style.display=hit?'':'none';if(hit)shownPost++;
+      });
+      nopost.style.display=(v&&!shownPost)?'block':'none';
+    }
+    nodesk.style.display=(v&&!shownDesk)?'block':'none';
+    count.textContent=v?(shownDesk+' of '+total+' entries'):('Reviewed 19 Sep 2026 · '+total+' entries');
+  }
+  window.__filter=filter;
+  q.addEventListener('input',filter);
+  clr.addEventListener('click',function(){q.value='';filter();q.focus();});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='/'&&document.activeElement!==q){e.preventDefault();q.focus();}
+    if(e.key==='Escape'&&document.activeElement===q){q.value='';filter();q.blur();}
+  });
+  filter();
+})();
+</script>
+</body></html>
