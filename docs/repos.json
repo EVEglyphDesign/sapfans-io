@@ -57,7 +57,9 @@
     { "name": "apache/iceberg", "url": "https://github.com/apache/iceberg", "category": "data",
       "description": "An open table format for large analytical datasets. Where a mirrored record can land so that it loads anywhere, not just in the tool that wrote it.", "tags": ["table-format", "portability", "lakehouse"] },
     { "name": "duckdb/duckdb", "url": "https://github.com/duckdb/duckdb", "category": "data",
-      "description": "An in-process SQL database that opens CSV, Parquet and Excel files directly. The fastest way for a functional analyst to query an extract without a server.", "tags": ["sql", "analysis", "extracts"] },
+      "description": "An in-process analytical SQL engine — no server, opens CSV, Parquet and Excel files directly. For one person querying an extract on a laptop. Not a system of record; that is PostgreSQL's job.", "tags": ["sql", "analysis", "extracts", "no-server"] },
+    { "name": "postgres/postgres", "url": "https://github.com/postgres/postgres", "category": "data",
+      "description": "The open-source system of record. Where a twin lives once it has to serve more than one person, keep history, and control access — the counterpart to DuckDB, not a competitor.", "tags": ["sql", "system-of-record", "server", "pgvector"] },
     { "name": "eclipse-tractusx/tractusx-edc", "url": "https://github.com/eclipse-tractusx/tractusx-edc", "category": "data",
       "description": "The Catena-X data-space connector — sovereign, contract-governed data sharing across an industrial supply chain. Same idea as the additive layer, applied between companies.", "tags": ["data-space", "sovereignty", "supply-chain"] },
 
