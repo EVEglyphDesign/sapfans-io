@@ -42,6 +42,14 @@ It writes the source file, the generator and the tool-specific files. From then 
 `canon/CANON.md` and re-run the build; everything else updates together, and a check fails
 the moment they drift apart.
 
+## When the client already has an agent
+
+If the front door is Copilot Studio or another agent platform, the harness sits behind an
+MCP server instead of a `CLAUDE.md`. Three read-only tools; the record stays in the
+client's custody. Start from
+[`templates/MCP-TOOL-CONTRACT.md`](templates/MCP-TOOL-CONTRACT.md) — the contract is
+written and committed before any diagram or code.
+
 ## Taking part
 
 - **[Discussions](https://github.com/EVEglyphDesign/sapfans-io/discussions)** — introduce
