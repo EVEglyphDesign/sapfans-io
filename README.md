@@ -1,70 +1,71 @@
 # SAPfans.io
 
-**The next generation of SAP fans, in the sovereign domain.**
+**Make the AI work accumulate.**
 
-[https://sapfans.io](https://sapfans.io) · `EgD-SAPF-001` · Key ID `EgD-KEY-2026-07`
+[https://sapfans.io](https://sapfans.io) · `EgD-SAPF-001 r2` · Key ID `EgD-KEY-2026-07`
 
-The enterprise ledger works. It was built by engineers over five decades and it is the
-accumulated record of how organisations actually run. **Nothing here seeks to replace it.**
+You already use Claude, Copilot or Perplexity on your projects. This is how to point them
+at a GitHub repository so the work lands somewhere, the decisions are recorded, and the
+spend shows a return.
 
-What this site is for is the right to **add** — to mirror what is needed, read-only, into
-custody the customer controls, and to build the services the ledger was never shaped to
-provide. No write-back. No displacement of the system of record. No demand that anyone
-abandon an investment that is working.
-
-Additive, not substitutive. Mirror, never cannibalise. **In conflict with none.**
+Written by a functional consultant, for functional consultants. No methodology, no product,
+nothing to buy.
 
 ## Start here
 
 | | |
 |---|---|
-| **[The Additive Doctrine](paper/ADDITIVE-DOCTRINE.md)** | The position, stated in full. Read this first. [Controlled PDF](https://sapfans.io/SAPfans_The_Additive_Doctrine.pdf) |
-| **[Heritage](heritage/HERITAGE.md)** | Why this name, and the one failure of the original we are obliged to correct |
-| **[Link your GitHub account](practitioners/00-LINK-YOUR-GITHUB.md)** | Access, 2FA, CLI, and connecting your AI surfaces safely |
-| **[Point your surfaces at the record](practitioners/01-YOUR-SURFACES.md)** | Making Claude and Perplexity effective rather than expensive |
-| **[Build your first twin](practitioners/02-BUILD-YOUR-TWIN.md)** | One subject, one repository, provenance on every input |
-| **[The repository pattern](pattern/REPO-PATTERN.md)** | Eleven rules, each with the cost of ignoring it |
-| **[Client handoff](pattern/CLIENT-HANDOFF.md)** | How design requirements arrive, get recorded, and get routed |
+| **[The tutorial](docs/tutorial.html)** | From nothing to a working repository and harness. About an hour. Assumes you have never used GitHub |
+| **[Usage standards](docs/standards.html)** | For delivery leads and PMO — three spend classes, one test, and what to measure |
+| **[Heritage](heritage/HERITAGE.md)** | Where the name comes from |
 
-Copy-ready material is in [`templates/`](templates) and [`scripts/`](scripts). The estate the
-pattern was derived from is read in [`registry/PUBLIC-REGISTER.md`](registry/PUBLIC-REGISTER.md)
-— 105 repositories, 44 of them public.
+## The idea in three lines
 
-## Who this is for
+1. **The repository is the control unit.** Developers settled this long ago. The functional
+   side of a project can use the same one.
+2. **A harness keeps the tools consistent.** One file you edit; the Claude, Copilot and
+   Perplexity versions are generated from it so they cannot drift apart.
+3. **Ask for files, not answers.** An answer in a chat window is gone when the tab closes.
+   A file is still there when somebody asks why in six months.
 
-Practitioners. SAP and the wider enterprise-ledger world — architects, consultants,
-developers, functional specialists, support staff, customers' own teams.
+## The harness
 
-**Regardless of the badge on your laptop.** Global integrator, boutique, internal team, or
-your own single-person practice: the pattern published here requires no product, no
-partnership tier, and no permission from anyone's channel organisation. If your employer's
-methodology disagrees with this one, follow your employer's and take what is useful.
+The kit lives in [EVEglyphDesign/canon](https://github.com/EVEglyphDesign/canon). One
+command from your repository's root:
 
-## What we do not do
+```bash
+curl -sL https://raw.githubusercontent.com/EVEglyphDesign/canon/main/harness/install.sh | bash
+```
 
-- **We do not attack engineers.** The German engineering tradition that produced this ledger
-  is a genuine achievement. Criticism here is aimed at executive lock-down provisions and
-  licensing posture — never at the craft, and never at the people maintaining it.
-- **We do not attack service providers.** Provider-neutral means what it says.
-- **We do not fork the community.** SAP Community, the user groups and the vendor forums do
-  things this site will not attempt. Go there too.
-- **We do not publish client material.** Ever, in any form, however anonymised it feels.
+It writes the source file, the generator and the tool-specific files. From then on you edit
+`canon/CANON.md` and re-run the build; everything else updates together, and a check fails
+the moment they drift apart.
 
-## Extending it
+## Taking part
 
-This doctrine is expanded by practitioners, not by an editorial board. See
-[CONTRIBUTING.md](CONTRIBUTING.md). One rule governs every merge:
-**append, correct, supersede — never delete.**
+- **[Discussions](https://github.com/EVEglyphDesign/sapfans-io/discussions)** — introduce
+  yourself, say what you are organising, report what worked.
+- **[Issues](https://github.com/EVEglyphDesign/sapfans-io/issues/new/choose)** — questions
+  and corrections. Corrections are the most useful thing anyone sends.
+- **[LinkedIn](https://www.linkedin.com/in/danytheriault)** — if GitHub is not where you
+  want to start.
 
-## Canon
+Never post client material here — no data, no system names, no screenshots of a client
+system. Describe the shape of the problem instead.
 
-Bound by the [Executive Boot Contract](https://eveglyphdesign.github.io/eve-glyph-boot-contract/),
-`EgD-BOOT-001`. See [`.canon/POINTER.md`](.canon/POINTER.md).
+## What changed in r2
 
-**Visibility: this repository is public.** Everything in it is clonable in full. That is
-deliberate — see [Heritage](heritage/HERITAGE.md).
+This site previously published a position paper — the Additive Doctrine — along with a
+practitioner pattern and a community-engagement lane. That material is preserved in
+[`archive/`](archive/) rather than deleted, per the rule this estate works to: append,
+correct, supersede, never delete.
+
+The surface was rewritten for the reader it is actually for: a functional consultant who
+wants a practical way to organise AI work, not a doctrine to agree with.
 
 ---
 
-© 2026 EVEglyphDesign. All rights reserved. Controlled copy.
+© 2026 EVEglyphDesign. Independent. Not affiliated with, endorsed by or sponsored by SAP SE
+or any service provider. SAP is a trademark of SAP SE.
+
 *Pour le bien-être du peuple.*
