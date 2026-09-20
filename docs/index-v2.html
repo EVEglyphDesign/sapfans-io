@@ -51,6 +51,13 @@ header.site{position:sticky;top:0;z-index:100;background:var(--bg);border-bottom
 .search .clr{position:absolute;right:7px;top:50%;transform:translateY(-50%);background:none;border:0;
  color:var(--faint);cursor:pointer;font-size:15px;line-height:1;padding:2px 4px;display:none;font-family:inherit}
 .search .clr:hover{color:var(--accent)}
+.search .mic{position:absolute;right:28px;top:50%;transform:translateY(-50%);background:none;border:0;
+ color:var(--faint);cursor:pointer;padding:2px 4px;display:none;font-family:inherit;line-height:0}
+.search .mic svg{width:14px;height:14px;fill:currentColor;display:block}
+.search .mic:hover{color:var(--accent)}
+.search .mic.on{color:var(--accent);animation:mic-pulse 1.1s ease-in-out infinite}
+.search input.listening{padding-right:52px}
+@keyframes mic-pulse{0%,100%{opacity:1}50%{opacity:.45}}
 .util{display:flex;align-items:center;gap:8px}
 .btn-sm{font-size:13px;font-weight:500;color:var(--dim);background:transparent;border:1px solid var(--line-2);
  border-radius:5px;padding:6px 11px;cursor:pointer;font-family:inherit;white-space:nowrap;display:inline-block}
@@ -150,6 +157,22 @@ section{margin:0 0 50px;scroll-margin-top:78px}
  color:var(--dim);margin:18px 0;border-radius:0 4px 4px 0}
 .callout b{color:var(--fg-strong)}
 
+/* ---- repositories toolbar ---- */
+.repos-toolbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 18px}
+.repos-toolbar .sort-lbl{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);font-weight:600}
+.repos-toolbar .sort-sel{background:var(--panel);color:var(--fg);border:1px solid var(--line-2);border-radius:5px;
+ padding:6px 10px;font-family:inherit;font-size:13px;cursor:pointer}
+.repos-toolbar .sort-sel:focus{border-color:var(--accent-soft);outline:none}
+.repos-toolbar .sort-note{font-size:12.4px;color:var(--faint);margin-left:4px}
+.repos-intro{margin-top:28px;padding-top:20px;border-top:1px solid var(--line)}
+
+/* ---- voice transcript hint ---- */
+.voice-hint{position:absolute;top:calc(100% + 4px);left:0;right:0;background:var(--panel-2);
+ border:1px solid var(--accent-soft);border-radius:5px;padding:6px 10px;font-size:12.2px;
+ color:var(--dim);display:none;z-index:120;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+.voice-hint.on{display:block}
+.voice-hint b{color:var(--accent);font-weight:600}
+
 footer.site{border-top:1px solid var(--line)}
 .foot{max-width:1280px;margin:0 auto;padding:20px 20px 42px;font-size:12.3px;color:var(--faint);
  display:flex;gap:7px 16px;flex-wrap:wrap}
@@ -168,7 +191,10 @@ footer.site{border-top:1px solid var(--line)}
   </nav>
   <div class="search">
     <svg class="ic" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
-    <input id="q" type="search" placeholder="Search the list…" autocomplete="off" aria-label="Search entries and posts">
+    <input id="q" type="search" placeholder="Search the list…" autocomplete="off" aria-label="Search entries, posts and repositories">
+    <button class="mic" id="mic" type="button" aria-label="Search by voice" title="Search by voice" hidden>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15a3 3 0 003-3V6a3 3 0 10-6 0v6a3 3 0 003 3zm5-3a5 5 0 01-10 0H5a7 7 0 006 6.92V22h2v-3.08A7 7 0 0019 12h-2z"/></svg>
+    </button>
     <button class="clr" id="clr" type="button" aria-label="Clear search">×</button>
   </div>
   <div class="util">
@@ -418,29 +444,167 @@ footer.site{border-top:1px solid var(--line)}
   </section>
 
   <section id="repos">
-    <div class="sec-head"><h2>Working in repositories</h2></div>
-    <p class="sec-lede">Practitioners increasingly keep their working knowledge in a Git repository rather than a folder of documents. If you have not worked this way, this is what it means and why people on the board will ask you for one.</p>
+    <div class="sec-head">
+      <h2>Repositories worth cloning</h2>
+      <span class="sub" id="repocount">Reviewed 19 Sep 2026</span>
+    </div>
+    <p class="sec-lede">Public GitHub repositories that a practitioner can actually clone and use — grouped by the same lanes as the reference desk. Point Claude or Perplexity at any of these before searching the web from cold. The header search filters this list too; sort with the control below.</p>
 
-    <div class="cols">
-      <div class="card"><h4>One subject, one repository</h4>
-        <p>A programme, a product area, a method. Everything on that subject in one place, versioned, with a history of what changed and when.</p></div>
-      <div class="card"><h4>Provenance on every input</h4>
-        <p>Each document records where it came from — SAP Note, Help Portal page, workshop, extract. Six months later you can still defend the number.</p></div>
-      <div class="card"><h4>Readable by an AI surface</h4>
-        <p>Point Claude or Perplexity at the repository and it works from your record instead of guessing. This is the practical reason the format is spreading.</p></div>
-      <div class="card"><h4>Portable between employers</h4>
-        <p>Your method travels with you. The client's data does not — that stays in the client's estate, never in a repository you control.</p></div>
+    <div class="repos-toolbar">
+      <label class="sort-lbl" for="reposort">Sort</label>
+      <select id="reposort" class="sort-sel" aria-label="Sort repositories">
+        <option value="lane">By lane</option>
+        <option value="name">By name (A → Z)</option>
+        <option value="owner">By owner</option>
+      </select>
+      <span class="sort-note">Each entry links to the repository on GitHub. Sample and archive repos are labelled.</span>
     </div>
 
-    <h3 style="font-size:14.5px;margin:30px 0 0">Exchanging with other practitioners</h3>
-    <ol class="steps">
-      <li><b>Find the person, not the file</b><span>Someone posts about a model, a mapping or a method you need. The useful move is to contact them, not to hunt for a download.</span></li>
-      <li><b>Reach them on LinkedIn or WhatsApp</b><span>Most people list a contact in their post. Say which post you're coming from and what specifically you want — vague requests get ignored here as anywhere.</span></li>
-      <li><b>Ask for read access, not a copy</b><span>If the repository is private, ask to be added as a read-only collaborator. The owner keeps control, sees who has access, and can revoke it. An emailed zip has none of those properties.</span></li>
-      <li><b>Reciprocate</b><span>The people who get the most out of an exchange like this have something of their own to open up. Publish the method; keep the client material out of it.</span></li>
-    </ol>
+    <div class="grp" id="r-pmo" data-g data-rlane="PMO &amp; execution">
+      <h3>PMO and programme execution</h3>
+      <div class="links" data-rlane-body>
+        <a class="row" data-name="teched2023-DT164" data-owner="SAP-samples" href="https://github.com/SAP-samples/teched2023-DT164" target="_blank" rel="noopener">
+          <span class="t">SAP-samples/teched2023-DT164 — Central Business Configuration for S/4HANA Cloud</span><span class="src">github.com · samples</span>
+          <span class="d">Workshop materials for guiding an S/4HANA Cloud programme through Central Business Configuration. Directly relevant to the Activate configure phase.</span></a>
+        <a class="row" data-name="btp-global-center-of-excellence-samples" data-owner="SAP-samples" href="https://github.com/SAP-samples/btp-global-center-of-excellence-samples" target="_blank" rel="noopener">
+          <span class="t">SAP-samples/btp-global-center-of-excellence-samples</span><span class="src">github.com · samples</span>
+          <span class="d">Working Jupyter notebooks from the SAP BTP Global Center of Excellence covering AI, ML, automation and data — the kind of proof a steering pack needs.</span></a>
+        <a class="row" data-name="abap-cheat-sheets" data-owner="SAP-samples" href="https://github.com/SAP-samples/abap-cheat-sheets" target="_blank" rel="noopener">
+          <span class="t">SAP-samples/abap-cheat-sheets</span><span class="src">github.com · samples</span>
+          <span class="d">Concise, executable ABAP syntax references. Useful when a PMO needs to sanity-check a developer estimate without reading a full course.</span></a>
+      </div>
+    </div>
 
-    <div class="callout"><b>One rule, no exceptions.</b> Client-identifiable material never goes into a shared repository or onto this board — not anonymised, not redacted, not "just the structure". If you are unsure whether something qualifies, it qualifies.</div>
+    <div class="grp" id="r-sec" data-g data-rlane="Data security standards">
+      <h3>Data security and protection standards</h3>
+      <div class="links" data-rlane-body>
+        <a class="row" data-name="teched2023-XP185v" data-owner="SAP-samples" href="https://github.com/SAP-samples/teched2023-XP185v" target="_blank" rel="noopener">
+          <span class="t">SAP-samples/teched2023-XP185v — Hands-on BTP security recommendations</span><span class="src">github.com · samples</span>
+          <span class="d">Exercises that walk through applying the SAP BTP Security Recommendations to real services and Cloud Identity — companion to the checklist on the reference desk.</span></a>
+        <a class="row" data-name="sap-btp-ai-best-practices" data-owner="SAP-samples" href="https://github.com/SAP-samples/sap-btp-ai-best-practices" target="_blank" rel="noopener">
+          <span class="t">SAP-samples/sap-btp-ai-best-practices — enterprise-grade AI on BTP</span><span class="src">github.com · samples</span>
+          <span class="d">Reference implementations for secure generative AI on BTP: content filtering, PII masking, prompt patterns and RAG. Cite this when a client asks what "safe" looks like.</span></a>
+        <a class="row" data-name="sap-btp-reference-architectures" data-owner="SAP" href="https://github.com/SAP/sap-btp-reference-architectures" target="_blank" rel="noopener">
+          <span class="t">SAP/sap-btp-reference-architectures</span><span class="src">github.com · archived</span>
+          <span class="d">Reference architecture diagrams for common BTP solution shapes. Repository is archived and read-only — still useful as a source of vetted diagrams.</span></a>
+      </div>
+    </div>
+
+    <div class="grp" id="r-aistd" data-g data-rlane="AI usage standards">
+      <h3>AI usage standards</h3>
+      <div class="links" data-rlane-body>
+        <a class="row" data-name="sap-btp-ai-best-practices" data-owner="SAP-samples" href="https://github.com/SAP-samples/sap-btp-ai-best-practices" target="_blank" rel="noopener">
+          <span class="t">SAP-samples/sap-btp-ai-best-practices — content filtering, PII, RAG patterns</span><span class="src">github.com · samples</span>
+          <span class="d">The same repo as the security lane, read through the AI-usage lens: how SAP itself expects generative AI to be built on BTP, with code you can review.</span></a>
+        <a class="row" data-name="teched2025-DA261" data-owner="SAP-samples" href="https://github.com/SAP-samples/teched2025-DA261" target="_blank" rel="noopener">
+          <span class="t">SAP-samples/teched2025-DA261 — AI apps with HANA Cloud vector search</span><span class="src">github.com · samples</span>
+          <span class="d">Hands-on workshop for AI applications on HANA Cloud: vector search, AutoML and knowledge graphs. The current authoritative pattern for retrieval-grounded AI.</span></a>
+        <a class="row" data-name="awesome-artificial-intelligence-regulation" data-owner="EthicalML" href="https://github.com/ethicalml/awesome-artificial-intelligence-regulation" target="_blank" rel="noopener">
+          <span class="t">EthicalML/awesome-artificial-intelligence-regulation</span><span class="src">github.com · community</span>
+          <span class="d">Maps AI regulations, principles, standards and tools across jurisdictions. Cross-industry, not SAP-specific — the map for aligning an SAP programme to external obligations.</span></a>
+      </div>
+    </div>
+
+    <div class="grp" id="r-bdc" data-g data-rlane="BDC &amp; Datasphere">
+      <h3>Business Data Cloud and Datasphere</h3>
+      <div class="links" data-rlane-body>
+        <a class="row" data-name="datasphere-content" data-owner="SAP-samples" href="https://github.com/SAP-samples/datasphere-content" target="_blank" rel="noopener">
+          <span class="t">SAP-samples/datasphere-content — importable sample content</span><span class="src">github.com · samples</span>
+          <span class="d">Ready-made CSV data, SQL and content packages for Datasphere scenarios — bikes, retail, finance, HR, sales, telecom. The fastest way to a real demo.</span></a>
+        <a class="row" data-name="analytics-cloud-datasphere-community-content" data-owner="SAP-samples" href="https://github.com/SAP-samples/analytics-cloud-datasphere-community-content" target="_blank" rel="noopener">
+          <span class="t">SAP-samples/analytics-cloud-datasphere-community-content</span><span class="src">github.com · samples</span>
+          <span class="d">Importable SAC and Datasphere packages covering technical samples, business scenarios and best practices — the community counterpart to the sample content repo above.</span></a>
+        <a class="row" data-name="sap-bdc-explore-hyperscaler-data" data-owner="SAP-samples" href="https://github.com/SAP-samples/sap-bdc-explore-hyperscaler-data" target="_blank" rel="noopener">
+          <span class="t">SAP-samples/sap-bdc-explore-hyperscaler-data</span><span class="src">github.com · samples</span>
+          <span class="d">Step-by-step guidance for integrating AWS, Azure, GCP and Databricks data into Datasphere within Business Data Cloud. Directly relevant to a BDC design conversation.</span></a>
+      </div>
+    </div>
+
+    <div class="grp" id="r-semantic" data-g data-rlane="Semantic model">
+      <h3>The semantic model beyond SAP</h3>
+      <div class="links" data-rlane-body>
+        <a class="row" data-name="teched2023-DA266" data-owner="SAP-samples" href="https://github.com/SAP-samples/teched2023-DA266" target="_blank" rel="noopener">
+          <span class="t">SAP-samples/teched2023-DA266 — federate Databricks queries via Datasphere</span><span class="src">github.com · samples</span>
+          <span class="d">Exercises that federate Databricks queries through Datasphere and build a real-time sales-order analytics scenario in SAC. Concrete proof of semantic reuse outside SAP.</span></a>
+        <a class="row" data-name="datasphere-fedml" data-owner="SAP-samples" href="https://github.com/SAP-samples/datasphere-fedml" target="_blank" rel="noopener">
+          <span class="t">SAP-samples/datasphere-fedml</span><span class="src">github.com · samples</span>
+          <span class="d">Libraries for sourcing SAP and non-SAP Datasphere data into ML training, deployment and inference across platforms — the semantic layer used as a first-class ML source.</span></a>
+        <a class="row" data-name="sap-datasphere-docs" data-owner="SAP-docs" href="https://github.com/SAP-docs/sap-datasphere" target="_blank" rel="noopener">
+          <span class="t">SAP-docs/sap-datasphere — markdown source of the Help Portal docs</span><span class="src">github.com · docs</span>
+          <span class="d">The Datasphere documentation as markdown. Open a pull request to fix or extend a page — the semantic model becomes something practitioners can contribute to.</span></a>
+      </div>
+    </div>
+
+    <div class="grp" id="r-connect" data-g data-rlane="Connecting AI to SAP">
+      <h3>Connecting Claude, Perplexity and other AI surfaces to SAP</h3>
+      <div class="links" data-rlane-body>
+        <a class="row" data-name="mdk-mcp-server" data-owner="SAP" href="https://github.com/SAP/mdk-mcp-server" target="_blank" rel="noopener">
+          <span class="t">SAP/mdk-mcp-server — MCP server for Mobile Development Kit</span><span class="src">github.com · SAP</span>
+          <span class="d">Gives AI agents MDK knowledge, project-aware tools, templates, documentation access and CLI workflows for SAP mobile app development. First-party MCP server.</span></a>
+        <a class="row" data-name="cap-js-mcp-server" data-owner="cap-js" href="https://github.com/cap-js/mcp-server" target="_blank" rel="noopener">
+          <span class="t">cap-js/mcp-server — MCP for AI-assisted CAP development</span><span class="src">github.com · cap-js</span>
+          <span class="d">Lets an agent search compiled CDS models and local CAP documentation. Actively maintained; the CAP-side answer to "how do we point Claude at this project?"</span></a>
+        <a class="row" data-name="modelcontextprotocol-servers" data-owner="modelcontextprotocol" href="https://github.com/modelcontextprotocol/servers" target="_blank" rel="noopener">
+          <span class="t">modelcontextprotocol/servers — reference MCP implementations</span><span class="src">github.com · community</span>
+          <span class="d">The reference collection for MCP servers. Read one implementation end-to-end before writing your own; it will save the SAP-specific work.</span></a>
+      </div>
+    </div>
+
+    <div class="grp" id="r-joule" data-g data-rlane="Joule &amp; agentic SAP">
+      <h3>Joule and agentic SAP</h3>
+      <div class="links" data-rlane-body>
+        <a class="row" data-name="btp-agentic-ai-use-cases" data-owner="SAP-samples" href="https://github.com/SAP-samples/btp-agentic-ai-use-cases" target="_blank" rel="noopener">
+          <span class="t">SAP-samples/btp-agentic-ai-use-cases</span><span class="src">github.com · samples</span>
+          <span class="d">Runnable BTP samples for building industry AI agents with Joule Studio, code-based agents, A2A and async APIs. The current SAP-published catalogue of agent patterns.</span></a>
+        <a class="row" data-name="codejam-code-based-agents" data-owner="SAP-samples" href="https://github.com/SAP-samples/codejam-code-based-agents" target="_blank" rel="noopener">
+          <span class="t">SAP-samples/codejam-code-based-agents</span><span class="src">github.com · samples</span>
+          <span class="d">CodeJam materials for building, deploying and integrating code-based AI agents on SAP BTP — the hands-on companion to the use-cases repo.</span></a>
+        <a class="row" data-name="btp-joule-a2a-pro-code-agent" data-owner="SAP-samples" href="https://github.com/SAP-samples/btp-joule-a2a-pro-code-agent" target="_blank" rel="noopener">
+          <span class="t">SAP-samples/btp-joule-a2a-pro-code-agent</span><span class="src">github.com · samples</span>
+          <span class="d">Reference implementation for BTP pro-code agents integrating Joule via A2A, using an RPT-1 model for sales-quotation optimisation. Shows an end-to-end agent, not a snippet.</span></a>
+      </div>
+    </div>
+
+    <div class="grp" id="r-tools" data-g data-rlane="Tools to keep open">
+      <h3>Tools to keep open</h3>
+      <div class="links" data-rlane-body>
+        <a class="row" data-name="apibusinesshub-api-recipes" data-owner="SAP" href="https://github.com/SAP/apibusinesshub-api-recipes" target="_blank" rel="noopener">
+          <span class="t">SAP/apibusinesshub-api-recipes</span><span class="src">github.com · SAP</span>
+          <span class="d">Reusable API Management proxies, policy templates and application samples to secure, govern and extend enterprise APIs. The recipe book for the Business Accelerator Hub.</span></a>
+        <a class="row" data-name="cloud-sdk" data-owner="SAP" href="https://github.com/SAP/cloud-sdk" target="_blank" rel="noopener">
+          <span class="t">SAP/cloud-sdk — SAP Cloud SDK documentation portal</span><span class="src">github.com · SAP</span>
+          <span class="d">Sources of the Cloud SDK documentation portal: setup, support and contribution paths. The single entry point for extending SAP cloud services in code.</span></a>
+        <a class="row" data-name="ui5-webcomponents" data-owner="SAP" href="https://github.com/SAP/ui5-webcomponents" target="_blank" rel="noopener">
+          <span class="t">SAP/ui5-webcomponents</span><span class="src">github.com · SAP</span>
+          <span class="d">Enterprise-grade UI5 web components for building Fiori-shaped interfaces in any framework — or with plain web APIs. Fewer of these break in six months than a bespoke stack.</span></a>
+      </div>
+    </div>
+
+    <div class="noresult" id="norepo">No repositories match that search.</div>
+
+    <div id="repos-intro" class="repos-intro">
+      <h3 style="font-size:14.5px;margin:26px 0 6px">Why practitioners keep their working knowledge in a repository</h3>
+      <div class="cols">
+        <div class="card"><h4>One subject, one repository</h4>
+          <p>A programme, a product area, a method. Everything on that subject in one place, versioned, with a history of what changed and when.</p></div>
+        <div class="card"><h4>Provenance on every input</h4>
+          <p>Each document records where it came from — SAP Note, Help Portal page, workshop, extract. Six months later you can still defend the number.</p></div>
+        <div class="card"><h4>Readable by an AI surface</h4>
+          <p>Point Claude or Perplexity at the repository and it works from your record instead of guessing. This is the practical reason the format is spreading.</p></div>
+        <div class="card"><h4>Portable between employers</h4>
+          <p>Your method travels with you. The client's data does not — that stays in the client's estate, never in a repository you control.</p></div>
+      </div>
+
+      <h3 style="font-size:14.5px;margin:24px 0 0">Exchanging with other practitioners</h3>
+      <ol class="steps">
+        <li><b>Find the person, not the file</b><span>Someone posts about a model, a mapping or a method you need. The useful move is to contact them, not to hunt for a download.</span></li>
+        <li><b>Reach them on LinkedIn or WhatsApp</b><span>Most people list a contact in their post. Say which post you're coming from and what specifically you want — vague requests get ignored here as anywhere.</span></li>
+        <li><b>Ask for read access, not a copy</b><span>If the repository is private, ask to be added as a read-only collaborator. The owner keeps control, sees who has access, and can revoke it. An emailed zip has none of those properties.</span></li>
+        <li><b>Reciprocate</b><span>The people who get the most out of an exchange like this have something of their own to open up. Publish the method; keep the client material out of it.</span></li>
+      </ol>
+
+      <div class="callout"><b>One rule, no exceptions.</b> Client-identifiable material never goes into a shared repository or onto this board — not anonymised, not redacted, not "just the structure". If you are unsure whether something qualifies, it qualifies.</div>
+    </div>
   </section>
 
   <section id="about">
@@ -527,22 +691,34 @@ footer.site{border-top:1px solid var(--line)}
   }).catch(function(){});
 })();
 
-/* one search box filters the whole page */
+/* one search box filters the whole page — reference desk, board, and repositories */
 (function(){
   var q=document.getElementById('q'),clr=document.getElementById('clr');
-  var nodesk=document.getElementById('nodesk'),nopost=document.getElementById('nopost');
+  var nodesk=document.getElementById('nodesk'),nopost=document.getElementById('nopost'),
+      norepo=document.getElementById('norepo');
   var count=document.getElementById('deskcount');
-  var total=document.querySelectorAll('#desk .row').length;
-  count.textContent='Reviewed 19 Sep 2026 · '+total+' entries';
+  var repocount=document.getElementById('repocount');
+  var totalDesk=document.querySelectorAll('#desk .row').length;
+  var totalRepo=document.querySelectorAll('#repos .row').length;
+  count.textContent='Reviewed 19 Sep 2026 · '+totalDesk+' entries';
+  if(repocount)repocount.textContent='Reviewed 19 Sep 2026 · '+totalRepo+' repositories';
   function filter(){
     var v=(q.value||'').trim().toLowerCase();
     clr.style.display=v?'block':'none';
-    var shownDesk=0,shownPost=0;
+    var shownDesk=0,shownPost=0,shownRepo=0;
     [].forEach.call(document.querySelectorAll('#desk .row'),function(r){
       var hit=!v||r.textContent.toLowerCase().indexOf(v)>-1;
       r.style.display=hit?'':'none';if(hit)shownDesk++;
     });
-    [].forEach.call(document.querySelectorAll('.grp[data-g]'),function(g){
+    [].forEach.call(document.querySelectorAll('#desk .grp[data-g]'),function(g){
+      var any=g.querySelector('.row:not([style*="none"])');
+      g.style.display=any?'':'none';
+    });
+    [].forEach.call(document.querySelectorAll('#repos .row'),function(r){
+      var hit=!v||r.textContent.toLowerCase().indexOf(v)>-1;
+      r.style.display=hit?'':'none';if(hit)shownRepo++;
+    });
+    [].forEach.call(document.querySelectorAll('#repos .grp[data-g]'),function(g){
       var any=g.querySelector('.row:not([style*="none"])');
       g.style.display=any?'':'none';
     });
@@ -555,7 +731,9 @@ footer.site{border-top:1px solid var(--line)}
       nopost.style.display=(v&&!shownPost)?'block':'none';
     }
     nodesk.style.display=(v&&!shownDesk)?'block':'none';
-    count.textContent=v?(shownDesk+' of '+total+' entries'):('Reviewed 19 Sep 2026 · '+total+' entries');
+    if(norepo)norepo.style.display=(v&&!shownRepo)?'block':'none';
+    count.textContent=v?(shownDesk+' of '+totalDesk+' entries'):('Reviewed 19 Sep 2026 · '+totalDesk+' entries');
+    if(repocount)repocount.textContent=v?(shownRepo+' of '+totalRepo+' repositories'):('Reviewed 19 Sep 2026 · '+totalRepo+' repositories');
   }
   window.__filter=filter;
   q.addEventListener('input',filter);
@@ -565,6 +743,99 @@ footer.site{border-top:1px solid var(--line)}
     if(e.key==='Escape'&&document.activeElement===q){q.value='';filter();q.blur();}
   });
   filter();
+})();
+
+/* repositories — sort control (by lane, name, or owner) */
+(function(){
+  var sel=document.getElementById('reposort');if(!sel)return;
+  var section=document.getElementById('repos');
+  var origHTML=null; // snapshot of the original lane-grouped markup, so we can restore "By lane"
+  function snapshot(){
+    if(origHTML===null){
+      var groups=section.querySelectorAll('.grp[data-rlane]');
+      origHTML=[];
+      groups.forEach(function(g){origHTML.push(g.outerHTML);});
+    }
+  }
+  function flat(){
+    var rows=[];
+    section.querySelectorAll('.grp[data-rlane]').forEach(function(g){
+      var lane=g.getAttribute('data-rlane');
+      g.querySelectorAll('a.row').forEach(function(a){
+        rows.push({el:a.cloneNode(true),lane:lane,
+          name:(a.getAttribute('data-name')||'').toLowerCase(),
+          owner:(a.getAttribute('data-owner')||'').toLowerCase()});
+      });
+    });
+    return rows;
+  }
+  function render(mode){
+    snapshot();
+    var host=section;
+    // remove existing .grp[data-rlane] blocks (leave sec-head, toolbar, intro, noresult)
+    section.querySelectorAll('.grp[data-rlane]').forEach(function(g){g.parentNode.removeChild(g);});
+    var anchor=document.getElementById('norepo');
+    if(mode==='lane'){
+      // restore originals in original order
+      origHTML.forEach(function(html){
+        var tpl=document.createElement('div');tpl.innerHTML=html.trim();
+        host.insertBefore(tpl.firstChild,anchor);
+      });
+    }else{
+      var rows=flat();
+      rows.sort(function(a,b){
+        if(mode==='name')return a.name.localeCompare(b.name)||a.owner.localeCompare(b.owner);
+        if(mode==='owner')return a.owner.localeCompare(b.owner)||a.name.localeCompare(b.name);
+        return 0;
+      });
+      var wrap=document.createElement('div');
+      wrap.className='grp';wrap.setAttribute('data-g','');wrap.setAttribute('data-rlane','All repositories');
+      var h=document.createElement('h3');h.textContent=(mode==='name'?'All repositories · by name':'All repositories · by owner');
+      wrap.appendChild(h);
+      var body=document.createElement('div');body.className='links';
+      rows.forEach(function(r){
+        // add a small lane label into the .src pill for context
+        var src=r.el.querySelector('.src');
+        if(src && r.lane){src.textContent=r.lane+' · '+src.textContent.split('·').slice(-1)[0].trim();}
+        body.appendChild(r.el);
+      });
+      wrap.appendChild(body);
+      host.insertBefore(wrap,anchor);
+    }
+    if(window.__filter)window.__filter();
+  }
+  sel.addEventListener('change',function(){render(sel.value);});
+})();
+
+/* voice input — Web Speech API, transcript kept visible in the search field */
+(function(){
+  var SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  var mic=document.getElementById('mic'),q=document.getElementById('q');
+  if(!SR||!mic||!q)return; // Firefox and older Safari: silently keep text-only search
+  mic.hidden=false;mic.style.display='block';
+  var rec=new SR();
+  rec.lang=(navigator.language||'en-US');
+  rec.continuous=false;rec.interimResults=true;rec.maxAlternatives=1;
+  var listening=false,finalBuf='';
+  function start(){try{finalBuf=q.value?q.value+' ':'';rec.start();}catch(e){}}
+  function stop(){try{rec.stop();}catch(e){}}
+  rec.onstart=function(){listening=true;mic.classList.add('on');q.classList.add('listening');
+    q.setAttribute('placeholder','Listening… speak your search');};
+  rec.onend=function(){listening=false;mic.classList.remove('on');q.classList.remove('listening');
+    q.setAttribute('placeholder','Search the list…');};
+  rec.onerror=function(){listening=false;mic.classList.remove('on');q.classList.remove('listening');
+    q.setAttribute('placeholder','Search the list…');};
+  rec.onresult=function(ev){
+    var interim='';
+    for(var i=ev.resultIndex;i<ev.results.length;i++){
+      var t=ev.results[i][0].transcript;
+      if(ev.results[i].isFinal)finalBuf+=t+' ';else interim+=t;
+    }
+    // Always show the running transcript in the input so the user can see and edit it
+    q.value=(finalBuf+interim).replace(/\s+/g,' ').trim();
+    if(window.__filter)window.__filter();
+  };
+  mic.addEventListener('click',function(){listening?stop():start();});
 })();
 </script>
 </body></html>
