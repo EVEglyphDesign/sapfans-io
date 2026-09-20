@@ -1,0 +1,43 @@
+name: Something here is wrong
+description: A correction to the tutorial, the standards, or anything else on the site.
+title: "[Correction] "
+labels: ["correction"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Corrections are the most useful thing anyone sends. If a step does not
+        work, or a claim is out of date, say so — including if it is a price,
+        which moves constantly.
+
+  - type: input
+    id: where
+    attributes:
+      label: Where is it?
+      description: Page and section, or a link.
+      placeholder: "tutorial.html — Step 2, the install command"
+    validations:
+      required: true
+
+  - type: textarea
+    id: wrong
+    attributes:
+      label: What is wrong?
+    validations:
+      required: true
+
+  - type: textarea
+    id: right
+    attributes:
+      label: What should it say?
+      description: If you know. A rough idea is fine.
+    validations:
+      required: false
+
+  - type: textarea
+    id: how
+    attributes:
+      label: How do you know?
+      description: Tried it and it failed, a vendor page that says otherwise, experience on a programme. Not an interrogation — it just helps to fix it properly.
+    validations:
+      required: false

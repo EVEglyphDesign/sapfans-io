@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Usage standards · SAPfans.io</title>
+<meta name="description" content="A starter usage standard for a programme using AI tools: three spend classes, one test before spending, and what to measure so the tools produce business results instead of just costing more.">
+<meta property="og:title" content="Usage standards · SAPfans.io">
+<meta property="og:description" content="Three spend classes, one test before spending, and what to measure so AI tools produce results instead of just costing more.">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head><body>
+<!-- EGD-CHECKIN-START v4 · fixed thumb-reachable check-in corner · Dany Theriault -->
+<style>
+  body{padding-top:68px !important}
+  #egd-checkin{position:fixed !important;top:10px !important;right:12px !important;left:auto !important;bottom:auto !important;width:auto !important;max-width:none !important;margin:0 !important;z-index:9999 !important;display:flex !important;flex-direction:row !important;flex:0 0 auto !important;align-items:center !important;justify-content:flex-start !important;gap:2px !important;padding:4px !important;background:rgba(253,250,244,.96) !important;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid #d9d2c1 !important;border-radius:999px !important;box-shadow:0 4px 16px rgba(26,26,26,.14) !important;font-family:Inter,system-ui,sans-serif !important}
+  #egd-checkin a{display:flex !important;flex:0 0 auto !important;align-items:center !important;justify-content:center !important;width:46px !important;height:46px !important;padding:0 !important;margin:0 !important;border-radius:50% !important;background:#fff !important;border:1px solid transparent !important;text-decoration:none !important;color:inherit !important;box-shadow:0 1px 3px rgba(26,26,26,.08) !important;transition:border-color .15s ease,transform .15s ease,box-shadow .15s ease}
+  #egd-checkin a:hover,#egd-checkin a:focus-visible{border-color:#e87722 !important;transform:translateY(-1px);box-shadow:0 3px 8px rgba(232,119,34,.25) !important}
+  #egd-checkin a svg{width:24px !important;height:24px !important;display:block !important}
+  #egd-checkin a[data-net="linkedin"] svg{fill:#0a66c2 !important}
+  #egd-checkin a[data-net="x"] svg{fill:#000 !important}
+  #egd-checkin a[data-net="whatsapp"] svg{fill:#25d366 !important}
+  #egd-checkin .egd-sr{position:absolute !important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  @media (max-width:480px){body{padding-top:62px !important}#egd-checkin{top:8px !important;right:8px !important;padding:3px !important;gap:2px !important}#egd-checkin a{width:44px !important;height:44px !important}#egd-checkin a svg{width:22px !important;height:22px !important}}
+</style>
+<div id="egd-checkin" role="navigation" aria-label="Check in with Dany">
+  <a href="https://www.linkedin.com/in/danytheriault" target="_blank" rel="noopener" data-net="linkedin" title="Connect on LinkedIn"><span class="egd-sr">Connect on LinkedIn</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a>
+  <a href="https://x.com/DDTheriault75" target="_blank" rel="noopener" data-net="x" title="Follow on X"><span class="egd-sr">Follow on X</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+  <a href="https://wa.me/15062921452" target="_blank" rel="noopener" data-net="whatsapp" title="Message on WhatsApp"><span class="egd-sr">Message on WhatsApp</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.027 2c-5.51 0-9.987 4.478-9.987 9.988 0 1.76.46 3.482 1.334 5.001L2 22l5.121-1.343A9.94 9.94 0 0012.017 22h.005c5.51 0 9.987-4.478 9.987-9.988A9.928 9.928 0 0019.089 4.9 9.928 9.928 0 0012.032 2zm0 18.32h-.003a8.31 8.31 0 01-4.23-1.159l-.303-.18-3.14.823.838-3.06-.198-.313A8.245 8.245 0 013.78 12c0-4.54 3.696-8.236 8.24-8.236a8.19 8.19 0 015.826 2.412 8.19 8.19 0 012.412 5.83c0 4.54-3.697 8.235-8.24 8.235z"/></svg></a>
+</div>
+<!-- EGD-CHECKIN-END v4 -->
+
+<header><div class="bar">
+<a class="brand" href="index.html">SAPfans<span>.io</span></a>
+<nav><a href="index.html">Start</a><a href="tutorial.html">Tutorial</a><a href="standards.html" class='on'>Standards</a><a href="repos.html">Repositories</a><a href="heritage.html">Heritage</a></nav>
+</div></header>
+<main class="wrap">
+
+<span class="pill">EgD-SAPF-004 · For programme leads</span>
+<h1>Usage standards</h1>
+<p class="lede">AI tools on a programme either produce business results or they quietly become another line item. The difference is usually not the tool. It is whether anyone agreed what good use looks like.</p>
+<p class="meta">A starter standard a delivery lead or PMO can adopt in an afternoon · 2026-09-18</p>
+
+<h2>The failure this prevents</h2>
+<p>Twelve consultants each have a licence. Each works in their own chat window. The same client question gets asked and answered eleven times, slightly differently. None of the output is written down anywhere the next person will find it. At the end of the quarter someone asks what the tooling delivered, and the honest answer is that nobody can tell — there is a bill, and there is a general feeling that things went faster.</p>
+<p>That is not a tooling problem. It is the absence of a standard.</p>
+
+<h2>Three spend classes</h2>
+<p>Almost every argument about AI cost dissolves once the team agrees which actions are which. The asymmetry is deliberate: nobody should be asking permission to breathe, and everybody should be asking before money moves.</p>
+<table>
+<thead><tr><th>Class</th><th>Examples</th><th>Rule</th></tr></thead>
+<tbody>
+<tr><td><b>Free</b></td><td>Recalling something from the session, reading a file in the repository, one lookup</td><td>Just do it. Never ask.</td></tr>
+<tr><td><b>Cheap</b></td><td>One web search, one page, one short document, one commit</td><td>Just do it. Never ask.</td></tr>
+<tr><td><b>Expensive</b></td><td>Deep research, large batches, anything run across many entities, anything in a loop</td><td>Confirm first, with a reason.</td></tr>
+</tbody>
+</table>
+
+<h3>The test before anything expensive</h3>
+<blockquote><p>Say in one sentence what it will do, why the cheaper approaches could not answer, and what the cheap version would have produced. If that sentence cannot be written honestly, the action is not justified.</p></blockquote>
+<p>This applies to the person as much as to the tool. It takes ten seconds and it is the only cost control on this page that survives contact with a deadline.</p>
+
+<h2>What to measure</h2>
+<p>Not tokens. Nobody on a steering committee has ever been moved by a token count.</p>
+<p>Measure <b>cost per artefact that survived</b> — how much was spent, divided by the number of decisions, analyses and deliverables that ended up in the repository and were still being referenced a month later. It is a crude number and it is the right one, because it prices the thing the programme actually wanted.</p>
+<p>A team where that number is high is usually not overspending. It is producing output that evaporates.</p>
+
+<h2>What things actually cost</h2>
+<p>Worth knowing, because most people's intuition is badly wrong in both directions. Prices below were taken from the vendors' own pricing pages on 18 September 2026 and will move.</p>
+<p>A worked case: regenerating this entire website — five pages, every guide, around 11,300 words plus the markup — done iteratively over roughly fifteen exchanges, which is what building it honestly looks like.</p>
+<table>
+<thead><tr><th>Tool</th><th>Cost</th></tr></thead>
+<tbody>
+<tr><td>Claude Haiku 4.5, with caching</td><td>$0.59</td></tr>
+<tr><td>Claude Sonnet 5, with caching</td><td>$1.19</td></tr>
+<tr><td>Perplexity Sonar Pro</td><td>$2.87</td></tr>
+<tr><td>Claude Opus 5, with caching</td><td>$2.96</td></tr>
+<tr><td>Claude Opus 5, no caching</td><td>$5.95</td></tr>
+</tbody>
+</table>
+<p>Three dollars. An entire site, top to bottom, on the most capable model available.</p>
+
+<h3>Two things that follow from that</h3>
+<p><b>Producing the document is not where the money goes.</b> If a programme's AI bill is large, it is not because people are writing too much. It is because sessions start cold and re-derive what the team already knew — the same analysis, commissioned three times by three people who could not find the first one. That is a filing problem wearing a cost problem's clothes, and the repository fixes it.</p>
+<p><b>Caching roughly halves a real workload, and not every tool offers it.</b> When most of what you send is unchanged from the last message, the unchanged part can be charged at a tenth of the normal rate. In the table above that is the whole difference between $2.96 and $5.95 on the same run. It is worth knowing which of your tools does this before standardising on one.</p>
+
+<hr>
+
+<h2>A standard you can adopt as-is</h2>
+<p>Six lines. Put them in the programme's ways-of-working pack, or in <code>canon/CANON.md</code> so the tools follow them too.</p>
+<div class="drill" aria-label="The standard">
+  <div class="step"><span class="n">1</span><h4>Repository first</h4><p>Every workstream has one. Output lands there or it did not happen.</p></div>
+  <div class="step"><span class="n">2</span><h4>Read before searching</h4><p>The repository is checked before the internet. Most waste is here.</p></div>
+  <div class="step"><span class="n">3</span><h4>Files, not transcripts</h4><p>Ask for a file. A chat window is not a deliverable.</p></div>
+</div>
+<ul>
+<li><b>4 · Confirm before expensive.</b> One sentence naming what it will do and why the cheap path could not.</li>
+<li><b>5 · Decisions get recorded.</b> What was chosen, the alternatives, what it rests on, who agreed. Eight lines.</li>
+<li><b>6 · Review monthly.</b> Spend against artefacts that survived. Ten minutes, not a workstream.</li>
+</ul>
+
+<h2>What not to do</h2>
+<ul>
+<li><b>Do not set a token budget per person.</b> It punishes the people doing the most thinking and it measures the wrong thing.</li>
+<li><b>Do not standardise on one tool because of the headline rate.</b> Caching, context limits and how well each one reads a repository matter more than the per-million price.</li>
+<li><b>Do not make the standard long.</b> A standard nobody reads is worse than none, because everyone assumes it is being followed.</li>
+<li><b>Do not put client data in a prompt</b> without checking what your firm and the client have agreed. This is the one on the list that can end an engagement.</li>
+</ul>
+
+<hr>
+
+<p>If you adopt this and it works — or it does not — <a href="https://github.com/EVEglyphDesign/sapfans-io/discussions">say so</a>. Numbers from a real programme are worth more than this page.</p>
+
+</main>
+<footer><div class="wrap">
+<p>© 2026 EVEglyphDesign · EgD-SAPF-004 · Key ID EgD-KEY-2026-07 · 2026-09-18<br>
+Independent. Not affiliated with, endorsed by or sponsored by SAP SE or any service provider. SAP is a trademark of SAP SE.<br>
+Prices quoted are the vendors' published rates as at 2026-09-18 and change without notice.<br>
+Held in the open at <a href="https://github.com/EVEglyphDesign/sapfans-io">the SAPfans.io repository</a> — clone it, it is yours.</p>
+<p class="accent">Pour le bien-être du peuple.</p>
+</div></footer>
+</body></html>

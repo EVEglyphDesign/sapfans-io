@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Repositories · SAPfans.io</title>
+<meta name="description" content="A searchable directory of useful GitHub repositories for functional consultants using AI tools on SAP and enterprise projects — the harness, agent instruction formats, SAP tooling, open data standards and starter templates.">
+<meta property="og:title" content="Repositories · SAPfans.io">
+<meta property="og:description" content="A searchable directory of useful GitHub repositories for functional consultants using AI tools on project work.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* Directory controls — house tokens only, nothing new introduced */
+  .search{width:100%;box-sizing:border-box;background:var(--panel);color:var(--fg);border:1px solid var(--line);
+    padding:12px 14px;font:inherit;font-size:16px;margin:8px 0 14px}
+  .search:focus{outline:none;border-color:var(--accent)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 26px}
+  .chip{font-size:13px;letter-spacing:.02em;color:var(--dim);border:1px solid var(--line);background:var(--panel);
+    padding:5px 12px;cursor:pointer;border-radius:2px;font-family:inherit}
+  .chip:hover{color:var(--fg);border-color:var(--fg)}
+  .chip.on{color:#000;background:var(--accent);border-color:var(--accent);font-weight:700}
+  .count{font-size:13px;color:var(--dim);margin:0 0 18px}
+  .cat{margin:34px 0 10px}
+  .cat h2{margin:0 0 4px}
+  .cat p{color:var(--dim);font-size:14.5px;margin:0 0 12px}
+  .repo{background:var(--panel);border:1px solid var(--line);padding:14px 16px;margin:0 0 10px}
+  .repo h4{font-family:Fraunces,Georgia,serif;font-size:16px;font-weight:600;margin:0 0 4px}
+  .repo h4 a{text-decoration:none;color:var(--fg)}
+  .repo h4 a:hover{color:var(--accent)}
+  .repo p{font-size:14.5px;color:var(--fg);margin:0 0 8px}
+  .repo .tags{font-size:12px;color:var(--dim);letter-spacing:.03em}
+  .repo .tags span{margin-right:10px}
+  .empty{color:var(--dim);padding:20px 0}
+</style>
+</head><body>
+<!-- EGD-CHECKIN-START v4 · fixed thumb-reachable check-in corner · Dany Theriault -->
+<style>
+  body{padding-top:68px !important}
+  #egd-checkin{position:fixed !important;top:10px !important;right:12px !important;left:auto !important;bottom:auto !important;width:auto !important;max-width:none !important;margin:0 !important;z-index:9999 !important;display:flex !important;flex-direction:row !important;flex:0 0 auto !important;align-items:center !important;justify-content:flex-start !important;gap:2px !important;padding:4px !important;background:rgba(253,250,244,.96) !important;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid #d9d2c1 !important;border-radius:999px !important;box-shadow:0 4px 16px rgba(26,26,26,.14) !important;font-family:Inter,system-ui,sans-serif !important}
+  #egd-checkin a{display:flex !important;flex:0 0 auto !important;align-items:center !important;justify-content:center !important;width:46px !important;height:46px !important;padding:0 !important;margin:0 !important;border-radius:50% !important;background:#fff !important;border:1px solid transparent !important;text-decoration:none !important;color:inherit !important;box-shadow:0 1px 3px rgba(26,26,26,.08) !important;transition:border-color .15s ease,transform .15s ease,box-shadow .15s ease}
+  #egd-checkin a:hover,#egd-checkin a:focus-visible{border-color:#e87722 !important;transform:translateY(-1px);box-shadow:0 3px 8px rgba(232,119,34,.25) !important}
+  #egd-checkin a svg{width:24px !important;height:24px !important;display:block !important}
+  #egd-checkin a[data-net="linkedin"] svg{fill:#0a66c2 !important}
+  #egd-checkin a[data-net="x"] svg{fill:#000 !important}
+  #egd-checkin a[data-net="whatsapp"] svg{fill:#25d366 !important}
+  #egd-checkin .egd-sr{position:absolute !important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  @media (max-width:480px){body{padding-top:62px !important}#egd-checkin{top:8px !important;right:8px !important;padding:3px !important;gap:2px !important}#egd-checkin a{width:44px !important;height:44px !important}#egd-checkin a svg{width:22px !important;height:22px !important}}
+</style>
+<div id="egd-checkin" role="navigation" aria-label="Check in with Dany">
+  <a href="https://www.linkedin.com/in/danytheriault" target="_blank" rel="noopener" data-net="linkedin" title="Connect on LinkedIn"><span class="egd-sr">Connect on LinkedIn</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a>
+  <a href="https://x.com/DDTheriault75" target="_blank" rel="noopener" data-net="x" title="Follow on X"><span class="egd-sr">Follow on X</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+  <a href="https://wa.me/15062921452" target="_blank" rel="noopener" data-net="whatsapp" title="Message on WhatsApp"><span class="egd-sr">Message on WhatsApp</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.027 2c-5.51 0-9.987 4.478-9.987 9.988 0 1.76.46 3.482 1.334 5.001L2 22l5.121-1.343A9.94 9.94 0 0012.017 22h.005c5.51 0 9.987-4.478 9.987-9.988A9.928 9.928 0 0019.089 4.9 9.928 9.928 0 0012.032 2zm0 18.32h-.003a8.31 8.31 0 01-4.23-1.159l-.303-.18-3.14.823.838-3.06-.198-.313A8.245 8.245 0 013.78 12c0-4.54 3.696-8.236 8.24-8.236a8.19 8.19 0 015.826 2.412 8.19 8.19 0 012.412 5.83c0 4.54-3.697 8.235-8.24 8.235z"/></svg></a>
+</div>
+<!-- EGD-CHECKIN-END v4 -->
+
+<header><div class="bar">
+<a class="brand" href="index.html">SAPfans<span>.io</span></a>
+<nav><a href="index.html">Start</a><a href="tutorial.html">Tutorial</a><a href="standards.html">Standards</a><a href="repos.html" class='on'>Repositories</a><a href="heritage.html">Heritage</a></nav>
+</div></header>
+<main class="wrap">
+
+<span class="pill">EgD-SAPF-005 · Directory</span>
+<h1>Useful repositories</h1>
+<p class="lede">GitHub repositories worth knowing about if you are a functional consultant using AI tools on SAP or enterprise project work. Grouped by what they are for, one sentence each.</p>
+<p class="meta" id="meta">Loading the directory…</p>
+
+<label for="q" class="egd-sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Search repositories</label>
+<input class="search" id="q" type="search" placeholder="Search — try "odata", "copilot", "abap", "template"…" autocomplete="off">
+<div class="chips" id="chips"></div>
+<p class="count" id="count"></p>
+<div id="list"></div>
+
+<hr>
+
+<h2>Add one</h2>
+<p>This directory is a single file — <a href="https://github.com/EVEglyphDesign/sapfans-io/blob/main/docs/repos.json"><code>docs/repos.json</code></a> — so adding a repository is either a one-line pull request or an issue that someone turns into one.</p>
+<div class="cards">
+<div class="card"><h4><a href="https://github.com/EVEglyphDesign/sapfans-io/issues/new?template=repository.yml">Suggest a repository</a></h4><p>Name, link, which category, and one sentence on why a functional consultant would care.</p></div>
+<div class="card"><h4><a href="https://github.com/EVEglyphDesign/sapfans-io/edit/main/docs/repos.json">Edit the file directly</a></h4><p>If you are comfortable with a pull request. Keep the shape; one entry per repository.</p></div>
+</div>
+<p>Two rules. <b>No client material</b> — nothing from an engagement, however anonymised it feels. <b>Say why</b> — a link with no sentence is a bookmark, not a recommendation.</p>
+
+</main>
+<footer><div class="wrap">
+<p>© 2026 EVEglyphDesign · EgD-SAPF-005 · Key ID EgD-KEY-2026-07 · 2026-09-19<br>
+Independent. Not affiliated with, endorsed by or sponsored by SAP SE or any service provider. SAP is a trademark of SAP SE.<br>
+Repositories listed belong to their respective owners. Listing is not endorsement by them of this site, nor by this site of them beyond the sentence given.<br>
+Held in the open at <a href="https://github.com/EVEglyphDesign/sapfans-io">the SAPfans.io repository</a> — clone it, it is yours.</p>
+<p class="accent">Pour le bien-être du peuple.</p>
+</div></footer>
+
+<script>
+(function () {
+  var q = document.getElementById('q'), chips = document.getElementById('chips'),
+      list = document.getElementById('list'), count = document.getElementById('count'),
+      meta = document.getElementById('meta');
+  var data = null, active = 'all';
+
+  function esc(s) { return String(s).replace(/[&<>"']/g, function (c) {
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+
+  function matches(r, needle) {
+    if (!needle) return true;
+    var hay = (r.name + ' ' + r.description + ' ' + (r.tags || []).join(' ')).toLowerCase();
+    return needle.split(/\s+/).every(function (w) { return hay.indexOf(w) !== -1; });
+  }
+
+  function render() {
+    var needle = q.value.trim().toLowerCase(), shown = 0, html = '';
+    data.categories.forEach(function (c) {
+      if (active !== 'all' && active !== c.id) return;
+      var rows = data.repos.filter(function (r) { return r.category === c.id && matches(r, needle); });
+      if (!rows.length) return;
+      shown += rows.length;
+      html += '<section class="cat"><h2>' + esc(c.name) + '</h2><p>' + esc(c.blurb) + '</p>';
+      rows.forEach(function (r) {
+        html += '<div class="repo"><h4><a href="' + esc(r.url) + '" target="_blank" rel="noopener">' + esc(r.name) + '</a></h4>'
+              + '<p>' + esc(r.description) + '</p>'
+              + '<div class="tags">' + (r.tags || []).map(function (t) { return '<span>#' + esc(t) + '</span>'; }).join('') + '</div></div>';
+      });
+      html += '</section>';
+    });
+    list.innerHTML = html || '<p class="empty">Nothing matches. Try fewer words, or suggest the repository you were looking for below.</p>';
+    count.textContent = shown + ' of ' + data.repos.length + ' repositories' + (needle ? ' matching "' + q.value.trim() + '"' : '');
+  }
+
+  function chip(id, label) {
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'chip' + (id === active ? ' on' : '');
+    b.textContent = label; b.setAttribute('data-id', id);
+    b.addEventListener('click', function () {
+      active = id;
+      Array.prototype.forEach.call(chips.children, function (el) { el.classList.toggle('on', el.getAttribute('data-id') === id); });
+      render();
+    });
+    return b;
+  }
+
+  fetch('repos.json', { cache: 'no-cache' }).then(function (r) { return r.json(); }).then(function (d) {
+    data = d;
+    meta.textContent = d.repos.length + ' repositories in ' + d.categories.length + ' categories · updated ' + d.updated;
+    chips.appendChild(chip('all', 'All'));
+    d.categories.forEach(function (c) { chips.appendChild(chip(c.id, c.name)); });
+    q.addEventListener('input', render);
+    render();
+  }).catch(function () {
+    meta.textContent = 'The directory could not be loaded here.';
+    list.innerHTML = '<p class="empty">This page reads <code>repos.json</code> from the same folder, which works on the live site but not when the file is opened directly from disk. <a href="https://github.com/EVEglyphDesign/sapfans-io/blob/main/docs/repos.json">Read the file on GitHub</a> instead.</p>';
+  });
+})();
+</script>
+</body></html>

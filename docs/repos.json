@@ -1,0 +1,380 @@
+{
+  "updated": "2026-09-19",
+  "note": "One entry per repository. Edit this file by pull request, or open a 'Suggest a repository' issue and it gets added for you. Descriptions are one sentence: what it is and why a functional consultant would care. No client material, ever.",
+  "categories": [
+    {
+      "id": "harness",
+      "name": "Control unit & harness",
+      "blurb": "The kit this site describes. Start here."
+    },
+    {
+      "id": "ai",
+      "name": "AI tools & agent instructions",
+      "blurb": "How Claude, Copilot and the rest read instructions, and the servers that connect them to your systems."
+    },
+    {
+      "id": "sap",
+      "name": "SAP — official",
+      "blurb": "Maintained by SAP. Style guides, samples, SDKs."
+    },
+    {
+      "id": "sap-community",
+      "name": "SAP — community tooling",
+      "blurb": "Practitioner-built. The tools working teams actually use."
+    },
+    {
+      "id": "data",
+      "name": "Data, integration & standards",
+      "blurb": "The open formats and protocols the additive layer is built on."
+    },
+    {
+      "id": "templates",
+      "name": "Templates & starters",
+      "blurb": "Copy these to start a repository that looks right on day one."
+    }
+  ],
+  "repos": [
+    {
+      "name": "EVEglyphDesign/canon",
+      "url": "https://github.com/EVEglyphDesign/canon",
+      "category": "harness",
+      "description": "One canon, many surfaces: edit one file and the Claude, Copilot and Perplexity versions are generated from it, with a check that fails when they drift.",
+      "tags": [
+        "harness",
+        "canon",
+        "generator"
+      ]
+    },
+    {
+      "name": "EVEglyphDesign/eve-glyph-boot-contract",
+      "url": "https://github.com/EVEglyphDesign/eve-glyph-boot-contract",
+      "category": "harness",
+      "description": "The operating contract behind the harness — read-before-search, spend classes, output rules — as a loadable Claude skill with a defect register and version arc.",
+      "tags": [
+        "boot-contract",
+        "skill",
+        "spend"
+      ]
+    },
+    {
+      "name": "EVEglyphDesign/sovereign-starter",
+      "url": "https://github.com/EVEglyphDesign/sovereign-starter",
+      "category": "harness",
+      "description": "A one-file starter you paste into any AI surface: standing rules in your own voice, an observation register, and the rule of three that turns observations into rules.",
+      "tags": [
+        "starter",
+        "paste-in",
+        "rules"
+      ]
+    },
+    {
+      "name": "EVEglyphDesign/sapfans-io",
+      "url": "https://github.com/EVEglyphDesign/sapfans-io",
+      "category": "harness",
+      "description": "This site. The tutorial, the usage standards, and this directory — clone it and everything here is yours.",
+      "tags": [
+        "site",
+        "tutorial"
+      ]
+    },
+    {
+      "name": "anthropics/claude-code",
+      "url": "https://github.com/anthropics/claude-code",
+      "category": "ai",
+      "description": "Claude's terminal agent. Works inside a clone of your repository, reads CLAUDE.md automatically, and can write files rather than answers.",
+      "tags": [
+        "claude",
+        "agent",
+        "cli"
+      ]
+    },
+    {
+      "name": "anthropics/skills",
+      "url": "https://github.com/anthropics/skills",
+      "category": "ai",
+      "description": "Anthropic's public skills — the SKILL.md format the harness uses, with worked examples for documents, spreadsheets and PDFs.",
+      "tags": [
+        "claude",
+        "skills",
+        "format"
+      ]
+    },
+    {
+      "name": "github/awesome-copilot",
+      "url": "https://github.com/github/awesome-copilot",
+      "category": "ai",
+      "description": "Community-contributed instructions, agents and skills for GitHub Copilot — the Copilot-side equivalent of a skills library.",
+      "tags": [
+        "copilot",
+        "instructions",
+        "collection"
+      ]
+    },
+    {
+      "name": "agentsmd/agents.md",
+      "url": "https://github.com/agentsmd/agents.md",
+      "category": "ai",
+      "description": "The AGENTS.md format: one vendor-neutral instruction file that Claude, Copilot and a growing set of other coding agents all read.",
+      "tags": [
+        "agents.md",
+        "standard",
+        "neutral"
+      ]
+    },
+    {
+      "name": "modelcontextprotocol/servers",
+      "url": "https://github.com/modelcontextprotocol/servers",
+      "category": "ai",
+      "description": "Reference MCP servers — the protocol that lets an AI tool read your repository, your files or your database instead of guessing.",
+      "tags": [
+        "mcp",
+        "connectors",
+        "reference"
+      ]
+    },
+    {
+      "name": "github/github-mcp-server",
+      "url": "https://github.com/github/github-mcp-server",
+      "category": "ai",
+      "description": "GitHub's official MCP server. Gives an AI tool read and write access to repositories, issues and pull requests with permissions you scope.",
+      "tags": [
+        "mcp",
+        "github",
+        "official"
+      ]
+    },
+    {
+      "name": "cloudflare/mcp",
+      "url": "https://github.com/cloudflare/mcp",
+      "category": "ai",
+      "description": "Cloudflare's full-API MCP server — DNS, zones, Workers — using a search-then-execute pattern that keeps the token cost small.",
+      "tags": [
+        "mcp",
+        "cloudflare",
+        "dns"
+      ]
+    },
+    {
+      "name": "microsoft/CopilotStudioSamples",
+      "url": "https://github.com/microsoft/CopilotStudioSamples",
+      "category": "ai",
+      "description": "Microsoft's samples for Copilot Studio agents — the reference for how a client's existing agent registers an MCP server and calls its tools.",
+      "tags": [
+        "copilot-studio",
+        "mcp",
+        "samples",
+        "microsoft"
+      ]
+    },
+    {
+      "name": "microsoft/mcp",
+      "url": "https://github.com/microsoft/mcp",
+      "category": "ai",
+      "description": "Catalogue of Microsoft's official MCP server implementations. Shows the shape Microsoft expects a server to have before Copilot Studio will call it.",
+      "tags": [
+        "mcp",
+        "microsoft",
+        "catalogue"
+      ]
+    },
+    {
+      "name": "langchain-ai/langgraph",
+      "url": "https://github.com/langchain-ai/langgraph",
+      "category": "ai",
+      "description": "Deterministic agent paths as graphs. Where the reasoning behind an MCP tool lives when it has to be repeatable, testable and owned by the client rather than by the front-end platform.",
+      "tags": [
+        "agents",
+        "deterministic",
+        "reasoning"
+      ]
+    },
+    {
+      "name": "langfuse/langfuse",
+      "url": "https://github.com/langfuse/langfuse",
+      "category": "ai",
+      "description": "Open-source tracing and evaluation for LLM applications. Every tool call logged with its provenance — on the client's own telemetry, not the vendor's.",
+      "tags": [
+        "observability",
+        "tracing",
+        "provenance",
+        "self-hosted"
+      ]
+    },
+    {
+      "name": "SAP/styleguides",
+      "url": "https://github.com/SAP/styleguides",
+      "category": "sap",
+      "description": "SAP's own coding style guides, Clean ABAP above all. The reference to point at when a developer asks what 'done properly' means.",
+      "tags": [
+        "abap",
+        "clean-code",
+        "style"
+      ]
+    },
+    {
+      "name": "SAP/abap-cleaner",
+      "url": "https://github.com/SAP/abap-cleaner",
+      "category": "sap",
+      "description": "Applies a hundred-plus cleanup rules to ABAP at one keystroke. Useful to know exists when reviewing custom code quality on a programme.",
+      "tags": [
+        "abap",
+        "formatter",
+        "quality"
+      ]
+    },
+    {
+      "name": "SAP/cloud-sdk-js",
+      "url": "https://github.com/SAP/cloud-sdk-js",
+      "category": "sap",
+      "description": "SAP Cloud SDK for JavaScript — typed clients for S/4HANA Cloud, SuccessFactors and other SAP services over OData and OpenAPI.",
+      "tags": [
+        "btp",
+        "odata",
+        "sdk"
+      ]
+    },
+    {
+      "name": "SAP-samples",
+      "url": "https://github.com/SAP-samples",
+      "category": "sap",
+      "description": "SAP's organisation of sample code — hundreds of small, runnable examples across BTP, integration, analytics and extension scenarios.",
+      "tags": [
+        "samples",
+        "btp",
+        "org"
+      ]
+    },
+    {
+      "name": "abapGit/abapGit",
+      "url": "https://github.com/abapGit/abapGit",
+      "category": "sap-community",
+      "description": "Git client for ABAP. The reason ABAP code can live in a GitHub repository at all — and be reviewed, versioned and shared like everything else.",
+      "tags": [
+        "abap",
+        "git",
+        "version-control"
+      ]
+    },
+    {
+      "name": "abaplint/abaplint",
+      "url": "https://github.com/abaplint/abaplint",
+      "category": "sap-community",
+      "description": "Static analysis for ABAP that runs outside SAP — in CI, in an editor, or on a pull request.",
+      "tags": [
+        "abap",
+        "linter",
+        "ci"
+      ]
+    },
+    {
+      "name": "abap-openapi/abap-openapi",
+      "url": "https://github.com/abap-openapi/abap-openapi",
+      "category": "sap-community",
+      "description": "Generates ABAP clients and servers from an OpenAPI description, so an integration contract can be written once and honoured on both sides.",
+      "tags": [
+        "abap",
+        "openapi",
+        "integration"
+      ]
+    },
+    {
+      "name": "OAI/OpenAPI-Specification",
+      "url": "https://github.com/OAI/OpenAPI-Specification",
+      "category": "data",
+      "description": "The OpenAPI standard itself. When an interface is described this way, every tool — including the AI ones — can read the contract.",
+      "tags": [
+        "openapi",
+        "standard",
+        "api"
+      ]
+    },
+    {
+      "name": "OData/odata.net",
+      "url": "https://github.com/OData/odata.net",
+      "category": "data",
+      "description": "Reference .NET libraries for OData, the query protocol most SAP read access uses. Useful for understanding what an OData feed can and cannot do.",
+      "tags": [
+        "odata",
+        "protocol",
+        "reference"
+      ]
+    },
+    {
+      "name": "apache/iceberg",
+      "url": "https://github.com/apache/iceberg",
+      "category": "data",
+      "description": "An open table format for large analytical datasets. Where a mirrored record can land so that it loads anywhere, not just in the tool that wrote it.",
+      "tags": [
+        "table-format",
+        "portability",
+        "lakehouse"
+      ]
+    },
+    {
+      "name": "duckdb/duckdb",
+      "url": "https://github.com/duckdb/duckdb",
+      "category": "data",
+      "description": "An in-process analytical SQL engine — no server, opens CSV, Parquet and Excel files directly. For one person querying an extract on a laptop. Not a system of record; that is PostgreSQL's job.",
+      "tags": [
+        "sql",
+        "analysis",
+        "extracts",
+        "no-server"
+      ]
+    },
+    {
+      "name": "postgres/postgres",
+      "url": "https://github.com/postgres/postgres",
+      "category": "data",
+      "description": "The open-source system of record. Where a twin lives once it has to serve more than one person, keep history, and control access — the counterpart to DuckDB, not a competitor.",
+      "tags": [
+        "sql",
+        "system-of-record",
+        "server",
+        "pgvector"
+      ]
+    },
+    {
+      "name": "eclipse-tractusx/tractusx-edc",
+      "url": "https://github.com/eclipse-tractusx/tractusx-edc",
+      "category": "data",
+      "description": "The Catena-X data-space connector — sovereign, contract-governed data sharing across an industrial supply chain. Same idea as the additive layer, applied between companies.",
+      "tags": [
+        "data-space",
+        "sovereignty",
+        "supply-chain"
+      ]
+    },
+    {
+      "name": "github/gitignore",
+      "url": "https://github.com/github/gitignore",
+      "category": "templates",
+      "description": "The standard collection of .gitignore files. Pick the one for your tooling so exports, secrets and scratch files never end up committed.",
+      "tags": [
+        "gitignore",
+        "hygiene"
+      ]
+    },
+    {
+      "name": "othneildrew/Best-README-Template",
+      "url": "https://github.com/othneildrew/Best-README-Template",
+      "category": "templates",
+      "description": "A well-structured README template. A repository whose README says what it is, who it serves and its current state is one people actually use.",
+      "tags": [
+        "readme",
+        "template"
+      ]
+    },
+    {
+      "name": "EVEglyphDesign/sapfans-io — repo-skeleton",
+      "url": "https://github.com/EVEglyphDesign/sapfans-io/tree/main/templates/repo-skeleton",
+      "category": "templates",
+      "description": "The folder shape from the tutorial — README, decisions, analysis, sources, canon — ready to copy into a new repository.",
+      "tags": [
+        "skeleton",
+        "starter",
+        "tutorial"
+      ]
+    }
+  ]
+}

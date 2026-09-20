@@ -1,0 +1,60 @@
+name: Suggest a repository
+description: Add a GitHub repository to the directory at sapfans.io/repos.html
+title: "[Repo] "
+labels: ["repository"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        One sentence on why a functional consultant would care is the whole
+        ask. A link with no sentence is a bookmark, not a recommendation.
+
+        **No client material.** Public repositories only.
+
+  - type: input
+    id: url
+    attributes:
+      label: Repository link
+      placeholder: "https://github.com/owner/name"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Control unit & harness
+        - AI tools & agent instructions
+        - SAP — official
+        - SAP — community tooling
+        - Data, integration & standards
+        - Templates & starters
+        - Something else — say what below
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it is useful, in one sentence
+      description: What it is, and what a functional consultant would use it for.
+    validations:
+      required: true
+
+  - type: input
+    id: tags
+    attributes:
+      label: Tags
+      description: Optional. Three or four words, comma-separated — what someone would search for.
+      placeholder: "odata, integration, sdk"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirm
+      options:
+        - label: This is a public repository and contains nothing from a client engagement.
+          required: true

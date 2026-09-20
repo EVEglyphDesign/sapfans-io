@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tutorial · SAPfans.io</title>
+<meta name="description" content="From nothing to a working repository and harness in about an hour. Assumes you have never used GitHub. For functional consultants using Claude, Copilot or Perplexity on project work.">
+<meta property="og:title" content="Tutorial · SAPfans.io">
+<meta property="og:description" content="From nothing to a working repository and harness in about an hour. Assumes you have never used GitHub.">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head><body>
+<!-- EGD-CHECKIN-START v4 · fixed thumb-reachable check-in corner · Dany Theriault -->
+<style>
+  body{padding-top:68px !important}
+  #egd-checkin{position:fixed !important;top:10px !important;right:12px !important;left:auto !important;bottom:auto !important;width:auto !important;max-width:none !important;margin:0 !important;z-index:9999 !important;display:flex !important;flex-direction:row !important;flex:0 0 auto !important;align-items:center !important;justify-content:flex-start !important;gap:2px !important;padding:4px !important;background:rgba(253,250,244,.96) !important;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid #d9d2c1 !important;border-radius:999px !important;box-shadow:0 4px 16px rgba(26,26,26,.14) !important;font-family:Inter,system-ui,sans-serif !important}
+  #egd-checkin a{display:flex !important;flex:0 0 auto !important;align-items:center !important;justify-content:center !important;width:46px !important;height:46px !important;padding:0 !important;margin:0 !important;border-radius:50% !important;background:#fff !important;border:1px solid transparent !important;text-decoration:none !important;color:inherit !important;box-shadow:0 1px 3px rgba(26,26,26,.08) !important;transition:border-color .15s ease,transform .15s ease,box-shadow .15s ease}
+  #egd-checkin a:hover,#egd-checkin a:focus-visible{border-color:#e87722 !important;transform:translateY(-1px);box-shadow:0 3px 8px rgba(232,119,34,.25) !important}
+  #egd-checkin a svg{width:24px !important;height:24px !important;display:block !important}
+  #egd-checkin a[data-net="linkedin"] svg{fill:#0a66c2 !important}
+  #egd-checkin a[data-net="x"] svg{fill:#000 !important}
+  #egd-checkin a[data-net="whatsapp"] svg{fill:#25d366 !important}
+  #egd-checkin .egd-sr{position:absolute !important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  @media (max-width:480px){body{padding-top:62px !important}#egd-checkin{top:8px !important;right:8px !important;padding:3px !important;gap:2px !important}#egd-checkin a{width:44px !important;height:44px !important}#egd-checkin a svg{width:22px !important;height:22px !important}}
+</style>
+<div id="egd-checkin" role="navigation" aria-label="Check in with Dany">
+  <a href="https://www.linkedin.com/in/danytheriault" target="_blank" rel="noopener" data-net="linkedin" title="Connect on LinkedIn"><span class="egd-sr">Connect on LinkedIn</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a>
+  <a href="https://x.com/DDTheriault75" target="_blank" rel="noopener" data-net="x" title="Follow on X"><span class="egd-sr">Follow on X</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+  <a href="https://wa.me/15062921452" target="_blank" rel="noopener" data-net="whatsapp" title="Message on WhatsApp"><span class="egd-sr">Message on WhatsApp</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.027 2c-5.51 0-9.987 4.478-9.987 9.988 0 1.76.46 3.482 1.334 5.001L2 22l5.121-1.343A9.94 9.94 0 0012.017 22h.005c5.51 0 9.987-4.478 9.987-9.988A9.928 9.928 0 0019.089 4.9 9.928 9.928 0 0012.032 2zm0 18.32h-.003a8.31 8.31 0 01-4.23-1.159l-.303-.18-3.14.823.838-3.06-.198-.313A8.245 8.245 0 013.78 12c0-4.54 3.696-8.236 8.24-8.236a8.19 8.19 0 015.826 2.412 8.19 8.19 0 012.412 5.83c0 4.54-3.697 8.235-8.24 8.235z"/></svg></a>
+</div>
+<!-- EGD-CHECKIN-END v4 -->
+
+<header><div class="bar">
+<a class="brand" href="index.html">SAPfans<span>.io</span></a>
+<nav><a href="index.html">Start</a><a href="tutorial.html" class='on'>Tutorial</a><a href="standards.html">Standards</a><a href="repos.html">Repositories</a><a href="heritage.html">Heritage</a></nav>
+</div></header>
+<main class="wrap">
+
+<span class="pill">EgD-SAPF-002 · Tutorial</span>
+<h1>From nothing to a working setup</h1>
+<p class="lede">About an hour, most of it once per project. This assumes you have never used GitHub and are not a developer.</p>
+<p class="meta">What you end up with: one repository your team can read, a harness your AI tools follow, and a habit that makes the output accumulate · 2026-09-18</p>
+
+<h2>Before you start</h2>
+<ul>
+<li>A <b>GitHub account</b>. Free. Use a personal email, not a client one.</li>
+<li><b>One AI tool</b> you already pay for — Claude, Copilot or Perplexity. Any of them.</li>
+<li><b>One real workstream</b> to try it on. Not a test. The habit only sticks on real work.</li>
+</ul>
+<p>Nothing here needs client data, and nothing here should ever contain any.</p>
+
+<hr>
+
+<h2>Step 1 · Make the repository</h2>
+<p>A repository is a folder with a history. Every change is recorded — what changed, who changed it, when, and why. That last part is the reason this is worth doing.</p>
+<p>On GitHub, click <b>New repository</b>. Name it after the workstream, lowercase with hyphens — <code>acme-o2c-redesign</code>, not <code>Project Files v3 FINAL</code>. Set it <b>private</b>. Tick <b>Add a README</b>.</p>
+<p>Then give it a shape. The shape matters more than it looks: it is what lets anyone — a colleague, or an AI tool landing cold — know where things go without being told.</p>
+<pre>your-repo/
+├── README.md        what this is, who it is for, and its current state
+├── decisions/       one file per decision. The part people ask for later
+├── analysis/        working papers, comparisons, drafts
+├── sources/         what you based things on, with dates
+└── canon/           the harness (Step 2)</pre>
+<p>Four folders. Make them by creating a file inside each — GitHub needs a file to keep a folder.</p>
+
+<h3>One repository, one subject</h3>
+<p>If you cannot say what the repository is <i>of</i> in one sentence, it is two repositories. The most common early mistake is one repository called <code>client-name</code> that becomes a junk drawer within a month.</p>
+
+<hr>
+
+<h2>Step 2 · Add the harness</h2>
+<p>The harness is the instructions your tools read before they do anything. You write them once, in one file, and the tool-specific files are generated from it.</p>
+<p>That last part is the bit that matters. Claude reads a file called <code>CLAUDE.md</code>. Copilot reads <code>.github/copilot-instructions.md</code>. Perplexity reads whatever you paste into a Space. If you maintain those by hand you will have three sets of rules within a month, quietly disagreeing with each other, and no way to tell which one an answer came from.</p>
+<p>So you keep <b>one</b> file — <code>canon/CANON.md</code> — and generate the rest:</p>
+<pre>curl -sL https://raw.githubusercontent.com/EVEglyphDesign/canon/main/harness/install.sh | bash</pre>
+<p>That writes the source file, the generator, and the tool-specific files. From then on you edit <code>canon/CANON.md</code> and re-run one command; everything else updates together and a check fails the moment they drift apart.</p>
+
+<h3>What goes in it</h3>
+<p>Keep it short. A harness nobody reads is worse than none, because people assume it is being followed. Four things earn their place:</p>
+<table>
+<thead><tr><th>Section</th><th>What it does</th></tr></thead>
+<tbody>
+<tr><td><b>Read the repo first</b></td><td>Stops the tool searching the internet for something already in your folder. This is where most wasted spend goes.</td></tr>
+<tr><td><b>Write files, not answers</b></td><td>Output lands in <code>decisions/</code> or <code>analysis/</code>, not in the chat window.</td></tr>
+<tr><td><b>Ask before expensive</b></td><td>Deep research, big batches and long runs get confirmed first. Everything cheap just happens.</td></tr>
+<tr><td><b>Project specifics</b></td><td>Client naming, the modules in scope, what is already decided, what is off-limits.</td></tr>
+</tbody>
+</table>
+<p>The first three are the same on every project. Only the fourth changes.</p>
+
+<hr>
+
+<h2>Step 3 · Point your tools at it</h2>
+
+<h3>Claude</h3>
+<p>Work in a clone of the repository rather than pasting files into a chat window. It can then read and search the actual folder, instead of only what you remembered to paste. It picks up <code>CLAUDE.md</code> automatically.</p>
+
+<h3>Copilot</h3>
+<p>It reads <code>.github/copilot-instructions.md</code> in the repository with no further setup. The generator writes that file for you.</p>
+
+<h3>Perplexity, ChatGPT, or anything else</h3>
+<p>These cannot read your repository, so give them the self-contained copy the generator produces. Paste the whole of <code>canon/PASTE-IN.md</code> into a Space or Project once. When the harness changes, re-paste it — the file carries a stamp at the top so you can tell whether the copy in the Space is current.</p>
+
+<hr>
+
+<h2>Step 4 · The habit that does the work</h2>
+<blockquote><p>Ask for a file, not an answer.</p></blockquote>
+<p>This is the single change that makes the difference, and it is almost free. Instead of "what are the trade-offs between these two designs", ask for "a file in <code>decisions/</code> comparing these two designs, with the recommendation and what it rests on."</p>
+<p>Same work, same cost. But one of them is gone when you close the tab and the other one is still there in six months when somebody asks why.</p>
+
+<h3>What a decision file looks like</h3>
+<pre>2026-09-18 · Credit block strategy for the O2C redesign
+
+Decision: Block at delivery, not at order entry.
+
+Alternatives considered:
+  - Block at order entry — rejected, stalls the call centre
+  - No automated block — rejected, AR exposure
+
+Rests on: the September aged-debt extract (sources/ar-aged-2026-09.md),
+          and the workshop on 11 Sep with the AR team
+
+Agreed by: D. Theriault, plus AR lead
+Revisit if: DSO moves past 45 days</pre>
+<p>Eight lines. Nobody has ever regretted writing one.</p>
+
+<hr>
+
+<h2>Step 5 · Read before you search</h2>
+<p>Most wasted AI spend is not caused by a hard question. It is caused by a tool that starts cold and goes looking on the internet for something already sitting in your repository. The harness should tell it to work down this order and stop at the first step that answers:</p>
+<table>
+<thead><tr><th>#</th><th>Where to look</th><th>Cost</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>What is already in this conversation</td><td>free</td></tr>
+<tr><td>2</td><td>What we produced in the last few sessions</td><td>near-free</td></tr>
+<tr><td>3</td><td><b>The repository</b></td><td>cheap</td></tr>
+<tr><td>4</td><td>One targeted search or page fetch</td><td>cheap</td></tr>
+<tr><td>5</td><td>Deep research, big batches, long runs</td><td><b>expensive</b></td></tr>
+</tbody>
+</table>
+<p>Step 3 is the one that gets skipped. A repository full of your own decisions costs almost nothing to read and is more reliable than anything a search will return, because it is what your project actually agreed.</p>
+
+<hr>
+
+<h2>Step 6 · Two rules that save you later</h2>
+<p><b>Say where things came from.</b> A number without a source is an opinion with a table around it. When something is extracted from a system or a document, note which one and when — a line in <code>sources/</code> is enough. You will need it the first time someone challenges a figure.</p>
+<p><b>Never delete, supersede.</b> When a decision changes, add the new one and mark the old as superseded. Do not edit history. The reason a decision changed is often more valuable than the decision, and deleting it throws that away.</p>
+
+<hr>
+
+<h2>When the client's front door is Copilot Studio</h2>
+<p>Some clients already have an agent — a Copilot Studio agent in Teams, say — and it is not going anywhere. It does not read a <code>CLAUDE.md</code>. It calls <b>tools</b>.</p>
+<p>That changes where the harness sits, not what it does. The repository is still the record. The client's agent becomes a <i>caller</i> of it, through an MCP server you expose — three tools, read-only, each result carrying where it came from. The agent stays the interface the client knows; the record, the reasoning and the audit trail stay in the client's own custody.</p>
+<p>The one thing to write before anything else is the <b>tool contract</b>: what the three tools are, what they take, what they return, and the rule that they never widen access beyond what the client's platform already grants. It is a short file, it is committed to the project repository, and it is what everyone reads to know what the seam does.</p>
+<p><a class="btn ghost" href="https://github.com/EVEglyphDesign/sapfans-io/blob/main/templates/MCP-TOOL-CONTRACT.md">Copy the tool-contract template</a></p>
+<p>Three platform facts to check before you commit to it, all verified against Microsoft's documentation on 2026-09-19 and all liable to move: Copilot Studio requires <b>Streamable HTTP</b> transport (SSE was dropped after August 2025); it authenticates by API key or OAuth 2.0; and it reaches the server through Power Platform connectors, so the client's <b>DLP policy</b> has to allow it or the calls fail silently.</p>
+
+<hr>
+
+<h2>What to do next</h2>
+<div class="cards">
+<div class="card"><h4><a href="standards.html">Set a usage standard</a></h4><p>If this is for a team rather than just you, agree what gets spent on what before the bill arrives.</p></div>
+<div class="card"><h4><a href="https://github.com/EVEglyphDesign/sapfans-io/discussions">Say how it went</a></h4><p>What worked, what did not, what you would change. That is how this gets better.</p></div>
+<div class="card"><h4><a href="https://github.com/EVEglyphDesign/sapfans-io/issues/new/choose">Ask a question</a></h4><p>Stuck on a step, or something here is wrong for your setup. Open an issue.</p></div>
+</div>
+
+</main>
+<footer><div class="wrap">
+<p>© 2026 EVEglyphDesign · EgD-SAPF-002 · Key ID EgD-KEY-2026-07 · 2026-09-18<br>
+Independent. Not affiliated with, endorsed by or sponsored by SAP SE or any service provider. SAP is a trademark of SAP SE.<br>
+Held in the open at <a href="https://github.com/EVEglyphDesign/sapfans-io">the SAPfans.io repository</a> — clone it, it is yours.</p>
+<p class="accent">Pour le bien-être du peuple.</p>
+</div></footer>
+</body></html>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://sapfans.io/index.html</loc><lastmod>2026-08-02</lastmod></url>
-  <url><loc>https://sapfans.io/heritage.html</loc><lastmod>2026-08-02</lastmod></url>
-  <url><loc>https://sapfans.io/practitioners.html</loc><lastmod>2026-08-02</lastmod></url>
-  <url><loc>https://sapfans.io/pattern.html</loc><lastmod>2026-08-02</lastmod></url>
-  <url><loc>https://sapfans.io/sovereign-start.html</loc><lastmod>2026-08-28</lastmod></url>
+  <url><loc>https://sapfans.io/</loc><lastmod>2026-09-18</lastmod><priority>1.0</priority></url>
+  <url><loc>https://sapfans.io/tutorial.html</loc><lastmod>2026-09-18</lastmod><priority>0.9</priority></url>
+  <url><loc>https://sapfans.io/standards.html</loc><lastmod>2026-09-18</lastmod><priority>0.8</priority></url>
+  <url><loc>https://sapfans.io/repos.html</loc><lastmod>2026-09-19</lastmod><priority>0.8</priority></url>
+  <url><loc>https://sapfans.io/heritage.html</loc><lastmod>2026-09-18</lastmod><priority>0.5</priority></url>
 </urlset>

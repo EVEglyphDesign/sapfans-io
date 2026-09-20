@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Introduce yourself
+    url: https://github.com/EVEglyphDesign/sapfans-io/discussions
+    about: Say what you work on and what you are trying to organise. Discussions, not issues.
+  - name: Message me directly
+    url: https://www.linkedin.com/in/danytheriault
+    about: If GitHub is not where you want to start, LinkedIn works.
