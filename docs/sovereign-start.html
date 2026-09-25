@@ -2,14 +2,14 @@
 <html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SAPfans.io · Make your AI work accumulate</title>
-<meta name="description" content="You already use Claude, Copilot or Perplexity on your projects. This is how to point them at a GitHub repository so the work lands somewhere, the decisions are recorded, and the spend shows a return. Written by a functional consultant, for functional consultants.">
-<meta property="og:title" content="SAPfans.io · Make your AI work accumulate">
-<meta property="og:description" content="Point Claude, Copilot or Perplexity at a GitHub repository so the work lands, the decisions are recorded, and the spend shows a return.">
+<title>Sovereign Start &middot; SAPfans.io</title>
+<meta name="description" content="The most basic boundary you can put around an AI surface. Three edges — EVE Enterprise Harness, canon, observation registry — downloadable as one Markdown file. The floor a practitioner needs before pointing an AI surface at their record.">
+<meta property="og:title" content="Sovereign Start &middot; SAPfans.io">
+<meta property="og:description" content="The most basic boundary you can put around an AI surface. Three edges downloadable as one Markdown file.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
   .tri-wrap { display: flex; justify-content: center; margin: 24px 0 16px; }
@@ -24,7 +24,9 @@
 </head><body>
 <!-- EGD-CHECKIN-START v4 · fixed thumb-reachable check-in corner · Dany Theriault -->
 <style>
+  /* Reserve top-right corner on the page so existing chrome doesn't collide */
   body{padding-top:68px !important}
+  /* Extra specificity via #egd-checkin to defeat any host-page nav rules */
   #egd-checkin{position:fixed !important;top:10px !important;right:12px !important;left:auto !important;bottom:auto !important;width:auto !important;max-width:none !important;margin:0 !important;z-index:9999 !important;display:flex !important;flex-direction:row !important;flex:0 0 auto !important;align-items:center !important;justify-content:flex-start !important;gap:2px !important;padding:4px !important;background:rgba(253,250,244,.96) !important;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid #d9d2c1 !important;border-radius:999px !important;box-shadow:0 4px 16px rgba(26,26,26,.14) !important;font-family:Inter,system-ui,sans-serif !important}
   #egd-checkin a{display:flex !important;flex:0 0 auto !important;align-items:center !important;justify-content:center !important;width:46px !important;height:46px !important;padding:0 !important;margin:0 !important;border-radius:50% !important;background:#fff !important;border:1px solid transparent !important;text-decoration:none !important;color:inherit !important;box-shadow:0 1px 3px rgba(26,26,26,.08) !important;transition:border-color .15s ease,transform .15s ease,box-shadow .15s ease}
   #egd-checkin a:hover,#egd-checkin a:focus-visible{border-color:#e87722 !important;transform:translateY(-1px);box-shadow:0 3px 8px rgba(232,119,34,.25) !important}
@@ -44,16 +46,19 @@
 
 <header><div class="bar">
 <a class="brand" href="index.html">SAPfans<span>.io</span></a>
-<nav><a href="index.html" class='on'>Start</a><a href="sovereign-start.html">Sovereign Start</a><a href="tutorial.html">Tutorial</a><a href="standards.html">Standards</a><a href="repos.html">Repositories</a><a href="heritage.html">Heritage</a></nav>
+<nav><a href="index.html">Start</a><a href="sovereign-start.html" class='on'>Sovereign Start</a><a href="tutorial.html">Tutorial</a><a href="standards.html">Standards</a><a href="repos.html">Repositories</a><a href="heritage.html">Heritage</a></nav>
 </div></header>
+
 <main class="wrap">
 
-<span class="pill">EgD-SAPF-001 r2 · Start here</span>
-<h1>Make the AI work accumulate</h1>
-<p class="lede">You already use Claude, Copilot or Perplexity on your projects. This is how to point them at a GitHub repository so the work lands somewhere, the decisions are recorded, and the spend shows a return.</p>
-<p class="meta">Written by a functional consultant, for functional consultants · 2026-09-18</p>
-<p><a class="btn" href="tutorial.html">Start the tutorial</a>
-<a class="btn ghost" href="standards.html">Set a usage standard</a></p>
+<span class="pill">EgD-SAPF-002 &middot; Sovereign Start</span>
+<h1>The most basic boundary<br>you can put around an AI surface.</h1>
+<p class="lede">Three edges. One repository. Downloadable as one Markdown file. Drop it into a new GitHub repo and your AI surface has guardrails it did not have twenty minutes earlier.</p>
+
+<p>
+  <a class="btn" href="https://raw.githubusercontent.com/EVEglyphDesign/sovereign-starter/main/SOVEREIGN-STARTER.md" download>Download <code>SOVEREIGN-STARTER.md</code></a>
+  <a class="btn ghost" href="https://eveglyphdesign.github.io/sovereign-starter/">Read the landing</a>
+</p>
 
 <section class="tri-wrap" aria-label="The triangle inside the repository circle">
 <svg viewBox="-60 0 640 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="tri-title tri-desc">
@@ -102,85 +107,42 @@
 </div>
 
 <p>Take the EVE Enterprise Harness away and the surface drifts. Take the canon away and the artifact leaks. Take the observation registry away and the other two become preferences instead of rules.</p>
-<p><a class="btn ghost" href="sovereign-start.html">Sovereign Start</a></p>
 
-<hr>
+<h2>Why bother</h2>
 
-<h2>The problem, in one paragraph</h2>
-<p>You ask Claude to work through a config decision. You get a good answer. You close the tab. Next week someone asks why the decision went that way, and the reasoning is gone — it was in a chat window nobody kept. So you ask again, and pay again, and get an answer that is slightly different from the first one. Multiply that across a project team and the tools have cost real money without leaving anything behind.</p>
-<p>Developers solved this a long time ago. They put the work in a repository. <b>The repository is the control unit</b> — it holds the decision, who made it, when, and what it was based on. That is all this site is suggesting: that the functional side of the project use the same control unit the technical side already uses, and point the AI tools at it.</p>
+<blockquote class="quote">The AI surface is a web browser. Nothing you say to it is permanent. Nothing you reason inside it comes back to you once the session closes.</blockquote>
 
-<section class="rings" aria-label="The idea, in one picture">
-<svg viewBox="0 0 260 260" role="img" aria-label="Three concentric rings: the record inside, the practitioner around it, the vendor outside">
-  <defs>
-    <radialGradient id="core" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#e87722" stop-opacity=".18"/>
-      <stop offset="100%" stop-color="#e87722" stop-opacity="0"/>
-    </radialGradient>
-  </defs>
-  <circle cx="130" cy="130" r="120" fill="none" stroke="#c8c8c8" stroke-opacity=".55" stroke-dasharray="3 5"/>
-  <circle cx="130" cy="130" r="84"  fill="none" stroke="#ffffff" stroke-opacity=".85" stroke-width="1.25"/>
-  <circle cx="130" cy="130" r="48"  fill="url(#core)" stroke="#e87722" stroke-width="2"/>
-  <polygon points="130,102 154,146 106,146" fill="none" stroke="#e87722" stroke-width="1.5" stroke-linejoin="round"/>
-  <text x="130" y="134" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-size="12" font-weight="700" fill="#ffffff">record</text>
-  <text x="130" y="64"  text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#ffffff" opacity=".85">practitioner</text>
-  <text x="130" y="24"  text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#c8c8c8">vendor</text>
-</svg>
-<div class="rings-legend">
-  <div class="row"><span class="dot"></span><div><b>Inner — the record</b><p>Your repository. The decisions, the analysis, the working papers. Yours, readable, in plain files.</p></div></div>
-  <div class="row"><span class="dot mid"></span><div><b>Mid — you</b><p>Where you and your AI tools work. Reads from the system, writes to the repository. Never writes back into the system.</p></div></div>
-  <div class="row"><span class="dot outer"></span><div><b>Outer — the system</b><p>SAP, or whatever the client runs. Untouched. This layer sits on top and changes nothing underneath.</p></div></div>
-</div>
-</section>
+<p>Facebook is beginning to give people their history back. AI surfaces are not promising that yet. Until they do, the only way to keep what you think is to keep it somewhere you hold. You hold the repository. That is the whole idea. Everything else is mechanics.</p>
 
-<div class="drill" aria-label="The three steps">
-  <div class="step"><span class="n">1</span><h4>Set up the repo</h4><p>One repository per workstream, with a shape the whole team recognises. Twenty minutes.</p></div>
-  <div class="step"><span class="n">2</span><h4>Add the harness</h4><p>One file of instructions your tools read automatically, so every session starts warm.</p></div>
-  <div class="step"><span class="n">3</span><h4>Set a usage standard</h4><p>Agree what the team spends on, and what a result looks like. Otherwise the bill grows without the output.</p></div>
+<p>This scaffold is <b>not</b> the sophisticated version. It is not the enterprise version. It is not the controlled EVEglyphDesign canon. It is the minimum shape that still works. More guardrails can be added on top later. The three edges are the floor.</p>
+
+<h2>How this connects to the doctrine</h2>
+
+<p>SAPfans.io asks for the right to <b>add</b>: to mirror the ledger read-only into a store the customer owns, and to build on top of it. The <a href="pattern.html">pattern</a> is provider-neutral — fork the repo, point your AI at the record, build one twin. That step assumes you already have a repository your AI reads and writes against, and an operating shape that keeps its output honest. If you do not, the pattern does not land.</p>
+
+<p>Sovereign Start is the floor beneath the pattern. It gives a first-time practitioner a repository, an EVE Enterprise Harness, an output canon, and an observation registry in one file — enough shape that an AI surface can be pointed at their record without producing toilet paper. Once the floor is in, the pattern becomes usable.</p>
+
+<div class="drill" aria-label="How to use it">
+  <div class="step"><span class="n">1</span><h4>Download the file</h4><p>One Markdown file: <a href="https://raw.githubusercontent.com/EVEglyphDesign/sovereign-starter/main/SOVEREIGN-STARTER.md"><code>SOVEREIGN-STARTER.md</code></a>. Save it as <code>README.md</code> in the root of a new GitHub repository.</p></div>
+  <div class="step"><span class="n">2</span><h4>Point your AI at it</h4><p>Perplexity, Claude, ChatGPT, Gemini — whichever surface reads your repository. Ask it to read the file and follow the setup in §0.</p></div>
+  <div class="step"><span class="n">3</span><h4>Take the pattern</h4><p>Now go to the <a href="pattern.html">Pattern</a>. Fork the repo, mirror the record you care about read-only, build one twin. The floor is in.</p></div>
 </div>
 
 <hr>
-
-<h2>What a harness is</h2>
-<p>A harness is a small set of written instructions that your AI tools read before they do anything — the same instructions, every time, whichever tool you are using.</p>
-<p>Without one, every session starts cold. The tool does not know your project, your client's naming, what was already decided, or where to put the output. So it guesses, or it searches the internet for something already sitting in your repository. That is where most of the wasted spend goes — not on hard questions, but on re-deriving things you already had.</p>
-<p>With one, the tool opens the repository first, reads what has already been agreed, and writes its output back as a file rather than a message in a window. The kit is small — one file you edit, and the tool-specific files are generated from it so Claude, Copilot and Perplexity cannot end up following different rules.</p>
-<p><a class="btn" href="tutorial.html">See how it is set up</a></p>
-
-<h2>The point is the decisions</h2>
-<p>On a programme, the expensive thing is rarely the document. It is the decision the document was supposed to support — and the fact that six months later nobody can reconstruct why it went the way it did.</p>
-<p>So the thing worth capturing is not the transcript. It is the decision: what was chosen, what the alternatives were, what it rested on, and who agreed. That is a short file. It costs almost nothing to write and it is the only part anyone asks for later.</p>
-<blockquote><p>If the session were deleted right now, could someone rebuild the reasoning from the repository alone? If not, the work is not finished.</p></blockquote>
-
-<h2>Who this is for</h2>
-<p>Functional and business consultants. Process leads, analysts, PMO, solution architects on the functional side — people who are accountable for decisions rather than for code, and who are now using AI tools daily without a shared way of organising the output.</p>
-<p>You do not need to be a developer. The tutorial assumes you have never used GitHub, and the parts that are genuinely technical are done for you by a script.</p>
-
-<h2>What this is not</h2>
+<h2>Provenance</h2>
 <ul>
-<li><b>Not a methodology.</b> If your firm has one, follow it. This is a place to put work, not a way of doing it.</li>
-<li><b>Not a product.</b> Nothing to buy, nothing to sign, no partnership tier. GitHub's free plan is enough.</li>
-<li><b>Not a replacement for anything.</b> It sits on top of what the project already runs and changes nothing underneath.</li>
-<li><b>Not client material.</b> Nothing from a client engagement is published here, ever.</li>
+  <li>Landing: <a href="https://eveglyphdesign.github.io/sovereign-starter/">eveglyphdesign.github.io/sovereign-starter</a></li>
+  <li>Repository: <a href="https://github.com/EVEglyphDesign/sovereign-starter">EVEglyphDesign/sovereign-starter</a></li>
+  <li>Source canon: <a href="https://github.com/EVEglyphDesign/eve-glyph-boot-contract">EVEglyphDesign/eve-glyph-boot-contract</a></li>
+  <li>License: <a href="https://github.com/EVEglyphDesign/sovereign-starter/blob/main/LICENSE-NOTICE.md">practitioner-use notice</a></li>
 </ul>
 
-<hr>
-
-<h2>Join in, or just ask</h2>
-<p>This is one person's learning, shared so other people can do the same thing and improve on it. There is no list to join and no account to create beyond the GitHub one you will need anyway.</p>
-<div class="cards">
-<div class="card"><h4><a href="https://github.com/EVEglyphDesign/sapfans-io/discussions">Introduce yourself</a></h4><p>Say what you work on and what you are trying to organise. Discussions, on the repository.</p></div>
-<div class="card"><h4><a href="https://github.com/EVEglyphDesign/sapfans-io/issues/new/choose">Ask a question</a></h4><p>Stuck on a step, or something here is wrong. Open an issue — the template asks the right things.</p></div>
-<div class="card"><h4><a href="https://www.linkedin.com/in/danytheriault">Just message me</a></h4><p>If GitHub is not where you want to start, LinkedIn works. Questions are welcome either way.</p></div>
-<div class="card"><h4><a href="repos.html">Share a repository</a></h4><p>A searchable directory of useful repositories, grouped by what they are for. Add one with an issue or a one-line pull request.</p></div>
-</div>
-<p>If you set this up for your own team and learn something, the useful thing is to say so — what worked, what did not, and what you would change. That is the whole of the ask.</p>
-
 </main>
-<footer><div class="wrap">
-<p>© 2026 EVEglyphDesign · EgD-SAPF-001 r2 · Key ID EgD-KEY-2026-07 · 2026-09-18<br>
-Independent. Not affiliated with, endorsed by or sponsored by SAP SE or any service provider. SAP is a trademark of SAP SE.<br>
-Held in the open at <a href="https://github.com/EVEglyphDesign/sapfans-io">the SAPfans.io repository</a> — clone it, it is yours.</p>
-<p class="accent">Pour le bien-être du peuple.</p>
-</div></footer>
+
+<footer>
+<div class="wrap">
+&copy; 2026 EVEglyphDesign. Additive, not substitutive. Mirror, never cannibalise. <span class="accent">In conflict with none.</span>
+</div>
+</footer>
+
 </body></html>
