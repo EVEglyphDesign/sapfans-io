@@ -27,8 +27,9 @@ Or reply in the session with the IDs to accept or reject.
 | P-018 | 2026-09-26 | [Agentic development with SAPUI5](https://community.sap.com/t5/devtoberfest/beyond-copilots-agentic-development-with-sapui5/ev-p/14470843) | Tools to keep open · Developer · UI5 | 3 | operator paste | Devtoberfest 2026 session page matched by title. |
 | P-021 | 2026-09-26 | [Databricks Certified Context Engineer Associate — cheat sheet](https://gist.github.com/ch-geo/4dbe6d7f78611fce78809fae0ef6e0f6) | BDC & Datasphere · Architect · SAP Databricks (BDC) | 3 | operator paste | Databricks exam cheat sheet (context engineering, MCP, RAG, agent memory). No SAP content. Scope question: adjacent via SAP Databricks in Business Data Cloud — accept into BDC lane, or hold as out of scope? |
 
-## Stale on the live page (0)
+## Stale on the live page (1)
 
+- R-021 [Architecting the Unified Semantic Layer — the data foundation](https://learning.sap.com/courses/guiding-ai-driven-transformation-as-an-sap-enterprise-architect/architecting-the-unified-semantic-layer-the-data-foundation) — last checked 2026-09-26
 
 ## Decided (0)
 
