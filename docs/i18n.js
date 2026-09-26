@@ -1,5 +1,225 @@
 /* EgD i18n dictionary — keyed by the English source string. Missing keys stay in English. */
 window.EGD_I18N={
+"References": {
+"de": "Referenzen",
+"es": "Referencias",
+"fr": "Références"
+},
+"All references": {
+"de": "Alle Referenzen",
+"es": "Todas las referencias",
+"fr": "Toutes les références"
+},
+"SAP references": {
+"de": "SAP-Referenzen",
+"es": "Referencias SAP",
+"fr": "Références SAP"
+},
+"References · SAPfans.io": {
+"de": "Referenzen · SAPfans.io",
+"es": "Referencias · SAPfans.io",
+"fr": "Références · SAPfans.io"
+},
+"SAP education and reference material, classified so you can filter to what you need. Checked on a schedule.": {
+"de": "SAP-Schulungs- und Referenzmaterial, so klassifiziert, dass Sie nach dem filtern können, was Sie brauchen. Regelmäßig geprüft.",
+"es": "Formación y material de referencia de SAP, clasificados para que filtre lo que necesita. Revisados periódicamente.",
+"fr": "Formation et documentation de référence SAP, classées pour que vous puissiez filtrer ce dont vous avez besoin. Vérifiées régulièrement."
+},
+"Search references": {
+"de": "Referenzen durchsuchen",
+"es": "Buscar referencias",
+"fr": "Rechercher des références"
+},
+"Search — try \"clean core\", \"MCP\", \"Datasphere\"…": {
+"de": "Suchen — z. B. „clean core“, „MCP“, „Datasphere“…",
+"es": "Buscar — pruebe «clean core», «MCP», «Datasphere»…",
+"fr": "Rechercher — essayez « clean core », « MCP », « Datasphere »…"
+},
+"Download CSV": {
+"de": "CSV herunterladen",
+"es": "Descargar CSV",
+"fr": "Télécharger en CSV"
+},
+"Found something": {
+"de": "Etwas gefunden",
+"es": "¿Encontró algo?",
+"fr": "Vous avez trouvé quelque chose"
+},
+"Suggest a reference": {
+"de": "Referenz vorschlagen",
+"es": "Proponer una referencia",
+"fr": "Proposer une référence"
+},
+"Paste the link and one sentence on why it helps. It goes to the review list.": {
+"de": "Fügen Sie den Link und einen Satz dazu ein, warum er hilft. Er kommt auf die Prüfliste.",
+"es": "Pegue el enlace y una frase sobre por qué ayuda. Pasa a la lista de revisión.",
+"fr": "Collez le lien et une phrase sur son utilité. Il rejoint la liste de revue."
+},
+"See the review list": {
+"de": "Prüfliste ansehen",
+"es": "Ver la lista de revisión",
+"fr": "Voir la liste de revue"
+},
+"What has been proposed and not yet added.": {
+"de": "Was vorgeschlagen und noch nicht aufgenommen wurde.",
+"es": "Lo propuesto que aún no se ha añadido.",
+"fr": "Ce qui a été proposé et pas encore ajouté."
+},
+"All priorities": {
+"de": "Alle Prioritäten",
+"es": "Todas las prioridades",
+"fr": "Toutes priorités"
+},
+"Priority 1 — start here": {
+"de": "Priorität 1 — hier beginnen",
+"es": "Prioridad 1 — empiece aquí",
+"fr": "Priorité 1 — commencez ici"
+},
+"Priority 2": {
+"de": "Priorität 2",
+"es": "Prioridad 2",
+"fr": "Priorité 2"
+},
+"Priority 3": {
+"de": "Priorität 3",
+"es": "Prioridad 3",
+"fr": "Priorité 3"
+},
+"Lane: all": {
+"de": "Bereich: alle",
+"es": "Línea: todas",
+"fr": "Axe : tous"
+},
+"Role: all": {
+"de": "Rolle: alle",
+"es": "Rol: todos",
+"fr": "Rôle : tous"
+},
+"Product: all": {
+"de": "Produkt: alle",
+"es": "Producto: todos",
+"fr": "Produit : tous"
+},
+"Format: all": {
+"de": "Format: alle",
+"es": "Formato: todos",
+"fr": "Format : tous"
+},
+"Level: all": {
+"de": "Niveau: alle",
+"es": "Nivel: todos",
+"fr": "Niveau : tous"
+},
+"Access: all": {
+"de": "Zugang: alle",
+"es": "Acceso: todos",
+"fr": "Accès : tous"
+},
+"Nothing matches. Clear a filter.": {
+"de": "Keine Treffer. Einen Filter entfernen.",
+"es": "Sin resultados. Quite un filtro.",
+"fr": "Aucun résultat. Retirez un filtre."
+},
+"Link failed last check": {
+"de": "Link beim letzten Test fehlgeschlagen",
+"es": "El enlace falló en la última revisión",
+"fr": "Lien en échec au dernier contrôle"
+},
+"Could not load the catalog.": {
+"de": "Katalog konnte nicht geladen werden.",
+"es": "No se pudo cargar el catálogo.",
+"fr": "Impossible de charger le catalogue."
+},
+"Functional": {
+"de": "Fachlich",
+"es": "Funcional",
+"fr": "Fonctionnel"
+},
+"PMO/lead": {
+"de": "PMO/Leitung",
+"es": "PMO/líder",
+"fr": "PMO/responsable"
+},
+"Architect": {
+"de": "Architekt",
+"es": "Arquitecto",
+"fr": "Architecte"
+},
+"Developer": {
+"de": "Entwickler",
+"es": "Desarrollador",
+"fr": "Développeur"
+},
+"Intro": {
+"de": "Einstieg",
+"es": "Introducción",
+"fr": "Introduction"
+},
+"Hands-on": {
+"de": "Praxis",
+"es": "Práctico",
+"fr": "Pratique"
+},
+"Deep": {
+"de": "Vertiefung",
+"es": "Avanzado",
+"fr": "Approfondi"
+},
+"Free login": {
+"de": "Kostenloses Konto",
+"es": "Registro gratuito",
+"fr": "Compte gratuit"
+},
+"Course": {
+"de": "Kurs",
+"es": "Curso",
+"fr": "Cours"
+},
+"Docs": {
+"de": "Dokumentation",
+"es": "Documentación",
+"fr": "Documentation"
+},
+"Community post": {
+"de": "Community-Beitrag",
+"es": "Publicación de la comunidad",
+"fr": "Billet communautaire"
+},
+"Topic hub": {
+"de": "Themenseite",
+"es": "Página temática",
+"fr": "Page thématique"
+},
+"Policy": {
+"de": "Richtlinie",
+"es": "Política",
+"fr": "Politique"
+},
+"News": {
+"de": "News",
+"es": "Noticias",
+"fr": "Actualités"
+},
+"Product page": {
+"de": "Produktseite",
+"es": "Página de producto",
+"fr": "Page produit"
+},
+"Data security": {
+"de": "Datensicherheit",
+"es": "Seguridad de datos",
+"fr": "Sécurité des données"
+},
+"Semantic model": {
+"de": "Semantisches Modell",
+"es": "Modelo semántico",
+"fr": "Modèle sémantique"
+},
+"References belong to their publishers. Listing is not endorsement by them of this site, nor by this site of them beyond the sentence given.": {
+"de": "Die Referenzen gehören ihren Herausgebern. Die Aufnahme bedeutet weder deren Billigung dieser Website noch eine Billigung durch diese Website über den angegebenen Satz hinaus.",
+"es": "Las referencias pertenecen a sus editores. Figurar aquí no implica que respalden este sitio, ni que este sitio los respalde más allá de la frase indicada.",
+"fr": "Les références appartiennent à leurs éditeurs. Leur présence ici ne signifie ni qu’ils approuvent ce site, ni que ce site les approuve au-delà de la phrase donnée."
+},
 ", not": {
 "de": ", nicht",
 "es": ", no",

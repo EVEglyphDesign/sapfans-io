@@ -1,0 +1,40 @@
+# SAPfans.io reference catalog upkeep. Runs on GitHub's free runners — no paid model calls.
+# - Monday 06:00 UTC: link-check every live reference; failures marked stale (never deleted).
+# - A "Suggest a reference" issue: the link is queued in registry/proposals.json for review.
+# Either way registry/PROPOSALS.md (the review list) is rewritten and committed.
+name: references
+on:
+  schedule: [{cron: "0 6 * * 1"}]
+  issues: {types: [opened, labeled]}
+  workflow_dispatch: {}
+permissions: {contents: write, issues: write}
+concurrency: {group: references, cancel-in-progress: false}
+jobs:
+  upkeep:
+    if: github.event_name != 'issues' || contains(github.event.issue.labels.*.name, 'reference')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Queue suggested reference
+        if: github.event_name == 'issues'
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_USER: ${{ github.event.issue.user.login }}
+        run: python3 scripts/refs.py issue
+      - name: Link check
+        if: github.event_name != 'issues'
+        run: python3 scripts/refs.py check
+      - run: python3 scripts/refs.py review
+      - name: Commit
+        run: |
+          git config user.name "sapfans-references[bot]"
+          git config user.email "agent@eveglyphdesign.com"
+          git add docs/references.json registry/proposals.json registry/PROPOSALS.md
+          git diff --cached --quiet && exit 0
+          git commit -m "references: ${{ github.event_name }} upkeep"
+          git pull --rebase && git push
+      - name: Acknowledge
+        if: github.event_name == 'issues'
+        env: {GH_TOKEN: "${{ github.token }}"}
+        run: gh issue comment ${{ github.event.issue.number }} --body "Thanks — queued on the [review list](https://github.com/EVEglyphDesign/sapfans-io/blob/main/registry/PROPOSALS.md)."

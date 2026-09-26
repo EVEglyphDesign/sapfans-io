@@ -2,10 +2,10 @@
 <html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Repositories · SAPfans.io</title>
-<meta name="description" content="A searchable directory of useful GitHub repositories for functional consultants using AI tools on SAP and enterprise projects — the harness, agent instruction formats, SAP tooling, open data standards and starter templates.">
-<meta property="og:title" content="Repositories · SAPfans.io">
-<meta property="og:description" content="A searchable directory of useful GitHub repositories for functional consultants using AI tools on project work.">
+<title>References · SAPfans.io</title>
+<meta name="description" content="A filterable, searchable catalog of SAP education and reference material — classified by lane, role, product, format, level and access, checked on a schedule.">
+<meta property="og:title" content="References · SAPfans.io">
+<meta property="og:description" content="SAP education and references, classified and filterable. Paste what you find; it is reviewed and added.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,6 +33,15 @@
   .repo .tags{font-size:12px;color:var(--dim);letter-spacing:.03em}
   .repo .tags span{margin-right:10px}
   .empty{color:var(--dim);padding:20px 0}
+  .filters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:0 0 12px}
+  .filters select{width:100%;background:var(--panel);color:var(--fg);border:1px solid var(--line);padding:9px 10px;font:inherit;font-size:14px;border-radius:2px}
+  .filters select:focus{outline:none;border-color:var(--accent)}
+  .bar2{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 18px}
+  .bar2 .count{margin:0;flex:1}
+  .repo .pri{font-size:12px;color:var(--accent);font-weight:700;letter-spacing:.03em;margin-right:8px}
+  .repo .src{font-size:12px;color:var(--dim)}
+  .repo.stale{opacity:.6}
+  @media (max-width:640px){.filters{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>
 </head><body>
 <!-- EGD-CHECKIN-START v4 · fixed thumb-reachable check-in corner · Dany Theriault -->
@@ -57,98 +66,67 @@
 
 <header><div class="bar">
 <a class="brand" href="index.html">SAPfans<span>.io</span></a>
-<nav><a href="index.html">Start</a><a href="tutorial.html">Tutorial</a><a href="standards.html">Standards</a><a href="references.html">References</a><a href="repos.html" class='on'>Repositories</a><a href="heritage.html">Heritage</a></nav><div class="egd-lang" role="group" aria-label="Language" data-i18n-skip><button type="button" data-lang="en" title="English">EN</button><button type="button" data-lang="fr" title="Français" lang="fr">FR</button><button type="button" data-lang="es" title="Español" lang="es">ES</button><button type="button" data-lang="de" title="Deutsch" lang="de">DE</button></div>
+<nav><a href="index.html">Start</a><a href="tutorial.html">Tutorial</a><a href="standards.html">Standards</a><a href="references.html" class='on'>References</a><a href="repos.html">Repositories</a><a href="heritage.html">Heritage</a></nav><div class="egd-lang" role="group" aria-label="Language" data-i18n-skip><button type="button" data-lang="en" title="English">EN</button><button type="button" data-lang="fr" title="Français" lang="fr">FR</button><button type="button" data-lang="es" title="Español" lang="es">ES</button><button type="button" data-lang="de" title="Deutsch" lang="de">DE</button></div>
 </div></header>
 <main class="wrap">
-
-<span class="pill">EgD-SAPF-005 · Directory</span>
-<h1>Useful repositories</h1>
-<p class="lede">GitHub repositories worth knowing about if you are a functional consultant using AI tools on SAP or enterprise project work. Grouped by what they are for, one sentence each.</p>
-<p class="meta" id="meta">Loading the directory…</p>
-
-<label for="q" class="egd-sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Search repositories</label>
-<input class="search" id="q" type="search" placeholder="Search — try "odata", "copilot", "abap", "template"…" autocomplete="off">
+<span class="pill">EgD-SAPF-008 · References</span>
+<h1>SAP references</h1>
+<p class="lede">SAP education and reference material, classified so you can filter to what you need. Checked on a schedule.</p>
+<p class="meta" id="meta">Loading…</p>
+<label for="q" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Search references</label>
+<input class="search" id="q" type="search" placeholder="Search — try &quot;clean core&quot;, &quot;MCP&quot;, &quot;Datasphere&quot;…" autocomplete="off">
+<div class="filters" id="filters"></div>
 <div class="chips" id="chips"></div>
-<p class="count" id="count"></p>
+<div class="bar2"><p class="count" id="count"></p><button class="chip" type="button" id="csv">Download CSV</button></div>
 <div id="list"></div>
-
 <hr>
-
-<h2>Add one</h2>
-<p>This directory is a single file — <a href="https://github.com/EVEglyphDesign/sapfans-io/blob/main/docs/repos.json"><code>docs/repos.json</code></a> — so adding a repository is either a one-line pull request or an issue that someone turns into one.</p>
+<h2>Found something</h2>
 <div class="cards">
-<div class="card"><h4><a href="https://github.com/EVEglyphDesign/sapfans-io/issues/new?template=repository.yml">Suggest a repository</a></h4><p>Name, link, which category, and one sentence on why a functional consultant would care.</p></div>
-<div class="card"><h4><a href="https://github.com/EVEglyphDesign/sapfans-io/edit/main/docs/repos.json">Edit the file directly</a></h4><p>If you are comfortable with a pull request. Keep the shape; one entry per repository.</p></div>
+<div class="card"><h4><a href="https://github.com/EVEglyphDesign/sapfans-io/issues/new?template=reference.yml">Suggest a reference</a></h4><p>Paste the link and one sentence on why it helps. It goes to the review list.</p></div>
+<div class="card"><h4><a href="https://github.com/EVEglyphDesign/sapfans-io/blob/main/registry/PROPOSALS.md">See the review list</a></h4><p>What has been proposed and not yet added.</p></div>
 </div>
-<p>Two rules. <b>No client material</b> — nothing from an engagement, however anonymised it feels. <b>Say why</b> — a link with no sentence is a bookmark, not a recommendation.</p>
-
 </main>
 <footer><div class="wrap">
 <p class="lang-note">Services are delivered predominantly in English, French, Spanish and German — our team works in all four.</p>
-<p>© 2026 EVEglyphDesign · EgD-SAPF-005 · Key ID EgD-KEY-2026-07 · 2026-09-19<br>
+<p>© 2026 EVEglyphDesign · EgD-SAPF-008 · Key ID EgD-KEY-2026-07 · 2026-09-26<br>
 Independent. Not affiliated with, endorsed by or sponsored by SAP SE or any service provider. SAP is a trademark of SAP SE.<br>
-Repositories listed belong to their respective owners. Listing is not endorsement by them of this site, nor by this site of them beyond the sentence given.<br>
+References belong to their publishers. Listing is not endorsement by them of this site, nor by this site of them beyond the sentence given.<br>
 Held in the open at <a href="https://github.com/EVEglyphDesign/sapfans-io">the SAPfans.io repository</a> — clone it, it is yours.</p>
 <p class="accent">Pour le bien-être du peuple.</p>
 </div></footer>
-
 <script>
-(function () {
-  var q = document.getElementById('q'), chips = document.getElementById('chips'),
-      list = document.getElementById('list'), count = document.getElementById('count'),
-      meta = document.getElementById('meta');
-  var data = null, active = 'all';
-
-  function esc(s) { return String(s).replace(/[&<>"']/g, function (c) {
-    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
-
-  function matches(r, needle) {
-    if (!needle) return true;
-    var hay = (r.name + ' ' + r.description + ' ' + (r.tags || []).join(' ')).toLowerCase();
-    return needle.split(/\s+/).every(function (w) { return hay.indexOf(w) !== -1; });
-  }
-
-  function render() {
-    var needle = q.value.trim().toLowerCase(), shown = 0, html = '';
-    data.categories.forEach(function (c) {
-      if (active !== 'all' && active !== c.id) return;
-      var rows = data.repos.filter(function (r) { return r.category === c.id && matches(r, needle); });
-      if (!rows.length) return;
-      shown += rows.length;
-      html += '<section class="cat"><h2>' + esc(c.name) + '</h2><p>' + esc(c.blurb) + '</p>';
-      rows.forEach(function (r) {
-        html += '<div class="repo"><h4><a href="' + esc(r.url) + '" target="_blank" rel="noopener">' + esc(r.name) + '</a></h4>'
-              + '<p>' + esc(r.description) + '</p>'
-              + '<div class="tags">' + (r.tags || []).map(function (t) { return '<span>#' + esc(t) + '</span>'; }).join('') + '</div></div>';
-      });
-      html += '</section>';
-    });
-    list.innerHTML = html || '<p class="empty">Nothing matches. Try fewer words, or suggest the repository you were looking for below.</p>';
-    count.textContent = shown + ' of ' + data.repos.length + ' repositories' + (needle ? ' matching "' + q.value.trim() + '"' : '');
-  }
-
-  function chip(id, label) {
-    var b = document.createElement('button'); b.type = 'button'; b.className = 'chip' + (id === active ? ' on' : '');
-    b.textContent = label; b.setAttribute('data-id', id);
-    b.addEventListener('click', function () {
-      active = id;
-      Array.prototype.forEach.call(chips.children, function (el) { el.classList.toggle('on', el.getAttribute('data-id') === id); });
-      render();
-    });
-    return b;
-  }
-
-  fetch('repos.json', { cache: 'no-cache' }).then(function (r) { return r.json(); }).then(function (d) {
-    data = d;
-    meta.textContent = d.repos.length + ' repositories in ' + d.categories.length + ' categories · updated ' + d.updated;
-    chips.appendChild(chip('all', 'All'));
-    d.categories.forEach(function (c) { chips.appendChild(chip(c.id, c.name)); });
-    q.addEventListener('input', render);
-    render();
-  }).catch(function () {
-    meta.textContent = 'The directory could not be loaded here.';
-    list.innerHTML = '<p class="empty">This page reads <code>repos.json</code> from the same folder, which works on the live site but not when the file is opened directly from disk. <a href="https://github.com/EVEglyphDesign/sapfans-io/blob/main/docs/repos.json">Read the file on GitHub</a> instead.</p>';
-  });
+(function(){
+var F=[["lane","Lane"],["role","Role"],["product","Product"],["format","Format"],["level","Level"],["access","Access"]];
+var D=[],sel={},pri=0,q="";
+function vals(k){var s={};D.forEach(function(i){[].concat(i[k]||[]).forEach(function(v){s[v]=1})});return Object.keys(s).sort()}
+function esc(t){return String(t==null?"":t).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function match(i){
+  for(var k in sel){if(sel[k]&&[].concat(i[k]||[]).indexOf(sel[k])<0)return false}
+  if(pri&&i.priority!==pri)return false;
+  if(q){var h=[i.title,i.why,i.lane,[].concat(i.role).join(" "),i.product,i.format,i.source].join(" ").toLowerCase();
+    if(q.split(/\s+/).some(function(w){return h.indexOf(w)<0}))return false}
+  return true}
+function rows(){return D.filter(match).sort(function(a,b){return (a.priority-b.priority)||(a.status==="stale")-(b.status==="stale")||a.title.localeCompare(b.title)})}
+function draw(){
+  var r=rows(),el=document.getElementById("list");
+  document.getElementById("count").textContent=r.length+" of "+D.length+" shown";
+  el.innerHTML=r.length?r.map(function(i){return '<div class="repo'+(i.status==="stale"?" stale":"")+'"><h4><a href="'+esc(i.url)+'" target="_blank" rel="noopener">'+esc(i.title)+'</a></h4><p>'+esc(i.why)+'</p><div class="tags"><span class="pri">P'+i.priority+'</span><span>'+esc(i.lane)+'</span><span>'+esc([].concat(i.role).join(", "))+'</span><span>'+esc(i.product)+'</span><span>'+esc(i.format)+'</span><span>'+esc(i.level)+'</span><span>'+esc(i.access)+'</span>'+(i.status==="stale"?'<span>Link failed last check</span>':'')+'</div></div>'}).join(""):'<p class="empty">Nothing matches. Clear a filter.</p>'}
+function build(){
+  document.getElementById("filters").innerHTML=F.map(function(f){return '<label style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)" for="f-'+f[0]+'">'+f[1]+'</label><select id="f-'+f[0]+'" data-k="'+f[0]+'"><option value="">'+f[1]+': all</option>'+vals(f[0]).map(function(v){return '<option value="'+esc(v)+'">'+esc(v)+'</option>'}).join("")+'</select>'}).join("");
+  document.querySelectorAll("#filters select").forEach(function(s){s.addEventListener("change",function(){sel[s.dataset.k]=s.value;draw()})});
+  var c=document.getElementById("chips");
+  c.innerHTML='<button class="chip on" type="button" data-p="0">All priorities</button><button class="chip" type="button" data-p="1">Priority 1 — start here</button><button class="chip" type="button" data-p="2">Priority 2</button><button class="chip" type="button" data-p="3">Priority 3</button>';
+  c.querySelectorAll("button").forEach(function(b){b.addEventListener("click",function(){pri=+b.dataset.p;c.querySelectorAll("button").forEach(function(x){x.classList.toggle("on",x===b)});draw()})});
+  document.getElementById("q").addEventListener("input",function(e){q=e.target.value.trim().toLowerCase();draw()});
+  document.getElementById("csv").addEventListener("click",function(){
+    var cols=["id","priority","title","url","why","lane","role","product","format","level","access","source","status","checked"];
+    var lines=[cols.join(",")].concat(rows().map(function(i){return cols.map(function(k){return '"'+String([].concat(i[k]==null?"":i[k]).join("; ")).replace(/"/g,'""')+'"'}).join(",")}));
+    var a=document.createElement("a");a.href=URL.createObjectURL(new Blob(["\ufeff"+lines.join("\n")],{type:"text/csv"}));a.download="sapfans-references.csv";a.click()});
+  draw()}
+fetch("references.json",{cache:"no-cache"}).then(function(r){return r.json()}).then(function(j){
+  D=j.items.filter(function(i){return i.status!=="retired"});
+  document.getElementById("meta").textContent=D.length+" references · updated "+j.updated;build()})
+ .catch(function(){document.getElementById("meta").textContent="Could not load the catalog."});
 })();
 </script>
 <script src="i18n.js" defer></script>

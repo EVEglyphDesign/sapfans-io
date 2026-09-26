@@ -1,0 +1,41 @@
+name: Suggest a reference
+description: Paste an SAP education or reference link for the catalog at sapfans.io/references.html
+title: "[Ref] "
+labels: ["reference"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Paste the link and one sentence on why it helps. It goes to the review
+        list; a person decides whether it is added. **Public material only.**
+  - type: input
+    id: url
+    attributes:
+      label: Link
+      placeholder: "https://…"
+    validations:
+      required: true
+  - type: input
+    id: why
+    attributes:
+      label: Why it helps (one sentence)
+    validations:
+      required: true
+  - type: dropdown
+    id: lane
+    attributes:
+      label: Lane (best guess is fine)
+      options:
+        - PMO & execution
+        - Data security
+        - AI usage standards
+        - BDC & Datasphere
+        - Semantic model
+        - Connecting AI to SAP
+        - Joule & agentic SAP
+        - Tools to keep open
+        - Not sure
+  - type: input
+    id: credit
+    attributes:
+      label: Where you found it (post link, optional — so the poster gets credit)
