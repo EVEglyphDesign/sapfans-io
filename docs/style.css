@@ -101,3 +101,10 @@ b,strong{color:var(--fg)}
  font-weight:700;letter-spacing:-.005em;color:var(--fg)}
 .drill .step p{font-size:13.5px;color:var(--dim);margin:0;line-height:1.5}
 @media(max-width:640px){.drill{grid-template-columns:1fr}}
+
+/* language toggle — EN default · FR · ES · DE */
+.egd-lang{display:flex;gap:3px;margin-left:14px;align-items:center}
+.egd-lang button{background:transparent;border:1px solid var(--line);color:var(--dim);font:600 11px/1 Inter,system-ui,sans-serif;letter-spacing:.06em;padding:4px 6px;border-radius:2px;cursor:pointer}
+.egd-lang button:hover{color:var(--fg);border-color:var(--accent)}
+.egd-lang button.on{color:var(--accent);border-color:var(--accent)}
+.lang-note{color:var(--dim)}

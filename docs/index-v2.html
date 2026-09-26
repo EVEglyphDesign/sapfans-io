@@ -59,6 +59,10 @@ header.site{position:sticky;top:0;z-index:100;background:var(--bg);border-bottom
 .search input.listening{padding-right:52px}
 @keyframes mic-pulse{0%,100%{opacity:1}50%{opacity:.45}}
 .util{display:flex;align-items:center;gap:8px}
+.egd-lang{display:flex;gap:3px}
+.egd-lang button{background:transparent;border:1px solid var(--line-2);color:var(--dim);font:600 11px/1 Inter,system-ui,sans-serif;letter-spacing:.06em;padding:5px 6px;border-radius:5px;cursor:pointer}
+.egd-lang button:hover{color:var(--fg-strong);border-color:var(--accent-soft)}
+.egd-lang button.on{color:var(--accent);border-color:var(--accent)}
 .btn-sm{font-size:13px;font-weight:500;color:var(--dim);background:transparent;border:1px solid var(--line-2);
  border-radius:5px;padding:6px 11px;cursor:pointer;font-family:inherit;white-space:nowrap;display:inline-block}
 .btn-sm:hover{color:var(--fg-strong);border-color:var(--accent-soft)}
@@ -198,6 +202,7 @@ footer.site{border-top:1px solid var(--line)}
     <button class="clr" id="clr" type="button" aria-label="Clear search">×</button>
   </div>
   <div class="util">
+    <div class="egd-lang" role="group" aria-label="Language" data-i18n-skip><button type="button" data-lang="en" title="English">EN</button><button type="button" data-lang="fr" title="Français" lang="fr">FR</button><button type="button" data-lang="es" title="Español" lang="es">ES</button><button type="button" data-lang="de" title="Deutsch" lang="de">DE</button></div>
     <button class="btn-sm" id="theme-toggle" type="button">Light</button>
     <a class="btn-sm btn-pri" href="https://github.com/EVEglyphDesign/sapfans-io/discussions/new/choose" target="_blank" rel="noopener">Post</a>
   </div>
@@ -630,6 +635,7 @@ footer.site{border-top:1px solid var(--line)}
   <a href="doctrine.html">Doctrine</a><span>·</span>
   <a href="heritage.html">Heritage</a><span>·</span>
   <a href="pattern.html">Pattern</a><span>·</span>
+  <span class="lang-note">Services are delivered predominantly in English, French, Spanish and German — our team works in all four.</span><span>·</span>
   <span><em>Pour le bien-être du peuple</em></span>
 </div></footer>
 
@@ -838,4 +844,5 @@ footer.site{border-top:1px solid var(--line)}
   mic.addEventListener('click',function(){listening?stop():start();});
 })();
 </script>
+<script src="i18n.js" defer></script>
 </body></html>
