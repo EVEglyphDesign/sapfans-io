@@ -1,6 +1,6 @@
 # Review list — proposed references
 
-Updated 2026-09-26. 21 open. Accept: `python3 scripts/refs.py accept P-001 --why "one line"` · Reject: `... reject P-001 --reason "..."`.
+Updated 2026-09-26. 31 open. Accept: `python3 scripts/refs.py accept P-001 --why "one line"` · Reject: `... reject P-001 --reason "..."`.
 Or reply in the session with the IDs to accept or reject.
 
 | ID | Proposed | Title | Lane · Role · Product | Pri | Found by | Note |
@@ -26,6 +26,16 @@ Or reply in the session with the IDs to accept or reject.
 | P-017 | 2026-09-26 | [Building AI-powered cross-platform Mobile apps with MDK](https://community.sap.com/t5/devtoberfest/building-ai-powered-cross-platform-mobile-apps-with-mobile-development-kit/ev-p/14472871) | Tools to keep open · Developer · MDK | 3 | operator paste | Devtoberfest 2026 session page matched by title. |
 | P-018 | 2026-09-26 | [Agentic development with SAPUI5](https://community.sap.com/t5/devtoberfest/beyond-copilots-agentic-development-with-sapui5/ev-p/14470843) | Tools to keep open · Developer · UI5 | 3 | operator paste | Devtoberfest 2026 session page matched by title. |
 | P-021 | 2026-09-26 | [Databricks Certified Context Engineer Associate — cheat sheet](https://gist.github.com/ch-geo/4dbe6d7f78611fce78809fae0ef6e0f6) | BDC & Datasphere · Architect · SAP Databricks (BDC) | 3 | operator paste | Databricks exam cheat sheet (context engineering, MCP, RAG, agent memory). No SAP content. Scope question: adjacent via SAP Databricks in Business Data Cloud — accept into BDC lane, or hold as out of scope? |
+| P-022 | 2026-09-26 | [SAP-samples/integration-mcp-gateway](https://github.com/SAP-samples/integration-mcp-gateway) | — · — · — | — | ARK GitHub lane (org:SAP-samples) | Hands-On Tutorial - Expose Composed APIs as MCP Server using SAP Integration Suite MCP Gateway · ★0 · SAP official · pushed 2026-09-25 |
+| P-023 | 2026-09-26 | [marianfoo/sap-ai-mcp-servers](https://github.com/marianfoo/sap-ai-mcp-servers) | — · — · — | — | ARK GitHub lane (sap) | A complete list of SAP MCP Servers and SAP AI Skills · ★492 · community · pushed 2026-09-26 |
+| P-024 | 2026-09-26 | [HelpCode-ai/anythingmcp](https://github.com/HelpCode-ai/anythingmcp) | — · — · — | — | ARK GitHub lane (sap) | Turn any REST, SOAP, GraphQL or SQL API into MCP tools for Claude & ChatGPT. Self-hosted. 258 connectors: ERP, e-commerce, SAP. · ★421 · community · pushed 2026-09-26 |
+| P-025 | 2026-09-26 | [mario-andreschak/mcp-sap-gui](https://github.com/mario-andreschak/mcp-sap-gui) | — · — · — | — | ARK GitHub lane (sap) | MCP server that allows simple SAP GUI interaction for LLM models using simulated mouse clicks and keyboard input. · ★134 · community · pushed 2026-09-24 |
+| P-026 | 2026-09-26 | [fr0ster/mcp-abap-adt](https://github.com/fr0ster/mcp-abap-adt) | — · — · — | — | ARK GitHub lane (sap) | MCP server for SAP BTP ABAP Cloud and On-Premise ECC/S/4HANA ABAP ADT with full CRUD, JWT/XSUAA, and service-key auth. · ★94 · community · pushed 2026-09-26 |
+| P-027 | 2026-09-26 | [dnic-dev/bw-modeling-mcp](https://github.com/dnic-dev/bw-modeling-mcp) | — · — · — | — | ARK GitHub lane (sap) | MCP server for agentic AI-assisted development in SAP BW/4HANA · ★67 · community · pushed 2026-09-25 |
+| P-028 | 2026-09-26 | [babamba2/superclaude-for-sap](https://github.com/babamba2/superclaude-for-sap) | — · — · — | — | ARK GitHub lane (sap) | SuperClaude for SAP — Claude Code plugin for SAP On-Premise S/4HANA ABAP development (24 agents, 14 skills, 150+ MCP tools) · ★62 · community · pushed 2026-09-23 |
+| P-029 | 2026-09-26 | [SAP/mdk-mcp-server](https://github.com/SAP/mdk-mcp-server) | — · — · — | — | ARK GitHub lane (sap) | Model Context Protocol (MCP) server for AI-assisted development ("vibe coding") of MDK applications. · ★37 · SAP official · pushed 2026-09-21 |
+| P-030 | 2026-09-26 | [kts982/mcp-sap-gui](https://github.com/kts982/mcp-sap-gui) | — · — · — | — | ARK GitHub lane (sap) | MCP server for SAP GUI for Windows automation via the SAP GUI Scripting API. · ★35 · community · pushed 2026-09-20 |
+| P-031 | 2026-09-26 | [ClementRingot/ROSA](https://github.com/ClementRingot/ROSA) | — · — · — | — | ARK GitHub lane (sap) | ROSA (Released Objects Search Assistant) - MCP server and REST API giving AI agents real-time knowledge of SAP objects released for ABAP Cloud / Clean Core · ★27 · community · pushed 2026-09-21 |
 
 ## Stale on the live page (1)
 
