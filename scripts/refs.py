@@ -4,6 +4,8 @@
   refs.py add URL [--title T] [--lane L] [--why W] [--credit C] [--by NAME]
                                                        paste a link -> review queue (state=open)
   refs.py issue                                        same, from a GitHub issue body in $ISSUE_BODY
+  refs.py inbox                                        queue every link pasted in intake/INBOX.md, then clear it
+  refs.py github [--days 7] [--cap 10]                 new SAP-org repos and active SAP x AI repos -> queue
   refs.py accept P-001 [--why "one line"]              queue -> docs/references.json (live page)
   refs.py reject P-001 --reason "..."                  closes the proposal, kept for the record
   refs.py check                                        link-check live rows; dead -> status=stale
@@ -31,7 +33,7 @@ def add(a):
     n = max([int(p["id"][2:]) for p in q["proposals"]] + [0]) + 1
     q["proposals"].append(dict(id=f"P-{n:03d}", title=a.title or a.url, url=a.url, why=a.why, lane=a.lane,
         role=[], product=None, format=None, level=None, access=None, source=None, priority=None,
-        credit=a.credit, found_by=a.by, proposed=TODAY, state="open", note="Pasted; classification pending."))
+        credit=a.credit, found_by=a.by, proposed=TODAY, state="open", note=getattr(a, "note", None) or "Pasted; classification pending."))
     save(Q, q); review(None); print("queued", f"P-{n:03d}")
 
 def issue(a):
@@ -46,6 +48,49 @@ def issue(a):
     a.url, a.why, a.lane, a.credit = url, field("Why it helps"), field("Lane"), field("Where you found it")
     a.title, a.by = None, "issue #" + os.environ.get("ISSUE_NUMBER", "?") + " by " + os.environ.get("ISSUE_USER", "?")
     add(a)
+
+def inbox(a):
+    """Queue every URL pasted below the --- line in intake/INBOX.md, then clear those lines."""
+    import re
+    f = ROOT / "intake" / "INBOX.md"; txt = f.read_text()
+    head, sep, body = txt.partition("\n---\n")
+    left, n = [], 0
+    for line in body.splitlines():
+        m = re.search(r"https?://\S+", line)
+        if not m: left.append(line); continue
+        url = m.group(0).rstrip(").,>]")
+        rest = line.replace(m.group(0), "").strip(" -*:\t") or None
+        ns = argparse.Namespace(url=url, title=None, lane=None, why=None, credit=None, by="inbox paste", note=rest or "Pasted to the inbox; classification pending.")
+        add(ns); n += 1
+    f.write_text(head + sep + "\n".join(l for l in left if l.strip()) + "\n"); print("inbox queued", n)
+
+def github(a):
+    """Free discovery over the GitHub API: new public repos from SAP's orgs and active SAP x AI repos. Capped."""
+    import os, re, urllib.parse
+    tok = os.environ.get("GITHUB_TOKEN"); held = known_urls(); since = (datetime.date.today() - datetime.timedelta(days=a.days)).isoformat()
+    def get(u):
+        h = {"Accept": "application/vnd.github+json", "User-Agent": "sapfans-refs"}
+        if tok: h["Authorization"] = "Bearer " + tok
+        return json.loads(urllib.request.urlopen(urllib.request.Request(u, headers=h), timeout=30).read())
+    qs = [f"org:SAP-samples created:>={since}", f"org:SAP created:>={since}", f"org:SAP-docs created:>={since}",
+          f"sap mcp in:name,description pushed:>={since} stars:>=10",
+          f"sap agent in:name,description pushed:>={since} stars:>=25",
+          f"topic:sap-btp pushed:>={since} stars:>=25"]
+    n = 0
+    for q in qs:
+        try: items = get("https://api.github.com/search/repositories?sort=stars&order=desc&per_page=10&q=" + urllib.parse.quote(q)).get("items", [])
+        except Exception as e: print("search failed:", q, e); continue
+        for r in items:
+            if n >= a.cap: break
+            if r["html_url"] in held or r.get("archived") or r.get("fork"): continue
+            official = r["owner"]["login"] in ("SAP", "SAP-samples", "SAP-docs")
+            text = (r["full_name"] + " " + (r.get("description") or ""))
+            if not official and not re.search(r"\bSAP\b|\bABAP\b|\bBTP\b|S/?4 ?HANA|\bHANA\b|Datasphere|\bJoule\b|\bCAP\b|\bUI5\b|SuccessFactors|\bAriba\b", text): continue
+            ns = argparse.Namespace(url=r["html_url"], title=r["full_name"], lane=None, why=None, credit=None,
+                by="ARK GitHub lane (" + q.split(" ")[0] + ")",
+                note=((r.get("description") or "").strip()[:160] + f" · ★{r['stargazers_count']} · {'SAP official' if official else 'community'} · pushed {r['pushed_at'][:10]}"))
+            add(ns); held.add(r["html_url"]); n += 1
+    print("github queued", n)
 
 def accept(a):
     q, c = load(Q), load(CAT)
@@ -103,8 +148,10 @@ def review(a):
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(); s = ap.add_subparsers(dest="cmd", required=True)
-    x = s.add_parser("add"); x.add_argument("url"); x.add_argument("--title"); x.add_argument("--lane"); x.add_argument("--by", default="operator paste"); x.add_argument("--why"); x.add_argument("--credit"); x.set_defaults(f=add)
+    x = s.add_parser("add"); x.add_argument("url"); x.add_argument("--title"); x.add_argument("--lane"); x.add_argument("--by", default="operator paste"); x.add_argument("--why"); x.add_argument("--credit"); x.add_argument("--note"); x.set_defaults(f=add)
     x = s.add_parser("accept"); x.add_argument("id"); x.add_argument("--why"); x.set_defaults(f=accept)
     x = s.add_parser("reject"); x.add_argument("id"); x.add_argument("--reason", required=True); x.set_defaults(f=reject)
-    s.add_parser("issue").set_defaults(f=issue); s.add_parser("check").set_defaults(f=check); s.add_parser("review").set_defaults(f=review)
+    s.add_parser("issue").set_defaults(f=issue); s.add_parser("inbox").set_defaults(f=inbox)
+    x = s.add_parser("github"); x.add_argument("--days", type=int, default=7); x.add_argument("--cap", type=int, default=10); x.set_defaults(f=github)
+    s.add_parser("check").set_defaults(f=check); s.add_parser("review").set_defaults(f=review)
     a = ap.parse_args(); a.f(a)

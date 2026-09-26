@@ -1,10 +1,14 @@
-# SAPfans.io reference catalog upkeep. Runs on GitHub's free runners — no paid model calls.
-# - Monday 06:00 UTC: link-check every live reference; failures marked stale (never deleted).
-# - A "Suggest a reference" issue: the link is queued in registry/proposals.json for review.
-# Either way registry/PROPOSALS.md (the review list) is rewritten and committed.
+# SAPfans.io reference catalog upkeep — the free lanes of the ARK sweep. GitHub's runners, no model calls.
+# - Daily 06:00 UTC: GitHub lane (new repos in SAP / SAP-samples / SAP-docs, active SAP x AI repos) -> review queue.
+# - Monday: link-check every live reference; failures marked stale (never deleted).
+# - Push to intake/INBOX.md: pasted links -> review queue, inbox cleared.
+# - "Suggest a reference" issue: the link -> review queue.
+# Every run rewrites registry/PROPOSALS.md (the review list). Nothing reaches the live page without `refs.py accept`.
+# Web lanes (SAP Learning, SAP Community, LinkedIn session lists, MIT) run in the ERP + AI monitor task, which calls `refs.py add`.
 name: references
 on:
-  schedule: [{cron: "0 6 * * 1"}]
+  schedule: [{cron: "0 6 * * *"}]
+  push: {branches: [main], paths: ["intake/INBOX.md"]}
   issues: {types: [opened, labeled]}
   workflow_dispatch: {}
 permissions: {contents: write, issues: write}
@@ -22,15 +26,22 @@ jobs:
           ISSUE_NUMBER: ${{ github.event.issue.number }}
           ISSUE_USER: ${{ github.event.issue.user.login }}
         run: python3 scripts/refs.py issue
-      - name: Link check
+      - name: Inbox
         if: github.event_name != 'issues'
-        run: python3 scripts/refs.py check
+        run: python3 scripts/refs.py inbox
+      - name: GitHub lane
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        env: {GITHUB_TOKEN: "${{ github.token }}"}
+        run: python3 scripts/refs.py github --days 7 --cap 10
+      - name: Link check (Mondays)
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        run: '[ "$(date -u +%a)" = "Mon" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ] && python3 scripts/refs.py check || echo "not Monday"'
       - run: python3 scripts/refs.py review
       - name: Commit
         run: |
           git config user.name "sapfans-references[bot]"
           git config user.email "agent@eveglyphdesign.com"
-          git add docs/references.json registry/proposals.json registry/PROPOSALS.md
+          git add docs/references.json registry/proposals.json registry/PROPOSALS.md intake/INBOX.md
           git diff --cached --quiet && exit 0
           git commit -m "references: ${{ github.event_name }} upkeep"
           git pull --rebase && git push
