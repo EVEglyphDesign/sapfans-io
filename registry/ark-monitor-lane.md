@@ -1,7 +1,8 @@
-# ARK web lane — appended to the ERP + AI monitor task (793da22e)
+# ARK web lane — scheduled task cec9f10d (daily 07:00 America/Bahia_Banderas)
 
-Added 2026-09-26 (v2.5). The text below is appended to the existing task; nothing above it
-was changed. To undo: remove this block from the task text.
+Added 2026-09-26 (v2.5). Runs as its own daily task; the ERP + AI monitor (793da22e) belongs to
+another session and was left unchanged. The task reads this file each run. To undo: delete task
+cec9f10d from its session (or ask any session to), and revert v2.5.
 
 ---
 
