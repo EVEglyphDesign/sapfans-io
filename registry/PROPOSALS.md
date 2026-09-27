@@ -1,6 +1,6 @@
 # Review list — proposed references
 
-Updated 2026-09-26. 31 open. Accept: `python3 scripts/refs.py accept P-001 --why "one line"` · Reject: `... reject P-001 --reason "..."`.
+Updated 2026-09-27. 41 open. Accept: `python3 scripts/refs.py accept P-001 --why "one line"` · Reject: `... reject P-001 --reason "..."`.
 Or reply in the session with the IDs to accept or reject.
 
 | ID | Proposed | Title | Lane · Role · Product | Pri | Found by | Note |
@@ -36,6 +36,16 @@ Or reply in the session with the IDs to accept or reject.
 | P-029 | 2026-09-26 | [SAP/mdk-mcp-server](https://github.com/SAP/mdk-mcp-server) | — · — · — | — | ARK GitHub lane (sap) | Model Context Protocol (MCP) server for AI-assisted development ("vibe coding") of MDK applications. · ★37 · SAP official · pushed 2026-09-21 |
 | P-030 | 2026-09-26 | [kts982/mcp-sap-gui](https://github.com/kts982/mcp-sap-gui) | — · — · — | — | ARK GitHub lane (sap) | MCP server for SAP GUI for Windows automation via the SAP GUI Scripting API. · ★35 · community · pushed 2026-09-20 |
 | P-031 | 2026-09-26 | [ClementRingot/ROSA](https://github.com/ClementRingot/ROSA) | — · — · — | — | ARK GitHub lane (sap) | ROSA (Released Objects Search Assistant) - MCP server and REST API giving AI agents real-time knowledge of SAP objects released for ABAP Cloud / Clean Core · ★27 · community · pushed 2026-09-21 |
+| P-032 | 2026-09-27 | [marcellourbani/vscode_abap_remote_fs](https://github.com/marcellourbani/vscode_abap_remote_fs) | — · — · — | — | ARK GitHub lane (sap) | VS Code-based Agentic AI Platform for SAP ABAP Development · ★393 · community · pushed 2026-09-27 |
+| P-033 | 2026-09-27 | [Gixsy95/abap_wiki](https://github.com/Gixsy95/abap_wiki) | — · — · — | — | ARK GitHub lane (sap) | Agent-driven SAP/ABAP knowledge base engine that turns S/4HANA custom objects into citable Markdown/Obsidian context for humans and AI agents. · ★48 · community · pushed 2026-09-21 |
+| P-034 | 2026-09-27 | [GoogleCloudPlatform/sapagent](https://github.com/GoogleCloudPlatform/sapagent) | — · — · — | — | ARK GitHub lane (sap) | This repository contains the Agent for SAP (Linux and Windows). The agent is intended to run on all Google Cloud compute instances where an SAP workload is runn · ★29 · community · pushed 2026-09-25 |
+| P-035 | 2026-09-27 | [SAP/cloud-sdk-python](https://github.com/SAP/cloud-sdk-python) | — · — · — | — | ARK GitHub lane (sap) | The SAP Cloud SDK for Python is the official Python client for SAP BTP services. It simplifies consuming SAP Cloud services through modular interfaces that hand · ★29 · SAP official · pushed 2026-09-25 |
+| P-036 | 2026-09-27 | [secondsky/sap-skills](https://github.com/secondsky/sap-skills) | — · — · — | — | ARK GitHub lane (topic:sap-btp) | Production-ready plugins for SAP development with AI coding assistants — BTP, CAP, Fiori, ABAP, HANA, Analytics Cloud, Datasphere, and more · ★454 · community · pushed 2026-09-21 |
+| P-037 | 2026-09-27 | [SAP/cloud-sdk-js](https://github.com/SAP/cloud-sdk-js) | — · — · — | — | ARK GitHub lane (topic:sap-btp) | Use the SAP Cloud SDK for JavaScript / TypeScript to reduce development effort when building applications on SAP Business Technology Platform that communicate w · ★220 · SAP official · pushed 2026-09-27 |
+| P-038 | 2026-09-27 | [SAP-samples/cloud-cap-samples-java](https://github.com/SAP-samples/cloud-cap-samples-java) | — · — · — | — | ARK GitHub lane (topic:sap-btp) | A sample application that demonstrates the features of the Java SDK for the SAP Cloud Application Programming Model. · ★179 · SAP official · pushed 2026-09-25 |
+| P-039 | 2026-09-27 | [SAP/terraform-provider-btp](https://github.com/SAP/terraform-provider-btp) | — · — · — | — | ARK GitHub lane (topic:sap-btp) | Terraform provider for SAP BTP · ★123 · SAP official · pushed 2026-09-25 |
+| P-040 | 2026-09-27 | [cap-js/mcp-server](https://github.com/cap-js/mcp-server) | — · — · — | — | ARK GitHub lane (topic:sap-btp) | MCP server for AI-assisted development of CAP applications · ★112 · community · pushed 2026-09-25 |
+| P-041 | 2026-09-27 | [SAP-samples/btp-developer-guide-cap](https://github.com/SAP-samples/btp-developer-guide-cap) | — · — · — | — | ARK GitHub lane (topic:sap-btp) | SAP BTP Developer’s Guide offers developer guidance to software developers on how to implement business applications using SAP Cloud Application Programming Mod · ★97 · SAP official · pushed 2026-09-24 |
 
 ## Stale on the live page (1)
 
