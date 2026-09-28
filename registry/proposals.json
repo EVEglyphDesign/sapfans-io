@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "updated": "2026-09-27",
+ "updated": "2026-09-28",
  "note": "Review queue. ARK and operator pastes land here as state=open. Accept or reject with scripts/refs.py; nothing reaches the live page without a person accepting it.",
  "proposals": [
   {
@@ -830,6 +830,63 @@
    "proposed": "2026-09-27",
    "state": "open",
    "note": "SAP BTP Developer’s Guide offers developer guidance to software developers on how to implement business applications using SAP Cloud Application Programming Mod · ★97 · SAP official · pushed 2026-09-24"
+  },
+  {
+   "id": "P-042",
+   "title": "DataZooDE/erpl-adt",
+   "url": "https://github.com/DataZooDE/erpl-adt",
+   "why": null,
+   "lane": null,
+   "role": [],
+   "product": null,
+   "format": null,
+   "level": null,
+   "access": null,
+   "source": null,
+   "priority": null,
+   "credit": null,
+   "found_by": "ARK GitHub lane (sap)",
+   "proposed": "2026-09-28",
+   "state": "open",
+   "note": "CLI and MCP server for the SAP ADT REST API — search, read/write ABAP source, run tests, manage transports. No Eclipse, no RFC SDK, no JVM. · ★21 · community · pushed 2026-09-27"
+  },
+  {
+   "id": "P-043",
+   "title": "SAP-samples/kyma-runtime-samples",
+   "url": "https://github.com/SAP-samples/kyma-runtime-samples",
+   "why": null,
+   "lane": null,
+   "role": [],
+   "product": null,
+   "format": null,
+   "level": null,
+   "access": null,
+   "source": null,
+   "priority": null,
+   "credit": null,
+   "found_by": "ARK GitHub lane (topic:sap-btp)",
+   "proposed": "2026-09-28",
+   "state": "open",
+   "note": "This project contains sample applications for building extensions and microservices on SAP BTP, Kyma runtime. · ★197 · SAP official · pushed 2026-09-28"
+  },
+  {
+   "id": "P-044",
+   "title": "SAP-docs/btp-cloud-platform",
+   "url": "https://github.com/SAP-docs/btp-cloud-platform",
+   "why": null,
+   "lane": null,
+   "role": [],
+   "product": null,
+   "format": null,
+   "level": null,
+   "access": null,
+   "source": null,
+   "priority": null,
+   "credit": null,
+   "found_by": "ARK GitHub lane (topic:sap-btp)",
+   "proposed": "2026-09-28",
+   "state": "open",
+   "note": "Markdown source for the SAP BTP documentation. Enables feedback and contributions to improve the documentation. · ★94 · SAP official · pushed 2026-09-28"
   }
  ]
 }

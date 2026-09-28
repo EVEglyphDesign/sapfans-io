@@ -1,6 +1,6 @@
 # Review list — proposed references
 
-Updated 2026-09-27. 41 open. Accept: `python3 scripts/refs.py accept P-001 --why "one line"` · Reject: `... reject P-001 --reason "..."`.
+Updated 2026-09-28. 44 open. Accept: `python3 scripts/refs.py accept P-001 --why "one line"` · Reject: `... reject P-001 --reason "..."`.
 Or reply in the session with the IDs to accept or reject.
 
 | ID | Proposed | Title | Lane · Role · Product | Pri | Found by | Note |
@@ -46,10 +46,13 @@ Or reply in the session with the IDs to accept or reject.
 | P-039 | 2026-09-27 | [SAP/terraform-provider-btp](https://github.com/SAP/terraform-provider-btp) | — · — · — | — | ARK GitHub lane (topic:sap-btp) | Terraform provider for SAP BTP · ★123 · SAP official · pushed 2026-09-25 |
 | P-040 | 2026-09-27 | [cap-js/mcp-server](https://github.com/cap-js/mcp-server) | — · — · — | — | ARK GitHub lane (topic:sap-btp) | MCP server for AI-assisted development of CAP applications · ★112 · community · pushed 2026-09-25 |
 | P-041 | 2026-09-27 | [SAP-samples/btp-developer-guide-cap](https://github.com/SAP-samples/btp-developer-guide-cap) | — · — · — | — | ARK GitHub lane (topic:sap-btp) | SAP BTP Developer’s Guide offers developer guidance to software developers on how to implement business applications using SAP Cloud Application Programming Mod · ★97 · SAP official · pushed 2026-09-24 |
+| P-042 | 2026-09-28 | [DataZooDE/erpl-adt](https://github.com/DataZooDE/erpl-adt) | — · — · — | — | ARK GitHub lane (sap) | CLI and MCP server for the SAP ADT REST API — search, read/write ABAP source, run tests, manage transports. No Eclipse, no RFC SDK, no JVM. · ★21 · community · pushed 2026-09-27 |
+| P-043 | 2026-09-28 | [SAP-samples/kyma-runtime-samples](https://github.com/SAP-samples/kyma-runtime-samples) | — · — · — | — | ARK GitHub lane (topic:sap-btp) | This project contains sample applications for building extensions and microservices on SAP BTP, Kyma runtime. · ★197 · SAP official · pushed 2026-09-28 |
+| P-044 | 2026-09-28 | [SAP-docs/btp-cloud-platform](https://github.com/SAP-docs/btp-cloud-platform) | — · — · — | — | ARK GitHub lane (topic:sap-btp) | Markdown source for the SAP BTP documentation. Enables feedback and contributions to improve the documentation. · ★94 · SAP official · pushed 2026-09-28 |
 
 ## Stale on the live page (1)
 
-- R-021 [Architecting the Unified Semantic Layer — the data foundation](https://learning.sap.com/courses/guiding-ai-driven-transformation-as-an-sap-enterprise-architect/architecting-the-unified-semantic-layer-the-data-foundation) — last checked 2026-09-26
+- R-021 [Architecting the Unified Semantic Layer — the data foundation](https://learning.sap.com/courses/guiding-ai-driven-transformation-as-an-sap-enterprise-architect/architecting-the-unified-semantic-layer-the-data-foundation) — last checked 2026-09-28
 
 ## Decided (0)
 
