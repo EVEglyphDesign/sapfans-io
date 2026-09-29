@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "updated": "2026-09-28",
+ "updated": "2026-09-29",
  "note": "Review queue. ARK and operator pastes land here as state=open. Accept or reject with scripts/refs.py; nothing reaches the live page without a person accepting it.",
  "proposals": [
   {
@@ -887,6 +887,44 @@
    "proposed": "2026-09-28",
    "state": "open",
    "note": "Markdown source for the SAP BTP documentation. Enables feedback and contributions to improve the documentation. · ★94 · SAP official · pushed 2026-09-28"
+  },
+  {
+   "id": "P-045",
+   "title": "shrek-abaper/sap-engineering-skill",
+   "url": "https://github.com/shrek-abaper/sap-engineering-skill",
+   "why": null,
+   "lane": null,
+   "role": [],
+   "product": null,
+   "format": null,
+   "level": null,
+   "access": null,
+   "source": null,
+   "priority": null,
+   "credit": null,
+   "found_by": "ARK GitHub lane (sap)",
+   "proposed": "2026-09-29",
+   "state": "open",
+   "note": "AI agent skills for SAP ABAP: ADT read/write CLI, 9-dimension code review, transport release gate, integration wiki. Works with Claude Code / opencode. · ★41 · community · pushed 2026-09-28"
+  },
+  {
+   "id": "P-046",
+   "title": "SAP/cloud-sdk",
+   "url": "https://github.com/SAP/cloud-sdk",
+   "why": null,
+   "lane": null,
+   "role": [],
+   "product": null,
+   "format": null,
+   "level": null,
+   "access": null,
+   "source": null,
+   "priority": null,
+   "credit": null,
+   "found_by": "ARK GitHub lane (topic:sap-btp)",
+   "proposed": "2026-09-29",
+   "state": "open",
+   "note": "The SAP Cloud SDK documentation and support repository. · ★52 · SAP official · pushed 2026-09-27"
   }
  ]
 }

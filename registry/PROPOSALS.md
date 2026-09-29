@@ -1,6 +1,6 @@
 # Review list — proposed references
 
-Updated 2026-09-28. 44 open. Accept: `python3 scripts/refs.py accept P-001 --why "one line"` · Reject: `... reject P-001 --reason "..."`.
+Updated 2026-09-29. 46 open. Accept: `python3 scripts/refs.py accept P-001 --why "one line"` · Reject: `... reject P-001 --reason "..."`.
 Or reply in the session with the IDs to accept or reject.
 
 | ID | Proposed | Title | Lane · Role · Product | Pri | Found by | Note |
@@ -49,6 +49,8 @@ Or reply in the session with the IDs to accept or reject.
 | P-042 | 2026-09-28 | [DataZooDE/erpl-adt](https://github.com/DataZooDE/erpl-adt) | — · — · — | — | ARK GitHub lane (sap) | CLI and MCP server for the SAP ADT REST API — search, read/write ABAP source, run tests, manage transports. No Eclipse, no RFC SDK, no JVM. · ★21 · community · pushed 2026-09-27 |
 | P-043 | 2026-09-28 | [SAP-samples/kyma-runtime-samples](https://github.com/SAP-samples/kyma-runtime-samples) | — · — · — | — | ARK GitHub lane (topic:sap-btp) | This project contains sample applications for building extensions and microservices on SAP BTP, Kyma runtime. · ★197 · SAP official · pushed 2026-09-28 |
 | P-044 | 2026-09-28 | [SAP-docs/btp-cloud-platform](https://github.com/SAP-docs/btp-cloud-platform) | — · — · — | — | ARK GitHub lane (topic:sap-btp) | Markdown source for the SAP BTP documentation. Enables feedback and contributions to improve the documentation. · ★94 · SAP official · pushed 2026-09-28 |
+| P-045 | 2026-09-29 | [shrek-abaper/sap-engineering-skill](https://github.com/shrek-abaper/sap-engineering-skill) | — · — · — | — | ARK GitHub lane (sap) | AI agent skills for SAP ABAP: ADT read/write CLI, 9-dimension code review, transport release gate, integration wiki. Works with Claude Code / opencode. · ★41 · community · pushed 2026-09-28 |
+| P-046 | 2026-09-29 | [SAP/cloud-sdk](https://github.com/SAP/cloud-sdk) | — · — · — | — | ARK GitHub lane (topic:sap-btp) | The SAP Cloud SDK documentation and support repository. · ★52 · SAP official · pushed 2026-09-27 |
 
 ## Stale on the live page (1)
 
