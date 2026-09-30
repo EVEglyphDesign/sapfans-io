@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "updated": "2026-09-29",
+ "updated": "2026-09-30",
  "note": "Review queue. ARK and operator pastes land here as state=open. Accept or reject with scripts/refs.py; nothing reaches the live page without a person accepting it.",
  "proposals": [
   {
@@ -925,6 +925,44 @@
    "proposed": "2026-09-29",
    "state": "open",
    "note": "The SAP Cloud SDK documentation and support repository. · ★52 · SAP official · pushed 2026-09-27"
+  },
+  {
+   "id": "P-047",
+   "title": "etosin/arc-draw",
+   "url": "https://github.com/etosin/arc-draw",
+   "why": null,
+   "lane": null,
+   "role": [],
+   "product": null,
+   "format": null,
+   "level": null,
+   "access": null,
+   "source": null,
+   "priority": null,
+   "credit": null,
+   "found_by": "ARK GitHub lane (sap)",
+   "proposed": "2026-09-30",
+   "state": "open",
+   "note": "ARC-DRAW is an SAP-aware Model Context Protocol (MCP) server for SAP Solution Architects. You describe an architecture in plain language; the AI agent places th · ★21 · community · pushed 2026-09-30"
+  },
+  {
+   "id": "P-048",
+   "title": "SAP-samples/codejam-code-based-agents",
+   "url": "https://github.com/SAP-samples/codejam-code-based-agents",
+   "why": null,
+   "lane": null,
+   "role": [],
+   "product": null,
+   "format": null,
+   "level": null,
+   "access": null,
+   "source": null,
+   "priority": null,
+   "credit": null,
+   "found_by": "ARK GitHub lane (sap)",
+   "proposed": "2026-09-30",
+   "state": "open",
+   "note": "Learn how to write code-based agents using Python, JavaScript and well-known industry standard frameworks. Learn how to deploy your code-based agent to SAP BTP, · ★62 · SAP official · pushed 2026-09-30"
   }
  ]
 }

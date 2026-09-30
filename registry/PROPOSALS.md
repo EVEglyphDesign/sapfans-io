@@ -1,6 +1,6 @@
 # Review list — proposed references
 
-Updated 2026-09-29. 46 open. Accept: `python3 scripts/refs.py accept P-001 --why "one line"` · Reject: `... reject P-001 --reason "..."`.
+Updated 2026-09-30. 48 open. Accept: `python3 scripts/refs.py accept P-001 --why "one line"` · Reject: `... reject P-001 --reason "..."`.
 Or reply in the session with the IDs to accept or reject.
 
 | ID | Proposed | Title | Lane · Role · Product | Pri | Found by | Note |
@@ -51,6 +51,8 @@ Or reply in the session with the IDs to accept or reject.
 | P-044 | 2026-09-28 | [SAP-docs/btp-cloud-platform](https://github.com/SAP-docs/btp-cloud-platform) | — · — · — | — | ARK GitHub lane (topic:sap-btp) | Markdown source for the SAP BTP documentation. Enables feedback and contributions to improve the documentation. · ★94 · SAP official · pushed 2026-09-28 |
 | P-045 | 2026-09-29 | [shrek-abaper/sap-engineering-skill](https://github.com/shrek-abaper/sap-engineering-skill) | — · — · — | — | ARK GitHub lane (sap) | AI agent skills for SAP ABAP: ADT read/write CLI, 9-dimension code review, transport release gate, integration wiki. Works with Claude Code / opencode. · ★41 · community · pushed 2026-09-28 |
 | P-046 | 2026-09-29 | [SAP/cloud-sdk](https://github.com/SAP/cloud-sdk) | — · — · — | — | ARK GitHub lane (topic:sap-btp) | The SAP Cloud SDK documentation and support repository. · ★52 · SAP official · pushed 2026-09-27 |
+| P-047 | 2026-09-30 | [etosin/arc-draw](https://github.com/etosin/arc-draw) | — · — · — | — | ARK GitHub lane (sap) | ARC-DRAW is an SAP-aware Model Context Protocol (MCP) server for SAP Solution Architects. You describe an architecture in plain language; the AI agent places th · ★21 · community · pushed 2026-09-30 |
+| P-048 | 2026-09-30 | [SAP-samples/codejam-code-based-agents](https://github.com/SAP-samples/codejam-code-based-agents) | — · — · — | — | ARK GitHub lane (sap) | Learn how to write code-based agents using Python, JavaScript and well-known industry standard frameworks. Learn how to deploy your code-based agent to SAP BTP, · ★62 · SAP official · pushed 2026-09-30 |
 
 ## Stale on the live page (1)
 
