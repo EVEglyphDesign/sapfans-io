@@ -2,169 +2,148 @@
 <html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SAPfans.io · Make your AI work accumulate</title>
-<meta name="description" content="You already use Claude, Copilot or Perplexity on your projects. This is how to point them at a GitHub repository so the work lands somewhere, the decisions are recorded, and the spend shows a return. Written by a functional consultant, for functional consultants.">
-<meta property="og:title" content="SAPfans.io · Make your AI work accumulate">
-<meta property="og:description" content="Point Claude, Copilot or Perplexity at a GitHub repository so the work lands, the decisions are recorded, and the spend shows a return.">
+<title>Reference Board · SAPfans.io</title>
+<meta name="description" content="A filterable, searchable catalog of education and reference material — classified by lane, role, product, format, level and access, checked on a schedule.">
+<meta property="og:title" content="Reference Board · SAPfans.io">
+<meta property="og:description" content="Education and references, classified and filterable. Paste what you find; it is reviewed and added.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-  .tri-wrap { display: flex; justify-content: center; margin: 24px 0 16px; }
-  .tri-wrap svg { width: 100%; max-width: 460px; height: auto; }
-  .tri-caption { text-align: center; color: var(--dim); font-size: 13px; margin: 4px 0 32px; }
-  .edges3 { display: grid; grid-template-columns: 1fr; gap: 14px; margin: 24px 0 32px; }
-  @media (min-width: 720px) { .edges3 { grid-template-columns: 1fr 1fr 1fr; } }
-  .edges3 .card h4 { color: var(--fg); }
-  .edges3 .card h4 span { color: var(--accent); margin-right: 6px; }
-  .quote { border-left: 3px solid var(--accent); padding: 6px 0 6px 18px; font-family: Fraunces, Georgia, serif; font-size: 20px; line-height: 1.4; color: var(--fg); margin: 24px 0; max-width: 640px; }
+  /* Directory controls — house tokens only, nothing new introduced */
+  .search{width:100%;box-sizing:border-box;background:var(--panel);color:var(--fg);border:1px solid var(--line);
+    padding:12px 14px;font:inherit;font-size:16px;margin:8px 0 14px}
+  .search:focus{outline:none;border-color:var(--accent)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 26px}
+  .chip{font-size:13px;letter-spacing:.02em;color:var(--dim);border:1px solid var(--line);background:var(--panel);
+    padding:5px 12px;cursor:pointer;border-radius:2px;font-family:inherit}
+  .chip:hover{color:var(--fg);border-color:var(--fg)}
+  .chip.on{color:#000;background:var(--accent);border-color:var(--accent);font-weight:700}
+  .count{font-size:13px;color:var(--dim);margin:0 0 18px}
+  .cat{margin:34px 0 10px}
+  .cat h2{margin:0 0 4px}
+  .cat p{color:var(--dim);font-size:14.5px;margin:0 0 12px}
+  .repo{background:var(--panel);border:1px solid var(--line);padding:14px 16px;margin:0 0 10px}
+  .repo h4{font-family:Fraunces,Georgia,serif;font-size:16px;font-weight:600;margin:0 0 4px}
+  .repo h4 a{text-decoration:none;color:var(--fg)}
+  .repo h4 a:hover{color:var(--accent)}
+  .repo p{font-size:14.5px;color:var(--fg);margin:0 0 8px}
+  .repo .tags{font-size:12px;color:var(--dim);letter-spacing:.03em}
+  .repo .tags span{margin-right:10px}
+  .empty{color:var(--dim);padding:20px 0}
+  .filters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:0 0 12px}
+  .filters select{width:100%;background:var(--panel);color:var(--fg);border:1px solid var(--line);padding:9px 10px;font:inherit;font-size:14px;border-radius:2px}
+  .filters select:focus{outline:none;border-color:var(--accent)}
+  .bar2{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 18px}
+  .bar2 .count{margin:0;flex:1}
+  #list .repo .tags{display:flex;flex-wrap:wrap;gap:2px 0}
+  .repo .pri{font-size:12px;color:var(--accent);font-weight:700;letter-spacing:.03em;margin-right:8px}
+  .repo .src{font-size:12px;color:var(--dim)}
+  .repo.stale{opacity:.6}
+  @media (max-width:640px){.filters{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  .neutral{border:1px solid var(--accent);background:var(--panel);padding:14px 16px;margin:0 0 22px}
+  .neutral h2{margin:0 0 6px;font-size:18px}
+  .neutral p{margin:0;font-size:14.5px}
+  .sig{margin-top:10px;border-top:1px solid var(--line);padding-top:8px}
+  .sig-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+  .sig-b,.sig-list a{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--bg);cursor:pointer;padding:0}
+  .sig-list a{width:32px;height:32px;vertical-align:middle;margin-left:4px}
+  .sig-b svg{width:20px;height:20px}.sig-list a svg{width:16px;height:16px}
+  .sig-b svg,.sig-list a svg{fill:var(--fg)}
+  .sig-b[data-net="linkedin"] svg,.sig-list a[data-net="linkedin"] svg{fill:#4a9fe8}
+  a.sig-b{text-decoration:none}
+  .sig-b:hover,.sig-b:focus-visible{border-color:var(--accent)}
+  .sig-b.on{border-color:var(--accent);background:var(--accent)}
+  .sig-b.on svg{fill:#000 !important}
+  .sig-who{background:none;border:0;color:var(--dim);font:inherit;font-size:13px;cursor:pointer;padding:6px 4px;text-decoration:underline;text-decoration-color:var(--accent)}
+  .sig-who b{color:var(--fg)}
+  .sig-none{font-size:13px;color:var(--dim)}
+  .sig-list{list-style:none;margin:8px 0 0;padding:0;font-size:14px}
+  .sig-list li{padding:4px 0;border-bottom:1px solid var(--line)}
+  .sig-panel{margin-top:10px;font-size:14px}
+  .sig-panel p{margin:0 0 8px;font-size:14px}
+  .sig-panel label{display:block;margin-bottom:8px}.sig-panel label span{display:block;color:var(--dim);font-size:13px;margin-bottom:4px}
+  .sig-panel input{width:100%;max-width:360px;padding:9px 10px;background:var(--bg);color:var(--fg);border:1px solid var(--line);font:inherit}
+  .sig-panel .chip{display:inline-block;text-decoration:none;margin:0 6px 6px 0}
+  .sig-err{color:var(--accent)}
+  .egd-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 </style>
 </head><body>
 
 <header><div class="bar">
 <a class="brand" href="index.html">SAPfans<span>.io</span></a>
-<nav><a href="index.html" class='on'>Start</a><a href="sovereign-start.html">Sovereign Start</a><a href="tutorial.html">Tutorial</a><a href="standards.html">Standards</a><a href="references.html">References</a><a href="repos.html">Repositories</a><a href="heritage.html">Heritage</a></nav><div class="egd-lang" role="group" aria-label="Language" data-i18n-skip><button type="button" data-lang="en" title="English">EN</button><button type="button" data-lang="fr" title="Français" lang="fr">FR</button><button type="button" data-lang="es" title="Español" lang="es">ES</button><button type="button" data-lang="de" title="Deutsch" lang="de">DE</button></div>
+<nav><a href="index.html" class='on'>Reference Board</a><a href="start.html">Start</a><a href="tutorial.html">Tutorial</a><a href="standards.html">Standards</a><a href="repos.html">Repositories</a><a href="heritage.html">Heritage</a></nav><div class="egd-lang" role="group" aria-label="Language" data-i18n-skip><button type="button" data-lang="en" title="English">EN</button><button type="button" data-lang="fr" title="Français" lang="fr">FR</button><button type="button" data-lang="es" title="Español" lang="es">ES</button><button type="button" data-lang="de" title="Deutsch" lang="de">DE</button></div>
 </div></header>
 <main class="wrap">
-
-<span class="pill">EgD-SAPF-001 r2 · Start here</span>
-<h1>Make the AI work accumulate</h1>
-<p class="lede">You already use Claude, Copilot or Perplexity on your projects. This is how to point them at a GitHub repository so the work lands somewhere, the decisions are recorded, and the spend shows a return.</p>
-<p class="meta">Written by a functional consultant, for functional consultants · 2026-09-18</p>
-<p><a class="btn" href="tutorial.html">Start the tutorial</a>
-<a class="btn ghost" href="standards.html">Set a usage standard</a></p>
-
-<section class="tri-wrap" aria-label="The triangle inside the repository circle">
-<svg viewBox="-60 0 640 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="tri-title tri-desc">
-  <title id="tri-title">The operator on one side of the repository circle, the objective on the other, with the Enterprise harness, Canon and Observation registry triangle inscribed in the circle between them</title>
-  <desc id="tri-desc">A circle labelled the repository contains an inscribed triangle whose three vertices sit on the circle: Enterprise harness at the top, Canon at the lower left, Observation registry at the lower right. Outside the circle on the lower left is a single asterisk labelled the operator. Outside the circle on the upper right, diagonally opposite, is a single asterisk labelled the objective. The line between the two asterisks passes through the whole circle and through the triangle inscribed in it.</desc>
-
-  <!-- Repository circle - a real boundary. The triangle is inscribed in it:
-       the three vertices sit ON the circle at 90 / 210 / 330 degrees. -->
-  <circle cx="260" cy="200" r="150" fill="none" stroke="#ffffff" stroke-width="2"/>
-  <text x="260" y="368" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="13" font-style="italic" fill="#c8c8c8">the repository</text>
-
-  <!-- Triangle: isosceles inscribed in the circle. Vertices ON the boundary. -->
-  <polygon points="260,50 130,275 390,275" fill="none" stroke="#ffffff" stroke-width="2"/>
-
-  <!-- vertex dots, each ON the circle -->
-  <circle cx="260" cy="50"  r="7" fill="#e87722"/>
-  <circle cx="130" cy="275" r="7" fill="#e87722"/>
-  <circle cx="390" cy="275" r="7" fill="#e87722"/>
-
-  <!-- vertex labels sit OUTSIDE the circle, aligned to their intersection bullet.
-       The bullet seeks the intersection; the text is next to it, never crossing the circle line. -->
-  <text x="260" y="28"  text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="15" font-weight="600" fill="#ffffff">Enterprise harness</text>
-  <text x="120" y="296" text-anchor="end"    font-family="Fraunces, Georgia, serif" font-size="17" font-weight="600" fill="#ffffff">Canon</text>
-  <text x="400" y="296" text-anchor="start"  font-family="Fraunces, Georgia, serif" font-size="17" font-weight="600" fill="#ffffff">Observation registry</text>
-
-  <!-- Founding axis - EgD-GEO-003.
-       The operator and the objective on opposite sides of the repository circle,
-       each a single asterisk. Symmetric across the circle centre. -->
-
-  <!-- Operator - single asterisk, lower-left, outside the circle -->
-  <text x="60" y="330" text-anchor="middle" dominant-baseline="middle" font-family="Fraunces, Georgia, serif" font-size="40" font-weight="700" fill="#ffffff">*</text>
-  <text x="60" y="365" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="12" font-style="italic" fill="#ffffff">the operator</text>
-
-  <!-- Objective - single asterisk, upper-right, outside the circle -->
-  <text x="460" y="70" text-anchor="middle" dominant-baseline="middle" font-family="Fraunces, Georgia, serif" font-size="40" font-weight="700" fill="#ffffff">*</text>
-  <text x="460" y="35" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="12" font-style="italic" fill="#ffffff">the objective</text>
-</svg>
+<span class="pill">EgD-SAPF-008 · Reference Board</span>
+<h1>Reference Board</h1>
+<p class="lede">Education and reference material, classified so you can filter to what you need. Checked on a schedule.</p>
+<section class="neutral" aria-labelledby="neutral-h">
+<h2 id="neutral-h">Neutral, curated reference material. You choose where to work together.</h2>
+<p>Everything on this board is curated reference material: vendor-neutral, classified, and checked on a schedule. If something here is useful to you, express your interest by leaving your signature on it with LinkedIn, X or GitHub. Peers working on the same thing can then find each other and work together directly, in the forum of their choosing. Nothing here endorses a vendor, a client or a consultant.</p>
+<p style="margin-top:10px"><b>Why this is different.</b> The original SAPfans.com was a discussion board from the 1990s, built before LinkedIn, X and GitHub existed, so the conversation had to happen on the site itself. Today those platforms already do conversation well. This board does the one thing they don't: it puts curated material and the people who know it in the same place, then gets out of the way. (<a href="heritage.html">Heritage</a>)</p>
 </section>
-<p class="tri-caption">The operator on one side of the repository, the objective on the other. The triangle in between binds every token of the model's processing to the axis between them &mdash; Enterprise harness at entry, canon at exit, observation registry logging every attempt to leave that axis.</p>
-
-<h2>The three edges</h2>
-<div class="edges3">
-  <div class="card"><h4><span>1.</span>Enterprise harness</h4><p>How the AI surface behaves before it does anything. The read-first rule. The one edge every session starts on.</p></div>
-  <div class="card"><h4><span>2.</span>Canon</h4><p>How the artifact leaves the repository. The output shape. The edge the work travels along on the way out.</p></div>
-  <div class="card"><h4><span>3.</span>Observation registry</h4><p>How the truth of what happened is preserved. The record of what was done wrong so it can be done right. The edge that closes the triangle.</p></div>
-</div>
-
-<p>Take the Enterprise harness away and the surface drifts. Take the canon away and the artifact leaks. Take the observation registry away and the other two become preferences instead of rules.</p>
-<p><a class="btn ghost" href="sovereign-start.html">Sovereign Start</a></p>
-
+<p class="meta" id="meta">Loading…</p>
+<label for="q" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Search references</label>
+<input class="search" id="q" type="search" placeholder="Search — try &quot;clean core&quot;, &quot;MCP&quot;, &quot;Datasphere&quot;…" autocomplete="off">
+<div class="filters" id="filters"></div>
+<div class="chips" id="chips"></div>
+<div class="bar2"><p class="count" id="count"></p><button class="chip" type="button" id="csv">Download CSV</button></div>
+<div id="list"></div>
 <hr>
-
-<h2>The problem, in one paragraph</h2>
-<p>You ask Claude to work through a config decision. You get a good answer. You close the tab. Next week someone asks why the decision went that way, and the reasoning is gone — it was in a chat window nobody kept. So you ask again, and pay again, and get an answer that is slightly different from the first one. Multiply that across a project team and the tools have cost real money without leaving anything behind.</p>
-<p>Developers solved this a long time ago. They put the work in a repository. <b>The repository is the control unit</b> — it holds the decision, who made it, when, and what it was based on. That is all this site is suggesting: that the functional side of the project use the same control unit the technical side already uses, and point the AI tools at it.</p>
-
-<section class="rings" aria-label="The idea, in one picture">
-<svg viewBox="0 0 260 260" role="img" aria-label="Three concentric rings: the record inside, the practitioner around it, the vendor outside">
-  <defs>
-    <radialGradient id="core" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#e87722" stop-opacity=".18"/>
-      <stop offset="100%" stop-color="#e87722" stop-opacity="0"/>
-    </radialGradient>
-  </defs>
-  <circle cx="130" cy="130" r="120" fill="none" stroke="#c8c8c8" stroke-opacity=".55" stroke-dasharray="3 5"/>
-  <circle cx="130" cy="130" r="84"  fill="none" stroke="#ffffff" stroke-opacity=".85" stroke-width="1.25"/>
-  <circle cx="130" cy="130" r="48"  fill="url(#core)" stroke="#e87722" stroke-width="2"/>
-  <polygon points="130,102 154,146 106,146" fill="none" stroke="#e87722" stroke-width="1.5" stroke-linejoin="round"/>
-  <text x="130" y="134" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-size="12" font-weight="700" fill="#ffffff">record</text>
-  <text x="130" y="64"  text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#ffffff" opacity=".85">practitioner</text>
-  <text x="130" y="24"  text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#c8c8c8">vendor</text>
-</svg>
-<div class="rings-legend">
-  <div class="row"><span class="dot"></span><div><b>Inner — the record</b><p>Your repository. The decisions, the analysis, the working papers. Yours, readable, in plain files.</p></div></div>
-  <div class="row"><span class="dot mid"></span><div><b>Mid — you</b><p>Where you and your AI tools work. Reads from the system, writes to the repository. Never writes back into the system.</p></div></div>
-  <div class="row"><span class="dot outer"></span><div><b>Outer — the system</b><p>SAP, or whatever the client runs. Untouched. This layer sits on top and changes nothing underneath.</p></div></div>
-</div>
-</section>
-
-<div class="drill" aria-label="The three steps">
-  <div class="step"><span class="n">1</span><h4>Set up the repo</h4><p>One repository per workstream, with a shape the whole team recognises. Twenty minutes.</p></div>
-  <div class="step"><span class="n">2</span><h4>Add the harness</h4><p>One file of instructions your tools read automatically, so every session starts warm.</p></div>
-  <div class="step"><span class="n">3</span><h4>Set a usage standard</h4><p>Agree what the team spends on, and what a result looks like. Otherwise the bill grows without the output.</p></div>
-</div>
-
-<hr>
-
-<h2>What a harness is</h2>
-<p>A harness is a small set of written instructions that your AI tools read before they do anything — the same instructions, every time, whichever tool you are using.</p>
-<p>Without one, every session starts cold. The tool does not know your project, your client's naming, what was already decided, or where to put the output. So it guesses, or it searches the internet for something already sitting in your repository. That is where most of the wasted spend goes — not on hard questions, but on re-deriving things you already had.</p>
-<p>With one, the tool opens the repository first, reads what has already been agreed, and writes its output back as a file rather than a message in a window. The kit is small — one file you edit, and the tool-specific files are generated from it so Claude, Copilot and Perplexity cannot end up following different rules.</p>
-<p><a class="btn" href="tutorial.html">See how it is set up</a></p>
-
-<h2>The point is the decisions</h2>
-<p>On a programme, the expensive thing is rarely the document. It is the decision the document was supposed to support — and the fact that six months later nobody can reconstruct why it went the way it did.</p>
-<p>So the thing worth capturing is not the transcript. It is the decision: what was chosen, what the alternatives were, what it rested on, and who agreed. That is a short file. It costs almost nothing to write and it is the only part anyone asks for later.</p>
-<blockquote><p>If the session were deleted right now, could someone rebuild the reasoning from the repository alone? If not, the work is not finished.</p></blockquote>
-
-<h2>Who this is for</h2>
-<p>Functional and business consultants. Process leads, analysts, PMO, solution architects on the functional side — people who are accountable for decisions rather than for code, and who are now using AI tools daily without a shared way of organising the output.</p>
-<p>You do not need to be a developer. The tutorial assumes you have never used GitHub, and the parts that are genuinely technical are done for you by a script.</p>
-
-<h2>What this is not</h2>
-<ul>
-<li><b>Not a methodology.</b> If your firm has one, follow it. This is a place to put work, not a way of doing it.</li>
-<li><b>Not a product.</b> Nothing to buy, nothing to sign, no partnership tier. GitHub's free plan is enough.</li>
-<li><b>Not a replacement for anything.</b> It sits on top of what the project already runs and changes nothing underneath.</li>
-<li><b>Not client material.</b> Nothing from a client engagement is published here, ever.</li>
-</ul>
-
-<hr>
-
-<h2>Join in, or just ask</h2>
-<p>This is one person's learning, shared so other people can do the same thing and improve on it. There is no list to join and no account to create beyond the GitHub one you will need anyway.</p>
+<h2>Found something</h2>
 <div class="cards">
-<div class="card"><h4><a href="https://github.com/EVEglyphDesign/sapfans-io/discussions">Introduce yourself</a></h4><p>Say what you work on and what you are trying to organise. Discussions, on the repository.</p></div>
-<div class="card"><h4><a href="https://github.com/EVEglyphDesign/sapfans-io/issues/new/choose">Ask a question</a></h4><p>Stuck on a step, or something here is wrong. Open an issue — the template asks the right things.</p></div>
-<div class="card"><h4><a href="https://www.linkedin.com/in/danytheriault">Just message me</a></h4><p>If GitHub is not where you want to start, LinkedIn works. Questions are welcome either way.</p></div>
-<div class="card"><h4><a href="repos.html">Share a repository</a></h4><p>A searchable directory of useful repositories, grouped by what they are for. Add one with an issue or a one-line pull request.</p></div>
+<div class="card"><h4><a href="https://github.com/EVEglyphDesign/sapfans-io/issues/new?template=reference.yml">Suggest a reference</a></h4><p>Paste the link and one sentence on why it helps. It goes to the review list.</p></div>
+<div class="card"><h4><a href="https://github.com/EVEglyphDesign/sapfans-io/blob/main/registry/PROPOSALS.md">See the review list</a></h4><p>What has been proposed and not yet added.</p></div>
 </div>
-<p>If you set this up for your own team and learn something, the useful thing is to say so — what worked, what did not, and what you would change. That is the whole of the ask.</p>
-
 </main>
 <footer><div class="wrap">
 <p class="moderator">Site moderator: Dany Theriault · <a href="https://www.linkedin.com/in/danytheriault" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://x.com/DDTheriault75" target="_blank" rel="noopener">X</a></p>
 <p class="lang-note">Services are delivered predominantly in English, French, Spanish and German — our team works in all four.</p>
-<p>© 2026 EVEglyphDesign · EgD-SAPF-001 r2 · Key ID EgD-KEY-2026-07 · 2026-09-18<br>
+<p>© 2026 EVEglyphDesign · EgD-SAPF-008 · Key ID EgD-KEY-2026-07 · 2026-09-26<br>
 Independent. Not affiliated with, endorsed by or sponsored by SAP SE or any service provider. SAP is a trademark of SAP SE.<br>
+References belong to their publishers. Listing is not endorsement by them of this site, nor by this site of them beyond the sentence given.<br>
 Held in the open at <a href="https://github.com/EVEglyphDesign/sapfans-io">the SAPfans.io repository</a> — clone it, it is yours.</p>
 <p class="accent">Pour le bien-être du peuple.</p>
 </div></footer>
+<script>
+(function(){
+var F=[["lane","Lane"],["role","Role"],["product","Product"],["format","Format"],["level","Level"],["access","Access"]];
+var D=[],sel={},pri=1,q="";
+function vals(k){var s={};D.forEach(function(i){[].concat(i[k]||[]).forEach(function(v){s[v]=1})});return Object.keys(s).sort()}
+function esc(t){return String(t==null?"":t).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function match(i){
+  for(var k in sel){if(sel[k]&&[].concat(i[k]||[]).indexOf(sel[k])<0)return false}
+  if(pri&&i.priority!==pri)return false;
+  if(q){var h=[i.title,i.why,i.lane,[].concat(i.role).join(" "),i.product,i.format,i.source].join(" ").toLowerCase();
+    if(q.split(/\s+/).some(function(w){return h.indexOf(w)<0}))return false}
+  return true}
+function rows(){return D.filter(match).sort(function(a,b){return (a.priority-b.priority)||(a.status==="stale")-(b.status==="stale")||a.title.localeCompare(b.title)})}
+function draw(){
+  var r=rows(),el=document.getElementById("list");
+  document.getElementById("count").textContent=r.length+" of "+D.length+" shown";
+  el.innerHTML=r.length?r.map(function(i){return '<div class="repo'+(i.status==="stale"?" stale":"")+'"><h4><a href="'+esc(i.url)+'" target="_blank" rel="noopener">'+esc(i.title)+'</a></h4><p>'+esc(i.why)+'</p><div class="tags"><span class="pri">P'+i.priority+'</span><span>'+esc(i.lane)+'</span>'+[].concat(i.role).map(function(r){return '<span>'+esc(r)+'</span>'}).join("")+'<span>'+esc(i.product)+'</span><span>'+esc(i.format)+'</span><span>'+esc(i.level)+'</span><span>'+esc(i.access)+'</span>'+(i.status==="stale"?'<span>Link failed last check</span>':'')+'</div><div class="sig" data-ref="'+esc(i.id)+'"></div></div>'}).join(""):'<p class="empty">Nothing matches. Clear a filter.</p>';
+  if(window.egdSig)window.egdSig.paint()}
+function build(){
+  document.getElementById("filters").innerHTML=F.map(function(f){return '<label style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)" for="f-'+f[0]+'">'+f[1]+'</label><select id="f-'+f[0]+'" data-k="'+f[0]+'"><option value="">'+f[1]+': all</option>'+vals(f[0]).map(function(v){return '<option value="'+esc(v)+'">'+esc(v)+'</option>'}).join("")+'</select>'}).join("");
+  document.querySelectorAll("#filters select").forEach(function(s){s.addEventListener("change",function(){sel[s.dataset.k]=s.value;draw()})});
+  var c=document.getElementById("chips");
+  c.innerHTML='<button class="chip" type="button" data-p="0">All priorities</button><button class="chip on" type="button" data-p="1">Priority 1 — start here</button><button class="chip" type="button" data-p="2">Priority 2</button><button class="chip" type="button" data-p="3">Priority 3</button>';
+  c.querySelectorAll("button").forEach(function(b){b.addEventListener("click",function(){pri=+b.dataset.p;c.querySelectorAll("button").forEach(function(x){x.classList.toggle("on",x===b)});draw()})});
+  document.getElementById("q").addEventListener("input",function(e){q=e.target.value.trim().toLowerCase();draw()});
+  document.getElementById("csv").addEventListener("click",function(){
+    var cols=["id","priority","title","url","why","lane","role","product","format","level","access","source","status","checked"];
+    var lines=[cols.join(",")].concat(rows().map(function(i){return cols.map(function(k){return '"'+String([].concat(i[k]==null?"":i[k]).join("; ")).replace(/"/g,'""')+'"'}).join(",")}));
+    var a=document.createElement("a");a.href=URL.createObjectURL(new Blob(["\ufeff"+lines.join("\n")],{type:"text/csv"}));a.download="sapfans-references.csv";a.click()});
+  draw()}
+fetch("references.json",{cache:"no-cache"}).then(function(r){return r.json()}).then(function(j){
+  D=j.items.filter(function(i){return i.status!=="retired"});
+  document.getElementById("meta").textContent=D.length+" references · updated "+j.updated;build()})
+ .catch(function(){document.getElementById("meta").textContent="Could not load the catalog."});
+})();
+</script>
 <script src="i18n.js" defer></script>
+<script src="signatures.js" defer></script>
 </body></html>

@@ -42,7 +42,7 @@ def main():
     net = field(body, "Network").lower().strip()
     remove = field(body, "Action").lower().startswith("remove")
     ids = {i["id"] for i in json.loads(CAT.read_text())["items"]}
-    if ref not in ids: return say(f"`{ref or '?'}` is not a reference on the page. Open the form from a reference card on [sapfans.io/references.html](https://sapfans.io/references.html).", False)
+    if ref not in ids: return say(f"`{ref or '?'}` is not a reference on the page. Open the form from a reference card on [the Reference Board](https://sapfans.io).", False)
     if net not in NETS: return say("Pick LinkedIn, X or GitHub.", False)
     d = json.loads(OUT.read_text()) if OUT.exists() else {"schema": 1, "refs": {}}
     people = d["refs"].setdefault(ref, [])
@@ -71,7 +71,7 @@ def main():
         people.append(p)
     p["name"] = user.get("name") or user["login"]
     p["links"][net] = url
-    save(d); say(f"Signed {ref} with your {net_name(net)}. It shows on [the references page](https://sapfans.io/references.html) in a minute or two.", True)
+    save(d); say(f"Signed {ref} with your {net_name(net)}. It shows on [the Reference Board](https://sapfans.io) in a minute or two.", True)
 
 def net_name(n): return {"linkedin": "LinkedIn", "x": "X", "github": "GitHub"}[n]
 def save(d):

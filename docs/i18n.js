@@ -1,5 +1,40 @@
 /* EgD i18n dictionary — keyed by the English source string. Missing keys stay in English. */
 window.EGD_I18N={
+"Neutral, curated reference material. You choose where to work together.": {
+"de": "Neutrales, kuratiertes Referenzmaterial. Sie wählen, wo Sie zusammenarbeiten.",
+"es": "Material de referencia neutral y curado. Usted elige dónde colaborar.",
+"fr": "Des références neutres et sélectionnées. Vous choisissez où travailler ensemble."
+},
+"Everything on this board is curated reference material: vendor-neutral, classified, and checked on a schedule. If something here is useful to you, express your interest by leaving your signature on it with LinkedIn, X or GitHub. Peers working on the same thing can then find each other and work together directly, in the forum of their choosing. Nothing here endorses a vendor, a client or a consultant.": {
+"de": "Alles auf diesem Board ist kuratiertes Referenzmaterial: herstellerneutral, klassifiziert und regelmäßig geprüft. Wenn Ihnen etwas hier nützt, zeigen Sie Ihr Interesse, indem Sie mit LinkedIn, X oder GitHub Ihre Signatur hinterlassen. Fachleute, die am selben Thema arbeiten, finden sich so gegenseitig und arbeiten direkt zusammen, im Forum ihrer Wahl. Nichts hier ist eine Empfehlung für einen Anbieter, einen Kunden oder einen Berater.",
+"es": "Todo en este tablero es material de referencia curado: neutral respecto a proveedores, clasificado y revisado periódicamente. Si algo aquí le resulta útil, exprese su interés dejando su firma con LinkedIn, X o GitHub. Así, los colegas que trabajan en lo mismo pueden encontrarse y colaborar directamente, en el foro que elijan. Nada aquí respalda a un proveedor, un cliente o un consultor.",
+"fr": "Tout ce qui figure sur ce tableau est une référence sélectionnée : neutre vis-à-vis des éditeurs, classée et vérifiée régulièrement. Si quelque chose vous est utile, exprimez votre intérêt en laissant votre signature avec LinkedIn, X ou GitHub. Les pairs qui travaillent sur le même sujet peuvent alors se trouver et collaborer directement, dans le forum de leur choix. Rien ici ne constitue une recommandation d’un éditeur, d’un client ou d’un consultant."
+},
+"Why this is different.": {
+"de": "Was hier anders ist.",
+"es": "Por qué esto es diferente.",
+"fr": "Ce qui change."
+},
+"The original SAPfans.com was a discussion board from the 1990s, built before LinkedIn, X and GitHub existed, so the conversation had to happen on the site itself. Today those platforms already do conversation well. This board does the one thing they don't: it puts curated material and the people who know it in the same place, then gets out of the way.": {
+"de": "Das ursprüngliche SAPfans.com war ein Diskussionsforum aus den 1990er-Jahren, entstanden bevor es LinkedIn, X und GitHub gab, deshalb musste das Gespräch auf der Website selbst stattfinden. Heute leisten diese Plattformen das Gespräch bereits gut. Dieses Board tut das eine, was sie nicht tun: Es bringt kuratiertes Material und die Menschen, die es kennen, an einen Ort und tritt dann zurück.",
+"es": "El SAPfans.com original fue un foro de discusión de los años noventa, creado antes de que existieran LinkedIn, X y GitHub, por lo que la conversación tenía que ocurrir en el propio sitio. Hoy esas plataformas ya hacen bien la conversación. Este tablero hace lo único que ellas no hacen: reúne el material curado y a las personas que lo conocen en un mismo lugar, y luego se aparta.",
+"fr": "Le SAPfans.com d’origine était un forum de discussion des années 1990, créé avant l’existence de LinkedIn, X et GitHub ; la conversation devait donc avoir lieu sur le site lui-même. Aujourd’hui, ces plateformes gèrent déjà bien la conversation. Ce tableau fait la seule chose qu’elles ne font pas : il réunit au même endroit des références sélectionnées et les personnes qui les connaissent, puis s’efface."
+},
+"Reference Board": {
+"de": "Referenz-Board",
+"es": "Tablero de referencias",
+"fr": "Tableau des références"
+},
+"EgD-SAPF-008 · Reference Board": {
+"de": "EgD-SAPF-008 · Referenz-Board",
+"es": "EgD-SAPF-008 · Tablero de referencias",
+"fr": "EgD-SAPF-008 · Tableau des références"
+},
+"Reference Board · SAPfans.io": {
+"de": "Referenz-Board · SAPfans.io",
+"es": "Tablero de referencias · SAPfans.io",
+"fr": "Tableau des références · SAPfans.io"
+},
 "Vendor-neutral. A connecting point, not a forum.": {
 "de": "Herstellerneutral. Ein Treffpunkt, kein Forum.",
 "es": "Neutral respecto a proveedores. Un punto de conexión, no un foro.",
@@ -195,10 +230,10 @@ window.EGD_I18N={
 "es": "Referencias · SAPfans.io",
 "fr": "Références · SAPfans.io"
 },
-"SAP education and reference material, classified so you can filter to what you need. Checked on a schedule.": {
-"de": "SAP-Schulungs- und Referenzmaterial, so klassifiziert, dass Sie nach dem filtern können, was Sie brauchen. Regelmäßig geprüft.",
-"es": "Formación y material de referencia de SAP, clasificados para que filtre lo que necesita. Revisados periódicamente.",
-"fr": "Formation et documentation de référence SAP, classées pour que vous puissiez filtrer ce dont vous avez besoin. Vérifiées régulièrement."
+"Education and reference material, classified so you can filter to what you need. Checked on a schedule.": {
+"de": "Schulungs- und Referenzmaterial, so klassifiziert, dass Sie nach dem filtern können, was Sie brauchen. Regelmäßig geprüft.",
+"es": "Formación y material de referencia, clasificados para que filtre lo que necesita. Revisados periódicamente.",
+"fr": "Formation et documentation de référence, classées pour que vous puissiez filtrer ce dont vous avez besoin. Vérifiées régulièrement."
 },
 "Search references": {
 "de": "Referenzen durchsuchen",

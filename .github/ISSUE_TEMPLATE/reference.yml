@@ -1,5 +1,5 @@
 name: Suggest a reference
-description: Paste an SAP education or reference link for the catalog at sapfans.io/references.html
+description: Paste an SAP education or reference link for the catalog at sapfans.io
 title: "[Ref] "
 labels: ["reference"]
 body:
