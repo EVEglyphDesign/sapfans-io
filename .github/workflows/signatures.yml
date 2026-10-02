@@ -1,0 +1,36 @@
+# SAPfans.io signatures — EgD-SAPF-009. A "Sign a reference" issue -> docs/signatures.json, then the issue is closed.
+# Identity is the GitHub account that opened the issue. GitHub's free runners, no model calls.
+name: signatures
+on:
+  issues: {types: [opened]}
+permissions: {contents: write, issues: write, pages: write}
+concurrency: {group: signatures, cancel-in-progress: false}
+jobs:
+  sign:
+    if: contains(github.event.issue.labels.*.name, 'signature')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - id: s
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_USER: ${{ github.event.issue.user.login }}
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/sign.py
+      - name: Commit
+        if: steps.s.outputs.ok == 'true'
+        run: |
+          git config user.name "sapfans-signatures[bot]"
+          git config user.email "agent@eveglyphdesign.com"
+          git add docs/signatures.json
+          git diff --cached --quiet && exit 0
+          git commit -m "signatures: #${{ github.event.issue.number }} by ${{ github.event.issue.user.login }}"
+          git pull --rebase && git push
+          gh api -X POST repos/${{ github.repository }}/pages/builds || true
+        env: {GH_TOKEN: "${{ github.token }}"}
+      - name: Reply and close
+        if: always()
+        env: {GH_TOKEN: "${{ github.token }}", MSG: "${{ steps.s.outputs.msg }}"}
+        run: |
+          gh issue comment ${{ github.event.issue.number }} --repo ${{ github.repository }} --body "${MSG:-Something went wrong. Please try again from the references page.}"
+          gh issue close ${{ github.event.issue.number }} --repo ${{ github.repository }} --reason ${{ steps.s.outputs.ok == 'true' && 'completed' || '"not planned"' }}

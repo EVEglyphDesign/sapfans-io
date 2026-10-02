@@ -1,0 +1,37 @@
+name: Sign a reference
+description: Leave your signature on a reference at sapfans.io/references.html so others working on it can find you.
+title: "Sign "
+labels: ["signature"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **A connecting point, not a forum.** Your name and the link you choose are added to the
+        reference. Discussion, advice and services happen on your own network, never on SAPfans.io.
+        Just press **Create**. Nothing else to write.
+  - type: input
+    id: ref
+    attributes:
+      label: Reference
+      description: Filled in for you, for example R-001.
+    validations:
+      required: true
+  - type: dropdown
+    id: net
+    attributes:
+      label: Network
+      options: [LinkedIn, X, GitHub]
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: Your profile link (only if it isn't already on your GitHub profile)
+      placeholder: "linkedin.com/in/your-name or @handle"
+  - type: dropdown
+    id: action
+    attributes:
+      label: Action
+      options: [Sign, Remove my signature]
+    validations:
+      required: true

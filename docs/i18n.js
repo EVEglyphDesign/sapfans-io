@@ -1,5 +1,100 @@
 /* EgD i18n dictionary — keyed by the English source string. Missing keys stay in English. */
 window.EGD_I18N={
+"Vendor-neutral. A connecting point, not a forum.": {
+"de": "Herstellerneutral. Ein Treffpunkt, kein Forum.",
+"es": "Neutral respecto a proveedores. Un punto de conexión, no un foro.",
+"fr": "Neutre vis-à-vis des éditeurs. Un point de rencontre, pas un forum."
+},
+"If you've reviewed something here and found it useful, leave your signature on it. Anyone working on the same thing can then find you on your own network: LinkedIn, X or GitHub. Discussion, advice and services all happen there, between you, never on this site. Nothing here endorses a vendor, a client or a consultant.": {
+"de": "Wenn Sie hier etwas geprüft und nützlich gefunden haben, hinterlassen Sie Ihre Signatur. Wer am selben Thema arbeitet, findet Sie dann in Ihrem eigenen Netzwerk: LinkedIn, X oder GitHub. Diskussion, Rat und Dienstleistungen finden dort statt, zwischen Ihnen, nie auf dieser Website. Nichts hier ist eine Empfehlung für einen Anbieter, einen Kunden oder einen Berater.",
+"es": "Si revisó algo aquí y le resultó útil, deje su firma. Quien trabaje en lo mismo podrá encontrarle en su propia red: LinkedIn, X o GitHub. La discusión, los consejos y los servicios ocurren allí, entre ustedes, nunca en este sitio. Nada aquí respalda a un proveedor, un cliente o un consultor.",
+"fr": "Si vous avez examiné quelque chose ici et l’avez trouvé utile, laissez votre signature. Quiconque travaille sur le même sujet pourra vous trouver sur votre propre réseau : LinkedIn, X ou GitHub. Discussions, conseils et services se passent là-bas, entre vous, jamais sur ce site. Rien ici ne constitue une recommandation d’un éditeur, d’un client ou d’un consultant."
+},
+"Site moderator: Dany Theriault ·": {
+"de": "Moderator der Website: Dany Theriault ·",
+"es": "Moderador del sitio: Dany Theriault ·",
+"fr": "Modérateur du site : Dany Theriault ·"
+},
+"Signed by": {
+"de": "Signiert von",
+"es": "Firmado por",
+"fr": "Signé par"
+},
+"see who": {
+"de": "wer",
+"es": "ver quién",
+"fr": "voir qui"
+},
+"Found it useful? Leave your signature.": {
+"de": "Nützlich gefunden? Hinterlassen Sie Ihre Signatur.",
+"es": "¿Le resultó útil? Deje su firma.",
+"fr": "Utile ? Laissez votre signature."
+},
+"Sign in to leave your signature. Your name comes from the network you sign in with.": {
+"de": "Melden Sie sich an, um Ihre Signatur zu hinterlassen. Ihr Name kommt aus dem Netzwerk, mit dem Sie sich anmelden.",
+"es": "Inicie sesión para dejar su firma. Su nombre viene de la red con la que inicia sesión.",
+"fr": "Connectez-vous pour laisser votre signature. Votre nom provient du réseau avec lequel vous vous connectez."
+},
+"Sign in with LinkedIn": {
+"de": "Mit LinkedIn anmelden",
+"es": "Iniciar sesión con LinkedIn",
+"fr": "Se connecter avec LinkedIn"
+},
+"Sign in with GitHub": {
+"de": "Mit GitHub anmelden",
+"es": "Iniciar sesión con GitHub",
+"fr": "Se connecter avec GitHub"
+},
+"Your X handle": {
+"de": "Ihr X-Name",
+"es": "Su usuario de X",
+"fr": "Votre identifiant X"
+},
+"Your LinkedIn profile link": {
+"de": "Link zu Ihrem LinkedIn-Profil",
+"es": "Enlace a su perfil de LinkedIn",
+"fr": "Lien vers votre profil LinkedIn"
+},
+"Save and sign": {
+"de": "Speichern und signieren",
+"es": "Guardar y firmar",
+"fr": "Enregistrer et signer"
+},
+"That link does not look right. Try again.": {
+"de": "Dieser Link sieht nicht richtig aus. Bitte erneut versuchen.",
+"es": "Ese enlace no parece correcto. Inténtelo de nuevo.",
+"fr": "Ce lien ne semble pas correct. Réessayez."
+},
+"Sign with your LinkedIn": {
+"de": "Mit Ihrem LinkedIn signieren",
+"es": "Firmar con su LinkedIn",
+"fr": "Signer avec votre LinkedIn"
+},
+"Remove your LinkedIn": {
+"de": "Ihr LinkedIn entfernen",
+"es": "Quitar su LinkedIn",
+"fr": "Retirer votre LinkedIn"
+},
+"Sign with your X": {
+"de": "Mit Ihrem X signieren",
+"es": "Firmar con su X",
+"fr": "Signer avec votre X"
+},
+"Remove your X": {
+"de": "Ihr X entfernen",
+"es": "Quitar su X",
+"fr": "Retirer votre X"
+},
+"Sign with your GitHub": {
+"de": "Mit Ihrem GitHub signieren",
+"es": "Firmar con su GitHub",
+"fr": "Signer avec votre GitHub"
+},
+"Remove your GitHub": {
+"de": "Ihr GitHub entfernen",
+"es": "Quitar su GitHub",
+"fr": "Retirer votre GitHub"
+},
 "SAP data shared into the client's existing Databricks without copying it out. Start here when the client's analytics platform is Databricks.": {
 "de": "SAP-Daten werden in das bestehende Databricks des Kunden geteilt, ohne sie herauszukopieren. Hier beginnen, wenn die Analyseplattform des Kunden Databricks ist.",
 "es": "Datos de SAP compartidos con el Databricks que el cliente ya tiene, sin copiarlos. Empiece aquí cuando la plataforma analítica del cliente sea Databricks.",
