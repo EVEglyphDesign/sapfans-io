@@ -1967,10 +1967,10 @@ window.EGD_I18N={
 "es": "Fuentes del portal de documentación del Cloud SDK: instalación, soporte y vías de contribución. El punto de entrada único para extender los servicios en la nube de SAP con código.",
 "fr": "Les sources du portail de documentation du Cloud SDK : installation, support et voies de contribution. Le point d’entrée unique pour étendre les services cloud SAP par le code."
 },
-"Sovereign Start is the floor beneath the pattern. It gives a first-time practitioner a repository, an EVE Enterprise Harness, an output canon, and an observation registry in one file — enough shape that an AI surface can be pointed at their record without producing toilet paper. Once the floor is in, the pattern becomes usable.": {
-"de": "Sovereign Start ist das Fundament unter dem Muster. Es gibt einer Erstanwenderin oder einem Erstanwender ein Repository, ein EVE Enterprise Harness, einen Ausgabekanon und ein Beobachtungsregister in einer Datei — genug Form, damit eine KI-Oberfläche auf die eigene Aufzeichnung gerichtet werden kann, ohne Makulatur zu produzieren. Sobald das Fundament liegt, wird das Muster nutzbar.",
-"es": "Sovereign Start es el piso debajo del patrón. Le da a un profesional principiante un repositorio, un EVE Enterprise Harness, un canon de salida y un registro de observaciones en un solo archivo — suficiente forma para que una superficie de IA pueda apuntarse a su registro sin producir papel higiénico. Una vez que el piso está puesto, el patrón se vuelve utilizable.",
-"fr": "Sovereign Start est le plancher sous le modèle. Il donne à un praticien débutant un dépôt, un EVE Enterprise Harness, un canon de sortie et un registre d’observations en un seul fichier — assez de structure pour qu’une surface d’IA puisse être dirigée vers son dossier sans produire du papier de toilette. Une fois le plancher en place, le modèle devient utilisable."
+"Sovereign Start is the floor beneath the pattern. It gives a first-time practitioner a repository, an Enterprise harness, an output canon, and an observation registry in one file — enough shape that an AI surface can be pointed at their record without producing toilet paper. Once the floor is in, the pattern becomes usable.": {
+"de": "Sovereign Start ist das Fundament unter dem Muster. Es gibt einer Erstanwenderin oder einem Erstanwender ein Repository, ein Enterprise harness, einen Ausgabekanon und ein Beobachtungsregister in einer Datei — genug Form, damit eine KI-Oberfläche auf die eigene Aufzeichnung gerichtet werden kann, ohne Makulatur zu produzieren. Sobald das Fundament liegt, wird das Muster nutzbar.",
+"es": "Sovereign Start es el piso debajo del patrón. Le da a un profesional principiante un repositorio, un Enterprise harness, un canon de salida y un registro de observaciones en un solo archivo — suficiente forma para que una superficie de IA pueda apuntarse a su registro sin producir papel higiénico. Una vez que el piso está puesto, el patrón se vuelve utilizable.",
+"fr": "Sovereign Start est le plancher sous le modèle. Il donne à un praticien débutant un dépôt, un Enterprise harness, un canon de sortie et un registre d’observations en un seul fichier — assez de structure pour qu’une surface d’IA puisse être dirigée vers son dossier sans produire du papier de toilette. Une fois le plancher en place, le modèle devient utilisable."
 },
 "Spend against artefacts that survived. Ten minutes, not a workstream.": {
 "de": "Ausgaben gegenüber Artefakten, die überlebt haben. Zehn Minuten, kein Workstream.",
@@ -2065,10 +2065,10 @@ window.EGD_I18N={
 "es": "Sugiera una adición publicándola en el tablero, o abra un pull request en",
 "fr": "Suggérez un ajout en le publiant sur le tableau, ou ouvrez une pull request sur"
 },
-"Take the EVE Enterprise Harness away and the surface drifts. Take the canon away and the artifact leaks. Take the observation registry away and the other two become preferences instead of rules.": {
-"de": "Nehmen Sie das EVE Enterprise Harness weg, und die Oberfläche driftet. Nehmen Sie den Kanon weg, und das Artefakt leckt. Nehmen Sie das Beobachtungsregister weg, und die anderen beiden werden zu Vorlieben statt Regeln.",
-"es": "Quite el EVE Enterprise Harness y la superficie se desvía. Quite el canon y el artefacto se filtra. Quite el registro de observaciones y los otros dos se vuelven preferencias en lugar de reglas.",
-"fr": "Retirez l’EVE Enterprise Harness et la surface dérive. Retirez le canon et l’artefact fuit. Retirez le registre d’observations et les deux autres deviennent des préférences plutôt que des règles."
+"Take the Enterprise harness away and the surface drifts. Take the canon away and the artifact leaks. Take the observation registry away and the other two become preferences instead of rules.": {
+"de": "Nehmen Sie das Enterprise harness weg, und die Oberfläche driftet. Nehmen Sie den Kanon weg, und das Artefakt leckt. Nehmen Sie das Beobachtungsregister weg, und die anderen beiden werden zu Vorlieben statt Regeln.",
+"es": "Quite el Enterprise harness y la superficie se desvía. Quite el canon y el artefacto se filtra. Quite el registro de observaciones y los otros dos se vuelven preferencias en lugar de reglas.",
+"fr": "Retirez l’Enterprise harness et la surface dérive. Retirez le canon et l’artefact fuit. Retirez le registre d’observations et les deux autres deviennent des préférences plutôt que des règles."
 },
 "Take the pattern": {
 "de": "Das Muster übernehmen",
@@ -2280,10 +2280,10 @@ window.EGD_I18N={
 "es": "El contrato operativo detrás del arnés — leer antes de buscar, clases de gasto, reglas de salida — como skill de Claude cargable, con un registro de defectos y un historial de versiones.",
 "fr": "Le contrat d’exploitation derrière le harnais — lire avant de chercher, classes de dépense, règles de production — sous forme de skill Claude chargeable, avec un registre des défauts et un historique des versions."
 },
-"The operator on one side of the repository, the objective on the other. The triangle in between binds every token of the model's processing to the axis between them — EVE Enterprise Harness at entry, canon at exit, observation registry logging every attempt to leave that axis.": {
-"de": "Der Operator auf der einen Seite des Repositorys, das Ziel auf der anderen. Das Dreieck dazwischen bindet jedes Token der Modellverarbeitung an die Achse zwischen beiden — EVE Enterprise Harness am Eingang, Kanon am Ausgang, das Beobachtungsregister protokolliert jeden Versuch, diese Achse zu verlassen.",
-"es": "El operador a un lado del repositorio, el objetivo al otro. El triángulo entre ambos vincula cada token del procesamiento del modelo al eje que los une — EVE Enterprise Harness a la entrada, el canon a la salida, el registro de observaciones anotando cada intento de salir de ese eje.",
-"fr": "L’opérateur d’un côté du dépôt, l’objectif de l’autre. Le triangle entre les deux lie chaque jeton du traitement du modèle à l’axe qui les relie — EVE Enterprise Harness à l’entrée, le canon à la sortie, le registre d’observations consignant chaque tentative de quitter cet axe."
+"The operator on one side of the repository, the objective on the other. The triangle in between binds every token of the model's processing to the axis between them — Enterprise harness at entry, canon at exit, observation registry logging every attempt to leave that axis.": {
+"de": "Der Operator auf der einen Seite des Repositorys, das Ziel auf der anderen. Das Dreieck dazwischen bindet jedes Token der Modellverarbeitung an die Achse zwischen beiden — Enterprise harness am Eingang, Kanon am Ausgang, das Beobachtungsregister protokolliert jeden Versuch, diese Achse zu verlassen.",
+"es": "El operador a un lado del repositorio, el objetivo al otro. El triángulo entre ambos vincula cada token del procesamiento del modelo al eje que los une — Enterprise harness a la entrada, el canon a la salida, el registro de observaciones anotando cada intento de salir de ese eje.",
+"fr": "L’opérateur d’un côté du dépôt, l’objectif de l’autre. Le triangle entre les deux lie chaque jeton du traitement du modèle à l’axe qui les relie — Enterprise harness à l’entrée, le canon à la sortie, le registre d’observations consignant chaque tentative de quitter cet axe."
 },
 "The page that answers \"so how do these two actually relate?\" — currently the most common question on the topic.": {
 "de": "Die Seite, die „wie hängen die beiden eigentlich zusammen?“ beantwortet — derzeit die häufigste Frage zum Thema.",
