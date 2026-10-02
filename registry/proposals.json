@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "updated": "2026-10-01",
+ "updated": "2026-10-02",
  "note": "Review queue. ARK and operator pastes land here as state=open. Accept or reject with scripts/refs.py; nothing reaches the live page without a person accepting it.",
  "proposals": [
   {
@@ -982,6 +982,25 @@
    "proposed": "2026-10-01",
    "state": "open",
    "note": "This is the markdown version of the official SAPUI5 documentation from the SAPUI5 Demo Kit for external contributions. · ★185 · SAP official · pushed 2026-10-01"
+  },
+  {
+   "id": "P-050",
+   "title": "yzonur/sap-adt-mcp",
+   "url": "https://github.com/yzonur/sap-adt-mcp",
+   "why": null,
+   "lane": null,
+   "role": [],
+   "product": null,
+   "format": null,
+   "level": null,
+   "access": null,
+   "source": null,
+   "priority": null,
+   "credit": null,
+   "found_by": "ARK GitHub lane (sap)",
+   "proposed": "2026-10-02",
+   "state": "open",
+   "note": "MCP server giving Claude live access to SAP systems via ADT — read, edit, search, test, and diff ABAP across landscapes without installing anything on the SAP s · ★16 · community · pushed 2026-09-28"
   }
  ]
 }

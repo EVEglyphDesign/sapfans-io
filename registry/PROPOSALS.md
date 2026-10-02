@@ -1,6 +1,6 @@
 # Review list — proposed references
 
-Updated 2026-10-01. 49 open. Accept: `python3 scripts/refs.py accept P-001 --why "one line"` · Reject: `... reject P-001 --reason "..."`.
+Updated 2026-10-02. 50 open. Accept: `python3 scripts/refs.py accept P-001 --why "one line"` · Reject: `... reject P-001 --reason "..."`.
 Or reply in the session with the IDs to accept or reject.
 
 | ID | Proposed | Title | Lane · Role · Product | Pri | Found by | Note |
@@ -54,6 +54,7 @@ Or reply in the session with the IDs to accept or reject.
 | P-047 | 2026-09-30 | [etosin/arc-draw](https://github.com/etosin/arc-draw) | — · — · — | — | ARK GitHub lane (sap) | ARC-DRAW is an SAP-aware Model Context Protocol (MCP) server for SAP Solution Architects. You describe an architecture in plain language; the AI agent places th · ★21 · community · pushed 2026-09-30 |
 | P-048 | 2026-09-30 | [SAP-samples/codejam-code-based-agents](https://github.com/SAP-samples/codejam-code-based-agents) | — · — · — | — | ARK GitHub lane (sap) | Learn how to write code-based agents using Python, JavaScript and well-known industry standard frameworks. Learn how to deploy your code-based agent to SAP BTP, · ★62 · SAP official · pushed 2026-09-30 |
 | P-049 | 2026-10-01 | [SAP-docs/sapui5](https://github.com/SAP-docs/sapui5) | — · — · — | — | ARK GitHub lane (topic:sap-btp) | This is the markdown version of the official SAPUI5 documentation from the SAPUI5 Demo Kit for external contributions. · ★185 · SAP official · pushed 2026-10-01 |
+| P-050 | 2026-10-02 | [yzonur/sap-adt-mcp](https://github.com/yzonur/sap-adt-mcp) | — · — · — | — | ARK GitHub lane (sap) | MCP server giving Claude live access to SAP systems via ADT — read, edit, search, test, and diff ABAP across landscapes without installing anything on the SAP s · ★16 · community · pushed 2026-09-28 |
 
 ## Stale on the live page (1)
 
