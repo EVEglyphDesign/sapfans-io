@@ -98,7 +98,7 @@ Held in the open at <a href="https://github.com/EVEglyphDesign/sapfans-io">the S
 <script>
 (function(){
 var F=[["lane","Lane"],["role","Role"],["product","Product"],["format","Format"],["level","Level"],["access","Access"]];
-var D=[],sel={},pri=0,q="";
+var D=[],sel={},pri=1,q="";
 function vals(k){var s={};D.forEach(function(i){[].concat(i[k]||[]).forEach(function(v){s[v]=1})});return Object.keys(s).sort()}
 function esc(t){return String(t==null?"":t).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
 function match(i){
@@ -116,7 +116,7 @@ function build(){
   document.getElementById("filters").innerHTML=F.map(function(f){return '<label style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)" for="f-'+f[0]+'">'+f[1]+'</label><select id="f-'+f[0]+'" data-k="'+f[0]+'"><option value="">'+f[1]+': all</option>'+vals(f[0]).map(function(v){return '<option value="'+esc(v)+'">'+esc(v)+'</option>'}).join("")+'</select>'}).join("");
   document.querySelectorAll("#filters select").forEach(function(s){s.addEventListener("change",function(){sel[s.dataset.k]=s.value;draw()})});
   var c=document.getElementById("chips");
-  c.innerHTML='<button class="chip on" type="button" data-p="0">All priorities</button><button class="chip" type="button" data-p="1">Priority 1 — start here</button><button class="chip" type="button" data-p="2">Priority 2</button><button class="chip" type="button" data-p="3">Priority 3</button>';
+  c.innerHTML='<button class="chip" type="button" data-p="0">All priorities</button><button class="chip on" type="button" data-p="1">Priority 1 — start here</button><button class="chip" type="button" data-p="2">Priority 2</button><button class="chip" type="button" data-p="3">Priority 3</button>';
   c.querySelectorAll("button").forEach(function(b){b.addEventListener("click",function(){pri=+b.dataset.p;c.querySelectorAll("button").forEach(function(x){x.classList.toggle("on",x===b)});draw()})});
   document.getElementById("q").addEventListener("input",function(e){q=e.target.value.trim().toLowerCase();draw()});
   document.getElementById("csv").addEventListener("click",function(){

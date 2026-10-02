@@ -60,8 +60,23 @@ Or reply in the session with the IDs to accept or reject.
 
 - R-021 [Architecting the Unified Semantic Layer — the data foundation](https://learning.sap.com/courses/guiding-ai-driven-transformation-as-an-sap-enterprise-architect/architecting-the-unified-semantic-layer-the-data-foundation) — last checked 2026-09-28
 
-## Decided (0)
+## Decided (15)
 
+- P-051 accepted 2026-10-02 — SAP and Google Cloud launch BDC Connect for BigQuery
+- P-052 accepted 2026-10-02 — Google Cloud Cortex Framework
+- P-053 accepted 2026-10-02 — Integrating SAP Business Data Cloud with Google BigQuery
+- P-054 accepted 2026-10-02 — Guidance for SAP Data Integration and Management on AWS
+- P-055 accepted 2026-10-02 — Guidance for Data Lakes with SAP and Non-SAP Data on AWS
+- P-056 accepted 2026-10-02 — Scaling RISE with SAP data and AWS Glue
+- P-057 accepted 2026-10-02 — SAP and Palantir enhance partnership with AI-supported data migration tooling
+- P-058 accepted 2026-10-02 — Accelerate enterprise data migration with Palantir AIP
+- P-059 accepted 2026-10-02 — Accelerating enterprise data migration with Palantir AIP (white paper, PDF)
+- P-060 accepted 2026-10-02 — Announcing the General Availability of SAP Business Data Cloud Connect to Databricks
+- P-061 accepted 2026-10-02 — SAP Databricks documentation
+- P-062 accepted 2026-10-02 — Unlocking SAP business context in Databricks with semantic metadata Delta Sharing
+- P-063 accepted 2026-10-02 — Announcing General Availability of SAP Snowflake and SAP Business Data Cloud Connect for Snowflake
+- P-064 accepted 2026-10-02 — About Snowflake and SAP zero-copy integration
+- P-065 accepted 2026-10-02 — Integration with Snowflake — SAP Architecture Center
 
 ---
 

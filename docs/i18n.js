@@ -1,5 +1,85 @@
 /* EgD i18n dictionary — keyed by the English source string. Missing keys stay in English. */
 window.EGD_I18N={
+"SAP data shared into the client's existing Databricks without copying it out. Start here when the client's analytics platform is Databricks.": {
+"de": "SAP-Daten werden in das bestehende Databricks des Kunden geteilt, ohne sie herauszukopieren. Hier beginnen, wenn die Analyseplattform des Kunden Databricks ist.",
+"es": "Datos de SAP compartidos con el Databricks que el cliente ya tiene, sin copiarlos. Empiece aquí cuando la plataforma analítica del cliente sea Databricks.",
+"fr": "Les données SAP partagées dans le Databricks existant du client, sans les copier. Commencez ici quand la plateforme analytique du client est Databricks."
+},
+"Databricks running inside SAP Business Data Cloud. What the team works in when the client buys it through SAP.": {
+"de": "Databricks innerhalb von SAP Business Data Cloud. Damit arbeitet das Team, wenn der Kunde es über SAP kauft.",
+"es": "Databricks dentro de SAP Business Data Cloud. Con lo que trabaja el equipo cuando el cliente lo compra a través de SAP.",
+"fr": "Databricks à l’intérieur de SAP Business Data Cloud. Ce avec quoi l’équipe travaille quand le client l’achète via SAP."
+},
+"How SAP's field meanings travel with the data into Databricks. Why the shared data stays readable as business data.": {
+"de": "Wie die Bedeutung der SAP-Felder mit den Daten nach Databricks wandert. Warum die geteilten Daten als Geschäftsdaten lesbar bleiben.",
+"es": "Cómo el significado de los campos de SAP viaja con los datos hasta Databricks. Por qué los datos compartidos siguen siendo legibles como datos de negocio.",
+"fr": "Comment le sens des champs SAP voyage avec les données vers Databricks. Pourquoi les données partagées restent lisibles comme données métier."
+},
+"SAP's May 2026 general availability for Snowflake, both inside Business Data Cloud and connected to the client's own Snowflake. Start here when the client's analytics platform is Snowflake.": {
+"de": "Die allgemeine Verfügbarkeit von SAP für Snowflake im Mai 2026, sowohl innerhalb von Business Data Cloud als auch verbunden mit dem eigenen Snowflake des Kunden. Hier beginnen, wenn die Analyseplattform des Kunden Snowflake ist.",
+"es": "La disponibilidad general de SAP para Snowflake de mayo de 2026, tanto dentro de Business Data Cloud como conectado al Snowflake propio del cliente. Empiece aquí cuando la plataforma analítica del cliente sea Snowflake.",
+"fr": "La disponibilité générale SAP pour Snowflake de mai 2026, à la fois dans Business Data Cloud et reliée au Snowflake du client. Commencez ici quand la plateforme analytique du client est Snowflake."
+},
+"Snowflake's own explanation of sharing SAP data without copying it. The Snowflake-side view of the same connection.": {
+"de": "Snowflakes eigene Erklärung, wie SAP-Daten ohne Kopie geteilt werden. Die Snowflake-Sicht auf dieselbe Verbindung.",
+"es": "La explicación de Snowflake sobre cómo compartir datos de SAP sin copiarlos. La vista desde Snowflake de la misma conexión.",
+"fr": "L’explication de Snowflake sur le partage des données SAP sans copie. La vue côté Snowflake de la même connexion."
+},
+"SAP's reference architecture for SAP data with Snowflake. The picture to hold up in a design review.": {
+"de": "Die Referenzarchitektur von SAP für SAP-Daten mit Snowflake. Das Bild für ein Design-Review.",
+"es": "La arquitectura de referencia de SAP para datos SAP con Snowflake. La imagen que mostrar en una revisión de diseño.",
+"fr": "L’architecture de référence SAP pour les données SAP avec Snowflake. Le schéma à montrer en revue de conception."
+},
+"Data-first assessment": {
+"de": "Datengestützte Bewertung",
+"es": "Evaluación basada en datos",
+"fr": "Évaluation fondée sur les données"
+},
+"SAP and Google's July 2026 launch for sharing SAP Business Data Cloud data with BigQuery. Start here when the client's analytics platform is Google.": {
+"de": "Der Start von SAP und Google im Juli 2026, um Daten aus SAP Business Data Cloud mit BigQuery zu teilen. Hier beginnen, wenn die Analyseplattform des Kunden Google ist.",
+"es": "El lanzamiento de SAP y Google de julio de 2026 para compartir datos de SAP Business Data Cloud con BigQuery. Empiece aquí cuando la plataforma analítica del cliente sea Google.",
+"fr": "Le lancement SAP et Google de juillet 2026 pour partager les données de SAP Business Data Cloud avec BigQuery. Commencez ici quand la plateforme analytique du client est Google."
+},
+"Google's ready-made data models for SAP ECC and S/4HANA data in BigQuery. Shows what the client's own data can answer before anyone builds.": {
+"de": "Die fertigen Datenmodelle von Google für SAP-ECC- und S/4HANA-Daten in BigQuery. Zeigt, was die eigenen Daten des Kunden beantworten können, bevor jemand baut.",
+"es": "Los modelos de datos listos de Google para datos de SAP ECC y S/4HANA en BigQuery. Muestra lo que los propios datos del cliente pueden responder antes de construir nada.",
+"fr": "Les modèles de données prêts à l’emploi de Google pour les données SAP ECC et S/4HANA dans BigQuery. Montre ce que les données du client peuvent dire avant que quiconque construise."
+},
+"SAP's own lesson on combining SAP and Google data. The SAP-side view of the same connection.": {
+"de": "SAPs eigene Lektion zur Kombination von SAP- und Google-Daten. Die SAP-Sicht auf dieselbe Verbindung.",
+"es": "La lección de SAP sobre cómo combinar datos de SAP y de Google. La vista desde SAP de la misma conexión.",
+"fr": "La leçon de SAP sur la combinaison des données SAP et Google. La vue côté SAP de la même connexion."
+},
+"AWS's reference design for bringing SAP ERP data into AWS. Start here when the client's analytics platform is AWS.": {
+"de": "Das Referenzdesign von AWS, um SAP-ERP-Daten nach AWS zu bringen. Hier beginnen, wenn die Analyseplattform des Kunden AWS ist.",
+"es": "El diseño de referencia de AWS para llevar datos de SAP ERP a AWS. Empiece aquí cuando la plataforma analítica del cliente sea AWS.",
+"fr": "La conception de référence d’AWS pour amener les données SAP ERP dans AWS. Commencez ici quand la plateforme analytique du client est AWS."
+},
+"Combining SAP and non-SAP data in an Amazon S3 data lake. The mixed landscape most large programs now run.": {
+"de": "SAP- und Nicht-SAP-Daten in einem Amazon-S3-Data-Lake kombinieren. Die gemischte Landschaft, in der die meisten großen Programme heute laufen.",
+"es": "Combinar datos SAP y no SAP en un data lake de Amazon S3. El entorno mixto en el que hoy corren la mayoría de los grandes programas.",
+"fr": "Combiner données SAP et non SAP dans un data lake Amazon S3. Le paysage mixte dans lequel tournent aujourd’hui la plupart des grands programmes."
+},
+"Pulling RISE with SAP data through the AWS Glue SAP OData connector. The hands-on step a lead should understand, not run.": {
+"de": "RISE-with-SAP-Daten über den AWS-Glue-SAP-OData-Connector abziehen. Der praktische Schritt, den eine Leitung verstehen, aber nicht selbst ausführen sollte.",
+"es": "Extraer datos de RISE with SAP con el conector SAP OData de AWS Glue. El paso práctico que un líder debe entender, no ejecutar.",
+"fr": "Extraire les données RISE with SAP via le connecteur SAP OData d’AWS Glue. L’étape pratique qu’un responsable doit comprendre, pas exécuter."
+},
+"SAP and Palantir's May 2026 announcement: AI working from the client's actual data to speed up the move to cloud ERP. The data-first message in one release.": {
+"de": "Die Ankündigung von SAP und Palantir vom Mai 2026: KI, die mit den tatsächlichen Daten des Kunden arbeitet, um den Wechsel zu Cloud ERP zu beschleunigen. Die datengestützte Botschaft in einer Mitteilung.",
+"es": "El anuncio de SAP y Palantir de mayo de 2026: IA que trabaja con los datos reales del cliente para acelerar el paso a cloud ERP. El mensaje basado en datos en un solo comunicado.",
+"fr": "L’annonce SAP et Palantir de mai 2026 : une IA qui part des données réelles du client pour accélérer le passage au cloud ERP. Le message fondé sur les données en un seul communiqué."
+},
+"How Palantir runs the migration lifecycle from the data up. Useful for knowing what the client may already be buying.": {
+"de": "Wie Palantir den Migrationszyklus von den Daten aus steuert. Nützlich, um zu wissen, was der Kunde vielleicht schon kauft.",
+"es": "Cómo Palantir gestiona el ciclo de migración partiendo de los datos. Útil para saber qué puede estar comprando ya el cliente.",
+"fr": "Comment Palantir mène le cycle de migration à partir des données. Utile pour savoir ce que le client achète peut-être déjà."
+},
+"Palantir's paper on moving from legacy SAP to S/4HANA. The long read behind the announcement.": {
+"de": "Palantirs Papier zum Wechsel von Alt-SAP zu S/4HANA. Die ausführliche Lektüre hinter der Ankündigung.",
+"es": "El documento de Palantir sobre pasar de SAP heredado a S/4HANA. La lectura de fondo detrás del anuncio.",
+"fr": "Le livre blanc de Palantir sur le passage de l’ancien SAP à S/4HANA. La lecture de fond derrière l’annonce."
+},
 "References": {
 "de": "Referenzen",
 "es": "Referencias",
