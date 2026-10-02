@@ -1,5 +1,20 @@
 /* EgD i18n dictionary — keyed by the English source string. Missing keys stay in English. */
 window.EGD_I18N={
+"GitHub intro": {
+"de": "GitHub-Einführung",
+"es": "Introducción a GitHub",
+"fr": "Introduction à GitHub"
+},
+"Found something useful? Sign it with LinkedIn, X or GitHub so peers on the same work can find you, then talk wherever you like.": {
+"de": "Etwas Nützliches gefunden? Signieren Sie es mit LinkedIn, X oder GitHub, damit Fachleute am selben Thema Sie finden, und sprechen Sie dann, wo Sie möchten.",
+"es": "¿Encontró algo útil? Fírmelo con LinkedIn, X o GitHub para que los colegas que trabajan en lo mismo le encuentren, y hablen donde prefieran.",
+"fr": "Vous avez trouvé quelque chose d’utile ? Signez-le avec LinkedIn, X ou GitHub pour que vos pairs sur le même sujet vous trouvent, puis échangez où vous voulez."
+},
+"Why it works this way": {
+"de": "Warum es so funktioniert",
+"es": "Por qué funciona así",
+"fr": "Pourquoi ça fonctionne ainsi"
+},
 "Neutral, curated reference material. You choose where to work together.": {
 "de": "Neutrales, kuratiertes Referenzmaterial. Sie wählen, wo Sie zusammenarbeiten.",
 "es": "Material de referencia neutral y curado. Usted elige dónde colaborar.",
