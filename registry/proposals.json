@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "updated": "2026-10-02",
+ "updated": "2026-10-03",
  "note": "Review queue. ARK and operator pastes land here as state=open. Accept or reject with scripts/refs.py; nothing reaches the live page without a person accepting it.",
  "proposals": [
   {
@@ -1376,6 +1376,25 @@
    "note": "Operator asked for Databricks and Snowflake in the Data-first assessment lane.",
    "decided": "2026-10-02",
    "row": "R-054"
+  },
+  {
+   "id": "P-066",
+   "title": "SAP-samples/btp-terraform-samples",
+   "url": "https://github.com/SAP-samples/btp-terraform-samples",
+   "why": null,
+   "lane": null,
+   "role": [],
+   "product": null,
+   "format": null,
+   "level": null,
+   "access": null,
+   "source": null,
+   "priority": null,
+   "credit": null,
+   "found_by": "ARK GitHub lane (topic:sap-btp)",
+   "proposed": "2026-10-03",
+   "state": "open",
+   "note": "Best practices and examples to use the Terraform provider for SAP BTP. · ★68 · SAP official · pushed 2026-10-02"
   }
  ]
 }
