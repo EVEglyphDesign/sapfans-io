@@ -24,10 +24,10 @@
   .sig-mini{margin:0;border:0;padding:0}.sig-mini .sig-row{flex-wrap:nowrap;gap:4px}.sig-mini .sig-b{width:30px;height:30px}.sig-mini .sig-b svg{width:14px;height:14px}.sig-mini .sig-none{display:none}
   .land h2{font-size:14px;margin:0 0 6px;letter-spacing:0;color:var(--dim);font-family:Inter,sans-serif;font-weight:600}
   .dash{border-top:1px solid var(--accent);font-size:13px}
-  .dr{display:grid;grid-template-columns:22px 178px 104px minmax(0,1.6fr) minmax(0,1fr) minmax(0,1.1fr) minmax(0,1.1fr) 44px 28px;column-gap:10px;align-items:start;border-bottom:1px solid var(--line);padding:7px 0}
+  .dr{display:grid;grid-template-columns:22px 178px 150px minmax(0,1.6fr) minmax(0,1fr) minmax(0,1.1fr) minmax(0,1.1fr) 44px 28px;column-gap:10px;align-items:start;border-bottom:1px solid var(--line);padding:7px 0}
   .dh{color:var(--dim);font-size:11px;letter-spacing:.04em;text-transform:uppercase;padding:5px 0}
   .c{min-width:0}.c-rk{color:var(--dim)}.c-pf a{font-weight:700;text-decoration-thickness:1px}
-  .c-pf{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ns{display:none}.c-sg{display:none}.dr.open .c-sg{display:block;grid-column:2/-1;padding-top:6px}
+  .c-pf{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ns{display:none}.rmp{display:none}.c-sg{display:none}.dr.open .c-sg{display:block;grid-column:2/-1;padding-top:6px}
   .c details>summary{list-style:none;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .c details>summary::-webkit-details-marker{display:none}
   .c details[open]>summary{display:none}
@@ -39,9 +39,9 @@
   .ex:hover{border-color:var(--accent)}
   .sig-mini{margin:0;border:0;padding:0}.sig-mini .sig-b{width:30px;height:30px}.sig-mini .sig-b svg{width:14px;height:14px}
   @media (max-width:760px){
-    .dr{grid-template-columns:18px minmax(0,1fr) minmax(0,1fr) 40px 28px}
+    .dr{grid-template-columns:18px minmax(0,1.25fr) minmax(0,.75fr) 40px 28px;column-gap:8px}
     .c-rk{grid-column:1;grid-row:1}.c-pf{grid-column:2;grid-row:1}.c-cl{grid-column:3;grid-row:1}.c-sc{grid-column:4;grid-row:1}.c-x{grid-column:5;grid-row:1}
-    .c-cn,.c-tl,.c-wn,.c-us{display:none}.nl{display:none}.ns{display:inline}
+    .c-cn,.c-tl,.c-wn,.c-us{display:none}.nl{display:none}.ns{display:inline}.rmp{display:inline;font-size:9px;letter-spacing:0;padding:0 2px}.rmc{display:none}
     .dr.open .c-cn,.dr.open .c-tl,.dr.open .c-wn,.dr.open .c-us{display:block;grid-column:2/-1;padding-top:6px}
     .dr.open .c-cn::before{content:"SAP connectivity"}.dr.open .c-tl::before{content:"Tools"}.dr.open .c-wn::before{content:"Top wins (live)"}.dr.open .c-us::before{content:"Known users"}
     .dr.open .c::before{display:block;color:var(--dim);font-size:10.5px;text-transform:uppercase;letter-spacing:.04em}
@@ -137,8 +137,8 @@ function land(){
     var more=function(n){return n>1?' <span class="mo">+'+(n-1)+'</span>':''};
     return '<div class="dr'+(p.fixed?' fx':'')+'" role="row">'+
       '<div class="c c-rk">'+(p.fixed?'':rk)+'</div>'+
-      '<div class="c c-pf">'+(p.fixed?'<span class="st ga rm">Roadmap</span> ':'')+'<a href="#list" data-pf="'+esc(p.pf)+'" title="'+esc(p.name)+': show all references"><span class="nl">'+esc(p.name)+'</span><span class="ns">'+esc(p.short)+'</span></a></div>'+
-      cell("cl",esc(p.cs),esc(p["class"]))+
+      '<div class="c c-pf">'+(p.fixed?'<span class="st ga rmp">Roadmap</span> ':'')+'<a href="#list" data-pf="'+esc(p.pf)+'" title="'+esc(p.name)+': show all references"><span class="nl">'+esc(p.name)+'</span><span class="ns">'+esc(p.short)+'</span></a></div>'+
+      cell("cl",(p.fixed?'<span class="st ga rmc">Roadmap</span> ':'')+esc(p.cs),(p.fixed?'<span class="st ga">Roadmap</span> ':'')+esc(p["class"]))+
       cell("cn",'<span class="st'+(c0.s==="Planned"?'':' ga')+'">'+esc(c0.s)+'</span> '+esc(c0.t)+more(p.conn.length),conn)+
       cell("tl",esc(p.tools[0][0])+more(p.tools.length),tools)+
       cell("wn",esc(p.wins[0].n)+more(p.wins.length),wins)+
