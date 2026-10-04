@@ -2,13 +2,12 @@
  "schema": 2,
  "updated": "2026-10-03",
  "note": "The platform table on the Content Connect Board. One row per platform. Only public sources from vendors, their customers or their partners. wins = live deployments only (named = 1 point, unnamed = 0.5); planned items never score. score = wins (max 3) + 1 if the SAP connection is GA + 1 if the vendor publishes a customer count. Row 1 is the SAP-roadmap row and stays first; the rest are ordered by score.",
- "method": "Evidence score (0–5): up to 3 for live, sourced deployments (named 1, unnamed 0.5) · +1 SAP connection generally available · +1 published customer count. Planned items never score.",
+ "method": "Enterprise standard counts only what actually happened: fast SAP implementation wins and decision-intelligence deployments 2 points each, other live deployments 1 (unnamed customers half), +1 for a published customer count. Planned items never score.",
  "platforms": [
   {
    "id": "L-SAP",
    "pf": "SAP",
    "name": "SAP Business Data Cloud",
-   "fixed": true,
    "class": "Business data fabric, SAP-managed",
    "conn": [
     {
@@ -54,22 +53,39 @@
    ],
    "wins": [
     {
+     "n": "Co-op UK",
+     "t": "SAP Retail on HANA moved to RISE with SAP S/4HANA Cloud, completed 2024",
+     "u": "https://news.sap.com/uk/2024/06/co-op-puts-customer-experience-first-with-rise-with-sap/",
+     "named": true,
+     "k": "impl"
+    },
+    {
+     "n": "Carrefour Brazil",
+     "t": "Converted to S/4HANA under RISE with SAP",
+     "u": "https://portalerp.com/br/noticia/carrefour-conclui-migracao-para-sap-s4hana",
+     "named": true,
+     "k": "impl"
+    },
+    {
      "n": "SAF-Holland",
      "t": "5x faster analysis on 100M+ SAP records with BDC, SAP Databricks and SAP Analytics Cloud",
      "u": "https://www.databricks.com/customers/saf-holland",
-     "named": true
+     "named": true,
+     "k": "live"
     },
     {
      "n": "Vodafone",
      "t": "BW footprint cut 80% with one semantic layer across markets",
      "u": "https://www.sap.com/products/data-cloud.html",
-     "named": true
+     "named": true,
+     "k": "live"
     },
     {
      "n": "Ericsson",
      "t": "One set of business semantics across petabytes and 180+ countries",
      "u": "https://www.sap.com/products/data-cloud.html",
-     "named": true
+     "named": true,
+     "k": "live"
     }
    ],
    "users": {
@@ -77,16 +93,33 @@
    },
    "conn_ga": true,
    "count": false,
-   "score": 4,
+   "score": 7,
    "cs": "Data fabric",
    "top": [
-    "R-055",
     "R-056",
     "R-049",
     "R-052",
     "R-057"
    ],
-   "short": "SAP BDC"
+   "short": "SAP BDC",
+   "strat": [
+    {
+     "n": "SAP + NVIDIA",
+     "t": "Secure, governed AI agent execution on the SAP Business AI Platform",
+     "u": "https://news.sap.com/2026/05/secure-ai-agents-how-sap-and-nvidia-co-define-enterprise-grade-agent-execution/"
+    },
+    {
+     "n": "Databricks and Snowflake inside BDC",
+     "t": "Partner data platforms delivered as SAP products",
+     "u": "https://www.sap.com/products/data-cloud.html"
+    }
+   ],
+   "sscore": 2,
+   "top_s": [
+    "R-055",
+    "R-056",
+    "R-057"
+   ]
   },
   {
    "id": "L-AWS",
@@ -128,19 +161,22 @@
      "n": "Thermo Fisher",
      "t": "SAP data in an AWS data lake",
      "u": "https://aws.amazon.com/blogs/awsforsap/building-data-lakes-with-sap-on-aws/",
-     "named": true
+     "named": true,
+     "k": "live"
     },
     {
      "n": "JD Group",
      "t": "SAP and non-SAP data lake for peak-period warehouse efficiency",
      "u": "https://sapinsider.org/wp-content/uploads/2025/03/JD-Group-Case-Study.pdf",
-     "named": true
+     "named": true,
+     "k": "live"
     },
     {
      "n": "Deutsche Bahn",
      "t": "Faster provisioning and SAP reporting on AWS",
      "u": "https://aws.amazon.com/sap/case-studies/",
-     "named": true
+     "named": true,
+     "k": "live"
     }
    ],
    "users": {
@@ -149,14 +185,30 @@
    },
    "conn_ga": true,
    "count": true,
-   "score": 5,
+   "score": 4,
    "cs": "Data lake",
    "top": [
-    "R-058",
     "R-059",
     "R-043"
    ],
-   "short": "AWS"
+   "short": "AWS",
+   "strat": [
+    {
+     "n": "SAP + AWS",
+     "t": "Bi-directional zero-copy data sharing with SAP BDC announced",
+     "u": "https://news.sap.com/2026/05/sap-aws-next-generation-ai-bi-directional-zero-copy-data-sharing-sap-bdc/"
+    },
+    {
+     "n": "Sainsbury's",
+     "t": "Moving to S/4HANA for Retail, RISE on AWS, signed 2024",
+     "u": "https://www.theregister.com/2024/09/17/sainsburys_rise_with_sap/"
+    }
+   ],
+   "sscore": 2,
+   "top_s": [
+    "R-058",
+    "R-059"
+   ]
   },
   {
    "id": "L-MICROSOFT",
@@ -194,19 +246,36 @@
      "n": "Maersk",
      "t": "500 SAP servers and a petabyte to Azure in six months; natural-language queries on SAP data",
      "u": "https://techcommunity.microsoft.com/blog/sapapplications/sap-on-azure-product-announcements-summary-%E2%80%93-sap-sapphire-2026/4517634",
-     "named": true
+     "named": true,
+     "k": "impl"
+    },
+    {
+     "n": "Woolworths",
+     "t": "ECC lifted to Azure first, then switched to S/4HANA in one weekend: 4.2M lines of custom code rewritten with AI, 1,800+ systems and interfaces, 35,000 tests",
+     "u": "https://www.linkedin.com/posts/woolworths-group_teamwoolies-retailinnovation-digitaltransformation-activity-7493071256661934080-1ZdF",
+     "named": true,
+     "k": "impl"
+    },
+    {
+     "n": "Coles",
+     "t": "Finance core to S/4HANA in five months by selective transition: 107 company codes, 12 years of history, near-zero downtime",
+     "u": "https://www.snpgroup.com/en/resources/customer-stories/coles-sap-s4hana/",
+     "named": true,
+     "k": "impl"
     },
     {
      "n": "PERI",
      "t": "From SAP BW on HANA to Fabric and Azure Databricks",
      "u": "https://www.microsoft.com/en/customers/story/26449-peri-microsoft-fabric",
-     "named": true
+     "named": true,
+     "k": "live"
     },
     {
      "n": "KONE",
      "t": "54,000+ contracts a year checked against SAP; handling time down 33%",
      "u": "https://techcommunity.microsoft.com/blog/sapapplications/sap-on-azure-product-announcements-summary-%E2%80%93-sap-sapphire-2026/4517634",
-     "named": true
+     "named": true,
+     "k": "live"
     }
    ],
    "users": {
@@ -215,13 +284,24 @@
    },
    "conn_ga": true,
    "count": true,
-   "score": 5,
+   "score": 9,
    "cs": "Lakehouse",
    "top": [
-    "R-060",
     "R-061"
    ],
-   "short": "Microsoft"
+   "short": "Microsoft",
+   "strat": [
+    {
+     "n": "BDC Connect for Fabric",
+     "t": "Zero-copy SAP BDC to Microsoft Fabric, H2 2026",
+     "u": "https://techcommunity.microsoft.com/blog/sapapplications/sap-on-azure-product-announcements-summary-%E2%80%93-sap-sapphire-2026/4517634"
+    }
+   ],
+   "sscore": 1,
+   "top_s": [
+    "R-060",
+    "R-061"
+   ]
   },
   {
    "id": "L-GOOGLE",
@@ -256,22 +336,46 @@
    ],
    "wins": [
     {
+     "n": "Coop Switzerland",
+     "t": "56 TB ECC retail system to S/4HANA by selective transition, 14-hour cutover; SAP data into BigQuery for logistics forecasts",
+     "u": "https://www.snpgroup.com/en/resources/customer-stories/enormous-15-hour-migration-moves-coop-to-sap-s4hana-successfully/",
+     "named": true,
+     "k": "impl"
+    },
+    {
+     "n": "Deutsche Börse",
+     "t": "Upgraded to S/4HANA and moved to Google Cloud at the same time",
+     "u": "https://cloud.google.com/blog/products/sap-google-cloud/deutsche-borse-group-runs-s4-hana-on-google-cloud",
+     "named": true,
+     "k": "impl"
+    },
+    {
      "n": "Grupo Bafar",
      "t": "SAP and Salesforce data in one BigQuery lake",
      "u": "https://cloud.google.com/customers/grupobafar",
-     "named": true
+     "named": true,
+     "k": "live"
     },
     {
      "n": "Copel",
      "t": "Gemini answering questions on SAP data",
      "u": "https://cloud.google.com/customers/copel",
-     "named": true
+     "named": true,
+     "k": "live"
     },
     {
      "n": "Orica",
      "t": "SAP performance and data transformation",
      "u": "https://cloud.google.com/customers/orica",
-     "named": true
+     "named": true,
+     "k": "live"
+    },
+    {
+     "n": "Carrefour Belgium",
+     "t": "Nearly all SAP on Google Cloud, including finance and HR; SAP data feeds BigQuery",
+     "u": "https://cloud.google.com/blog/products/sap-google-cloud/carrefour-belgium-leading-in-retail-digital-transformation",
+     "named": true,
+     "k": "live"
     }
    ],
    "users": {
@@ -279,14 +383,36 @@
    },
    "conn_ga": true,
    "count": false,
-   "score": 4,
+   "score": 8,
    "cs": "Lakehouse",
    "top": [
     "R-040",
     "R-041",
     "R-042"
    ],
-   "short": "Google"
+   "short": "Google",
+   "strat": [
+    {
+     "n": "Carrefour Group",
+     "t": "Google named strategic AI partner; €100M a year on AI to 2030",
+     "u": "https://www.carrefour.com/sites/default/files/2026-02/PR%20Carrefour%202030%20Strategic%20Plan_1.pdf"
+    },
+    {
+     "n": "REWE Group",
+     "t": "73 SAP systems moving to S/4HANA Cloud, RISE on Google Cloud",
+     "u": "https://news.sap.com/2025/04/rewe-group-rise-with-sap-cloud-transform-digitally/"
+    },
+    {
+     "n": "METRO",
+     "t": "100 country finance instances consolidating into one S/4HANA on Google Cloud",
+     "u": "https://cloud.google.com/blog/topics/customers/how-metro-ag-is-migrating-its-sap-finance-systems-to-google-cloud"
+    }
+   ],
+   "sscore": 3,
+   "top_s": [
+    "R-040",
+    "R-041"
+   ]
   },
   {
    "id": "L-PALANTIR",
@@ -315,13 +441,15 @@
      "n": "Food manufacturer",
      "t": "20+ markets moved from ECC to S/4HANA",
      "u": "https://www.palantir.com/migration/",
-     "named": false
+     "named": false,
+     "k": "impl"
     },
     {
      "n": "Manufacturer",
      "t": "Several legacy ERPs to S/4HANA on Foundry",
      "u": "https://unit8.com/casestudies/erp-data-migration-on-foundry/",
-     "named": false
+     "named": false,
+     "k": "impl"
     }
    ],
    "users": {
@@ -329,14 +457,26 @@
    },
    "conn_ga": false,
    "count": false,
-   "score": 1.0,
+   "score": 2.0,
    "cs": "Ontology",
    "top": [
     "R-046",
     "R-047",
     "R-048"
    ],
-   "short": "Palantir"
+   "short": "Palantir",
+   "strat": [
+    {
+     "n": "SAP + Palantir",
+     "t": "AI-assisted data migration to S/4HANA, \"weeks, not years\"",
+     "u": "https://www.palantir.com/migration/"
+    }
+   ],
+   "sscore": 1,
+   "top_s": [
+    "R-046"
+   ]
   }
- ]
+ ],
+ "method_s": "Strategic direction counts announced partnerships, investments and programs in progress, 1 point each, sourced. It shows where the market is heading, not what is deployed."
 }

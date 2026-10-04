@@ -1,5 +1,11 @@
 /* EgD i18n dictionary — keyed by the English source string. Missing keys stay in English. */
 window.EGD_I18N={
+"Enterprise standard": {"de": "Unternehmensstandard", "es": "Estándar empresarial", "fr": "Standard d'entreprise"},
+"Strategic direction": {"de": "Strategische Richtung", "es": "Dirección estratégica", "fr": "Orientation stratégique"},
+"Announced": {"de": "Angekündigt", "es": "Anunciado", "fr": "Annoncé"},
+"ranked by what actually happened": {"de": "gereiht nach tatsächlich Umgesetztem", "es": "ordenado por lo que realmente ocurrió", "fr": "classé selon ce qui s'est réellement passé"},
+"ranked by announced direction": {"de": "gereiht nach angekündigter Richtung", "es": "ordenado por la dirección anunciada", "fr": "classé selon l'orientation annoncée"},
+"None sourced yet": {"de": "Noch keine Quelle", "es": "Aún sin fuente", "fr": "Aucune source pour l'instant"},
 "Who signed:": {"de": "Wer signiert hat:", "es": "Quién firmó:", "fr": "Qui a signé :"},
 "Continue on GitHub": {"de": "Weiter auf GitHub", "es": "Continuar en GitHub", "fr": "Continuer sur GitHub"},
 "Enterprise data is a leverageable capital asset.": {"de": "Unternehmensdaten sind ein hebelbares Kapitalgut.", "es": "Los datos empresariales son un activo de capital apalancable.", "fr": "Les données d'entreprise sont un actif en capital à effet de levier."},

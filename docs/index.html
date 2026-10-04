@@ -52,6 +52,9 @@
   .sig-step label{display:inline-flex;align-items:center;gap:6px;cursor:pointer;min-height:32px}
   .sig-step input{accent-color:var(--accent);width:18px;height:18px;margin:0}
   .sig-go{background:var(--accent);color:#000;font-weight:700;text-decoration:none;padding:6px 14px;border-radius:2px}
+.mode{display:inline-flex;border:1px solid var(--line,#2a2a2a);margin:4px 0 10px}.mode button{background:none;border:0;color:var(--dim);font:600 13px Inter,sans-serif;padding:8px 12px;cursor:pointer;min-height:36px}.mode button[aria-pressed="true"]{background:var(--accent);color:#000}
+.sig [hidden]{display:none!important}
+  .dash[data-m="str"] .dr.open .c-wn::before{content:"Announced"}
   .sig-pick{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:8px 0 0}.sig-msg{font-size:12.5px;color:var(--dim);margin:6px 0 0}.sig-find{font-size:13px;color:var(--dim);margin-left:4px}.sig-find a{margin:0 2px}
   .sig-go[aria-disabled="true"]{background:var(--line);color:var(--dim);pointer-events:none}
   .sig-t{font-size:10.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--accent);margin-left:6px}
@@ -97,7 +100,8 @@
 <p class="intro">The decisions were made before you arrived. New SAP technology, AI transformation, governance, data structure: here is what's actually deployed. Peer-to-peer, as SAPfans always was. Everything else happens off-surface. <a href="heritage.html">Why</a></p>
 
 <section class="land" aria-labelledby="land-h">
-<h2 id="land-h">Where SAP data goes · ranked by live deployments</h2>
+<div class="mode" role="group" aria-label="Ranking"><button type="button" data-m="std" aria-pressed="true">Enterprise standard</button><button type="button" data-m="str" aria-pressed="false">Strategic direction</button></div>
+<h2 id="land-h">Where SAP data goes · <span id="land-sub">ranked by what actually happened</span></h2>
 <div id="land" class="dash" role="table"></div>
 <p class="small" id="method"></p>
 </section>
@@ -131,33 +135,39 @@ function match(i){
   return true}
 // rank: priority first, then landscape top reads (in their column order), then the rest by title
 function score(i){return TOP[i.id]!=null?TOP[i.id]:0}
+// ranking mode: std = Enterprise standard (default, only what happened), str = Strategic direction
+var M="std";
+function tops(){TOP={};if(L)L.platforms.forEach(function(p){var k=M==="str"?"top_s":"top",v=M==="str"?p.sscore:p.score;(p[k]||[]).forEach(function(id,n){TOP[id]=100*v-n})})}
+document.addEventListener("click",function(e){var b=e.target.closest(".mode button");if(!b)return;M=b.dataset.m;
+  document.querySelectorAll(".mode button").forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});tops();land();draw()});
 function rows(){return D.filter(match).sort(function(a,b){return (a.priority-b.priority)||(score(b)-score(a))||(a.status==="stale")-(b.status==="stale")||a.short.localeCompare(b.short)})}
 function cell(c){if(!c)return "";var t=esc(c.t),cls=/^GA/.test(c.t)?"st ga":/^(Planned|Yes|Native|The hub)/.test(c.t)?"st":"";
   t=cls?'<span class="'+cls+'">'+t+'</span>':t;return c.u?'<a href="'+esc(c.u)+'" target="_blank" rel="noopener">'+t+'</a>':t}
 function land(){
   if(!L)return;var P=L.platforms.slice(),rk=0;
-  P.sort(function(a,b){return (b.fixed?1:0)-(a.fixed?1:0)||(b.score-a.score)||a.name.localeCompare(b.name)});
+  var S=M==="str"?"sscore":"score";P.sort(function(a,b){return (b[S]-a[S])||a.name.localeCompare(b.name)});
   function lk(t,u){return u?'<a href="'+esc(u)+'" target="_blank" rel="noopener">'+esc(t)+'</a>':esc(t)}
   function cell(k,sum,full){return '<div class="c c-'+k+'" role="cell"><details><summary>'+sum+'</summary><div class="full">'+full+'</div></details></div>'}
-  var h='<div class="dr dh" role="row"><div class="c c-rk">#</div><div class="c c-pf">Platform</div><div class="c c-cl">Class</div><div class="c c-cn">SAP connectivity</div><div class="c c-tl">Tools</div><div class="c c-wn">Top wins (live)</div><div class="c c-us">Known users</div><div class="c c-sc" title="'+esc(L.method)+'">Score</div><div class="c c-x"></div></div>';
-  h+=P.map(function(p){if(!p.fixed)rk++;var c0=p.conn[0];
+  var h='<div class="dr dh" role="row"><div class="c c-rk">#</div><div class="c c-pf">Platform</div><div class="c c-cl">Class</div><div class="c c-cn">SAP connectivity</div><div class="c c-tl">Tools</div><div class="c c-wn">'+(M==="str"?"Announced":"Top wins (live)")+'</div><div class="c c-us">Known users</div><div class="c c-sc" title="'+esc(M==="str"?L.method_s:L.method)+'">Score</div><div class="c c-x"></div></div>';
+  h+=P.map(function(p){rk++;var c0=p.conn[0];var WL=M==="str"?p.strat:p.wins;
     var conn='<ul>'+p.conn.map(function(c){return '<li'+(c.s==="Planned"?' class="pl"':'')+'><span class="st'+(c.s==="Planned"?'':' ga')+'">'+esc(c.s)+'</span> '+lk(c.t,c.u)+'</li>'}).join("")+'</ul>';
     var tools='<ul>'+p.tools.map(function(t){return '<li>'+lk(t[0],t[1])+'</li>'}).join("")+'</ul>';
-    var wins='<ol>'+p.wins.map(function(w){return '<li>'+lk(w.n,w.u)+': '+esc(w.t)+'</li>'}).join("")+'</ol>';
+    var wins=WL.length?'<ol>'+WL.map(function(w){return '<li>'+(w.k==="impl"?'<span class="st ga">Fast S/4</span> ':w.k==="di"?'<span class="st ga">DI</span> ':'')+lk(w.n,w.u)+': '+esc(w.t)+'</li>'}).join("")+'</ol>':'None sourced yet';
     var more=function(n){return n>1?' <span class="mo">+'+(n-1)+'</span>':''};
-    return '<div class="dr'+(p.fixed?' fx':'')+'" role="row">'+
-      '<div class="c c-rk">'+(p.fixed?'':rk)+'</div>'+
-      '<div class="c c-pf">'+(p.fixed?'<span class="st ga rmp">Roadmap</span> ':'')+'<a href="#list" data-pf="'+esc(p.pf)+'" title="'+esc(p.name)+': show all references"><span class="nl">'+esc(p.name)+'</span><span class="ns">'+esc(p.short)+'</span></a></div>'+
-      cell("cl",(p.fixed?'<span class="st ga rmc">Roadmap</span> ':'')+esc(p.cs),esc(p["class"]))+
+    return '<div class="dr" role="row">'+
+      '<div class="c c-rk">'+rk+'</div>'+
+      '<div class="c c-pf"><a href="#list" data-pf="'+esc(p.pf)+'" title="'+esc(p.name)+': show all references"><span class="nl">'+esc(p.name)+'</span><span class="ns">'+esc(p.short)+'</span></a></div>'+
+      cell("cl",esc(p.cs),esc(p["class"]))+
       cell("cn",'<span class="st'+(c0.s==="Planned"?'':' ga')+'">'+esc(c0.s)+'</span> '+esc(c0.t)+more(p.conn.length),conn)+
       cell("tl",esc(p.tools[0][0])+more(p.tools.length),tools)+
-      cell("wn",esc(p.wins[0].n)+more(p.wins.length),wins)+
+      cell("wn",(WL[0]?esc(WL[0].n)+more(WL.length):"—"),wins)+
       cell("us",esc(p.users.t),lk(p.users.t,p.users.u))+
-      '<div class="c c-sc"><b>'+p.score+'</b>/5</div>'+
+      '<div class="c c-sc"><b>'+p[S]+'</b></div>'+
       '<div class="c c-x"><button type="button" class="ex" aria-label="Expand '+esc(p.name)+'">+</button></div>'+
       '<div class="c c-sg"><div class="sig sig-mini" data-ref="'+esc(p.id)+'" data-label="'+esc(p.name)+'"></div></div></div>'}).join("");
-  var el=document.getElementById("land");el.innerHTML=h;
-  document.getElementById("method").textContent=L.method;
+  var el=document.getElementById("land");el.innerHTML=h;el.dataset.m=M;
+  document.getElementById("method").textContent=M==="str"?L.method_s:L.method;
+  document.getElementById("land-sub").textContent=M==="str"?"ranked by announced direction":"ranked by what actually happened";
   el.querySelectorAll(".ex").forEach(function(b){b.addEventListener("click",function(){var r=b.closest(".dr"),o=!r.classList.contains("open");r.classList.toggle("open",o);b.textContent=o?"−":"+";r.querySelectorAll("details").forEach(function(d){d.open=o})})});
   el.querySelectorAll("[data-pf]").forEach(function(a){a.addEventListener("click",function(){sel.platform=a.dataset.pf;sel.priority="";syncF();draw()})})}
 function sugg(){var s={};D.forEach(function(i){s[i.short]=1;s[i.kind]=1;s[i.platform]=1});
@@ -192,8 +202,7 @@ function deep(){var h=decodeURIComponent(location.hash.slice(1)).toUpperCase();i
     r.onend=function(){b.classList.remove("on")};r.start()})})();
 Promise.all([fetch("references.json",{cache:"no-cache"}).then(function(r){return r.json()}),fetch("landscape.json",{cache:"no-cache"}).then(function(r){return r.json()}).catch(function(){return null})])
  .then(function(x){var j=x[0];L=x[1];window._upd=j.updated;D=j.items.filter(function(i){return i.status!=="retired"});
-   if(L)L.platforms.forEach(function(p){(p.top||[]).forEach(function(id,n){TOP[id]=10*(p.fixed?6:p.score)-n})});
-   build()})
+   tops();build()})
  .catch(function(){document.getElementById("count").textContent="Could not load the catalog."});
 })();
 </script>
