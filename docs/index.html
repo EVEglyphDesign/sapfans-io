@@ -56,6 +56,12 @@
 .sig [hidden]{display:none!important}
   .dash[data-m="str"] .dr.open .c-wn::before{content:"Announced"}
 .evt{color:var(--accent);font-weight:700}.evt.u{color:var(--dim)}
+.rrow{display:grid;grid-template-columns:26px 108px minmax(0,1fr) 120px 72px 64px;gap:4px 10px;align-items:baseline;padding:8px 2px}
+  .rrow .in{font-size:12px;color:var(--dim)}
+  .rrow .sig.sig-line{margin:0;border:0;padding:0}.sig-line .sig-go{padding:3px 12px;font-size:13px}.sig-line .sig-find{display:none}
+  .rrow .sig.sig-line.on{grid-column:3/-1}.sig-line.on .sig-find{display:inline}
+  .rrow:target{background:var(--panel)}
+  @media (max-width:640px){.rrow{grid-template-columns:22px minmax(0,1fr) 64px}.rrow .in{display:none}.rrow .sig.sig-line.on{grid-column:2/-1}}
   .sig-pick{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:8px 0 0}.sig-msg{font-size:12.5px;color:var(--dim);margin:6px 0 0}.sig-find{font-size:13px;color:var(--dim);margin-left:4px}.sig-find a{margin:0 2px}
   .sig-go[aria-disabled="true"]{background:var(--line);color:var(--dim);pointer-events:none}
   .sig-t{font-size:10.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--accent);margin-left:6px}
@@ -183,7 +189,7 @@ function sugg(){var s={};D.forEach(function(i){s[i.short]=1;s[i.kind]=1;s[i.plat
 function draw(){
   var r=rows(),el=document.getElementById("list");
   document.getElementById("count").textContent=r.length+" of "+D.length+" shown · updated "+(window._upd||"");
-  el.innerHTML=r.length?r.map(function(i,n){return '<li'+(i.status==="stale"?' class="stale"':'')+'><details><summary><span class="rk">'+(n+1)+'</span><span class="kd">'+(i.ev&&i.ev!=="Vendor"?'<b class="evt'+(i.ev==="Underway"?' u':'')+'">'+esc(i.ev)+'</b> ':'')+esc(i.kind)+'</span><span class="sh"><a href="'+esc(i.url)+'" target="_blank" rel="noopener">'+esc(i.short)+'</a></span><span class="pf">'+esc(i.platform)+'</span></summary><div class="dt"><p><b>'+esc(i.title)+'</b></p><p>'+esc(i.why)+'</p><div class="tags"><span>P'+i.priority+'</span><span>'+esc(i.lane)+'</span>'+[].concat(i.role).map(function(x){return '<span>'+esc(x)+'</span>'}).join("")+'<span>'+esc(i.format)+'</span><span>'+esc(i.level)+'</span><span>'+esc(i.access)+'</span><span>'+esc(i.source)+'</span>'+(i.status==="stale"?'<span>Link failed last check</span>':'')+'</div><div class="sig" data-ref="'+esc(i.id)+'" data-label="'+esc(i.short)+'" data-url="'+esc(i.url)+'"></div></div></details></li>'}).join(""):'<li class="empty">Nothing matches. Clear a filter.</li>';
+  el.innerHTML=r.length?r.map(function(i,n){return '<li class="rrow'+(i.status==="stale"?' stale':'')+'" id="'+esc(i.id)+'"><span class="rk">'+(n+1)+'</span><span class="kd">'+(i.ev&&i.ev!=="Vendor"?'<b class="evt'+(i.ev==="Underway"?' u':'')+'">'+esc(i.ev)+'</b> ':'')+esc(i.kind)+'</span><span class="sh"><a href="'+esc(i.url)+'" target="_blank" rel="noopener">'+esc(i.short)+'</a></span><span class="in">'+esc(i.industry||"")+'</span><span class="pf">'+esc(i.platform)+'</span><div class="sig sig-line" data-ref="'+esc(i.id)+'" data-label="'+esc(i.short)+'" data-url="'+esc(i.url)+'"></div></li>'}).join(""):'<li class="empty">Nothing matches. Clear a filter.</li>';
   if(window.egdSig)window.egdSig.paint()}
 // Platform and Technology options mirror the table above: same rows, same order, same tools
 function tableP(){if(!L)return [];var S=M==="str"?"sscore":"score";return L.platforms.slice().sort(function(a,b){return (b[S]-a[S])||a.name.localeCompare(b.name)})}
@@ -211,7 +217,7 @@ function deep(){var h=decodeURIComponent(location.hash.slice(1)).toUpperCase();i
   if(h[0]==="R"){if(!D.some(function(i){return i.id===h})){location.replace("r/"+h+".html");return}sel={ev:""};q="";document.getElementById("q").value="";syncF();draw()}
   var g=document.querySelector('.sig[data-ref="'+h+'"]');if(!g)return;
   if(h[0]==="L"){var r=g.closest(".dr");if(!r.classList.contains("open"))r.querySelector(".ex").click();r.scrollIntoView({block:"start"})}
-  else{var d=g.closest("details");d.open=true;d.scrollIntoView({block:"start"})}}
+  else{g.closest("li").scrollIntoView({block:"start"})}}
 // voice search: browsers with the Web Speech API only; the button stays hidden elsewhere
 (function(){var SR=window.SpeechRecognition||window.webkitSpeechRecognition,b=document.getElementById("mic");if(!SR||!b)return;b.hidden=false;
   b.addEventListener("click",function(){var r=new SR();r.lang=document.documentElement.lang||"en";r.interimResults=false;b.classList.add("on");

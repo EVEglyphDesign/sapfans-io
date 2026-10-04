@@ -34,7 +34,7 @@ function upd(sg){var st=sg.querySelector(".sig-step"),a=st.querySelector(".sig-p
 document.addEventListener("change",function(e){var sg=e.target.closest(".sig");if(sg&&e.target.closest(".sig-step"))upd(sg)});
 document.addEventListener("click",function(e){
  var t=e.target,sg=t.closest(".sig");if(!sg)return;
- if(t.closest(".sig-start")){sg.querySelector(".sig-pick").hidden=false;return}
+ if(t.closest(".sig-start")){var pk=sg.querySelector(".sig-pick");pk.hidden=!pk.hidden;sg.classList.toggle("on",!pk.hidden);if(pk.hidden){["sig-step","sig-gh","sig-msg"].forEach(function(c){sg.querySelector("."+c).hidden=true})}return}
  var b=t.closest(".sig-b");if(b&&b.tagName==="BUTTON"){var net=b.dataset.net;sg.dataset.net=net;
    sg.querySelectorAll(".sig-b").forEach(function(x){x.classList.toggle("on",x===b)});
    sg.querySelector(".sig-step").hidden=net==="github";sg.querySelector(".sig-gh").hidden=net!=="github";sg.querySelector(".sig-msg").hidden=true;
