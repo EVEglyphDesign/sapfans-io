@@ -2205,11 +2205,6 @@ window.EGD_I18N={
 "es": "Fuentes del portal de documentación del Cloud SDK: instalación, soporte y vías de contribución. El punto de entrada único para extender los servicios en la nube de SAP con código.",
 "fr": "Les sources du portail de documentation du Cloud SDK : installation, support et voies de contribution. Le point d’entrée unique pour étendre les services cloud SAP par le code."
 },
-"Sovereign Start is the floor beneath the pattern. It gives a first-time practitioner a repository, an Enterprise harness, an output canon, and an observation registry in one file — enough shape that an AI surface can be pointed at their record without producing toilet paper. Once the floor is in, the pattern becomes usable.": {
-"de": "Sovereign Start ist das Fundament unter dem Muster. Es gibt einer Erstanwenderin oder einem Erstanwender ein Repository, ein Enterprise harness, einen Ausgabekanon und ein Beobachtungsregister in einer Datei — genug Form, damit eine KI-Oberfläche auf die eigene Aufzeichnung gerichtet werden kann, ohne Makulatur zu produzieren. Sobald das Fundament liegt, wird das Muster nutzbar.",
-"es": "Sovereign Start es el piso debajo del patrón. Le da a un profesional principiante un repositorio, un Enterprise harness, un canon de salida y un registro de observaciones en un solo archivo — suficiente forma para que una superficie de IA pueda apuntarse a su registro sin producir papel higiénico. Una vez que el piso está puesto, el patrón se vuelve utilizable.",
-"fr": "Sovereign Start est le plancher sous le modèle. Il donne à un praticien débutant un dépôt, un Enterprise harness, un canon de sortie et un registre d’observations en un seul fichier — assez de structure pour qu’une surface d’IA puisse être dirigée vers son dossier sans produire du papier de toilette. Une fois le plancher en place, le modèle devient utilisable."
-},
 "Spend against artefacts that survived. Ten minutes, not a workstream.": {
 "de": "Ausgaben gegenüber Artefakten, die überlebt haben. Zehn Minuten, kein Workstream.",
 "es": "Gasto frente a artefactos que sobrevivieron. Diez minutos, no un frente de trabajo.",

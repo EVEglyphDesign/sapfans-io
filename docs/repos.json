@@ -57,17 +57,6 @@
       ]
     },
     {
-      "name": "EVEglyphDesign/sovereign-starter",
-      "url": "https://github.com/EVEglyphDesign/sovereign-starter",
-      "category": "harness",
-      "description": "A one-file starter you paste into any AI surface: standing rules in your own voice, an observation register, and the rule of three that turns observations into rules.",
-      "tags": [
-        "starter",
-        "paste-in",
-        "rules"
-      ]
-    },
-    {
       "name": "EVEglyphDesign/sapfans-io",
       "url": "https://github.com/EVEglyphDesign/sapfans-io",
       "category": "harness",

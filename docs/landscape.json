@@ -3,68 +3,280 @@
  "updated": "2026-10-03",
  "note": "The landscape table on the Content Connect Board. One column per platform; every cell that states a status carries a source. top = reference IDs in rank order (from references.json); deployed = public customer stories.",
  "rows": [
-  ["stack", "Stack"],
-  ["reads", "Reads ECC / S/4 data"],
-  ["zerocopy", "Zero-copy with SAP BDC"],
-  ["migration", "Migration"],
-  ["agents", "AI agents"]
+  [
+   "stack",
+   "Stack"
+  ],
+  [
+   "reads",
+   "Reads ECC / S/4 data"
+  ],
+  [
+   "zerocopy",
+   "Zero-copy with SAP BDC"
+  ],
+  [
+   "migration",
+   "Migration"
+  ],
+  [
+   "agents",
+   "AI agents"
+  ]
  ],
  "platforms": [
-  {"id": "SAP", "name": "SAP strategy",
+  {
+   "id": "SAP",
+   "name": "SAP strategy",
    "stack": "Business Data Cloud · Datasphere · Joule",
-   "reads": {"t": "Native"},
-   "zerocopy": {"t": "The hub (BDC Connect)", "u": "https://www.sap.com/products/data-cloud/open-data-ecosystem.html"},
-   "migration": {"t": "SAP tools, partners for complex cases", "u": "https://www.linkedin.com/posts/palantir-technologies_sebastian-steinhaeuser-chief-operating-officer-activity-7438276132560556032-6Eos"},
-   "agents": {"t": "Joule · NVIDIA OpenShell", "u": "https://blogs.nvidia.com/blog/sap-specialized-agents/"},
-   "top": ["R-055", "R-056", "R-057"],
+   "reads": {
+    "t": "Native"
+   },
+   "zerocopy": {
+    "t": "The hub (BDC Connect)",
+    "u": "https://www.sap.com/products/data-cloud/open-data-ecosystem.html"
+   },
+   "migration": {
+    "t": "SAP tools, partners for complex cases",
+    "u": "https://www.linkedin.com/posts/palantir-technologies_sebastian-steinhaeuser-chief-operating-officer-activity-7438276132560556032-6Eos"
+   },
+   "agents": {
+    "t": "Joule · NVIDIA OpenShell",
+    "u": "https://blogs.nvidia.com/blog/sap-specialized-agents/"
+   },
+   "top": [
+    "R-055",
+    "R-056",
+    "R-057"
+   ],
    "deployed": [
-    {"t": "NVIDIA runs finance and supply chain on SAP", "u": "https://blogs.nvidia.com/blog/sap-specialized-agents/"}
-   ]},
-  {"id": "Google", "name": "Google",
+    {
+     "t": "NVIDIA runs finance and supply chain on SAP",
+     "u": "https://blogs.nvidia.com/blog/sap-specialized-agents/"
+    }
+   ]
+  },
+  {
+   "id": "Google",
+   "name": "Google",
    "stack": "BigQuery · Gemini · Cortex",
-   "reads": {"t": "Yes, Cortex (ECC, S/4)", "u": "https://docs.cloud.google.com/cortex/docs/source-system-integration/sap-erp"},
-   "zerocopy": {"t": "GA · Jul 2026", "u": "https://cloud.google.com/blog/products/sap-google-cloud/sap-and-google-cloud-launch-bdc-connect-for-bigquery"},
-   "migration": {"t": "—"},
-   "agents": {"t": "Gemini agents on SAP data", "u": "https://cloud.google.com/blog/products/sap-google-cloud/sap-sapphire-2026-the-future-of-google-cloud-ai-agents"},
-   "top": ["R-040", "R-041", "R-042"],
+   "reads": {
+    "t": "Yes, Cortex (ECC, S/4)",
+    "u": "https://docs.cloud.google.com/cortex/docs/source-system-integration/sap-erp"
+   },
+   "zerocopy": {
+    "t": "GA · Jul 2026",
+    "u": "https://cloud.google.com/blog/products/sap-google-cloud/sap-and-google-cloud-launch-bdc-connect-for-bigquery"
+   },
+   "migration": {
+    "t": "—"
+   },
+   "agents": {
+    "t": "Gemini agents on SAP data",
+    "u": "https://cloud.google.com/blog/products/sap-google-cloud/sap-sapphire-2026-the-future-of-google-cloud-ai-agents"
+   },
+   "top": [
+    "R-040",
+    "R-041",
+    "R-042"
+   ],
    "deployed": [
-    {"t": "Grupo Bafar: SAP and Salesforce data in one BigQuery lake", "u": "https://cloud.google.com/customers/grupobafar"},
-    {"t": "Copel: Gemini answers questions on SAP data", "u": "https://cloud.google.com/customers/copel"},
-    {"t": "Orica: SAP performance and data transformation", "u": "https://cloud.google.com/customers/orica"}
-   ]},
-  {"id": "AWS", "name": "AWS",
+    {
+     "t": "Grupo Bafar: SAP and Salesforce data in one BigQuery lake",
+     "u": "https://cloud.google.com/customers/grupobafar"
+    },
+    {
+     "t": "Copel: Gemini answers questions on SAP data",
+     "u": "https://cloud.google.com/customers/copel"
+    },
+    {
+     "t": "Orica: SAP performance and data transformation",
+     "u": "https://cloud.google.com/customers/orica"
+    }
+   ]
+  },
+  {
+   "id": "AWS",
+   "name": "AWS",
    "stack": "S3 · Athena · Glue · Bedrock",
-   "reads": {"t": "Yes, Glue SAP OData connector", "u": "https://aws.amazon.com/blogs/big-data/scaling-rise-with-sap-data-and-aws-glue/"},
-   "zerocopy": {"t": "Planned · Athena", "u": "https://news.sap.com/2026/05/sap-aws-next-generation-ai-bi-directional-zero-copy-data-sharing-sap-bdc/"},
-   "migration": {"t": "RISE transition tooling (announced May 2026)", "u": "https://aws.amazon.com/blogs/awsforsap/sapphire-2026-how-aws-is-helping-sap-customers-move-faster-and-build-more/"},
-   "agents": {"t": "Bedrock · SAP MCP server (GA May 2026)", "u": "https://aws.amazon.com/about-aws/whats-new/2026/05/aws-sap-mcp-amazon-bedrock/"},
-   "top": ["R-058", "R-059", "R-043"],
+   "reads": {
+    "t": "Yes, Glue SAP OData connector",
+    "u": "https://aws.amazon.com/blogs/big-data/scaling-rise-with-sap-data-and-aws-glue/"
+   },
+   "zerocopy": {
+    "t": "Planned · Athena",
+    "u": "https://news.sap.com/2026/05/sap-aws-next-generation-ai-bi-directional-zero-copy-data-sharing-sap-bdc/"
+   },
+   "migration": {
+    "t": "RISE transition tooling (announced May 2026)",
+    "u": "https://aws.amazon.com/blogs/awsforsap/sapphire-2026-how-aws-is-helping-sap-customers-move-faster-and-build-more/"
+   },
+   "agents": {
+    "t": "Bedrock · SAP MCP server (GA May 2026)",
+    "u": "https://aws.amazon.com/about-aws/whats-new/2026/05/aws-sap-mcp-amazon-bedrock/"
+   },
+   "top": [
+    "R-058",
+    "R-059",
+    "R-043"
+   ],
    "deployed": [
-    {"t": "Thermo Fisher: SAP data in an AWS data lake", "u": "https://aws.amazon.com/blogs/awsforsap/building-data-lakes-with-sap-on-aws/"},
-    {"t": "5,000+ customers run SAP on AWS: case studies", "u": "https://aws.amazon.com/sap/case-studies/"}
-   ]},
-  {"id": "Microsoft", "name": "Microsoft",
+    {
+     "t": "Thermo Fisher: SAP data in an AWS data lake",
+     "u": "https://aws.amazon.com/blogs/awsforsap/building-data-lakes-with-sap-on-aws/"
+    },
+    {
+     "t": "5,000+ customers run SAP on AWS: case studies",
+     "u": "https://aws.amazon.com/sap/case-studies/"
+    }
+   ]
+  },
+  {
+   "id": "Microsoft",
+   "name": "Microsoft",
    "stack": "Fabric · Azure · Copilot",
-   "reads": {"t": "Yes, Datasphere mirroring (GA Mar 2026)", "u": "https://techcommunity.microsoft.com/blog/sapapplications/sap-on-azure-product-announcements-summary-%E2%80%93-sap-sapphire-2026/4517634"},
-   "zerocopy": {"t": "Planned · H2 2026", "u": "https://techcommunity.microsoft.com/blog/sapapplications/sap-on-azure-product-announcements-summary-%E2%80%93-sap-sapphire-2026/4517634"},
-   "migration": {"t": "—"},
-   "agents": {"t": "Copilot ↔ Joule (GA late 2025)", "u": "https://techcommunity.microsoft.com/blog/sapapplications/sap-on-azure-product-announcements-summary-%E2%80%93-sap-sapphire-2026/4517634"},
-   "top": ["R-060", "R-061"],
+   "reads": {
+    "t": "Yes, Datasphere mirroring (GA Mar 2026)",
+    "u": "https://techcommunity.microsoft.com/blog/sapapplications/sap-on-azure-product-announcements-summary-%E2%80%93-sap-sapphire-2026/4517634"
+   },
+   "zerocopy": {
+    "t": "Planned · H2 2026",
+    "u": "https://techcommunity.microsoft.com/blog/sapapplications/sap-on-azure-product-announcements-summary-%E2%80%93-sap-sapphire-2026/4517634"
+   },
+   "migration": {
+    "t": "—"
+   },
+   "agents": {
+    "t": "Copilot ↔ Joule (GA late 2025)",
+    "u": "https://techcommunity.microsoft.com/blog/sapapplications/sap-on-azure-product-announcements-summary-%E2%80%93-sap-sapphire-2026/4517634"
+   },
+   "top": [
+    "R-060",
+    "R-061"
+   ],
    "deployed": [
-    {"t": "Maersk: 500 SAP servers to Azure in six months", "u": "https://techcommunity.microsoft.com/blog/sapapplications/sap-on-azure-product-announcements-summary-%E2%80%93-sap-sapphire-2026/4517634"},
-    {"t": "PERI: from SAP BW on HANA to Fabric and Databricks", "u": "https://www.microsoft.com/en/customers/story/26449-peri-microsoft-fabric"},
-    {"t": "KONE: 54,000 contracts a year checked against SAP", "u": "https://techcommunity.microsoft.com/blog/sapapplications/sap-on-azure-product-announcements-summary-%E2%80%93-sap-sapphire-2026/4517634"}
-   ]},
-  {"id": "Palantir", "name": "Palantir",
+    {
+     "t": "Maersk: 500 SAP servers to Azure in six months",
+     "u": "https://techcommunity.microsoft.com/blog/sapapplications/sap-on-azure-product-announcements-summary-%E2%80%93-sap-sapphire-2026/4517634"
+    },
+    {
+     "t": "PERI: from SAP BW on HANA to Fabric and Databricks",
+     "u": "https://www.microsoft.com/en/customers/story/26449-peri-microsoft-fabric"
+    },
+    {
+     "t": "KONE: 54,000 contracts a year checked against SAP",
+     "u": "https://techcommunity.microsoft.com/blog/sapapplications/sap-on-azure-product-announcements-summary-%E2%80%93-sap-sapphire-2026/4517634"
+    }
+   ]
+  },
+  {
+   "id": "Palantir",
+   "name": "Palantir",
    "stack": "Foundry · AIP",
-   "reads": {"t": "Yes, ECC to S/4 migration", "u": "https://www.palantir.com/migration/"},
-   "zerocopy": {"t": "—"},
-   "migration": {"t": "With SAP, up to 5x faster", "u": "https://www.sap.com/partners/find/palantir.html"},
-   "agents": {"t": "AIP", "u": "https://www.palantir.com/migration/"},
-   "top": ["R-046", "R-047", "R-048"],
+   "reads": {
+    "t": "Yes, ECC to S/4 migration",
+    "u": "https://www.palantir.com/migration/"
+   },
+   "zerocopy": {
+    "t": "—"
+   },
+   "migration": {
+    "t": "With SAP, up to 5x faster",
+    "u": "https://www.sap.com/partners/find/palantir.html"
+   },
+   "agents": {
+    "t": "AIP",
+    "u": "https://www.palantir.com/migration/"
+   },
+   "top": [
+    "R-046",
+    "R-047",
+    "R-048"
+   ],
    "deployed": [
-    {"t": "Food manufacturer: 20+ markets from ECC to S/4HANA", "u": "https://www.palantir.com/migration/"},
-    {"t": "Manufacturer: several legacy ERPs to S/4HANA on Foundry", "u": "https://unit8.com/casestudies/erp-data-migration-on-foundry/"}
-   ]}
+    {
+     "t": "Food manufacturer: 20+ markets from ECC to S/4HANA",
+     "u": "https://www.palantir.com/migration/"
+    },
+    {
+     "t": "Manufacturer: several legacy ERPs to S/4HANA on Foundry",
+     "u": "https://unit8.com/casestudies/erp-data-migration-on-foundry/"
+    }
+   ]
+  },
+  {
+   "id": "Databricks",
+   "name": "Databricks",
+   "stack": "Data Intelligence Platform · Delta Sharing · Agent Bricks",
+   "reads": {
+    "t": "Yes, inside BDC (SAP Databricks)",
+    "u": "https://docs.databricks.com/sap/en/"
+   },
+   "zerocopy": {
+    "t": "GA",
+    "u": "https://www.databricks.com/blog/announcing-general-availability-sap-business-data-cloud-connect-databricks"
+   },
+   "migration": {
+    "t": "—"
+   },
+   "agents": {
+    "t": "Agent Bricks",
+    "u": "https://developers.databricks.com/product/agent-bricks"
+   },
+   "top": [
+    "R-049",
+    "R-050",
+    "R-051"
+   ],
+   "deployed": [
+    {
+     "t": "SAF-Holland: demand insights for supply chain",
+     "u": "https://www.databricks.com/customers/saf-holland"
+    },
+    {
+     "t": "SAP Enterprise Cloud Services: SIEM costs down 70%",
+     "u": "https://answers.databricks.com/sap-enterprise-cloud-services-cuts-siem-costs-70-databricks-pxatfqqt7Hc"
+    },
+    {
+     "t": "Healthcare distributor: SAP analytics unified",
+     "u": "https://www.brillio.com/insights/resources/case-study/modernizing-sap-data-for-enterprise-scale-analytics-on-databricks/"
+    }
+   ]
+  },
+  {
+   "id": "Snowflake",
+   "name": "Snowflake",
+   "stack": "AI Data Cloud · Cortex",
+   "reads": {
+    "t": "Yes, inside BDC (SAP Snowflake)",
+    "u": "https://www.sap.com/products/data-cloud/snowflake.html"
+   },
+   "zerocopy": {
+    "t": "GA · May 2026",
+    "u": "https://docs.snowflake.com/en/release-notes/2026/other/2026-05-04-Snowflake-SAP-zerocopy-integration"
+   },
+   "migration": {
+    "t": "—"
+   },
+   "agents": {
+    "t": "Cortex agents on SAP data",
+    "u": "https://dxc.com/insights/knowledge-base/article/turn-enterprise-data-into-decisions-with-ai-agents-and-snowflake"
+   },
+   "top": [
+    "R-052",
+    "R-053",
+    "R-054"
+   ],
+   "deployed": [
+    {
+     "t": "Romande Energie: SAP data to Snowflake in under three weeks",
+     "u": "https://www.snpgroup.com/en/resources/customer-stories/romande-energie/"
+    },
+    {
+     "t": "Manufacturer: AI agents on SAP data in Snowflake",
+     "u": "https://dxc.com/insights/knowledge-base/article/turn-enterprise-data-into-decisions-with-ai-agents-and-snowflake"
+    }
+   ]
+  }
  ]
 }
