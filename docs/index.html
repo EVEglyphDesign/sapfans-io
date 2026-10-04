@@ -46,6 +46,14 @@
     .dr.open .c-cn::before{content:"SAP connectivity"}.dr.open .c-tl::before{content:"Tools"}.dr.open .c-wn::before{content:"Top wins (live)"}.dr.open .c-us::before{content:"Known users"}
     .dr.open .c::before{display:block;color:var(--dim);font-size:10.5px;text-transform:uppercase;letter-spacing:.04em}
     .dh .c-cl{visibility:visible}}
+  .lede2{font-family:Fraunces,Georgia,serif;font-size:clamp(17px,2.4vw,21px);font-weight:600;color:var(--accent);margin:0 0 4px;line-height:1.3}
+  .sig-b.on{border-color:var(--accent);background:var(--panel)}
+  .sig-step{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;margin:8px 0 0;font-size:13px}
+  .sig-step label{display:inline-flex;align-items:center;gap:6px;cursor:pointer;min-height:32px}
+  .sig-step input{accent-color:var(--accent);width:18px;height:18px;margin:0}
+  .sig-go{background:var(--accent);color:#000;font-weight:700;text-decoration:none;padding:6px 14px;border-radius:2px}
+  .sig-go[aria-disabled="true"]{background:var(--line);color:var(--dim);pointer-events:none}
+  .sig-t{font-size:10.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--accent);margin-left:6px}
   .frow{display:flex;gap:6px;overflow-x:auto;margin:16px 0 8px;padding-bottom:2px}
   .frow select{flex:0 0 auto;background:var(--panel);color:var(--fg);border:1px solid var(--line);padding:7px 8px;font:inherit;font-size:13px;border-radius:2px;max-width:200px}
   .frow select:focus{outline:none;border-color:var(--accent)}
@@ -84,12 +92,14 @@
 </div></header>
 <main class="wrap board">
 <h1>Content Connect Board</h1>
-<p class="intro">Neutral, curated public sources from the vendors and their customers, for planning, decision intelligence, PMO, governance, data as a capital asset and data sovereignty. We connect people; we don't hold or pass along anyone's material. Sign a reference so peers can find you, then share repositories and files with each other directly, on your own surfaces. <a href="heritage.html">Why</a></p>
+<p class="lede2">Enterprise data is a leverageable capital asset.</p>
+<p class="intro">The decisions were made before you arrived. New SAP technology, AI transformation, governance, data structure: here is what's actually deployed. Peer-to-peer, as SAPfans always was. Everything else happens off-surface. <a href="heritage.html">Why</a></p>
 
 <section class="land" aria-labelledby="land-h">
 <h2 id="land-h">Where SAP data goes · ranked by live deployments</h2>
 <div id="land" class="dash" role="table"></div>
 <p class="small" id="method"></p>
+<p class="small signote">Sign as Experience, Questions or both. Peers contact you off-surface on that basis.</p>
 </section>
 <div class="sbox"><label for="q" class="egd-sr">Search references</label>
 <input class="search" id="q" type="search" placeholder="Search or speak: zero-copy, BigQuery, migration…" autocomplete="off" list="sugg"><datalist id="sugg"></datalist>
@@ -138,7 +148,7 @@ function land(){
     return '<div class="dr'+(p.fixed?' fx':'')+'" role="row">'+
       '<div class="c c-rk">'+(p.fixed?'':rk)+'</div>'+
       '<div class="c c-pf">'+(p.fixed?'<span class="st ga rmp">Roadmap</span> ':'')+'<a href="#list" data-pf="'+esc(p.pf)+'" title="'+esc(p.name)+': show all references"><span class="nl">'+esc(p.name)+'</span><span class="ns">'+esc(p.short)+'</span></a></div>'+
-      cell("cl",(p.fixed?'<span class="st ga rmc">Roadmap</span> ':'')+esc(p.cs),(p.fixed?'<span class="st ga">Roadmap</span> ':'')+esc(p["class"]))+
+      cell("cl",(p.fixed?'<span class="st ga rmc">Roadmap</span> ':'')+esc(p.cs),esc(p["class"]))+
       cell("cn",'<span class="st'+(c0.s==="Planned"?'':' ga')+'">'+esc(c0.s)+'</span> '+esc(c0.t)+more(p.conn.length),conn)+
       cell("tl",esc(p.tools[0][0])+more(p.tools.length),tools)+
       cell("wn",esc(p.wins[0].n)+more(p.wins.length),wins)+

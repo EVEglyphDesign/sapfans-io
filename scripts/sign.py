@@ -71,6 +71,8 @@ def main():
         people.append(p)
     p["name"] = user.get("name") or user["login"]
     p["links"][net] = url
+    sa = field(body, "Signing as")
+    if sa: p["as"] = sa
     save(d); say(f"Signed {ref} with your {net_name(net)}. It shows on [the Content Connect Board](https://sapfans.io) in a minute or two.", True)
 
 def net_name(n): return {"linkedin": "LinkedIn", "x": "X", "github": "GitHub"}[n]

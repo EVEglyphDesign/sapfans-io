@@ -23,6 +23,13 @@ body:
       options: [LinkedIn, X, GitHub]
     validations:
       required: true
+  - type: dropdown
+    id: as
+    attributes:
+      label: Signing as
+      options: [Experience, Questions, Experience and questions]
+    validations:
+      required: true
   - type: input
     id: link
     attributes:

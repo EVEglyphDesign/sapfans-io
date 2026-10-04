@@ -11,16 +11,25 @@ var IC={
 var NAME={linkedin:"LinkedIn",x:"X",github:"GitHub"};
 var R={};
 function esc(t){return String(t==null?"":t).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
-function href(id,net){return FORM+"&title="+encodeURIComponent("Sign "+id)+"&ref="+encodeURIComponent(id)+"&net="+NAME[net]+"&action=Sign"}
+var AS={e:"Experience",q:"Questions",eq:"Experience and questions"};
+function href(id,net,as){return FORM+"&title="+encodeURIComponent("Sign "+id)+"&ref="+encodeURIComponent(id)+"&net="+NAME[net]+(as?"&as="+encodeURIComponent(AS[as]):"")+"&action=Sign"}
+function tag(a){a=String(a||"").toLowerCase();var e=a.indexOf("experience")>=0,q=a.indexOf("question")>=0;return e&&q?"Both":e?"Experience":q?"Questions":""}
 function block(id){
  var who=R[id]||[],n=who.length;
  var b=["linkedin","x","github"].map(function(net){
-  return '<a class="sig-b" href="'+href(id,net)+'" target="_blank" rel="noopener" data-net="'+net+'" title="Sign with your '+NAME[net]+'">'+IC[net]+'<span class="egd-sr">'+NAME[net]+'</span></a>'}).join("");
- var list=n?'<ul class="sig-list" hidden>'+who.map(function(p){return '<li><span class="sig-n">'+esc(p.name)+'</span>'+Object.keys(p.links).map(function(k){return ' <a href="'+esc(p.links[k])+'" target="_blank" rel="noopener nofollow ugc" data-net="'+k+'" title="'+esc(p.name)+' on '+NAME[k]+'">'+IC[k]+'<span class="egd-sr">'+NAME[k]+'</span></a>'}).join("")+'</li>'}).join("")+'</ul>':"";
- var c=n?'<button type="button" class="sig-who"><span>Signed by</span> <b>'+n+'</b> · <span>see who</span></button>':'<span class="sig-none">Found it useful? Leave your signature.</span>';
- return '<div class="sig-row">'+b+c+'</div>'+list}
+  return '<button type="button" class="sig-b" data-net="'+net+'" title="Sign with your '+NAME[net]+'">'+IC[net]+'<span class="egd-sr">'+NAME[net]+'</span></button>'}).join("");
+ var step='<div class="sig-step" hidden><label><input type="checkbox" value="e"> <span>Experience</span></label><label><input type="checkbox" value="q"> <span>Questions</span></label><a class="sig-go" aria-disabled="true" target="_blank" rel="noopener" data-ref="'+esc(id)+'">Sign</a></div>';
+ var list=n?'<ul class="sig-list" hidden>'+who.map(function(p){return '<li><span class="sig-n">'+esc(p.name)+'</span>'+Object.keys(p.links).map(function(k){return ' <a href="'+esc(p.links[k])+'" target="_blank" rel="noopener nofollow ugc" data-net="'+k+'" title="'+esc(p.name)+' on '+NAME[k]+'">'+IC[k]+'<span class="egd-sr">'+NAME[k]+'</span></a>'}).join("")+(tag(p.as)?' <span class="sig-t">'+tag(p.as)+'</span>':'')+'</li>'}).join("")+'</ul>':"";
+ var ne=who.filter(function(p){return /experience/i.test(p.as||"")}).length,nq=who.filter(function(p){return /question/i.test(p.as||"")}).length;
+ var c=n?'<button type="button" class="sig-who"><b>'+ne+'</b> <span>with experience</span> · <b>'+nq+'</b> <span>with questions</span> · <span>see who</span></button>':'<span class="sig-none">Found it useful? Leave your signature.</span>';
+ return '<div class="sig-row">'+b+c+'</div>'+step+list}
 function paint(){document.querySelectorAll(".sig[data-ref]").forEach(function(el){el.innerHTML=block(el.dataset.ref)})}
-document.addEventListener("click",function(e){var w=e.target.closest(".sig-who");if(!w)return;var l=w.closest(".sig").querySelector(".sig-list");if(l)l.hidden=!l.hidden});
+function upd(st){var v=[].slice.call(st.querySelectorAll("input:checked")).map(function(i){return i.value}).join(""),g=st.querySelector(".sig-go");
+ if(v){g.href=href(g.dataset.ref,st.dataset.net,v);g.removeAttribute("aria-disabled")}else{g.removeAttribute("href");g.setAttribute("aria-disabled","true")}}
+document.addEventListener("change",function(e){var st=e.target.closest(".sig-step");if(st)upd(st)});
+document.addEventListener("click",function(e){var b=e.target.closest(".sig-b");if(b&&b.tagName==="BUTTON"){var sg=b.closest(".sig"),st=sg.querySelector(".sig-step");
+  sg.querySelectorAll(".sig-b").forEach(function(x){x.classList.toggle("on",x===b)});st.dataset.net=b.dataset.net;st.hidden=false;upd(st);return}
+ var w=e.target.closest(".sig-who");if(!w)return;var l=w.closest(".sig").querySelector(".sig-list");if(l)l.hidden=!l.hidden});
 window.egdSig={paint:paint};
 fetch("signatures.json",{cache:"no-cache"}).then(function(r){return r.json()}).then(function(j){R=j.refs||{};paint()}).catch(paint);
 })();
