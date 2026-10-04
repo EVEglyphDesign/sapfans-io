@@ -55,6 +55,7 @@
 .mode{display:inline-flex;border:1px solid var(--line,#2a2a2a);margin:4px 0 10px}.mode button{background:none;border:0;color:var(--dim);font:600 13px Inter,sans-serif;padding:8px 12px;cursor:pointer;min-height:36px}.mode button[aria-pressed="true"]{background:var(--accent);color:#000}
 .sig [hidden]{display:none!important}
   .dash[data-m="str"] .dr.open .c-wn::before{content:"Announced"}
+.evt{color:var(--accent);font-weight:700}.evt.u{color:var(--dim)}
   .sig-pick{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:8px 0 0}.sig-msg{font-size:12.5px;color:var(--dim);margin:6px 0 0}.sig-find{font-size:13px;color:var(--dim);margin-left:4px}.sig-find a{margin:0 2px}
   .sig-go[aria-disabled="true"]{background:var(--line);color:var(--dim);pointer-events:none}
   .sig-t{font-size:10.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--accent);margin-left:6px}
@@ -124,12 +125,13 @@ Held in the open at <a href="https://github.com/EVEglyphDesign/sapfans-io">the S
 </div></footer>
 <script>
 (function(){
-var F=[["platform","Platform"],["kind","Topic"],["lane","Lane"],["role","Role"],["level","Level"],["priority","Priority"]];
-var D=[],L=null,sel={priority:"1"},q="",TOP={};
+var F=[["ev","Evidence"],["industry","Industry"],["platform","Platform"],["kind","Topic"],["lane","Lane"],["role","Role"],["level","Level"],["priority","Priority"]];
+var D=[],L=null,sel={priority:"1",ev:"real"},q="",TOP={};
 function esc(t){return String(t==null?"":t).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
 function vals(k){var s={};D.forEach(function(i){[].concat(i[k]||[]).forEach(function(v){s[v]=1})});return Object.keys(s).sort()}
 function match(i){
-  for(var k in sel){if(sel[k]&&[].concat(String(i[k]==null?"":i[k])).concat([].concat(i[k]||[]).map(String)).indexOf(sel[k])<0)return false}
+  if(sel.ev){if(sel.ev==="real"?i.ev==="Vendor":i.ev!==sel.ev)return false}
+  for(var k in sel){if(k==="ev")continue;if(sel[k]&&[].concat(String(i[k]==null?"":i[k])).concat([].concat(i[k]||[]).map(String)).indexOf(sel[k])<0)return false}
   if(q){var h=[i.short,i.title,i.why,i.kind,i.platform,i.lane,[].concat(i.role).join(" "),i.product,i.source].join(" ").toLowerCase();
     if(q.split(/\s+/).some(function(w){return h.indexOf(w)<0}))return false}
   return true}
@@ -140,7 +142,10 @@ var M="std";
 function tops(){TOP={};if(L)L.platforms.forEach(function(p){var k=M==="str"?"top_s":"top",v=M==="str"?p.sscore:p.score;(p[k]||[]).forEach(function(id,n){TOP[id]=100*v-n})})}
 document.addEventListener("click",function(e){var b=e.target.closest(".mode button");if(!b)return;M=b.dataset.m;
   document.querySelectorAll(".mode button").forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});tops();land();draw()});
-function rows(){return D.filter(match).sort(function(a,b){return (a.priority-b.priority)||(score(b)-score(a))||(a.status==="stale")-(b.status==="stale")||a.short.localeCompare(b.short)})}
+// real stories first: what happened, weighted by size, ahead of what is underway; independent sources before vendor ones
+function ev(i){return i.ev==="Happened"?2*(i.size||1):i.ev==="Underway"?(i.size||1):0}
+function ind(i){return i.src==="Customer"?2:i.src==="Independent"?1:0}
+function rows(){return D.filter(match).sort(function(a,b){return (ev(b)-ev(a))||(ind(b)-ind(a))||(a.priority-b.priority)||(score(b)-score(a))||(a.status==="stale")-(b.status==="stale")||a.short.localeCompare(b.short)})}
 function cell(c){if(!c)return "";var t=esc(c.t),cls=/^GA/.test(c.t)?"st ga":/^(Planned|Yes|Native|The hub)/.test(c.t)?"st":"";
   t=cls?'<span class="'+cls+'">'+t+'</span>':t;return c.u?'<a href="'+esc(c.u)+'" target="_blank" rel="noopener">'+t+'</a>':t}
 function land(){
@@ -176,11 +181,11 @@ function sugg(){var s={};D.forEach(function(i){s[i.short]=1;s[i.kind]=1;s[i.plat
 function draw(){
   var r=rows(),el=document.getElementById("list");
   document.getElementById("count").textContent=r.length+" of "+D.length+" shown · updated "+(window._upd||"");
-  el.innerHTML=r.length?r.map(function(i,n){return '<li'+(i.status==="stale"?' class="stale"':'')+'><details><summary><span class="rk">'+(n+1)+'</span><span class="kd">'+esc(i.kind)+'</span><span class="sh"><a href="'+esc(i.url)+'" target="_blank" rel="noopener">'+esc(i.short)+'</a></span><span class="pf">'+esc(i.platform)+'</span></summary><div class="dt"><p><b>'+esc(i.title)+'</b></p><p>'+esc(i.why)+'</p><div class="tags"><span>P'+i.priority+'</span><span>'+esc(i.lane)+'</span>'+[].concat(i.role).map(function(x){return '<span>'+esc(x)+'</span>'}).join("")+'<span>'+esc(i.format)+'</span><span>'+esc(i.level)+'</span><span>'+esc(i.access)+'</span><span>'+esc(i.source)+'</span>'+(i.status==="stale"?'<span>Link failed last check</span>':'')+'</div><div class="sig" data-ref="'+esc(i.id)+'" data-label="'+esc(i.short)+'" data-url="'+esc(i.url)+'"></div></div></details></li>'}).join(""):'<li class="empty">Nothing matches. Clear a filter.</li>';
+  el.innerHTML=r.length?r.map(function(i,n){return '<li'+(i.status==="stale"?' class="stale"':'')+'><details><summary><span class="rk">'+(n+1)+'</span><span class="kd">'+(i.ev&&i.ev!=="Vendor"?'<b class="evt'+(i.ev==="Underway"?' u':'')+'">'+esc(i.ev)+'</b> ':'')+esc(i.kind)+'</span><span class="sh"><a href="'+esc(i.url)+'" target="_blank" rel="noopener">'+esc(i.short)+'</a></span><span class="pf">'+esc(i.platform)+'</span></summary><div class="dt"><p><b>'+esc(i.title)+'</b></p><p>'+esc(i.why)+'</p><div class="tags"><span>P'+i.priority+'</span><span>'+esc(i.lane)+'</span>'+[].concat(i.role).map(function(x){return '<span>'+esc(x)+'</span>'}).join("")+'<span>'+esc(i.format)+'</span><span>'+esc(i.level)+'</span><span>'+esc(i.access)+'</span><span>'+esc(i.source)+'</span>'+(i.status==="stale"?'<span>Link failed last check</span>':'')+'</div><div class="sig" data-ref="'+esc(i.id)+'" data-label="'+esc(i.short)+'" data-url="'+esc(i.url)+'"></div></div></details></li>'}).join(""):'<li class="empty">Nothing matches. Clear a filter.</li>';
   if(window.egdSig)window.egdSig.paint()}
 function syncF(){document.querySelectorAll("#filters select").forEach(function(s){s.value=sel[s.dataset.k]||""})}
 function build(){
-  document.getElementById("filters").innerHTML=F.map(function(f){var v=f[0]==="priority"?["1","2","3"]:vals(f[0]);return '<label class="egd-sr" for="f-'+f[0]+'">'+f[1]+'</label><select id="f-'+f[0]+'" data-k="'+f[0]+'"><option value="">'+f[1]+': all</option>'+v.map(function(x){return '<option value="'+esc(x)+'">'+(f[0]==="priority"?"Priority "+esc(x):esc(x))+'</option>'}).join("")+'</select>'}).join("");
+  document.getElementById("filters").innerHTML=F.map(function(f){var v=f[0]==="priority"?["1","2","3"]:f[0]==="ev"?["Happened","Underway","Vendor"]:vals(f[0]);return '<label class="egd-sr" for="f-'+f[0]+'">'+f[1]+'</label><select id="f-'+f[0]+'" data-k="'+f[0]+'">'+(f[0]==="ev"?'<option value="real">Real stories</option>':'')+'<option value="">'+f[1]+': all</option>'+v.map(function(x){return '<option value="'+esc(x)+'">'+(f[0]==="priority"?"Priority "+esc(x):esc(x))+'</option>'}).join("")+'</select>'}).join("");
   syncF();
   document.querySelectorAll("#filters select").forEach(function(s){s.addEventListener("change",function(){sel[s.dataset.k]=s.value;draw()})});
   document.getElementById("q").addEventListener("input",function(e){q=e.target.value.trim().toLowerCase();if(q)sel.priority="",syncF();draw()});
@@ -191,7 +196,7 @@ function build(){
   land();sugg();draw();deep();window.addEventListener("hashchange",deep)}
 // deep link: sapfans.io/#R-055 opens that reference; #L-SAP opens that platform row
 function deep(){var h=decodeURIComponent(location.hash.slice(1)).toUpperCase();if(!/^[RL]-[A-Z0-9]+$/.test(h))return;
-  if(h[0]==="R"){if(!D.some(function(i){return i.id===h}))return;sel={};q="";document.getElementById("q").value="";syncF();draw()}
+  if(h[0]==="R"){if(!D.some(function(i){return i.id===h}))return;sel={ev:""};q="";document.getElementById("q").value="";syncF();draw()}
   var g=document.querySelector('.sig[data-ref="'+h+'"]');if(!g)return;
   if(h[0]==="L"){var r=g.closest(".dr");if(!r.classList.contains("open"))r.querySelector(".ex").click();r.scrollIntoView({block:"start"})}
   else{var d=g.closest("details");d.open=true;d.scrollIntoView({block:"start"})}}

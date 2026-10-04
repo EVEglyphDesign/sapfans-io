@@ -1,0 +1,110 @@
+[
+ {
+  "company": "Northrop Grumman",
+  "industry": "Aerospace & defense",
+  "status": "Happened",
+  "kind": "S/4 transformation",
+  "what": "Went live January 2024 on SAP S/4HANA for 70,000 users in nine months, consolidating SAP and non-SAP ERP data, on time with minimal disruption.",
+  "platform": "SAP",
+  "size": 3,
+  "url": "https://www.snpgroup.com/en/resources/customer-stories/northrop-grumman-and-snp-co-innovating-for-rapid-transformation-with-kyano/",
+  "source_type": "Vendor case study",
+  "date": "2024-01"
+ },
+ {
+  "company": "Daimler Truck",
+  "industry": "Machinery / commercial vehicles",
+  "status": "Happened",
+  "kind": "S/4 transformation",
+  "what": "Big-bang go-live of OneERP on S/4HANA (RISE) replaced 9 plant systems and migrated over 550 million data records while keeping operations running.",
+  "platform": "SAP",
+  "size": 3,
+  "url": "https://www.linkedin.com/posts/jamesjmcdermott59_daimler-truck-continues-to-lead-the-way-activity-7291876412683104257-NQgU",
+  "source_type": "Independent",
+  "date": "2025-01"
+ },
+ {
+  "company": "KOLB",
+  "industry": "Packaging manufacturing",
+  "status": "Happened",
+  "kind": "S/4 transformation",
+  "what": "Selective Bluefield move to S/4HANA finished in 10 months; the system cut over in 20 hours over Easter 2025 with no production downtime.",
+  "platform": "SAP",
+  "size": 1,
+  "url": "https://www.delaware.pro/en-de/stories/kolb-in-10-months-to-a-digital-future-with-sap-s-4hana",
+  "source_type": "Vendor case study",
+  "date": "2025-07"
+ },
+ {
+  "company": "Honeywell Aerospace (Civitanavi Systems)",
+  "industry": "Aerospace",
+  "status": "Happened",
+  "kind": "S/4 transformation",
+  "what": "Greenfield S/4HANA went live 4 August 2025 for Civitanavi Systems in seven months, in scope and on schedule, with 150+ team members.",
+  "platform": "SAP",
+  "size": 2,
+  "url": "https://www.linkedin.com/posts/richsernyak_amazing-achievement-activity-7361856025202683904-Weem",
+  "source_type": "Independent",
+  "date": "2025-08"
+ },
+ {
+  "company": "Etex",
+  "industry": "Building materials",
+  "status": "Happened",
+  "kind": "S/4 transformation",
+  "what": "Migrated ECC to S/4HANA in under 12 months, on schedule, with a single-weekend cutover across 100+ plants, 40+ countries and 6,000+ users.",
+  "platform": "SAP",
+  "size": 2,
+  "url": "https://www.cognizant.com/en_us/case-studies/documents/2701267_etex-modernizes-its-it-foundation-for-a-new-era-of-sustainable-innovation_printable.pdf",
+  "source_type": "Vendor case study",
+  "date": "2025"
+ },
+ {
+  "company": "Mannesmann Precision Tubes (Salzgitter)",
+  "industry": "Steel tubes / industrial",
+  "status": "Happened",
+  "kind": "S/4 transformation",
+  "what": "Simultaneous S/4HANA and Transportation Management go-live at all German and French sites on schedule; cutover window about 100 hours, 600+ activities.",
+  "platform": "SAP",
+  "size": 2,
+  "url": "https://www.consenso.de/en/mpt-s4hana-go-live.html",
+  "source_type": "Vendor case study",
+  "date": "2026"
+ },
+ {
+  "company": "Siemens Energy",
+  "industry": "Industrial / energy equipment",
+  "status": "Happened",
+  "kind": "Data as capital",
+  "what": "Built the SE Data Center on Snowflake with SAP data replicated every 20 minutes; its Procurement Cockpit spans 20+ factories and saves over 150,000 hours a year.",
+  "platform": "Snowflake",
+  "size": 3,
+  "url": "https://www.alteryx.com/blog/domain-expertise-is-the-new-it-how-we-scaled-analytics-across-siemens-energy",
+  "source_type": "Vendor case study",
+  "date": "2026"
+ },
+ {
+  "company": "Airbus",
+  "industry": "Aerospace",
+  "status": "Underway",
+  "kind": "S/4 transformation",
+  "what": "Migrating a sprawling SAP estate (R/3 4.6, ECC 6.0) to S/4HANA, returning to standard after heavy ABAP customisation; finance, materials and parts of Helicopters are done, bulk remains.",
+  "platform": "SAP",
+  "size": 3,
+  "url": "https://www.theregister.com/software/2025/12/11/airbus-exec-most-of-us-will-not-hit-sap-migration-by-2030/2572834",
+  "source_type": "Independent",
+  "date": "2025-12"
+ },
+ {
+  "company": "BASF",
+  "industry": "Chemicals",
+  "status": "Underway",
+  "kind": "S/4 transformation",
+  "what": "Moving a single global SAP instance with 300,000+ custom objects to S/4HANA Cloud Private Edition, splitting it into several business-related instances; announced May 2025, not complete.",
+  "platform": "SAP",
+  "size": 3,
+  "url": "https://www.computerweekly.com/news/366625052/Sapphire-2025-BASF-evolves-business-with-move-to-SAP-S-4Hana",
+  "source_type": "Independent",
+  "date": "2025-05"
+ }
+]

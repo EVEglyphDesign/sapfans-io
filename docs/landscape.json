@@ -2,7 +2,7 @@
  "schema": 2,
  "updated": "2026-10-03",
  "note": "The platform table on the Content Connect Board. One row per platform. Only public sources from vendors, their customers or their partners. wins = live deployments only (named = 1 point, unnamed = 0.5); planned items never score. score = wins (max 3) + 1 if the SAP connection is GA + 1 if the vendor publishes a customer count. Row 1 is the SAP-roadmap row and stays first; the rest are ordered by score.",
- "method": "Enterprise standard counts only what actually happened: fast SAP implementation wins and decision-intelligence deployments 2 points each, other live deployments 1 (unnamed customers half), +1 for a published customer count. Planned items never score.",
+ "method": "Enterprise standard counts only what actually happened: fast SAP implementation wins and decision intelligence a company built on its own data, 2 points each; other live deployments 1 (unnamed customers half); +1 for a published customer count. Planned items never score.",
  "platforms": [
   {
    "id": "L-SAP",
@@ -264,6 +264,13 @@
      "k": "impl"
     },
     {
+     "n": "Xylem",
+     "t": "Built xylem.ai in-house with EY and Microsoft: enterprise data, AI and governance for daily decisions; 4,000+ employees use it every day",
+     "u": "https://www.ey.com/en_gl/insights/industrial-products/how-xylem-turned-ai-ambition-into-enterprise-execution",
+     "named": true,
+     "k": "di"
+    },
+    {
      "n": "PERI",
      "t": "From SAP BW on HANA to Fabric and Azure Databricks",
      "u": "https://www.microsoft.com/en/customers/story/26449-peri-microsoft-fabric",
@@ -284,7 +291,7 @@
    },
    "conn_ga": true,
    "count": true,
-   "score": 9,
+   "score": 11,
    "cs": "Lakehouse",
    "top": [
     "R-061"
@@ -376,6 +383,13 @@
      "u": "https://cloud.google.com/blog/products/sap-google-cloud/carrefour-belgium-leading-in-retail-digital-transformation",
      "named": true,
      "k": "live"
+    },
+    {
+     "n": "Carrefour",
+     "t": "Own team built a data assistant on its Google Cloud data platform; resolves about 75% of queries, from hours to under two minutes",
+     "u": "https://cloud.google.com/customers/carrefour-tech",
+     "named": true,
+     "k": "live"
     }
    ],
    "users": {
@@ -383,7 +397,7 @@
    },
    "conn_ga": true,
    "count": false,
-   "score": 8,
+   "score": 9,
    "cs": "Lakehouse",
    "top": [
     "R-040",

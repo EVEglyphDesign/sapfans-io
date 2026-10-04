@@ -1,0 +1,122 @@
+[
+ {
+  "company": "Nestlé",
+  "industry": "Food & beverage",
+  "status": "Happened",
+  "kind": "S/4 transformation",
+  "what": "First part of world's largest SAP S/4HANA Cloud Private Edition upgrade live: 50,000 users in 112 countries; rest of Group due within two years.",
+  "platform": "SAP",
+  "size": 3,
+  "url": "https://www.nestle.com/media/news/digital-core-sap-s4hana-cloud-upgrade",
+  "source_type": "Customer",
+  "date": "2025-10"
+ },
+ {
+  "company": "Diageo",
+  "industry": "Beverages/spirits",
+  "status": "Happened",
+  "kind": "S/4 transformation",
+  "what": "Global S/4HANA go-live after reset: program run-rate cost cut ~50%; 103 billion records migrated in 72 hours; ~95% of markets by net sales live within four days.",
+  "platform": "SAP",
+  "size": 3,
+  "url": "https://www.bain.com/client-results/how-diageo-refocused-its-erp-transformationand-defied-the-odds/",
+  "source_type": "Independent",
+  "date": "2025"
+ },
+ {
+  "company": "Beiersdorf",
+  "industry": "Consumer goods (personal care)",
+  "status": "Happened",
+  "kind": "S/4 transformation",
+  "what": "FUSION big-bang: two global ECC systems merged into one S/4HANA template for ~100 affiliates, 775 million records migrated, ~23 TB data downsized, 870 days.",
+  "platform": "SAP",
+  "size": 3,
+  "url": "https://www.linkedin.com/posts/astrid-hermann-95426912_congratulations-fusion-team-you-are-amazing-activity-7151854054267101184-lm9k",
+  "source_type": "Customer",
+  "date": "2024-01"
+ },
+ {
+  "company": "Henkel",
+  "industry": "Consumer goods",
+  "status": "Happened",
+  "kind": "S/4 transformation",
+  "what": "Two SAP systems moved to SAP cloud on S/4HANA: 27,000 users, 1,500+ interfaces, €22bn revenue, no major incidents reported (project lead's post).",
+  "platform": "SAP",
+  "size": 2,
+  "url": "https://www.linkedin.com/posts/patrick-reiter-4146a589_henkel-wearehenkel-sap-activity-7338846904136392704-oOZx",
+  "source_type": "Customer",
+  "date": "2025-06"
+ },
+ {
+  "company": "CONA Services (Coca-Cola North America bottlers)",
+  "industry": "Beverages",
+  "status": "Happened",
+  "kind": "Data as capital",
+  "what": "SAP data replicated to Snowflake on Azure during one of the industry's largest S/4HANA migrations; real-time access for ~35,000 users across 11 bottlers, faster close.",
+  "platform": "Snowflake",
+  "size": 2,
+  "url": "https://www.fivetran.com/case-studies/coke-one-north-america-accelerates-real-time-sap-insights-for-35-000-users",
+  "source_type": "Vendor case study",
+  "date": "2025"
+ },
+ {
+  "company": "Unilever",
+  "industry": "Consumer goods",
+  "status": "Happened",
+  "kind": "AI on SAP data",
+  "what": "AI digital twins on SAP digital core: 20% waste cut and 10% capacity gain at Raeford; nearly 30% waste cut in Poznan; 40+ more twins planned in 18 months.",
+  "platform": "SAP",
+  "size": 2,
+  "url": "https://sapinsider.org/blogs/sap-accenture-digital-twin-partnership-unilever-manufacturing/",
+  "source_type": "Independent",
+  "date": "2026-06"
+ },
+ {
+  "company": "Unilever",
+  "industry": "Consumer goods",
+  "status": "Happened",
+  "kind": "S/4 transformation",
+  "what": "Migrated entire SAP estate (four core ERPs, ~350 systems, 25–30 TB per regional ERP) to Azure in 18 months; 20-30% faster critical business processes.",
+  "platform": "Microsoft",
+  "size": 2,
+  "url": "https://www.microsoft.com/en/customers/story/1636966914474684948-unilever-consumer-goods-sap-on-azure",
+  "source_type": "Vendor case study",
+  "date": "2023-05"
+ },
+ {
+  "company": "Mondelēz International",
+  "industry": "Food & snacks",
+  "status": "Underway",
+  "kind": "S/4 transformation",
+  "what": "Multi-year ECC-to-S/4HANA migration across ~80 countries in progress; Celonis connected to top 25 systems of record as process backbone. No results reported yet.",
+  "platform": "Mixed",
+  "size": 3,
+  "url": "https://www.theregister.com/software/2026/02/27/mondelz-picks-celonis-as-process-backbone-for-sap-overhaul/4908186",
+  "source_type": "Independent",
+  "date": "2026-02"
+ },
+ {
+  "company": "Levi Strauss & Co.",
+  "industry": "Fashion/apparel",
+  "status": "Underway",
+  "kind": "S/4 transformation",
+  "what": "Replacing ~11 ERPs with one S/4HANA Fashion instance on Azure across 110 countries; US, Canada, India and 14 Asia-Pacific countries live, Europe next summer; ~80% done.",
+  "platform": "Microsoft",
+  "size": 2,
+  "url": "https://sapinsider.org/case-studies/levi-strauss-co-s-global-erp-transformation-builds-the-backbone-of-a-frontier-retailer/",
+  "source_type": "Independent",
+  "date": "2026-05"
+ },
+ {
+  "company": "Carlsberg",
+  "industry": "Beverages",
+  "status": "Underway",
+  "kind": "S/4 transformation",
+  "what": "Pre-migration data cleanup for S/4HANA: 99.89% of old open SAP records archived (partner TJC Group); S/4HANA migration with Bluefield custom-code automation still ahead.",
+  "platform": "SAP",
+  "size": 1,
+  "url": "https://www.linkedin.com/posts/tjc-group_sap-s4hana-dataarchiving-activity-7419755574780641280-GmCV",
+  "source_type": "Customer",
+  "date": "2026-01"
+ }
+]
