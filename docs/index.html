@@ -3,7 +3,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Content Connect Board · SAPfans.io</title>
-<meta name="description" content="Neutral, curated references for program, PMO and functional leads, with the analytics landscape around SAP: Google, AWS, Microsoft, Palantir, Databricks, Snowflake.">
+<meta name="description" content="Neutral, curated references for program, PMO and functional leads, with the analytics landscape around SAP: AWS, Microsoft, Google, Palantir, ranked by live deployments.">
 <meta property="og:title" content="Content Connect Board · SAPfans.io">
 <meta property="og:description" content="Education and references, classified and filterable. Paste what you find; it is reviewed and added.">
 <meta property="og:type" content="website">
@@ -16,20 +16,36 @@
   .board.wrap{max-width:1120px}
   .board h1{font-size:clamp(24px,4vw,32px);margin:18px 0 4px}
   .intro{font-size:14.5px;color:var(--dim);margin:0 0 12px;max-width:820px;line-height:1.5}
-  .sbox{position:relative;margin:0 0 14px}
+  .sbox{position:relative;margin:16px 0 8px}
   .search{width:100%;background:var(--panel);color:var(--fg);border:1px solid var(--line);padding:11px 52px 11px 14px;font:inherit;font-size:16px}
   .search:focus{outline:none;border-color:var(--accent)}
   .mic{position:absolute;right:4px;top:50%;transform:translateY(-50%);width:44px;height:44px;border:0;background:none;cursor:pointer;padding:0}
   .mic svg{width:22px;height:22px;fill:var(--fg)}.mic.on svg{fill:var(--accent)}
-  .land h2{font-size:16px;margin:0 0 6px;letter-spacing:0}
-  .tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line)}
-  #land{margin:0;font-size:13px;min-width:1100px}
-  #land th{white-space:nowrap}#land th a{color:#000;text-decoration:none}#land th a:hover{text-decoration:underline}
-  #land th:first-child,#land td:first-child{position:sticky;left:0;background:#000;z-index:1;color:var(--dim);font-weight:600;width:120px}
-  #land th:first-child{background:var(--accent);color:#000}
-  #land td{padding:7px 10px;line-height:1.4}#land td a{text-decoration-thickness:1px}
-  #land ol{margin:0;padding-left:18px}#land li{margin:0 0 3px}
-  .st{font-weight:700}.st.ga{color:var(--accent)}
+  .sig-mini{margin:0;border:0;padding:0}.sig-mini .sig-row{flex-wrap:nowrap;gap:4px}.sig-mini .sig-b{width:30px;height:30px}.sig-mini .sig-b svg{width:14px;height:14px}.sig-mini .sig-none{display:none}
+  .land h2{font-size:14px;margin:0 0 6px;letter-spacing:0;color:var(--dim);font-family:Inter,sans-serif;font-weight:600}
+  .dash{border-top:1px solid var(--accent);font-size:13px}
+  .dr{display:grid;grid-template-columns:22px 178px 104px minmax(0,1.6fr) minmax(0,1fr) minmax(0,1.1fr) minmax(0,1.1fr) 44px 28px;column-gap:10px;align-items:start;border-bottom:1px solid var(--line);padding:7px 0}
+  .dh{color:var(--dim);font-size:11px;letter-spacing:.04em;text-transform:uppercase;padding:5px 0}
+  .c{min-width:0}.c-rk{color:var(--dim)}.c-pf a{font-weight:700;text-decoration-thickness:1px}
+  .c-pf{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ns{display:none}.c-sg{display:none}.dr.open .c-sg{display:block;grid-column:2/-1;padding-top:6px}
+  .c details>summary{list-style:none;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .c details>summary::-webkit-details-marker{display:none}
+  .c details[open]>summary{display:none}
+  .c .full ul,.c .full ol{margin:0;padding-left:16px}.c .full ul{list-style:none;padding:0}.c .full li{margin:0 0 3px}.c .full li.pl{opacity:.6}
+  .mo{color:var(--accent);font-size:11px}.pin{color:var(--accent)}.dr.fx{background:var(--panel)}
+  .st{font-size:10px;letter-spacing:.04em;text-transform:uppercase;border:1px solid var(--line);padding:0 3px}.st.ga{color:var(--accent);border-color:var(--accent)}
+  .c-sc{white-space:nowrap}.c-sc b{color:var(--accent);font-size:15px}
+  .ex{width:26px;height:24px;border:1px solid var(--line);background:none;color:var(--fg);cursor:pointer;font:inherit;padding:0;line-height:1}
+  .ex:hover{border-color:var(--accent)}
+  .sig-mini{margin:0;border:0;padding:0}.sig-mini .sig-b{width:30px;height:30px}.sig-mini .sig-b svg{width:14px;height:14px}
+  @media (max-width:760px){
+    .dr{grid-template-columns:18px minmax(0,1fr) minmax(0,1fr) 40px 28px}
+    .c-rk{grid-column:1;grid-row:1}.c-pf{grid-column:2;grid-row:1}.c-cl{grid-column:3;grid-row:1}.c-sc{grid-column:4;grid-row:1}.c-x{grid-column:5;grid-row:1}
+    .c-cn,.c-tl,.c-wn,.c-us{display:none}.nl{display:none}.ns{display:inline}
+    .dr.open .c-cn,.dr.open .c-tl,.dr.open .c-wn,.dr.open .c-us{display:block;grid-column:2/-1;padding-top:6px}
+    .dr.open .c-cn::before{content:"SAP connectivity"}.dr.open .c-tl::before{content:"Tools"}.dr.open .c-wn::before{content:"Top wins (live)"}.dr.open .c-us::before{content:"Known users"}
+    .dr.open .c::before{display:block;color:var(--dim);font-size:10.5px;text-transform:uppercase;letter-spacing:.04em}
+    .dh .c-cl{visibility:visible}}
   .frow{display:flex;gap:6px;overflow-x:auto;margin:16px 0 8px;padding-bottom:2px}
   .frow select{flex:0 0 auto;background:var(--panel);color:var(--fg);border:1px solid var(--line);padding:7px 8px;font:inherit;font-size:13px;border-radius:2px;max-width:200px}
   .frow select:focus{outline:none;border-color:var(--accent)}
@@ -68,14 +84,16 @@
 </div></header>
 <main class="wrap board">
 <h1>Content Connect Board</h1>
-<p class="intro">Neutral, curated references for program, PMO and functional leads: planning, decision intelligence, governance, data as a capital asset, data sovereignty. Sign what you know; peers connect with you on LinkedIn, X or GitHub. <a href="heritage.html">Why</a></p>
-<div class="sbox"><label for="q" class="egd-sr">Search references</label>
-<input class="search" id="q" type="search" placeholder="Search or speak: zero-copy, BigQuery, migration…" autocomplete="off">
-<button type="button" id="mic" class="mic" title="Speak to search" aria-label="Speak to search" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15a3 3 0 003-3V6a3 3 0 10-6 0v6a3 3 0 003 3zm5-3a5 5 0 01-10 0H5a7 7 0 006 6.92V21h2v-2.08A7 7 0 0019 12h-2z"/></svg></button></div>
+<p class="intro">Neutral, curated public sources from the vendors and their customers, for planning, decision intelligence, PMO, governance, data as a capital asset and data sovereignty. We connect people; we don't hold or pass along anyone's material. Sign a reference so peers can find you, then share repositories and files with each other directly, on your own surfaces. <a href="heritage.html">Why</a></p>
+
 <section class="land" aria-labelledby="land-h">
-<h2 id="land-h">The analytics landscape around SAP</h2>
-<div class="tscroll"><table id="land"></table></div>
+<h2 id="land-h">Where SAP data goes · ranked by live deployments</h2>
+<div id="land" class="dash" role="table"></div>
+<p class="small" id="method"></p>
 </section>
+<div class="sbox"><label for="q" class="egd-sr">Search references</label>
+<input class="search" id="q" type="search" placeholder="Search or speak: zero-copy, BigQuery, migration…" autocomplete="off" list="sugg"><datalist id="sugg"></datalist>
+<button type="button" id="mic" class="mic" title="Speak to search" aria-label="Speak to search" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15a3 3 0 003-3V6a3 3 0 10-6 0v6a3 3 0 003 3zm5-3a5 5 0 01-10 0H5a7 7 0 006 6.92V21h2v-2.08A7 7 0 0019 12h-2z"/></svg></button></div>
 <div class="frow" id="filters"></div>
 <ol class="rlist" id="list"></ol>
 <p class="count" id="count"></p>
@@ -102,18 +120,39 @@ function match(i){
     if(q.split(/\s+/).some(function(w){return h.indexOf(w)<0}))return false}
   return true}
 // rank: priority first, then landscape top reads (in their column order), then the rest by title
-function score(i){return (TOP[i.id]!=null?100-TOP[i.id]:0)}
+function score(i){return TOP[i.id]!=null?TOP[i.id]:0}
 function rows(){return D.filter(match).sort(function(a,b){return (a.priority-b.priority)||(score(b)-score(a))||(a.status==="stale")-(b.status==="stale")||a.short.localeCompare(b.short)})}
 function cell(c){if(!c)return "";var t=esc(c.t),cls=/^GA/.test(c.t)?"st ga":/^(Planned|Yes|Native|The hub)/.test(c.t)?"st":"";
   t=cls?'<span class="'+cls+'">'+t+'</span>':t;return c.u?'<a href="'+esc(c.u)+'" target="_blank" rel="noopener">'+t+'</a>':t}
 function land(){
-  if(!L)return;var P=L.platforms,byId={};D.forEach(function(i){byId[i.id]=i});
-  var h='<thead><tr><th></th>'+P.map(function(p){return '<th><a href="#list" data-pf="'+esc(p.id)+'" title="Show all '+esc(p.name)+' references">'+esc(p.name)+' ›</a></th>'}).join("")+'</tr></thead><tbody>';
-  h+=L.rows.map(function(r){return '<tr><td>'+esc(r[1])+'</td>'+P.map(function(p){return '<td>'+(r[0]==="stack"?esc(p.stack):cell(p[r[0]]))+'</td>'}).join("")+'</tr>'}).join("");
-  h+='<tr><td>Top reads</td>'+P.map(function(p){return '<td><ol>'+p.top.map(function(id){var i=byId[id];return i?'<li><a href="'+esc(i.url)+'" target="_blank" rel="noopener">'+esc(i.short)+'</a></li>':""}).join("")+'</ol></td>'}).join("")+'</tr>';
-  h+='<tr><td>Deployed at</td>'+P.map(function(p){return '<td><ol>'+(p.deployed||[]).map(function(d){return '<li><a href="'+esc(d.u)+'" target="_blank" rel="noopener">'+esc(d.t)+'</a></li>'}).join("")+'</ol></td>'}).join("")+'</tr></tbody>';
-  document.getElementById("land").innerHTML=h;
-  document.querySelectorAll("#land [data-pf]").forEach(function(a){a.addEventListener("click",function(){sel.platform=a.dataset.pf;sel.priority="";syncF();draw()})})}
+  if(!L)return;var P=L.platforms.slice(),rk=0;
+  P.sort(function(a,b){return (b.fixed?1:0)-(a.fixed?1:0)||(b.score-a.score)||a.name.localeCompare(b.name)});
+  function lk(t,u){return u?'<a href="'+esc(u)+'" target="_blank" rel="noopener">'+esc(t)+'</a>':esc(t)}
+  function cell(k,sum,full){return '<div class="c c-'+k+'" role="cell"><details><summary>'+sum+'</summary><div class="full">'+full+'</div></details></div>'}
+  var h='<div class="dr dh" role="row"><div class="c c-rk">#</div><div class="c c-pf">Platform</div><div class="c c-cl">Class</div><div class="c c-cn">SAP connectivity</div><div class="c c-tl">Tools</div><div class="c c-wn">Top wins (live)</div><div class="c c-us">Known users</div><div class="c c-sc" title="'+esc(L.method)+'">Score</div><div class="c c-x"></div></div>';
+  h+=P.map(function(p){if(!p.fixed)rk++;var c0=p.conn[0];
+    var conn='<ul>'+p.conn.map(function(c){return '<li'+(c.s==="Planned"?' class="pl"':'')+'><span class="st'+(c.s==="Planned"?'':' ga')+'">'+esc(c.s)+'</span> '+lk(c.t,c.u)+'</li>'}).join("")+'</ul>';
+    var tools='<ul>'+p.tools.map(function(t){return '<li>'+lk(t[0],t[1])+'</li>'}).join("")+'</ul>';
+    var wins='<ol>'+p.wins.map(function(w){return '<li>'+lk(w.n,w.u)+': '+esc(w.t)+'</li>'}).join("")+'</ol>';
+    var more=function(n){return n>1?' <span class="mo">+'+(n-1)+'</span>':''};
+    return '<div class="dr'+(p.fixed?' fx':'')+'" role="row">'+
+      '<div class="c c-rk">'+(p.fixed?'':rk)+'</div>'+
+      '<div class="c c-pf">'+(p.fixed?'<span class="st ga rm">Roadmap</span> ':'')+'<a href="#list" data-pf="'+esc(p.pf)+'" title="'+esc(p.name)+': show all references"><span class="nl">'+esc(p.name)+'</span><span class="ns">'+esc(p.short)+'</span></a></div>'+
+      cell("cl",esc(p.cs),esc(p["class"]))+
+      cell("cn",'<span class="st'+(c0.s==="Planned"?'':' ga')+'">'+esc(c0.s)+'</span> '+esc(c0.t)+more(p.conn.length),conn)+
+      cell("tl",esc(p.tools[0][0])+more(p.tools.length),tools)+
+      cell("wn",esc(p.wins[0].n)+more(p.wins.length),wins)+
+      cell("us",esc(p.users.t),lk(p.users.t,p.users.u))+
+      '<div class="c c-sc"><b>'+p.score+'</b>/5</div>'+
+      '<div class="c c-x"><button type="button" class="ex" aria-label="Expand '+esc(p.name)+'">+</button></div>'+
+      '<div class="c c-sg"><div class="sig sig-mini" data-ref="'+esc(p.id)+'"></div></div></div>'}).join("");
+  var el=document.getElementById("land");el.innerHTML=h;
+  document.getElementById("method").textContent=L.method;
+  el.querySelectorAll(".ex").forEach(function(b){b.addEventListener("click",function(){var r=b.closest(".dr"),o=!r.classList.contains("open");r.classList.toggle("open",o);b.textContent=o?"−":"+";r.querySelectorAll("details").forEach(function(d){d.open=o})})});
+  el.querySelectorAll("[data-pf]").forEach(function(a){a.addEventListener("click",function(){sel.platform=a.dataset.pf;sel.priority="";syncF();draw()})})}
+function sugg(){var s={};D.forEach(function(i){s[i.short]=1;s[i.kind]=1;s[i.platform]=1});
+  if(L)L.platforms.forEach(function(p){s[p.name]=1;p.tools.forEach(function(t){s[t[0]]=1});p.wins.forEach(function(w){if(w.named)s[w.n]=1})});
+  document.getElementById("sugg").innerHTML=Object.keys(s).sort().map(function(k){return '<option value="'+esc(k)+'">'}).join("")}
 function draw(){
   var r=rows(),el=document.getElementById("list");
   document.getElementById("count").textContent=r.length+" of "+D.length+" shown · updated "+(window._upd||"");
@@ -129,7 +168,7 @@ function build(){
     var cols=["id","priority","kind","short","title","url","why","platform","lane","role","product","format","level","access","source","status","checked"];
     var lines=[cols.join(",")].concat(rows().map(function(i){return cols.map(function(k){return '"'+String([].concat(i[k]==null?"":i[k]).join("; ")).replace(/"/g,'""')+'"'}).join(",")}));
     var a=document.createElement("a");a.href=URL.createObjectURL(new Blob(["\ufeff"+lines.join("\n")],{type:"text/csv"}));a.download="sapfans-references.csv";a.click()});
-  land();draw()}
+  land();sugg();draw()}
 // voice search: browsers with the Web Speech API only; the button stays hidden elsewhere
 (function(){var SR=window.SpeechRecognition||window.webkitSpeechRecognition,b=document.getElementById("mic");if(!SR||!b)return;b.hidden=false;
   b.addEventListener("click",function(){var r=new SR();r.lang=document.documentElement.lang||"en";r.interimResults=false;b.classList.add("on");
@@ -137,7 +176,8 @@ function build(){
     r.onend=function(){b.classList.remove("on")};r.start()})})();
 Promise.all([fetch("references.json",{cache:"no-cache"}).then(function(r){return r.json()}),fetch("landscape.json",{cache:"no-cache"}).then(function(r){return r.json()}).catch(function(){return null})])
  .then(function(x){var j=x[0];L=x[1];window._upd=j.updated;D=j.items.filter(function(i){return i.status!=="retired"});
-   if(L)L.platforms.forEach(function(p){p.top.forEach(function(id,n){TOP[id]=n})});build()})
+   if(L)L.platforms.forEach(function(p){(p.top||[]).forEach(function(id,n){TOP[id]=10*(p.fixed?6:p.score)-n})});
+   build()})
  .catch(function(){document.getElementById("count").textContent="Could not load the catalog."});
 })();
 </script>

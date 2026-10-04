@@ -41,7 +41,7 @@ def main():
     ref = field(body, "Reference").upper().strip()
     net = field(body, "Network").lower().strip()
     remove = field(body, "Action").lower().startswith("remove")
-    ids = {i["id"] for i in json.loads(CAT.read_text())["items"]}
+    ids = {i["id"] for i in json.loads(CAT.read_text())["items"]} | {p["id"] for p in json.loads((ROOT / "docs" / "landscape.json").read_text())["platforms"]}
     if ref not in ids: return say(f"`{ref or '?'}` is not a reference on the page. Open the form from a reference card on [the Content Connect Board](https://sapfans.io).", False)
     if net not in NETS: return say("Pick LinkedIn, X or GitHub.", False)
     d = json.loads(OUT.read_text()) if OUT.exists() else {"schema": 1, "refs": {}}

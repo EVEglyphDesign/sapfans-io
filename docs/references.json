@@ -1214,7 +1214,7 @@
    "from_proposal": "P-060",
    "kind": "Zero-copy",
    "short": "SAP data in your own Databricks (GA)",
-   "platform": "Databricks"
+   "platform": "SAP"
   },
   {
    "title": "SAP Databricks documentation",
@@ -1240,7 +1240,7 @@
    "from_proposal": "P-061",
    "kind": "Data platform",
    "short": "Databricks inside Business Data Cloud",
-   "platform": "Databricks"
+   "platform": "SAP"
   },
   {
    "title": "Unlocking SAP business context in Databricks with semantic metadata Delta Sharing",
@@ -1266,7 +1266,7 @@
    "from_proposal": "P-062",
    "kind": "Semantic layer",
    "short": "SAP business meaning carried into Databricks",
-   "platform": "Databricks"
+   "platform": "SAP"
   },
   {
    "title": "Announcing General Availability of SAP Snowflake and SAP Business Data Cloud Connect for Snowflake",
@@ -1292,7 +1292,7 @@
    "from_proposal": "P-063",
    "kind": "Zero-copy",
    "short": "Snowflake with SAP data (GA May 2026)",
-   "platform": "Snowflake"
+   "platform": "SAP"
   },
   {
    "title": "About Snowflake and SAP zero-copy integration",
@@ -1318,7 +1318,7 @@
    "from_proposal": "P-064",
    "kind": "Zero-copy",
    "short": "Snowflake's zero-copy SAP integration",
-   "platform": "Snowflake"
+   "platform": "SAP"
   },
   {
    "title": "Integration with Snowflake — SAP Architecture Center",
@@ -1344,7 +1344,7 @@
    "from_proposal": "P-065",
    "kind": "Architecture",
    "short": "SAP data with Snowflake: reference architecture",
-   "platform": "Snowflake"
+   "platform": "SAP"
   },
   {
    "title": "SAP and NVIDIA: secure, governed AI agents",
