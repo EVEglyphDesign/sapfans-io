@@ -1,7 +1,7 @@
 {
  "schema": 1,
- "updated": "2026-10-02",
- "note": "One row per reference. Rows are added only from registry/proposals.json after review (scripts/refs.py accept). Classification columns drive the filters on sapfans.io/references.html. Priority: 1 = start here: official, shipped, useful to a functional or PMO reader coming up to speed (the page opens on these); 2 = useful but specialist or roadmap; 3 = background.",
+ "updated": "2026-10-04",
+ "note": "One row per reference. Rows are added only from registry/proposals.json after review (scripts/refs.py accept). Classification columns drive the filters on sapfans.io/references.html. Priority: 1 = start here: official, shipped, useful to a functional or PMO reader coming up to speed (the page opens on these); 2 = useful but specialist or roadmap; 3 = background. kind and short are the neutral one-line classification shown on the board; platform groups rows under the landscape table.",
  "lanes": [
   "PMO & execution",
   "Data-first assessment",
@@ -39,7 +39,10 @@
    "credit": null,
    "added": "2026-09-19",
    "checked": "2026-09-28",
-   "status": "live"
+   "status": "live",
+   "kind": "Roadmap",
+   "short": "What's planned, by release and product",
+   "platform": "SAP"
   },
   {
    "id": "R-002",
@@ -59,7 +62,10 @@
    "credit": null,
    "added": "2026-09-19",
    "checked": "2026-09-28",
-   "status": "live"
+   "status": "live",
+   "kind": "Method",
+   "short": "Activate roadmaps and accelerators",
+   "platform": "SAP"
   },
   {
    "id": "R-003",
@@ -80,7 +86,10 @@
    "credit": null,
    "added": "2026-09-19",
    "checked": "2026-09-28",
-   "status": "live"
+   "status": "live",
+   "kind": "Method",
+   "short": "Activate update: on-prem upgrades, clean core",
+   "platform": "SAP"
   },
   {
    "id": "R-004",
@@ -102,7 +111,10 @@
    "credit": null,
    "added": "2026-09-19",
    "checked": "2026-09-28",
-   "status": "live"
+   "status": "live",
+   "kind": "Clean core",
+   "short": "Clean core: the community hub",
+   "platform": "SAP"
   },
   {
    "id": "R-005",
@@ -123,7 +135,10 @@
    "credit": null,
    "added": "2026-09-19",
    "checked": "2026-09-28",
-   "status": "live"
+   "status": "live",
+   "kind": "Clean core",
+   "short": "Running clean core in cloud ERP",
+   "platform": "SAP"
   },
   {
    "id": "R-006",
@@ -144,7 +159,10 @@
    "credit": null,
    "added": "2026-09-19",
    "checked": "2026-09-28",
-   "status": "live"
+   "status": "live",
+   "kind": "Clean core",
+   "short": "Clean core extensions in S/4HANA Cloud",
+   "platform": "SAP"
   },
   {
    "id": "R-007",
@@ -165,7 +183,10 @@
    "credit": null,
    "added": "2026-09-19",
    "checked": "2026-09-28",
-   "status": "live"
+   "status": "live",
+   "kind": "Architecture",
+   "short": "Missions and reference architectures",
+   "platform": "SAP"
   },
   {
    "id": "R-008",
@@ -186,7 +207,10 @@
    "credit": null,
    "added": "2026-09-19",
    "checked": "2026-09-28",
-   "status": "live"
+   "status": "live",
+   "kind": "Security",
+   "short": "BTP security recommendations",
+   "platform": "SAP"
   },
   {
    "id": "R-009",
@@ -208,7 +232,10 @@
    "credit": null,
    "added": "2026-09-19",
    "checked": "2026-09-28",
-   "status": "live"
+   "status": "live",
+   "kind": "Security",
+   "short": "Data protection and privacy on BTP",
+   "platform": "SAP"
   },
   {
    "id": "R-010",
@@ -228,7 +255,10 @@
    "credit": null,
    "added": "2026-09-19",
    "checked": "2026-09-28",
-   "status": "live"
+   "status": "live",
+   "kind": "Security",
+   "short": "BTP security overview",
+   "platform": "SAP"
   },
   {
    "id": "R-011",
@@ -248,7 +278,10 @@
    "credit": null,
    "added": "2026-09-19",
    "checked": "2026-09-28",
-   "status": "live"
+   "status": "live",
+   "kind": "Security",
+   "short": "BTP security concepts (admin guide)",
+   "platform": "SAP"
   },
   {
    "id": "R-012",
@@ -268,7 +301,10 @@
    "credit": null,
    "added": "2026-09-19",
    "checked": "2026-09-28",
-   "status": "live"
+   "status": "live",
+   "kind": "Security",
+   "short": "BTP security: community hub",
+   "platform": "SAP"
   },
   {
    "id": "R-013",
@@ -289,7 +325,10 @@
    "credit": null,
    "added": "2026-09-19",
    "checked": "2026-09-28",
-   "status": "live"
+   "status": "live",
+   "kind": "AI policy",
+   "short": "SAP's AI ethics policy",
+   "platform": "SAP"
   },
   {
    "id": "R-014",
@@ -310,7 +349,10 @@
    "credit": null,
    "added": "2026-09-19",
    "checked": "2026-09-28",
-   "status": "live"
+   "status": "live",
+   "kind": "AI policy",
+   "short": "SAP's AI ethics handbook",
+   "platform": "SAP"
   },
   {
    "id": "R-015",
@@ -330,7 +372,10 @@
    "credit": null,
    "added": "2026-09-19",
    "checked": "2026-09-28",
-   "status": "live"
+   "status": "live",
+   "kind": "AI policy",
+   "short": "SAP's responsible AI approach",
+   "platform": "SAP"
   },
   {
    "id": "R-016",
@@ -351,7 +396,10 @@
    "credit": null,
    "added": "2026-09-19",
    "checked": "2026-09-28",
-   "status": "live"
+   "status": "live",
+   "kind": "Data platform",
+   "short": "Business Data Cloud: the documentation",
+   "platform": "SAP"
   },
   {
    "id": "R-017",
@@ -372,7 +420,10 @@
    "credit": null,
    "added": "2026-09-19",
    "checked": "2026-09-28",
-   "status": "live"
+   "status": "live",
+   "kind": "Data platform",
+   "short": "Datasphere inside Business Data Cloud",
+   "platform": "SAP"
   },
   {
    "id": "R-018",
@@ -393,7 +444,10 @@
    "credit": null,
    "added": "2026-09-19",
    "checked": "2026-09-28",
-   "status": "live"
+   "status": "live",
+   "kind": "Data platform",
+   "short": "Datasphere: the documentation",
+   "platform": "SAP"
   },
   {
    "id": "R-019",
@@ -413,7 +467,10 @@
    "credit": null,
    "added": "2026-09-19",
    "checked": "2026-09-28",
-   "status": "live"
+   "status": "live",
+   "kind": "Data platform",
+   "short": "Data cloud documentation index",
+   "platform": "SAP"
   },
   {
    "id": "R-020",
@@ -434,7 +491,10 @@
    "credit": null,
    "added": "2026-09-19",
    "checked": "2026-09-28",
-   "status": "live"
+   "status": "live",
+   "kind": "Data platform",
+   "short": "Datasphere: community hub",
+   "platform": "SAP"
   },
   {
    "id": "R-021",
@@ -455,7 +515,10 @@
    "credit": null,
    "added": "2026-09-19",
    "checked": "2026-09-28",
-   "status": "stale"
+   "status": "stale",
+   "kind": "Semantic layer",
+   "short": "One semantic layer as the data foundation",
+   "platform": "SAP"
   },
   {
    "id": "R-022",
@@ -476,7 +539,10 @@
    "credit": null,
    "added": "2026-09-19",
    "checked": "2026-09-28",
-   "status": "live"
+   "status": "live",
+   "kind": "Semantic layer",
+   "short": "Reusing Datasphere models from Databricks",
+   "platform": "SAP"
   },
   {
    "id": "R-023",
@@ -497,7 +563,10 @@
    "credit": null,
    "added": "2026-09-19",
    "checked": "2026-09-28",
-   "status": "live"
+   "status": "live",
+   "kind": "Semantic layer",
+   "short": "Building a data model with business meaning",
+   "platform": "SAP"
   },
   {
    "id": "R-024",
@@ -518,7 +587,10 @@
    "credit": null,
    "added": "2026-09-19",
    "checked": "2026-09-28",
-   "status": "live"
+   "status": "live",
+   "kind": "Semantic layer",
+   "short": "26 years of BI semantic layers, in one read",
+   "platform": "SAP"
   },
   {
    "id": "R-025",
@@ -538,7 +610,10 @@
    "credit": null,
    "added": "2026-09-19",
    "checked": "2026-09-28",
-   "status": "live"
+   "status": "live",
+   "kind": "AI connection",
+   "short": "AI tools inside ABAP development (MCP)",
+   "platform": "SAP"
   },
   {
    "id": "R-026",
@@ -559,7 +634,10 @@
    "credit": null,
    "added": "2026-09-19",
    "checked": "2026-09-28",
-   "status": "live"
+   "status": "live",
+   "kind": "AI connection",
+   "short": "Connecting AI agents through Integration Suite (MCP)",
+   "platform": "SAP"
   },
   {
    "id": "R-027",
@@ -580,7 +658,10 @@
    "credit": null,
    "added": "2026-09-19",
    "checked": "2026-09-28",
-   "status": "live"
+   "status": "live",
+   "kind": "AI connection",
+   "short": "AI agents administering BTP (MCP)",
+   "platform": "SAP"
   },
   {
    "id": "R-028",
@@ -601,7 +682,10 @@
    "credit": null,
    "added": "2026-09-19",
    "checked": "2026-09-28",
-   "status": "live"
+   "status": "live",
+   "kind": "AI connection",
+   "short": "Building a secure MCP server on BTP (Python)",
+   "platform": "SAP"
   },
   {
    "id": "R-029",
@@ -622,7 +706,10 @@
    "credit": null,
    "added": "2026-09-19",
    "checked": "2026-09-28",
-   "status": "live"
+   "status": "live",
+   "kind": "AI connection",
+   "short": "Your first MCP server on BTP",
+   "platform": "SAP"
   },
   {
    "id": "R-030",
@@ -643,7 +730,10 @@
    "credit": null,
    "added": "2026-09-19",
    "checked": "2026-09-28",
-   "status": "live"
+   "status": "live",
+   "kind": "AI connection",
+   "short": "MCP explained",
+   "platform": "SAP"
   },
   {
    "id": "R-031",
@@ -665,7 +755,10 @@
    "credit": null,
    "added": "2026-09-19",
    "checked": "2026-09-28",
-   "status": "live"
+   "status": "live",
+   "kind": "AI connection",
+   "short": "Every SAP API and event, in one catalog",
+   "platform": "SAP"
   },
   {
    "id": "R-032",
@@ -686,7 +779,10 @@
    "credit": null,
    "added": "2026-09-19",
    "checked": "2026-09-28",
-   "status": "live"
+   "status": "live",
+   "kind": "AI agents",
+   "short": "SAP Business AI: what shipped in Q2 2026",
+   "platform": "SAP"
   },
   {
    "id": "R-033",
@@ -707,7 +803,10 @@
    "credit": null,
    "added": "2026-09-19",
    "checked": "2026-09-28",
-   "status": "live"
+   "status": "live",
+   "kind": "AI agents",
+   "short": "Joule Studio: building enterprise agents",
+   "platform": "SAP"
   },
   {
    "id": "R-034",
@@ -728,7 +827,10 @@
    "credit": null,
    "added": "2026-09-19",
    "checked": "2026-09-28",
-   "status": "live"
+   "status": "live",
+   "kind": "AI agents",
+   "short": "Agentic AI for ABAP",
+   "platform": "SAP"
   },
   {
    "id": "R-035",
@@ -749,7 +851,10 @@
    "credit": null,
    "added": "2026-09-19",
    "checked": "2026-09-28",
-   "status": "live"
+   "status": "live",
+   "kind": "AI agents",
+   "short": "Joule for Developers: 2026 roadmap",
+   "platform": "SAP"
   },
   {
    "id": "R-036",
@@ -772,7 +877,10 @@
    "credit": null,
    "added": "2026-09-19",
    "checked": "2026-09-28",
-   "status": "live"
+   "status": "live",
+   "kind": "Learning",
+   "short": "SAP Learning",
+   "platform": "SAP"
   },
   {
    "id": "R-037",
@@ -795,7 +903,10 @@
    "credit": null,
    "added": "2026-09-19",
    "checked": "2026-09-28",
-   "status": "live"
+   "status": "live",
+   "kind": "Learning",
+   "short": "SAP Community",
+   "platform": "SAP"
   },
   {
    "id": "R-038",
@@ -816,7 +927,10 @@
    "credit": null,
    "added": "2026-09-19",
    "checked": "2026-09-28",
-   "status": "live"
+   "status": "live",
+   "kind": "Learning",
+   "short": "API catalog: how to use it",
+   "platform": "SAP"
   },
   {
    "id": "R-039",
@@ -837,7 +951,10 @@
    "credit": null,
    "added": "2026-09-19",
    "checked": "2026-09-28",
-   "status": "live"
+   "status": "live",
+   "kind": "Learning",
+   "short": "Community round-up",
+   "platform": "SAP"
   },
   {
    "title": "SAP and Google Cloud launch BDC Connect for BigQuery",
@@ -860,7 +977,10 @@
    "added": "2026-10-02",
    "checked": "2026-10-02",
    "status": "live",
-   "from_proposal": "P-051"
+   "from_proposal": "P-051",
+   "kind": "Zero-copy",
+   "short": "SAP data in BigQuery without copying (GA Jul 2026)",
+   "platform": "Google"
   },
   {
    "title": "Google Cloud Cortex Framework",
@@ -883,7 +1003,10 @@
    "added": "2026-10-02",
    "checked": "2026-10-02",
    "status": "live",
-   "from_proposal": "P-052"
+   "from_proposal": "P-052",
+   "kind": "Data platform",
+   "short": "Ready-made SAP data models for BigQuery",
+   "platform": "Google"
   },
   {
    "title": "Integrating SAP Business Data Cloud with Google BigQuery",
@@ -906,7 +1029,10 @@
    "added": "2026-10-02",
    "checked": "2026-10-02",
    "status": "live",
-   "from_proposal": "P-053"
+   "from_proposal": "P-053",
+   "kind": "Learning",
+   "short": "Combining SAP and Google data (course)",
+   "platform": "Google"
   },
   {
    "title": "Guidance for SAP Data Integration and Management on AWS",
@@ -929,7 +1055,10 @@
    "added": "2026-10-02",
    "checked": "2026-10-02",
    "status": "live",
-   "from_proposal": "P-054"
+   "from_proposal": "P-054",
+   "kind": "Architecture",
+   "short": "Bringing SAP ERP data into AWS",
+   "platform": "AWS"
   },
   {
    "title": "Guidance for Data Lakes with SAP and Non-SAP Data on AWS",
@@ -952,7 +1081,10 @@
    "added": "2026-10-02",
    "checked": "2026-10-02",
    "status": "live",
-   "from_proposal": "P-055"
+   "from_proposal": "P-055",
+   "kind": "Architecture",
+   "short": "SAP and non-SAP data in one S3 data lake",
+   "platform": "AWS"
   },
   {
    "title": "Scaling RISE with SAP data and AWS Glue",
@@ -975,7 +1107,10 @@
    "added": "2026-10-02",
    "checked": "2026-10-02",
    "status": "live",
-   "from_proposal": "P-056"
+   "from_proposal": "P-056",
+   "kind": "Data platform",
+   "short": "Pulling RISE data with AWS Glue",
+   "platform": "AWS"
   },
   {
    "title": "SAP and Palantir enhance partnership with AI-supported data migration tooling",
@@ -998,7 +1133,10 @@
    "added": "2026-10-02",
    "checked": "2026-10-02",
    "status": "live",
-   "from_proposal": "P-057"
+   "from_proposal": "P-057",
+   "kind": "Migration",
+   "short": "SAP + Palantir: AI-assisted data migration",
+   "platform": "Palantir"
   },
   {
    "title": "Accelerate enterprise data migration with Palantir AIP",
@@ -1021,7 +1159,10 @@
    "added": "2026-10-02",
    "checked": "2026-10-02",
    "status": "live",
-   "from_proposal": "P-058"
+   "from_proposal": "P-058",
+   "kind": "Migration",
+   "short": "Migration from the data up",
+   "platform": "Palantir"
   },
   {
    "title": "Accelerating enterprise data migration with Palantir AIP (white paper, PDF)",
@@ -1044,7 +1185,10 @@
    "added": "2026-10-02",
    "checked": "2026-10-02",
    "status": "live",
-   "from_proposal": "P-059"
+   "from_proposal": "P-059",
+   "kind": "Migration",
+   "short": "Legacy SAP to S/4HANA (white paper)",
+   "platform": "Palantir"
   },
   {
    "title": "Announcing the General Availability of SAP Business Data Cloud Connect to Databricks",
@@ -1067,7 +1211,10 @@
    "added": "2026-10-02",
    "checked": "2026-10-02",
    "status": "live",
-   "from_proposal": "P-060"
+   "from_proposal": "P-060",
+   "kind": "Zero-copy",
+   "short": "SAP data in your own Databricks (GA)",
+   "platform": "Databricks"
   },
   {
    "title": "SAP Databricks documentation",
@@ -1090,7 +1237,10 @@
    "added": "2026-10-02",
    "checked": "2026-10-02",
    "status": "live",
-   "from_proposal": "P-061"
+   "from_proposal": "P-061",
+   "kind": "Data platform",
+   "short": "Databricks inside Business Data Cloud",
+   "platform": "Databricks"
   },
   {
    "title": "Unlocking SAP business context in Databricks with semantic metadata Delta Sharing",
@@ -1113,7 +1263,10 @@
    "added": "2026-10-02",
    "checked": "2026-10-02",
    "status": "live",
-   "from_proposal": "P-062"
+   "from_proposal": "P-062",
+   "kind": "Semantic layer",
+   "short": "SAP business meaning carried into Databricks",
+   "platform": "Databricks"
   },
   {
    "title": "Announcing General Availability of SAP Snowflake and SAP Business Data Cloud Connect for Snowflake",
@@ -1136,7 +1289,10 @@
    "added": "2026-10-02",
    "checked": "2026-10-02",
    "status": "live",
-   "from_proposal": "P-063"
+   "from_proposal": "P-063",
+   "kind": "Zero-copy",
+   "short": "Snowflake with SAP data (GA May 2026)",
+   "platform": "Snowflake"
   },
   {
    "title": "About Snowflake and SAP zero-copy integration",
@@ -1159,7 +1315,10 @@
    "added": "2026-10-02",
    "checked": "2026-10-02",
    "status": "live",
-   "from_proposal": "P-064"
+   "from_proposal": "P-064",
+   "kind": "Zero-copy",
+   "short": "Snowflake's zero-copy SAP integration",
+   "platform": "Snowflake"
   },
   {
    "title": "Integration with Snowflake — SAP Architecture Center",
@@ -1182,7 +1341,192 @@
    "added": "2026-10-02",
    "checked": "2026-10-02",
    "status": "live",
-   "from_proposal": "P-065"
+   "from_proposal": "P-065",
+   "kind": "Architecture",
+   "short": "SAP data with Snowflake: reference architecture",
+   "platform": "Snowflake"
+  },
+  {
+   "title": "SAP and NVIDIA: secure, governed AI agents",
+   "url": "https://news.sap.com/2026/05/secure-ai-agents-how-sap-and-nvidia-co-define-enterprise-grade-agent-execution/",
+   "lane": "Joule & agentic SAP",
+   "role": [
+    "PMO/lead",
+    "Functional",
+    "Architect"
+   ],
+   "product": "SAP",
+   "format": "News",
+   "level": "Intro",
+   "access": "Free",
+   "source": "SAP official",
+   "priority": 1,
+   "credit": null,
+   "id": "R-055",
+   "why": "SAP's May 2026 move with NVIDIA: OpenShell becomes the security layer for AI agents on the SAP Business AI Platform, including custom agents built in Joule Studio.",
+   "added": "2026-10-04",
+   "checked": "2026-10-04",
+   "status": "live",
+   "from_proposal": "P-067",
+   "kind": "AI agents",
+   "short": "SAP + NVIDIA: secure, governed AI agents",
+   "platform": "SAP"
+  },
+  {
+   "title": "SAP Business Data Cloud — open data ecosystem",
+   "url": "https://www.sap.com/products/data-cloud/open-data-ecosystem.html",
+   "lane": "BDC & Datasphere",
+   "role": [
+    "PMO/lead",
+    "Functional",
+    "Architect"
+   ],
+   "product": "SAP",
+   "format": "Product page",
+   "level": "Intro",
+   "access": "Free",
+   "source": "SAP official",
+   "priority": 1,
+   "credit": null,
+   "id": "R-056",
+   "why": "How SAP shares data products both ways with other clouds without copying them. The map of which outside platforms SAP data can reach.",
+   "added": "2026-10-04",
+   "checked": "2026-10-04",
+   "status": "live",
+   "from_proposal": "P-068",
+   "kind": "Zero-copy",
+   "short": "Where SAP data can go without copying",
+   "platform": "SAP"
+  },
+  {
+   "title": "Transforming enterprise data strategy with SAP Business Data Cloud — SAP Architecture Center",
+   "url": "https://architecture.learning.sap.com/docs/ref-arch/e1732d",
+   "lane": "BDC & Datasphere",
+   "role": [
+    "PMO/lead",
+    "Functional",
+    "Architect"
+   ],
+   "product": "SAP",
+   "format": "Docs",
+   "level": "Deep",
+   "access": "Free",
+   "source": "SAP official",
+   "priority": 1,
+   "credit": null,
+   "id": "R-057",
+   "why": "SAP's reference architecture for combining SAP and non-SAP data, including data from outside the company, in one governed foundation.",
+   "added": "2026-10-04",
+   "checked": "2026-10-04",
+   "status": "live",
+   "from_proposal": "P-069",
+   "kind": "Architecture",
+   "short": "SAP and outside data in one governed foundation",
+   "platform": "SAP"
+  },
+  {
+   "title": "SAP and AWS: bi-directional zero-copy data sharing with SAP Business Data Cloud",
+   "url": "https://news.sap.com/2026/05/sap-aws-next-generation-ai-bi-directional-zero-copy-data-sharing-sap-bdc/",
+   "lane": "Data-first assessment",
+   "role": [
+    "PMO/lead",
+    "Functional",
+    "Architect"
+   ],
+   "product": "AWS",
+   "format": "News",
+   "level": "Intro",
+   "access": "Free",
+   "source": "SAP official",
+   "priority": 1,
+   "credit": null,
+   "id": "R-058",
+   "why": "SAP's May 2026 plan for BDC Connect for Amazon Athena: live SAP data products in AWS without copying them. Planned; no date given.",
+   "added": "2026-10-04",
+   "checked": "2026-10-04",
+   "status": "live",
+   "from_proposal": "P-070",
+   "kind": "Zero-copy",
+   "short": "SAP data in Amazon Athena without copying (planned)",
+   "platform": "AWS"
+  },
+  {
+   "title": "SAPPHIRE 2026: How AWS is helping SAP customers move faster and build more",
+   "url": "https://aws.amazon.com/blogs/awsforsap/sapphire-2026-how-aws-is-helping-sap-customers-move-faster-and-build-more/",
+   "lane": "Data-first assessment",
+   "role": [
+    "PMO/lead",
+    "Functional",
+    "Architect"
+   ],
+   "product": "AWS",
+   "format": "News",
+   "level": "Intro",
+   "access": "Free",
+   "source": "AWS official",
+   "priority": 1,
+   "credit": null,
+   "id": "R-059",
+   "why": "AWS's May 2026 round-up for SAP customers: migration tooling, sovereign cloud, SAP data in Athena and AI agents through Bedrock.",
+   "added": "2026-10-04",
+   "checked": "2026-10-04",
+   "status": "live",
+   "from_proposal": "P-071",
+   "kind": "Data platform",
+   "short": "AWS for SAP: what changed at Sapphire 2026",
+   "platform": "AWS"
+  },
+  {
+   "title": "SAP and Microsoft: SAP Business Data Cloud Connect for Microsoft Fabric",
+   "url": "https://news.sap.com/2025/11/sap-bdc-connect-for-microsoft-fabric-business-insights-ai-innovation/",
+   "lane": "Data-first assessment",
+   "role": [
+    "PMO/lead",
+    "Functional",
+    "Architect"
+   ],
+   "product": "Microsoft",
+   "format": "News",
+   "level": "Intro",
+   "access": "Free",
+   "source": "SAP official",
+   "priority": 1,
+   "credit": null,
+   "id": "R-060",
+   "why": "SAP's plan for zero-copy sharing between SAP Business Data Cloud and Microsoft Fabric. Start here when the client's analytics platform is Microsoft.",
+   "added": "2026-10-04",
+   "checked": "2026-10-04",
+   "status": "live",
+   "from_proposal": "P-072",
+   "kind": "Zero-copy",
+   "short": "SAP data in Microsoft Fabric without copying (planned)",
+   "platform": "Microsoft"
+  },
+  {
+   "title": "SAP on Azure product announcements — SAP Sapphire 2026",
+   "url": "https://techcommunity.microsoft.com/blog/sapapplications/sap-on-azure-product-announcements-summary-%E2%80%93-sap-sapphire-2026/4517634",
+   "lane": "Data-first assessment",
+   "role": [
+    "PMO/lead",
+    "Functional",
+    "Architect"
+   ],
+   "product": "Microsoft",
+   "format": "News",
+   "level": "Intro",
+   "access": "Free",
+   "source": "Microsoft official",
+   "priority": 1,
+   "credit": null,
+   "id": "R-061",
+   "why": "Microsoft's May 2026 summary: Datasphere mirroring into Fabric (GA March 2026), Joule with Microsoft 365 Copilot, and customer results.",
+   "added": "2026-10-04",
+   "checked": "2026-10-04",
+   "status": "live",
+   "from_proposal": "P-073",
+   "kind": "Data platform",
+   "short": "SAP on Azure: what changed at Sapphire 2026",
+   "platform": "Microsoft"
   }
  ]
 }

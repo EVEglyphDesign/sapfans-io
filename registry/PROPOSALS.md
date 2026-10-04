@@ -1,6 +1,6 @@
 # Review list — proposed references
 
-Updated 2026-10-03. 51 open. Accept: `python3 scripts/refs.py accept P-001 --why "one line"` · Reject: `... reject P-001 --reason "..."`.
+Updated 2026-10-04. 51 open. Accept: `python3 scripts/refs.py accept P-001 --why "one line"` · Reject: `... reject P-001 --reason "..."`.
 Or reply in the session with the IDs to accept or reject.
 
 | ID | Proposed | Title | Lane · Role · Product | Pri | Found by | Note |
@@ -61,7 +61,7 @@ Or reply in the session with the IDs to accept or reject.
 
 - R-021 [Architecting the Unified Semantic Layer — the data foundation](https://learning.sap.com/courses/guiding-ai-driven-transformation-as-an-sap-enterprise-architect/architecting-the-unified-semantic-layer-the-data-foundation) — last checked 2026-09-28
 
-## Decided (15)
+## Decided (22)
 
 - P-051 accepted 2026-10-02 — SAP and Google Cloud launch BDC Connect for BigQuery
 - P-052 accepted 2026-10-02 — Google Cloud Cortex Framework
@@ -78,6 +78,13 @@ Or reply in the session with the IDs to accept or reject.
 - P-063 accepted 2026-10-02 — Announcing General Availability of SAP Snowflake and SAP Business Data Cloud Connect for Snowflake
 - P-064 accepted 2026-10-02 — About Snowflake and SAP zero-copy integration
 - P-065 accepted 2026-10-02 — Integration with Snowflake — SAP Architecture Center
+- P-067 accepted 2026-10-04 — SAP and NVIDIA: secure, governed AI agents
+- P-068 accepted 2026-10-04 — SAP Business Data Cloud — open data ecosystem
+- P-069 accepted 2026-10-04 — Transforming enterprise data strategy with SAP Business Data Cloud — SAP Architecture Center
+- P-070 accepted 2026-10-04 — SAP and AWS: bi-directional zero-copy data sharing with SAP Business Data Cloud
+- P-071 accepted 2026-10-04 — SAPPHIRE 2026: How AWS is helping SAP customers move faster and build more
+- P-072 accepted 2026-10-04 — SAP and Microsoft: SAP Business Data Cloud Connect for Microsoft Fabric
+- P-073 accepted 2026-10-04 — SAP on Azure product announcements — SAP Sapphire 2026
 
 ---
 

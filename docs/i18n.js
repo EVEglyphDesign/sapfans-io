@@ -1,5 +1,18 @@
 /* EgD i18n dictionary — keyed by the English source string. Missing keys stay in English. */
 window.EGD_I18N={
+"Content Connect Board": {"de": "Content Connect Board", "es": "Content Connect Board", "fr": "Content Connect Board"},
+"Neutral, curated references for program, PMO and functional leads: planning, decision intelligence, governance, data as a capital asset, data sovereignty. Sign what you know; peers connect with you on LinkedIn, X or GitHub.": {"de": "Neutrale, kuratierte Referenzen für Programm-, PMO- und Fachverantwortliche: Planung, Decision Intelligence, Governance, Daten als Kapital, Datensouveränität. Signieren Sie, was Sie kennen; Fachleute vernetzen sich mit Ihnen über LinkedIn, X oder GitHub.", "es": "Referencias neutrales y curadas para líderes de programa, PMO y funcionales: planificación, inteligencia de decisiones, gobierno, datos como activo de capital, soberanía de datos. Firme lo que conoce; sus pares conectan con usted en LinkedIn, X o GitHub.", "fr": "Références neutres et sélectionnées pour les responsables de programme, de PMO et fonctionnels : planification, intelligence décisionnelle, gouvernance, données comme actif, souveraineté des données. Signez ce que vous connaissez ; vos pairs vous contactent sur LinkedIn, X ou GitHub."},
+"Why": {"de": "Warum", "es": "Por qué", "fr": "Pourquoi"},
+"The analytics landscape around SAP": {"de": "Die Analytics-Landschaft rund um SAP", "es": "El panorama analítico alrededor de SAP", "fr": "Le paysage analytique autour de SAP"},
+"Stack": {"de": "Stack", "es": "Pila", "fr": "Pile"},
+"Reads ECC / S/4 data": {"de": "Liest ECC-/S/4-Daten", "es": "Lee datos de ECC / S/4", "fr": "Lit les données ECC / S/4"},
+"Zero-copy with SAP BDC": {"de": "Zero-Copy mit SAP BDC", "es": "Zero-copy con SAP BDC", "fr": "Zéro copie avec SAP BDC"},
+"Migration": {"de": "Migration", "es": "Migración", "fr": "Migration"},
+"AI agents": {"de": "KI-Agenten", "es": "Agentes de IA", "fr": "Agents IA"},
+"Top reads": {"de": "Top-Lektüre", "es": "Lecturas principales", "fr": "Lectures clés"},
+"Deployed at": {"de": "Im Einsatz bei", "es": "Desplegado en", "fr": "Déployé chez"},
+"SAP strategy ›": {"de": "SAP-Strategie ›", "es": "Estrategia SAP ›", "fr": "Stratégie SAP ›"},
+"Review list": {"de": "Prüfliste", "es": "Lista de revisión", "fr": "Liste de revue"},
 "GitHub intro": {
 "de": "GitHub-Einführung",
 "es": "Introducción a GitHub",
