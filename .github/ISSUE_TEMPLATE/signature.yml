@@ -8,7 +8,7 @@ body:
       value: |
         **A connecting point, not a forum.** Your name and the link you choose are added to the
         reference. Discussion, advice and services happen on your own network, never on SAPfans.io.
-        Just press **Create**. Nothing else to write.
+        Pick your network, tick Experience, Questions or both, then press **Create**.
   - type: input
     id: ref
     attributes:
@@ -23,13 +23,14 @@ body:
       options: [LinkedIn, X, GitHub]
     validations:
       required: true
-  - type: dropdown
+  - type: checkboxes
     id: as
     attributes:
       label: Signing as
-      options: [Experience, Questions, Experience and questions]
-    validations:
-      required: true
+      description: Tick one or both.
+      options:
+        - label: Experience
+        - label: Questions
   - type: input
     id: link
     attributes:

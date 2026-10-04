@@ -44,6 +44,10 @@ def main():
     ids = {i["id"] for i in json.loads(CAT.read_text())["items"]} | {p["id"] for p in json.loads((ROOT / "docs" / "landscape.json").read_text())["platforms"]}
     if ref not in ids: return say(f"`{ref or '?'}` is not a reference on the page. Open the form from a reference card on [the Content Connect Board](https://sapfans.io).", False)
     if net not in NETS: return say("Pick LinkedIn, X or GitHub.", False)
+    ticks = field(body, "Signing as")
+    e = bool(re.search(r"\[x\]\s*Experience", ticks, re.I)); qq = bool(re.search(r"\[x\]\s*Questions", ticks, re.I))
+    sa = "Experience and questions" if e and qq else "Experience" if e else "Questions" if qq else ""
+    if not remove and not sa: return say("Tick Experience, Questions or both, then sign again.", False)
     d = json.loads(OUT.read_text()) if OUT.exists() else {"schema": 1, "refs": {}}
     people = d["refs"].setdefault(ref, [])
     p = next((x for x in people if x["login"].lower() == login.lower()), None)
@@ -71,8 +75,7 @@ def main():
         people.append(p)
     p["name"] = user.get("name") or user["login"]
     p["links"][net] = url
-    sa = field(body, "Signing as")
-    if sa: p["as"] = sa
+    p["as"] = sa
     save(d); say(f"Signed {ref} with your {net_name(net)}. It shows on [the Content Connect Board](https://sapfans.io) in a minute or two.", True)
 
 def net_name(n): return {"linkedin": "LinkedIn", "x": "X", "github": "GitHub"}[n]
