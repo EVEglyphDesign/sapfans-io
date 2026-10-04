@@ -1,0 +1,751 @@
+{
+ "schema": 1,
+ "rule": "Append-only. Never remove, renumber or re-point an id.",
+ "ids": {
+  "R-001": {
+   "url": "https://pages.community.sap.com/topics/road-map-explorer",
+   "title": "What's planned, by release and product",
+   "first": "2026-10-04"
+  },
+  "R-002": {
+   "url": "https://community.sap.com/t5/enterprise-resource-planning-blog-posts-by-sap/access-sap-activate-methodology-roadmaps-in-sap-road-map-viewer/ba-p/13304674",
+   "title": "Activate roadmaps and accelerators",
+   "first": "2026-10-04"
+  },
+  "R-003": {
+   "url": "https://community.sap.com/t5/enterprise-resource-planning-blog-posts-by-sap/update-of-the-sap-activate-roadmap-for-sap-s-4hana-on-prem-upgrades-with/ba-p/13679242",
+   "title": "Activate update: on-prem upgrades, clean core",
+   "first": "2026-10-04"
+  },
+  "R-004": {
+   "url": "https://pages.community.sap.com/topics/activate/clean-core-erp",
+   "title": "Clean core: the community hub",
+   "first": "2026-10-04"
+  },
+  "R-005": {
+   "url": "https://learning.sap.com/courses/managing-clean-core-for-sap-cloud-erp",
+   "title": "Running clean core in cloud ERP",
+   "first": "2026-10-04"
+  },
+  "R-006": {
+   "url": "https://learning.sap.com/courses/practicing-clean-core-extensibility-for-sap-s-4hana-cloud",
+   "title": "Clean core extensions in S/4HANA Cloud",
+   "first": "2026-10-04"
+  },
+  "R-007": {
+   "url": "https://discovery-center.cloud.sap/",
+   "title": "Missions and reference architectures",
+   "first": "2026-10-04"
+  },
+  "R-008": {
+   "url": "https://help.sap.com/docs/btp/sap-btp-security-recommendations-c8a9bb59fe624f0981efa0eff2497d7d/sap-btp-security-recommendations",
+   "title": "BTP security recommendations",
+   "first": "2026-10-04"
+  },
+  "R-009": {
+   "url": "https://help.sap.com/docs/btp/sap-business-technology-platform/data-protection-and-privacy",
+   "title": "Data protection and privacy on BTP",
+   "first": "2026-10-04"
+  },
+  "R-010": {
+   "url": "https://help.sap.com/docs/btp/sap-business-technology-platform/btp-security",
+   "title": "BTP security overview",
+   "first": "2026-10-04"
+  },
+  "R-011": {
+   "url": "https://help.sap.com/docs/btp/best-practices/security-concepts",
+   "title": "BTP security concepts (admin guide)",
+   "first": "2026-10-04"
+  },
+  "R-012": {
+   "url": "https://pages.community.sap.com/topics/btp-security",
+   "title": "BTP security: community hub",
+   "first": "2026-10-04"
+  },
+  "R-013": {
+   "url": "https://www.sap.com/documents/2022/01/a8431b91-117e-0010-bca6-c68f7e60039b.html",
+   "title": "SAP's AI ethics policy",
+   "first": "2026-10-04"
+  },
+  "R-014": {
+   "url": "https://www.sap.com/documents/2023/03/7211ee96-647e-0010-bca6-c68f7e60039b.html",
+   "title": "SAP's AI ethics handbook",
+   "first": "2026-10-04"
+  },
+  "R-015": {
+   "url": "https://www.sap.com/products/artificial-intelligence/ai-ethics.html",
+   "title": "SAP's responsible AI approach",
+   "first": "2026-10-04"
+  },
+  "R-016": {
+   "url": "https://help.sap.com/docs/business-data-cloud",
+   "title": "Business Data Cloud: the documentation",
+   "first": "2026-10-04"
+  },
+  "R-017": {
+   "url": "https://help.sap.com/docs/SAP_DATASPHERE/be5967d099974c69b77f4549425ca4c0/8f9c3725cfe84e08b3e951e7af06ce57.html",
+   "title": "Datasphere inside Business Data Cloud",
+   "first": "2026-10-04"
+  },
+  "R-018": {
+   "url": "https://help.sap.com/docs/SAP_DATASPHERE?locale=en-US",
+   "title": "Datasphere: the documentation",
+   "first": "2026-10-04"
+  },
+  "R-019": {
+   "url": "https://help.sap.com/docs/portfolio-category/data-cloud",
+   "title": "Data cloud documentation index",
+   "first": "2026-10-04"
+  },
+  "R-020": {
+   "url": "https://pages.community.sap.com/topics/datasphere",
+   "title": "Datasphere: community hub",
+   "first": "2026-10-04"
+  },
+  "R-021": {
+   "url": "https://learning.sap.com/courses/guiding-ai-driven-transformation-as-an-sap-enterprise-architect/architecting-the-unified-semantic-layer-the-data-foundation",
+   "title": "One semantic layer as the data foundation",
+   "first": "2026-10-04"
+  },
+  "R-022": {
+   "url": "https://community.sap.com/t5/technology-blog-posts-by-sap/explore-and-reuse-sap-datasphere-models-from-databricks/ba-p/14482125",
+   "title": "Reusing Datasphere models from Databricks",
+   "first": "2026-10-04"
+  },
+  "R-023": {
+   "url": "https://www.sap.com/assetdetail/2026/03/0262e6df-417f-0010-bca6-c68f7e60039b.html",
+   "title": "Building a data model with business meaning",
+   "first": "2026-10-04"
+  },
+  "R-024": {
+   "url": "https://community.sap.com/t5/data-and-analytics-learning-group-blog-posts/my-26-year-bi-semantic-layer-journey-from-businessobjects-to-sap-s-cloud/ba-p/14355034",
+   "title": "26 years of BI semantic layers, in one read",
+   "first": "2026-10-04"
+  },
+  "R-025": {
+   "url": "https://help.sap.com/docs/abap-cloud/abap-development-tools-for-visual-studio-code/mcp-tools",
+   "title": "AI tools inside ABAP development (MCP)",
+   "first": "2026-10-04"
+  },
+  "R-026": {
+   "url": "https://help.sap.com/docs/integration-suite/isuite-integrations-and-apis/model-context-protocol-mcp",
+   "title": "Connecting AI agents through Integration Suite (MCP)",
+   "first": "2026-10-04"
+  },
+  "R-027": {
+   "url": "https://community.sap.com/t5/technology-blog-posts-by-sap/public-release-of-the-mcp-server-for-sap-btp-administration/ba-p/14471692",
+   "title": "AI agents administering BTP (MCP)",
+   "first": "2026-10-04"
+  },
+  "R-028": {
+   "url": "https://community.sap.com/t5/technology-blog-posts-by-sap/building-and-securing-mcp-servers-in-python-on-btp/ba-p/14354754",
+   "title": "Building a secure MCP server on BTP (Python)",
+   "first": "2026-10-04"
+  },
+  "R-029": {
+   "url": "https://community.sap.com/t5/artificial-intelligence-blogs-posts/building-and-deploying-your-first-mcp-server-on-sap-btp/ba-p/14443640",
+   "title": "Your first MCP server on BTP",
+   "first": "2026-10-04"
+  },
+  "R-030": {
+   "url": "https://community.sap.com/t5/technology-blog-posts-by-sap/mcp-a-comprehensive-guide/ba-p/14238053",
+   "title": "MCP explained",
+   "first": "2026-10-04"
+  },
+  "R-031": {
+   "url": "https://api.sap.com/",
+   "title": "Every SAP API and event, in one catalog",
+   "first": "2026-10-04"
+  },
+  "R-032": {
+   "url": "https://news.sap.com/2026/07/sap-business-ai-release-highlights-q2-2026/",
+   "title": "SAP Business AI: what shipped in Q2 2026",
+   "first": "2026-10-04"
+  },
+  "R-033": {
+   "url": "https://news.sap.com/2026/05/new-joule-studio-enterprise-scale-agentic-development/",
+   "title": "Joule Studio: building enterprise agents",
+   "first": "2026-10-04"
+  },
+  "R-034": {
+   "url": "https://news.sap.com/2026/08/with-agentic-ai-abap-takes-evolution-to-the-next-level/",
+   "title": "Agentic AI for ABAP",
+   "first": "2026-10-04"
+  },
+  "R-035": {
+   "url": "https://community.sap.com/t5/technology-blog-posts-by-sap/our-2026-roadmap-for-joule-for-developers-abap-ai-capabilities/ba-p/14360358",
+   "title": "Joule for Developers: 2026 roadmap",
+   "first": "2026-10-04"
+  },
+  "R-036": {
+   "url": "https://learning.sap.com/",
+   "title": "SAP Learning",
+   "first": "2026-10-04"
+  },
+  "R-037": {
+   "url": "https://community.sap.com/",
+   "title": "SAP Community",
+   "first": "2026-10-04"
+  },
+  "R-038": {
+   "url": "https://help.sap.com/docs/business-accelerator-hub",
+   "title": "API catalog: how to use it",
+   "first": "2026-10-04"
+  },
+  "R-039": {
+   "url": "https://community.sap.com/t5/what-s-new/sap-community-voice-ai-assisted-development-abap-cloud-community-updates/ba-p/14473584",
+   "title": "Community round-up",
+   "first": "2026-10-04"
+  },
+  "R-040": {
+   "url": "https://cloud.google.com/blog/products/sap-google-cloud/sap-and-google-cloud-launch-bdc-connect-for-bigquery",
+   "title": "SAP data in BigQuery without copying (GA Jul 2026)",
+   "first": "2026-10-04"
+  },
+  "R-041": {
+   "url": "https://cloud.google.com/solutions/cortex",
+   "title": "Ready-made SAP data models for BigQuery",
+   "first": "2026-10-04"
+  },
+  "R-042": {
+   "url": "https://learning.sap.com/courses/mastering-sap-data-architecture/integrating-sap-business-data-cloud-with-google-bigquery_f3afecab-c25f-4665-a9e1-9d880890664f",
+   "title": "Combining SAP and Google data (course)",
+   "first": "2026-10-04"
+  },
+  "R-043": {
+   "url": "https://docs.aws.amazon.com/solutions/sap-data-integration-and-management-on-aws/",
+   "title": "Bringing SAP ERP data into AWS",
+   "first": "2026-10-04"
+  },
+  "R-044": {
+   "url": "https://docs.aws.amazon.com/solutions/data-lakes-with-sap-and-non-sap-data-on-aws/",
+   "title": "SAP and non-SAP data in one S3 data lake",
+   "first": "2026-10-04"
+  },
+  "R-045": {
+   "url": "https://aws.amazon.com/blogs/big-data/scaling-rise-with-sap-data-and-aws-glue/",
+   "title": "Pulling RISE data with AWS Glue",
+   "first": "2026-10-04"
+  },
+  "R-046": {
+   "url": "https://investors.palantir.com/news-details/2026/SAP-and-Palantir-Enhance-Partnership-with-AI-Supported-Data-Migration-Tooling-to-Accelerate-Enterprise-Cloud-ERP-Transformation-for-Autonomous-Enterprises/",
+   "title": "SAP + Palantir: AI-assisted data migration",
+   "first": "2026-10-04"
+  },
+  "R-047": {
+   "url": "https://www.palantir.com/migration/",
+   "title": "Migration from the data up",
+   "first": "2026-10-04"
+  },
+  "R-048": {
+   "url": "https://www.palantir.com/assets/xrfr7uokpv1b/2F8L1TTINRFCg8IGhcJ8vo/1965d99b6512cbae17b845ec8d26ebd2/SAP_Migration_Whitepaper.pdf",
+   "title": "Legacy SAP to S/4HANA (white paper)",
+   "first": "2026-10-04"
+  },
+  "R-049": {
+   "url": "https://www.databricks.com/blog/announcing-general-availability-sap-business-data-cloud-connect-databricks",
+   "title": "SAP data in your own Databricks (GA)",
+   "first": "2026-10-04"
+  },
+  "R-050": {
+   "url": "https://docs.databricks.com/sap/en/",
+   "title": "Databricks inside Business Data Cloud",
+   "first": "2026-10-04"
+  },
+  "R-051": {
+   "url": "https://www.databricks.com/blog/unlocking-sap-business-context-databricks-semantic-metadata-delta-sharing",
+   "title": "SAP business meaning carried into Databricks",
+   "first": "2026-10-04"
+  },
+  "R-052": {
+   "url": "https://community.sap.com/t5/technology-blog-posts-by-sap/announcing-general-availability-of-sap-snowflake-and-sap-business-data/ba-p/14386550",
+   "title": "Snowflake with SAP data (GA May 2026)",
+   "first": "2026-10-04"
+  },
+  "R-053": {
+   "url": "https://docs.snowflake.com/en/user-guide/data-integration/zero-copy/about-sap-snowflake",
+   "title": "Snowflake's zero-copy SAP integration",
+   "first": "2026-10-04"
+  },
+  "R-054": {
+   "url": "https://architecture.learning.sap.com/docs/ref-arch/053d2b",
+   "title": "SAP data with Snowflake: reference architecture",
+   "first": "2026-10-04"
+  },
+  "R-055": {
+   "url": "https://news.sap.com/2026/05/secure-ai-agents-how-sap-and-nvidia-co-define-enterprise-grade-agent-execution/",
+   "title": "SAP + NVIDIA: secure, governed AI agents",
+   "first": "2026-10-04"
+  },
+  "R-056": {
+   "url": "https://www.sap.com/products/data-cloud/open-data-ecosystem.html",
+   "title": "Where SAP data can go without copying",
+   "first": "2026-10-04"
+  },
+  "R-057": {
+   "url": "https://architecture.learning.sap.com/docs/ref-arch/e1732d",
+   "title": "SAP and outside data in one governed foundation",
+   "first": "2026-10-04"
+  },
+  "R-058": {
+   "url": "https://news.sap.com/2026/05/sap-aws-next-generation-ai-bi-directional-zero-copy-data-sharing-sap-bdc/",
+   "title": "SAP data in Amazon Athena without copying (planned)",
+   "first": "2026-10-04"
+  },
+  "R-059": {
+   "url": "https://aws.amazon.com/blogs/awsforsap/sapphire-2026-how-aws-is-helping-sap-customers-move-faster-and-build-more/",
+   "title": "AWS for SAP: what changed at Sapphire 2026",
+   "first": "2026-10-04"
+  },
+  "R-060": {
+   "url": "https://news.sap.com/2025/11/sap-bdc-connect-for-microsoft-fabric-business-insights-ai-innovation/",
+   "title": "SAP data in Microsoft Fabric without copying (planned)",
+   "first": "2026-10-04"
+  },
+  "R-061": {
+   "url": "https://techcommunity.microsoft.com/blog/sapapplications/sap-on-azure-product-announcements-summary-%E2%80%93-sap-sapphire-2026/4517634",
+   "title": "SAP on Azure: what changed at Sapphire 2026",
+   "first": "2026-10-04"
+  },
+  "R-101": {
+   "url": "https://news.sap.com/uk/2024/06/co-op-puts-customer-experience-first-with-rise-with-sap/",
+   "title": "Co-op UK: SAP Retail on HANA moved to RISE with SAP S/4HANA Cloud, completed 2024",
+   "first": "2026-10-04"
+  },
+  "R-102": {
+   "url": "https://portalerp.com/br/noticia/carrefour-conclui-migracao-para-sap-s4hana",
+   "title": "Carrefour Brazil: Converted to S/4HANA under RISE with SAP",
+   "first": "2026-10-04"
+  },
+  "R-103": {
+   "url": "https://www.databricks.com/customers/saf-holland",
+   "title": "SAF-Holland: 5x faster analysis on 100M+ SAP records with BDC, SAP Databricks and SAP Analytics Cloud",
+   "first": "2026-10-04"
+  },
+  "R-104": {
+   "url": "https://www.sap.com/products/data-cloud.html",
+   "title": "Vodafone: BW footprint cut 80% with one semantic layer across markets",
+   "first": "2026-10-04"
+  },
+  "R-105": {
+   "url": "https://www.sap.com/products/data-cloud.html",
+   "title": "Ericsson: One set of business semantics across petabytes and 180+ countries",
+   "first": "2026-10-04"
+  },
+  "R-106": {
+   "url": "https://aws.amazon.com/blogs/awsforsap/building-data-lakes-with-sap-on-aws/",
+   "title": "Thermo Fisher: SAP data in an AWS data lake",
+   "first": "2026-10-04"
+  },
+  "R-107": {
+   "url": "https://sapinsider.org/wp-content/uploads/2025/03/JD-Group-Case-Study.pdf",
+   "title": "JD Group: SAP and non-SAP data lake for peak-period warehouse efficiency",
+   "first": "2026-10-04"
+  },
+  "R-108": {
+   "url": "https://aws.amazon.com/sap/case-studies/",
+   "title": "Deutsche Bahn: Faster provisioning and SAP reporting on AWS",
+   "first": "2026-10-04"
+  },
+  "R-109": {
+   "url": "https://techcommunity.microsoft.com/blog/sapapplications/sap-on-azure-product-announcements-summary-%E2%80%93-sap-sapphire-2026/4517634",
+   "title": "Maersk: 500 SAP servers and a petabyte to Azure in six months",
+   "first": "2026-10-04"
+  },
+  "R-110": {
+   "url": "https://www.linkedin.com/posts/woolworths-group_teamwoolies-retailinnovation-digitaltransformation-activity-7493071256661934080-1ZdF",
+   "title": "Woolworths: ECC lifted to Azure first, then switched to S/4HANA in one weekend",
+   "first": "2026-10-04"
+  },
+  "R-111": {
+   "url": "https://www.snpgroup.com/en/resources/customer-stories/coles-sap-s4hana/",
+   "title": "Coles: Finance core to S/4HANA in five months by selective transition",
+   "first": "2026-10-04"
+  },
+  "R-112": {
+   "url": "https://www.ey.com/en_gl/insights/industrial-products/how-xylem-turned-ai-ambition-into-enterprise-execution",
+   "title": "Xylem: Built xylem.ai in-house with EY and Microsoft",
+   "first": "2026-10-04"
+  },
+  "R-113": {
+   "url": "https://www.microsoft.com/en/customers/story/26449-peri-microsoft-fabric",
+   "title": "PERI: From SAP BW on HANA to Fabric and Azure Databricks",
+   "first": "2026-10-04"
+  },
+  "R-114": {
+   "url": "https://techcommunity.microsoft.com/blog/sapapplications/sap-on-azure-product-announcements-summary-%E2%80%93-sap-sapphire-2026/4517634",
+   "title": "KONE: 54,000+ contracts a year checked against SAP",
+   "first": "2026-10-04"
+  },
+  "R-115": {
+   "url": "https://www.snpgroup.com/en/resources/customer-stories/enormous-15-hour-migration-moves-coop-to-sap-s4hana-successfully/",
+   "title": "Coop Switzerland: 56 TB ECC retail system to S/4HANA by selective transition, 14-hour cutover",
+   "first": "2026-10-04"
+  },
+  "R-116": {
+   "url": "https://cloud.google.com/blog/products/sap-google-cloud/deutsche-borse-group-runs-s4-hana-on-google-cloud",
+   "title": "Deutsche Börse: Upgraded to S/4HANA and moved to Google Cloud at the same time",
+   "first": "2026-10-04"
+  },
+  "R-117": {
+   "url": "https://cloud.google.com/customers/grupobafar",
+   "title": "Grupo Bafar: SAP and Salesforce data in one BigQuery lake",
+   "first": "2026-10-04"
+  },
+  "R-118": {
+   "url": "https://cloud.google.com/customers/copel",
+   "title": "Copel: Gemini answering questions on SAP data",
+   "first": "2026-10-04"
+  },
+  "R-119": {
+   "url": "https://cloud.google.com/customers/orica",
+   "title": "Orica: SAP performance and data transformation",
+   "first": "2026-10-04"
+  },
+  "R-120": {
+   "url": "https://cloud.google.com/blog/products/sap-google-cloud/carrefour-belgium-leading-in-retail-digital-transformation",
+   "title": "Carrefour Belgium: Nearly all SAP on Google Cloud, including finance and HR",
+   "first": "2026-10-04"
+  },
+  "R-121": {
+   "url": "https://cloud.google.com/customers/carrefour-tech",
+   "title": "Carrefour: Own team built a data assistant on its Google Cloud data platform",
+   "first": "2026-10-04"
+  },
+  "R-122": {
+   "url": "https://www.palantir.com/migration/",
+   "title": "Food manufacturer: 20+ markets moved from ECC to S/4HANA",
+   "first": "2026-10-04"
+  },
+  "R-123": {
+   "url": "https://unit8.com/casestudies/erp-data-migration-on-foundry/",
+   "title": "Manufacturer: Several legacy ERPs to S/4HANA on Foundry",
+   "first": "2026-10-04"
+  },
+  "R-124": {
+   "url": "https://www.carrefour.com/sites/default/files/2026-02/PR%20Carrefour%202030%20Strategic%20Plan_1.pdf",
+   "title": "Carrefour Group: Google named strategic AI partner",
+   "first": "2026-10-04"
+  },
+  "R-125": {
+   "url": "https://news.sap.com/2025/04/rewe-group-rise-with-sap-cloud-transform-digitally/",
+   "title": "REWE Group: 73 SAP systems moving to S/4HANA Cloud, RISE on Google Cloud",
+   "first": "2026-10-04"
+  },
+  "R-126": {
+   "url": "https://cloud.google.com/blog/topics/customers/how-metro-ag-is-migrating-its-sap-finance-systems-to-google-cloud",
+   "title": "METRO: 100 country finance instances consolidating into one S/4HANA on Google Cloud",
+   "first": "2026-10-04"
+  },
+  "R-127": {
+   "url": "https://www.theregister.com/2024/09/17/sainsburys_rise_with_sap/",
+   "title": "Sainsbury's: Moving to S/4HANA for Retail, RISE on AWS, signed 2024",
+   "first": "2026-10-04"
+  },
+  "R-128": {
+   "url": "https://www.nestle.com/media/news/digital-core-sap-s4hana-cloud-upgrade",
+   "title": "Nestlé: First part of world's largest SAP S/4HANA Cloud Private Edition upgrade",
+   "first": "2026-10-04"
+  },
+  "R-129": {
+   "url": "https://www.bain.com/client-results/how-diageo-refocused-its-erp-transformationand-defied-the-odds/",
+   "title": "Diageo: Global S/4HANA go-live after reset",
+   "first": "2026-10-04"
+  },
+  "R-130": {
+   "url": "https://www.linkedin.com/posts/astrid-hermann-95426912_congratulations-fusion-team-you-are-amazing-activity-7151854054267101184-lm9k",
+   "title": "Beiersdorf: FUSION big-bang",
+   "first": "2026-10-04"
+  },
+  "R-131": {
+   "url": "https://www.linkedin.com/posts/patrick-reiter-4146a589_henkel-wearehenkel-sap-activity-7338846904136392704-oOZx",
+   "title": "Henkel: Two SAP systems moved to SAP cloud on S/4HANA",
+   "first": "2026-10-04"
+  },
+  "R-132": {
+   "url": "https://www.fivetran.com/case-studies/coke-one-north-america-accelerates-real-time-sap-insights-for-35-000-users",
+   "title": "CONA (Coca-Cola bottlers): SAP data replicated to Snowflake on Azure",
+   "first": "2026-10-04"
+  },
+  "R-133": {
+   "url": "https://sapinsider.org/blogs/sap-accenture-digital-twin-partnership-unilever-manufacturing/",
+   "title": "Unilever: AI digital twins on SAP digital core",
+   "first": "2026-10-04"
+  },
+  "R-134": {
+   "url": "https://www.microsoft.com/en/customers/story/1636966914474684948-unilever-consumer-goods-sap-on-azure",
+   "title": "Unilever: Migrated entire SAP estate",
+   "first": "2026-10-04"
+  },
+  "R-135": {
+   "url": "https://www.theregister.com/software/2026/02/27/mondelz-picks-celonis-as-process-backbone-for-sap-overhaul/4908186",
+   "title": "Mondelēz International: Multi-year ECC-to-S/4HANA migration across ~80 countries in progress",
+   "first": "2026-10-04"
+  },
+  "R-136": {
+   "url": "https://sapinsider.org/case-studies/levi-strauss-co-s-global-erp-transformation-builds-the-backbone-of-a-frontier-retailer/",
+   "title": "Levi Strauss & Co.: Replacing ~11 ERPs with one S/4HANA Fashion instance on Azure",
+   "first": "2026-10-04"
+  },
+  "R-137": {
+   "url": "https://www.linkedin.com/posts/tjc-group_sap-s4hana-dataarchiving-activity-7419755574780641280-GmCV",
+   "title": "Carlsberg: Pre-migration data cleanup for S/4HANA",
+   "first": "2026-10-04"
+  },
+  "R-138": {
+   "url": "https://www.asug.com/insights/how-conocophillips-and-pwc-set-a-new-benchmark-for-clean-core-transformation",
+   "title": "ConocoPhillips: Moved ECC to S/4HANA across Canada, APAC, Norway/UK and US",
+   "first": "2026-10-04"
+  },
+  "R-139": {
+   "url": "https://www.thestack.technology/sap-migration-delivering-exxonmobil-ceo/",
+   "title": "ExxonMobil: Consolidating 12 ERP systems into one S/4HANA instance by 2028 on a new",
+   "first": "2026-10-04"
+  },
+  "R-140": {
+   "url": "https://www.snpgroup.com/en/resources/customer-stories/eon-sap-s4hana-transformation/",
+   "title": "E.ON: Industrialised S/4HANA migration of 500+ group companies",
+   "first": "2026-10-04"
+  },
+  "R-141": {
+   "url": "https://www.signavio.com/success-stories/rio-tinto",
+   "title": "Rio Tinto: Modern ERP programme moving off ECC",
+   "first": "2026-10-04"
+  },
+  "R-142": {
+   "url": "https://www.sap.com/australia/documents/2024/12/3248c0bd-e77e-0010-bca6-c68f7e60039b.html",
+   "title": "Woodside Energy: Greenfield standardised S/4HANA unifying Woodside and BHP Petroleum",
+   "first": "2026-10-04"
+  },
+  "R-143": {
+   "url": "https://www.technologyreview.com/2026/07/02/1138433/building-the-foundation-for-an-autonomous-enterprise/",
+   "title": "Woodside Energy: Maintenance Intelligence correlates SAP maintenance history",
+   "first": "2026-10-04"
+  },
+  "R-144": {
+   "url": "https://www.all-for-one.pl/en/case-studies/air-bp-aramco-erp-in-the-sap-private-cloud/",
+   "title": "Air BP Aramco Poland: S/4HANA in SAP private cloud built in under a year",
+   "first": "2026-10-04"
+  },
+  "R-145": {
+   "url": "https://www.syniti.com/customer-stories/phillips-66/",
+   "title": "Phillips 66: Integrated 20-year-old legacy ERP and DCP systems into its S/4HANA",
+   "first": "2026-10-04"
+  },
+  "R-146": {
+   "url": "https://news.sap.com/netherlands/2025/06/anglo-american-vernieuwt-financiele-operaties-met-sap-s-4hana/",
+   "title": "Anglo American: Finance moved to S/4HANA Record-to-Report across 53,000+ employees",
+   "first": "2026-10-04"
+  },
+  "R-147": {
+   "url": "https://news.sap.com/australia/2023/01/17/origin-energy-benefits-through-sap-implementation/",
+   "title": "Origin Energy: S/4HANA-based ERP went live in two releases",
+   "first": "2026-10-04"
+  },
+  "R-148": {
+   "url": "https://www.snpgroup.com/en/resources/customer-stories/sicredi/",
+   "title": "Sicredi: Brazilian cooperative bank moved ECC to S/4HANA on RISE via Bluefield",
+   "first": "2026-10-04"
+  },
+  "R-149": {
+   "url": "https://www.sap.com/documents/2025/03/5c56a73e-fc7e-0010-bca6-c68f7e60039b.html",
+   "title": "U.S. Department of the Interior: First US federal department fully on SAP S/4HANA, covering",
+   "first": "2026-10-04"
+  },
+  "R-150": {
+   "url": "https://www.itnews.com.au/news/telstra-shifts-staff-between-supply-chains-during-retail-peaks-and-natural-disasters-610857",
+   "title": "Telstra: Consolidated three legacy ERPs",
+   "first": "2026-10-04"
+  },
+  "R-151": {
+   "url": "https://www.snpgroup.com/ja/resources/customer-stories/land-registry-services/",
+   "title": "NSW Land Registry Services: Australia's first Bluefield S/4HANA move",
+   "first": "2026-10-04"
+  },
+  "R-152": {
+   "url": "https://www.all-for-one.pl/en/case-studies/king-abdullah-university-of-science-and-technology-migration-to-sap-s-4hana/",
+   "title": "KAUST: Bluefield conversion of a multi-domain SAP estate went live",
+   "first": "2026-10-04"
+  },
+  "R-153": {
+   "url": "https://www.capgemini.com/news/client-stories/spearheading-sap-s-4hana-implementation-at-the-municipality-of-milan/",
+   "title": "Municipality of Milan: First Italian municipality on S/4HANA for finance and accounting",
+   "first": "2026-10-04"
+  },
+  "R-154": {
+   "url": "https://scaledagile.com/case_study/swiss-federal-railways-sbb/",
+   "title": "Swiss Federal Railways (SBB): Switzerland's largest S/4HANA transformation",
+   "first": "2026-10-04"
+  },
+  "R-155": {
+   "url": "https://www.computerwoche.de/article/4122110/sap-transformation-bei-der-telekom-weniger-systeme-mehr-standard.html",
+   "title": "Deutsche Telekom: Consolidating 83 central SAP applications toward",
+   "first": "2026-10-04"
+  },
+  "R-156": {
+   "url": "https://www.theregister.com/software/2026/03/09/uks-shared-services-strategy-is-entering-the-danger-zone/5220778",
+   "title": "HMRC Unity cluster: moving from ECC to S/4HANA under UK shared services",
+   "first": "2026-10-04"
+  },
+  "R-157": {
+   "url": "https://www.snpgroup.com/en/resources/customer-stories/northrop-grumman-and-snp-co-innovating-for-rapid-transformation-with-kyano/",
+   "title": "Northrop Grumman: Went live January 2024 on SAP S/4HANA for 70,000 users in nine months",
+   "first": "2026-10-04"
+  },
+  "R-158": {
+   "url": "https://www.linkedin.com/posts/jamesjmcdermott59_daimler-truck-continues-to-lead-the-way-activity-7291876412683104257-NQgU",
+   "title": "Daimler Truck: Big-bang go-live of OneERP on S/4HANA",
+   "first": "2026-10-04"
+  },
+  "R-159": {
+   "url": "https://www.delaware.pro/en-de/stories/kolb-in-10-months-to-a-digital-future-with-sap-s-4hana",
+   "title": "KOLB: Selective Bluefield move to S/4HANA finished in 10 months",
+   "first": "2026-10-04"
+  },
+  "R-160": {
+   "url": "https://www.linkedin.com/posts/richsernyak_amazing-achievement-activity-7361856025202683904-Weem",
+   "title": "Honeywell Aerospace (Civitanavi): greenfield S/4HANA live August 2025",
+   "first": "2026-10-04"
+  },
+  "R-161": {
+   "url": "https://www.cognizant.com/en_us/case-studies/documents/2701267_etex-modernizes-its-it-foundation-for-a-new-era-of-sustainable-innovation_printable.pdf",
+   "title": "Etex: Migrated ECC to S/4HANA in under 12 months, on schedule",
+   "first": "2026-10-04"
+  },
+  "R-162": {
+   "url": "https://www.consenso.de/en/mpt-s4hana-go-live.html",
+   "title": "Mannesmann Precision Tubes: S/4HANA and TM live at all German sites",
+   "first": "2026-10-04"
+  },
+  "R-163": {
+   "url": "https://www.alteryx.com/blog/domain-expertise-is-the-new-it-how-we-scaled-analytics-across-siemens-energy",
+   "title": "Siemens Energy: own data center on Snowflake, SAP data every 20 minutes",
+   "first": "2026-10-04"
+  },
+  "R-164": {
+   "url": "https://www.theregister.com/software/2025/12/11/airbus-exec-most-of-us-will-not-hit-sap-migration-by-2030/2572834",
+   "title": "Airbus: Migrating a sprawling SAP estate",
+   "first": "2026-10-04"
+  },
+  "R-165": {
+   "url": "https://www.computerweekly.com/news/366625052/Sapphire-2025-BASF-evolves-business-with-move-to-SAP-S-4Hana",
+   "title": "BASF: Moving a single global SAP instance",
+   "first": "2026-10-04"
+  },
+  "R-166": {
+   "url": "https://erp.today/case-study-snp-drives-successful-sap-s-4hana-rollout-at-bmw-group-plant-regensburg/",
+   "title": "BMW Regensburg: ECC to S/4HANA Cloud Private Edition on time",
+   "first": "2026-10-04"
+  },
+  "R-167": {
+   "url": "https://www.mig-now.com/en/cases/gol-linhas-aereas",
+   "title": "GOL Linhas Aéreas: ECC to S/4HANA",
+   "first": "2026-10-04"
+  },
+  "R-168": {
+   "url": "https://global.fujitsu/en-global/customer-stories/cs-nissin-20260616",
+   "title": "Nissin Corporation: Bluefield ECC 6.0 to S/4HANA on AWS across 150+ locations",
+   "first": "2026-10-04"
+  },
+  "R-169": {
+   "url": "https://www.abat.de/en/customers/success-stories/mercedes-benz-gss-plus",
+   "title": "Mercedes-Benz: S/4HANA replaced the central SAP system for global logistics",
+   "first": "2026-10-04"
+  },
+  "R-170": {
+   "url": "https://cloud.google.com/customers/one",
+   "title": "Ocean Network Express: S/4HANA finance to Google Cloud in three months",
+   "first": "2026-10-04"
+  },
+  "R-171": {
+   "url": "https://news.sap.com/africa/2025/02/port-of-rotterdam-ensures-business-processes-with-sap-s-4hana-cloud/",
+   "title": "Port of Rotterdam Authority: As-is ECC to S/4HANA Cloud via RISE went live after four test",
+   "first": "2026-10-04"
+  },
+  "R-172": {
+   "url": "https://www.automotivelogistics.media/digitalisation/the-quest-for-one-source-of-truth-in-volkswagen-groups-digital-supply-chain/184347",
+   "title": "Volkswagen Group Logistics: ONElog on S/4HANA replacing legacy systems",
+   "first": "2026-10-04"
+  },
+  "R-173": {
+   "url": "https://www.visit-bmwgroup.com/en/focus-on-digitalisation-bmw-group-favours-sap-architecture/",
+   "title": "BMW Group (RISE with SAP, global): Group-wide RISE transformation since",
+   "first": "2026-10-04"
+  },
+  "R-174": {
+   "url": "https://www.sap.com/romania/asset/dynamic/2023/08/6ed562f3-877e-0010-bca6-c68f7e60039b.html",
+   "title": "Lufthansa Group: Business data fabric on SAP Datasphere federates SAP and third-party",
+   "first": "2026-10-04"
+  },
+  "R-175": {
+   "url": "https://www.snpgroup.com/en/resources/customer-stories/pfizer/",
+   "title": "Pfizer: Selective Bluefield migration of 85 TB ECC",
+   "first": "2026-10-04"
+  },
+  "R-176": {
+   "url": "https://www.snpgroup.com/en/resources/customer-stories/inventia-healthcare/",
+   "title": "Inventia Healthcare: First S/4HANA transformation in India using SNP Bluefield",
+   "first": "2026-10-04"
+  },
+  "R-177": {
+   "url": "https://www.sap.com/asset/dynamic/2024/07/4cf24fc0-c87e-0010-bca6-c68f7e60039b.html",
+   "title": "Fresenius: Moved 134 SAP systems",
+   "first": "2026-10-04"
+  },
+  "R-178": {
+   "url": "https://www.deloitte.com/de/de/alliances/sap/case-studies/sap-transformation-siemens-healthineers.html",
+   "title": "Siemens Healthineers: Combined S/4HANA upgrade and new global template",
+   "first": "2026-10-04"
+  },
+  "R-179": {
+   "url": "https://sapinsider.org/case-studies/case-study-merck-kgaa-darmstadt-germany-puts-digital-at-the-heart-of-healthcare/",
+   "title": "Merck KGaA (Healthcare): Cloud S/4HANA live in Netherlands, Spain, Belgium and Germany",
+   "first": "2026-10-04"
+  },
+  "R-180": {
+   "url": "https://www.linkedin.com/posts/wolfgang-nickl_teambayer-onecoreteam-activity-7419357694479757312-KM9s",
+   "title": "Bayer: CORE program replacing a heavily customised landscape",
+   "first": "2026-10-04"
+  },
+  "R-181": {
+   "url": "https://assets.dm.ux.sap.com/eur-leaders-in-life-sciences-symposium-2025/pdfs/07_roche.pdf",
+   "title": "Roche: ASPIRE greenfield S/4HANA program targeting ~260 legal entities",
+   "first": "2026-10-04"
+  },
+  "R-182": {
+   "url": "https://www.sap.com/asset/dynamic/2025/11/7ee2a818-2c7f-0010-bca6-c68f7e60039b.html",
+   "title": "Takeda: RISE with SAP move aiming to go live within three years",
+   "first": "2026-10-04"
+  },
+  "R-183": {
+   "url": "https://www.ey.com/en_us/alliances/novartis-optimizes-supply-chain-with-real-time-risk-insight",
+   "title": "Novartis: Unified inventory data model on SAP PaPM flags slow- and non-moving",
+   "first": "2026-10-04"
+  },
+  "L-SAP": {
+   "url": "https://sapfans.io/#L-SAP",
+   "title": "SAP Business Data Cloud on the Content Connect Board",
+   "first": "2026-10-04"
+  },
+  "L-AWS": {
+   "url": "https://sapfans.io/#L-AWS",
+   "title": "AWS on the Content Connect Board",
+   "first": "2026-10-04"
+  },
+  "L-MICROSOFT": {
+   "url": "https://sapfans.io/#L-MICROSOFT",
+   "title": "Microsoft on the Content Connect Board",
+   "first": "2026-10-04"
+  },
+  "L-GOOGLE": {
+   "url": "https://sapfans.io/#L-GOOGLE",
+   "title": "Google on the Content Connect Board",
+   "first": "2026-10-04"
+  },
+  "L-PALANTIR": {
+   "url": "https://sapfans.io/#L-PALANTIR",
+   "title": "Palantir on the Content Connect Board",
+   "first": "2026-10-04"
+  }
+ }
+}

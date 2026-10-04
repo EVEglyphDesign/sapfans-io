@@ -37,11 +37,13 @@ jobs:
         if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
         run: '[ "$(date -u +%a)" = "Mon" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ] && python3 scripts/refs.py check || echo "not Monday"'
       - run: python3 scripts/refs.py review
+      - name: Permanent links (append-only; fails if a published id is re-pointed)
+        run: python3 scripts/permalinks.py && python3 scripts/permalinks.py --check
       - name: Commit
         run: |
           git config user.name "sapfans-references[bot]"
           git config user.email "agent@eveglyphdesign.com"
-          git add docs/references.json registry/proposals.json registry/PROPOSALS.md intake/INBOX.md
+          git add docs/references.json registry/proposals.json registry/PROPOSALS.md intake/INBOX.md archive/permalinks.json docs/r
           git diff --cached --quiet && exit 0
           git commit -m "references: ${{ github.event_name }} upkeep"
           git pull --rebase && git push

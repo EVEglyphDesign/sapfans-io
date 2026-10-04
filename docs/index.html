@@ -208,7 +208,7 @@ function build(){
   land();sugg();draw();deep();window.addEventListener("hashchange",deep)}
 // deep link: sapfans.io/#R-055 opens that reference; #L-SAP opens that platform row
 function deep(){var h=decodeURIComponent(location.hash.slice(1)).toUpperCase();if(!/^[RL]-[A-Z0-9]+$/.test(h))return;
-  if(h[0]==="R"){if(!D.some(function(i){return i.id===h}))return;sel={ev:""};q="";document.getElementById("q").value="";syncF();draw()}
+  if(h[0]==="R"){if(!D.some(function(i){return i.id===h})){location.replace("r/"+h+".html");return}sel={ev:""};q="";document.getElementById("q").value="";syncF();draw()}
   var g=document.querySelector('.sig[data-ref="'+h+'"]');if(!g)return;
   if(h[0]==="L"){var r=g.closest(".dr");if(!r.classList.contains("open"))r.querySelector(".ex").click();r.scrollIntoView({block:"start"})}
   else{var d=g.closest("details");d.open=true;d.scrollIntoView({block:"start"})}}
