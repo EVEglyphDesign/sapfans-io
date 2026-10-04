@@ -56,12 +56,16 @@
 .sig [hidden]{display:none!important}
   .dash[data-m="str"] .dr.open .c-wn::before{content:"Announced"}
 .evt{color:var(--accent);font-weight:700}.evt.u{color:var(--dim)}
-.rrow{display:grid;grid-template-columns:26px 108px minmax(0,1fr) 120px 72px 64px;gap:4px 10px;align-items:baseline;padding:8px 2px}
+.rrow{display:grid;grid-template-columns:26px 118px minmax(0,1fr) minmax(0,1.25fr) 72px 64px;gap:4px 12px;align-items:baseline;padding:9px 2px}
+  .rrow .cl{font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);font-weight:700}.rrow .cl.k-rm{color:var(--accent)}
+  .rrow .wy{font-size:13.5px;line-height:1.45;color:var(--fg)}
+  .rrow.pin{background:var(--panel)}.rrow.pin .rk{color:var(--accent);font-weight:700}
+  .rhead{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);border-bottom:1px solid var(--line);padding:6px 2px}
   .rrow .in{font-size:12px;color:var(--dim)}
   .rrow .sig.sig-line{margin:0;border:0;padding:0}.sig-line .sig-go{padding:3px 12px;font-size:13px}.sig-line .sig-find{display:none}
   .rrow .sig.sig-line.on{grid-column:3/-1}.sig-line.on .sig-find{display:inline}
   .rrow:target{background:var(--panel)}
-  @media (max-width:640px){.rrow{grid-template-columns:22px minmax(0,1fr) 64px}.rrow .in{display:none}.rrow .sig.sig-line.on{grid-column:2/-1}}
+  @media (max-width:640px){.rrow{grid-template-columns:22px minmax(0,1fr) 64px}.rrow .cl{grid-column:2;grid-row:1}.rrow .sh{grid-column:2}.rrow .wy{grid-column:2;font-size:13px;color:var(--dim)}.rrow .sig.sig-line{grid-column:3;grid-row:1/span 3}.rrow .sig.sig-line.on{grid-column:2/-1;grid-row:auto}.rhead{display:none}}
   .sig-pick{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:8px 0 0}.sig-msg{font-size:12.5px;color:var(--dim);margin:6px 0 0}.sig-find{font-size:13px;color:var(--dim);margin-left:4px}.sig-find a{margin:0 2px}
   .sig-go[aria-disabled="true"]{background:var(--line);color:var(--dim);pointer-events:none}
   .sig-t{font-size:10.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--accent);margin-left:6px}
@@ -131,15 +135,15 @@ Held in the open at <a href="https://github.com/EVEglyphDesign/sapfans-io">the S
 </div></footer>
 <script>
 (function(){
-var F=[["ev","Evidence"],["platform","Platform"],["tech","Technology"],["industry","Industry"],["kind","Topic"],["lane","Lane"],["role","Role"],["level","Level"],["priority","Priority"]];
-var D=[],L=null,sel={priority:"1",ev:"real"},q="",TOP={};
+var F=[["cls","Class"],["ev","Evidence"],["platform","Platform"],["tech","Technology"],["industry","Industry"],["kind","Topic"],["lane","Lane"],["role","Role"],["level","Level"],["priority","Priority"]];
+var D=[],L=null,sel={priority:"1"},q="",TOP={};
 function esc(t){return String(t==null?"":t).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
 function vals(k){var s={};D.forEach(function(i){[].concat(i[k]||[]).forEach(function(v){s[v]=1})});return Object.keys(s).sort()}
 function match(i){
   if(sel.ev){if(sel.ev==="real"?i.ev==="Vendor":i.ev!==sel.ev)return false}
   if(sel.tech&&!techRe(sel.tech).test([i.short,i.title,i.why,i.product].join(" ")))return false
   for(var k in sel){if(k==="ev"||k==="tech")continue;if(sel[k]&&[].concat(String(i[k]==null?"":i[k])).concat([].concat(i[k]||[]).map(String)).indexOf(sel[k])<0)return false}
-  if(q){var h=[i.short,i.title,i.why,i.kind,i.platform,i.lane,[].concat(i.role).join(" "),i.product,i.source].join(" ").toLowerCase();
+  if(q){var h=[i.cls,i.cap,i.short,i.title,i.why,i.kind,i.platform,i.lane,[].concat(i.role).join(" "),i.product,i.source].join(" ").toLowerCase();
     if(q.split(/\s+/).some(function(w){return h.indexOf(w)<0}))return false}
   return true}
 // rank: priority first, then landscape top reads (in their column order), then the rest by title
@@ -153,7 +157,9 @@ document.addEventListener("click",function(e){var b=e.target.closest(".mode butt
 // real stories first: what happened, weighted by size, ahead of what is underway; independent sources before vendor ones
 function ev(i){return i.ev==="Happened"?2*(i.size||1):i.ev==="Underway"?(i.size||1):0}
 function ind(i){return i.src==="Customer"?2:i.src==="Independent"?1:0}
-function rows(){return D.filter(match).sort(function(a,b){return (ev(b)-ev(a))||(ind(b)-ind(a))||(a.priority-b.priority)||(score(b)-score(a))||(a.status==="stale")-(b.status==="stale")||a.short.localeCompare(b.short)})}
+function pin(i){return i.pin?4-i.pin:0}
+function ann(i){return i.ev==="Vendor"?1:0}
+function rows(){return D.filter(match).sort(function(a,b){return (pin(b)-pin(a))||(M==="str"?(ann(b)-ann(a))||(score(b)-score(a)):0)||(ev(b)-ev(a))||(ind(b)-ind(a))||(a.priority-b.priority)||(score(b)-score(a))||(a.status==="stale")-(b.status==="stale")||a.short.localeCompare(b.short)})}
 function cell(c){if(!c)return "";var t=esc(c.t),cls=/^GA/.test(c.t)?"st ga":/^(Planned|Yes|Native|The hub)/.test(c.t)?"st":"";
   t=cls?'<span class="'+cls+'">'+t+'</span>':t;return c.u?'<a href="'+esc(c.u)+'" target="_blank" rel="noopener">'+t+'</a>':t}
 function land(){
@@ -189,7 +195,7 @@ function sugg(){var s={};D.forEach(function(i){s[i.short]=1;s[i.kind]=1;s[i.plat
 function draw(){
   var r=rows(),el=document.getElementById("list");
   document.getElementById("count").textContent=r.length+" of "+D.length+" shown · updated "+(window._upd||"");
-  el.innerHTML=r.length?r.map(function(i,n){return '<li class="rrow'+(i.status==="stale"?' stale':'')+'" id="'+esc(i.id)+'"><span class="rk">'+(n+1)+'</span><span class="kd">'+(i.ev&&i.ev!=="Vendor"?'<b class="evt'+(i.ev==="Underway"?' u':'')+'">'+esc(i.ev)+'</b> ':'')+esc(i.kind)+'</span><span class="sh"><a href="'+esc(i.url)+'" target="_blank" rel="noopener">'+esc(i.short)+'</a></span><span class="in">'+esc(i.industry||"")+'</span><span class="pf">'+esc(i.platform)+'</span><div class="sig sig-line" data-ref="'+esc(i.id)+'" data-label="'+esc(i.short)+'" data-url="'+esc(i.url)+'"></div></li>'}).join(""):'<li class="empty">Nothing matches. Clear a filter.</li>';
+  el.innerHTML=r.length?'<li class="rrow rhead" aria-hidden="true"><span>#</span><span>Class</span><span>Reference</span><span>Why it matters</span><span>Platform</span><span></span></li>'+r.map(function(i,n){return '<li class="rrow'+(i.pin?' pin':'')+(i.status==="stale"?' stale':'')+'" id="'+esc(i.id)+'"><span class="rk">'+(n+1)+'</span><span class="cl'+(/roadmap|standard/.test(i.cls||"")?' k-rm':'')+'">'+esc(i.cls)+'</span><span class="sh"><a href="'+esc(i.url)+'" target="_blank" rel="noopener">'+esc(i.short)+'</a></span><span class="wy">'+esc(i.cap||"")+'</span><span class="pf">'+esc(i.platform)+'</span><div class="sig sig-line" data-ref="'+esc(i.id)+'" data-label="'+esc(i.short)+'" data-why="'+esc(i.cap||"")+'" data-url="'+esc(i.url)+'"></div></li>'}).join(""):'<li class="empty">Nothing matches. Clear a filter.</li>';
   if(window.egdSig)window.egdSig.paint()}
 // Platform and Technology options mirror the table above: same rows, same order, same tools
 function tableP(){if(!L)return [];var S=M==="str"?"sscore":"score";return L.platforms.slice().sort(function(a,b){return (b[S]-a[S])||a.name.localeCompare(b.name)})}
@@ -203,12 +209,12 @@ function techRe(t){var k=ALIAS[t]||t.replace(/^SAP /,"").replace(/[.*+?^${}()[\]
 function techN(t){var re=techRe(t);return D.filter(function(i){return re.test([i.short,i.title,i.why,i.product].join(" "))}).length}
 function syncF(){document.querySelectorAll("#filters select").forEach(function(s){s.value=sel[s.dataset.k]||""})}
 function build(){
-  document.getElementById("filters").innerHTML=F.map(function(f){return '<label class="egd-sr" for="f-'+f[0]+'">'+f[1]+'</label><select id="f-'+f[0]+'" data-k="'+f[0]+'">'+(f[0]==="ev"?'<option value="real">Real stories</option>':'')+'<option value="">'+f[1]+': all</option>'+opts(f[0])+'</select>'}).join("");
+  document.getElementById("filters").innerHTML=F.map(function(f){return '<label class="egd-sr" for="f-'+f[0]+'">'+f[1]+'</label><select id="f-'+f[0]+'" data-k="'+f[0]+'">'+'<option value="">'+f[1]+': all</option>'+opts(f[0])+'</select>'}).join("");
   syncF();
   document.querySelectorAll("#filters select").forEach(function(s){s.addEventListener("change",function(){sel[s.dataset.k]=s.value;if(s.dataset.k==="tech"&&s.value){sel.ev="";sel.priority="";syncF()}draw()})});
   document.getElementById("q").addEventListener("input",function(e){q=e.target.value.trim().toLowerCase();if(q)sel.priority="",syncF();draw()});
   document.getElementById("csv").addEventListener("click",function(e){e.preventDefault();
-    var cols=["id","priority","kind","short","title","url","why","platform","lane","role","product","format","level","access","source","status","checked"];
+    var cols=["id","cls","cap","priority","kind","short","title","url","why","platform","lane","role","product","format","level","access","source","status","checked"];
     var lines=[cols.join(",")].concat(rows().map(function(i){return cols.map(function(k){return '"'+String([].concat(i[k]==null?"":i[k]).join("; ")).replace(/"/g,'""')+'"'}).join(",")}));
     var a=document.createElement("a");a.href=URL.createObjectURL(new Blob(["\ufeff"+lines.join("\n")],{type:"text/csv"}));a.download="sapfans-references.csv";a.click()});
   land();sugg();draw();deep();window.addEventListener("hashchange",deep)}

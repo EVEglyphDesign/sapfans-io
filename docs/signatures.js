@@ -15,8 +15,8 @@ var R={};
 function esc(t){return String(t==null?"":t).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
 function tagOf(id){return TAG[id]||("SAPfans"+String(id).replace(/[^A-Za-z0-9]/g,""))}
 function form(id){return FORM+"&title="+encodeURIComponent("Sign "+id)+"&ref="+encodeURIComponent(id)+"&action=Sign"}
-function text(label,id,e,q,url){var s=e&&q?"I have experience with "+label+" and questions about it.":e?"I have experience with "+label+".":"I have questions about "+label+".";
-  return s+" Open to connecting with peers."+(url?"\n"+url:"")+"\nhttps://sapfans.io/#"+id+"\n#SAPfans #"+tagOf(id)}
+function text(label,id,e,q,url,why){var s=e&&q?"I have experience with "+label+" and questions about it.":e?"I have experience with "+label+".":"I have questions about "+label+".";
+  return s+(why?" Why it matters: "+why:"")+" Open to connecting with peers."+(url?"\n"+url:"")+"\nhttps://sapfans.io/#"+id+"\n#SAPfans #"+tagOf(id)}
 function post(net,t){return net==="x"?"https://x.com/intent/post?text="+encodeURIComponent(t):"https://www.linkedin.com/feed/?shareActive=true&text="+encodeURIComponent(t)}
 function find(net,id){var h=encodeURIComponent("#"+tagOf(id));return net==="x"?"https://x.com/search?q="+h+"&f=live":"https://www.linkedin.com/search/results/content/?keywords="+h}
 function tg(a){a=String(a||"").toLowerCase();var e=a.indexOf("experience")>=0,q=a.indexOf("question")>=0;return e&&q?"Both":e?"Experience":q?"Questions":""}
@@ -30,7 +30,7 @@ function block(id){
  return '<div class="sig-row"><button type="button" class="sig-go sig-start">Sign</button>'+findl+'</div>'+pick+list}
 function paint(){document.querySelectorAll(".sig[data-ref]").forEach(function(el){el.innerHTML=block(el.dataset.ref)})}
 function upd(sg){var st=sg.querySelector(".sig-step"),a=st.querySelector(".sig-post"),c=st.querySelectorAll("input"),e=c[0].checked,q=c[1].checked;
-  if(e||q){var t=text(sg.dataset.label||sg.dataset.ref,sg.dataset.ref,e,q,sg.dataset.url);a.href=post(sg.dataset.net,t);a.dataset.t=t;a.removeAttribute("aria-disabled")}else{a.removeAttribute("href");a.setAttribute("aria-disabled","true")}}
+  if(e||q){var t=text(sg.dataset.label||sg.dataset.ref,sg.dataset.ref,e,q,sg.dataset.url,sg.dataset.net==="x"?"":sg.dataset.why);a.href=post(sg.dataset.net,t);a.dataset.t=t;a.removeAttribute("aria-disabled")}else{a.removeAttribute("href");a.setAttribute("aria-disabled","true")}}
 document.addEventListener("change",function(e){var sg=e.target.closest(".sig");if(sg&&e.target.closest(".sig-step"))upd(sg)});
 document.addEventListener("click",function(e){
  var t=e.target,sg=t.closest(".sig");if(!sg)return;

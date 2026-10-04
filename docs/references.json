@@ -1,7 +1,7 @@
 {
  "schema": 1,
  "updated": "2026-10-03",
- "note": "One row per reference. Rows are added only from registry/proposals.json after review (scripts/refs.py accept). Classification columns drive the filters on sapfans.io/references.html. Priority: 1 = start here: official, shipped, useful to a functional or PMO reader coming up to speed (the page opens on these); 2 = useful but specialist or roadmap; 3 = background. kind and short are the neutral one-line classification shown on the board; platform groups rows under the landscape table.",
+ "note": "One row per reference. Rows are added only from registry/proposals.json after review (scripts/refs.py accept). Classification columns drive the filters on sapfans.io/references.html. Priority: 1 = start here: official, shipped, useful to a functional or PMO reader coming up to speed (the page opens on these); 2 = useful but specialist or roadmap; 3 = background. kind and short are the neutral one-line classification shown on the board; platform groups rows under the landscape table. cls is the visible class (SAP roadmap, <Platform> standard/roadmap, SAP standard, Proven outcome, In flight, Practice); cap is the visible one-line 'why it matters' read against enterprise data as a capital asset; pin 1-3 fixes the three headliners (best SAP, AWS, Google) at the top of every default view.",
  "lanes": [
   "PMO & execution",
   "Data-first assessment",
@@ -43,7 +43,9 @@
    "kind": "Roadmap",
    "short": "What's planned, by release and product",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "The only authoritative answer to 'is it coming?' Roadmap commitments decide where data investment goes.",
+   "cls": "SAP roadmap"
   },
   {
    "id": "R-002",
@@ -67,7 +69,9 @@
    "kind": "Method",
    "short": "Activate roadmaps and accelerators",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "Activate is the delivery standard SAP programmes are audited against; skipping it is how data scope gets lost.",
+   "cls": "SAP standard"
   },
   {
    "id": "R-003",
@@ -92,7 +96,9 @@
    "kind": "Method",
    "short": "Activate update: on-prem upgrades, clean core",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "Clean core decides how much of your data model stays upgradeable, and therefore reusable.",
+   "cls": "SAP standard"
   },
   {
    "id": "R-004",
@@ -118,7 +124,9 @@
    "kind": "Clean core",
    "short": "Clean core: the community hub",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "Clean core is now the enterprise default: custom code that blocks upgrades devalues the data behind it.",
+   "cls": "SAP standard"
   },
   {
    "id": "R-005",
@@ -143,7 +151,9 @@
    "kind": "Clean core",
    "short": "Running clean core in cloud ERP",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "The governance rule every extension request now meets; it protects the data model's long-term value.",
+   "cls": "SAP standard"
   },
   {
    "id": "R-006",
@@ -168,7 +178,9 @@
    "kind": "Clean core",
    "short": "Clean core extensions in S/4HANA Cloud",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "Extensibility tiers decide whether custom data stays usable after every upgrade.",
+   "cls": "SAP standard"
   },
   {
    "id": "R-007",
@@ -193,7 +205,9 @@
    "kind": "Architecture",
    "short": "Missions and reference architectures",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "Reference architectures with costs: the fastest way to size what the data platform will cost to run.",
+   "cls": "SAP standard"
   },
   {
    "id": "R-008",
@@ -218,7 +232,9 @@
    "kind": "Security",
    "short": "BTP security recommendations",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "The security baseline auditors expect. Data is only an asset while it is protected.",
+   "cls": "SAP standard"
   },
   {
    "id": "R-009",
@@ -244,7 +260,9 @@
    "kind": "Security",
    "short": "Data protection and privacy on BTP",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "Personal data is a liability unless governed; this is what BTP covers and what it leaves to you.",
+   "cls": "SAP standard"
   },
   {
    "id": "R-010",
@@ -268,7 +286,9 @@
    "kind": "Security",
    "short": "BTP security overview",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "Identity, authorisation and audit are what make shared data trustworthy enough to use.",
+   "cls": "SAP standard"
   },
   {
    "id": "R-011",
@@ -292,7 +312,9 @@
    "kind": "Security",
    "short": "BTP security concepts (admin guide)",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "The concepts behind the checklist, so security decisions on data can be defended, not just followed.",
+   "cls": "SAP standard"
   },
   {
    "id": "R-012",
@@ -316,7 +338,9 @@
    "kind": "Security",
    "short": "BTP security: community hub",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "Where new security notes land first; exposure on data surfaces here before it reaches the checklist.",
+   "cls": "SAP standard"
   },
   {
    "id": "R-013",
@@ -341,7 +365,9 @@
    "kind": "AI policy",
    "short": "SAP's AI ethics policy",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "The policy you will be held to when AI touches company data. Cite it, don't paraphrase it.",
+   "cls": "SAP standard"
   },
   {
    "id": "R-014",
@@ -366,7 +392,9 @@
    "kind": "AI policy",
    "short": "SAP's AI ethics handbook",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "How SAP's AI review actually runs; the gate any AI use of enterprise data has to pass.",
+   "cls": "SAP standard"
   },
   {
    "id": "R-015",
@@ -390,7 +418,9 @@
    "kind": "AI policy",
    "short": "SAP's responsible AI approach",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "The governance bodies behind SAP AI; who decides what AI may do with customer data.",
+   "cls": "SAP standard"
   },
   {
    "id": "R-016",
@@ -415,7 +445,9 @@
    "kind": "Data platform",
    "short": "Business Data Cloud: the documentation",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "Defines the 'data product', the unit SAP now prices, governs and shares. Every design starts here.",
+   "cls": "SAP roadmap"
   },
   {
    "id": "R-017",
@@ -440,7 +472,9 @@
    "kind": "Data platform",
    "short": "Datasphere inside Business Data Cloud",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "Datasphere is now part of BDC: the answer that decides whether existing models carry forward.",
+   "cls": "SAP roadmap"
   },
   {
    "id": "R-018",
@@ -465,7 +499,9 @@
    "kind": "Data platform",
    "short": "Datasphere: the documentation",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "Modelling done well here is what turns SAP tables into reusable business data.",
+   "cls": "SAP roadmap"
   },
   {
    "id": "R-019",
@@ -489,7 +525,9 @@
    "kind": "Data platform",
    "short": "Data cloud documentation index",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "One index across SAP's data portfolio: find which component owns the data before you design.",
+   "cls": "SAP roadmap"
   },
   {
    "id": "R-020",
@@ -514,7 +552,9 @@
    "kind": "Data platform",
    "short": "Datasphere: community hub",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "Quarterly what's-new on Datasphere: track what the data platform can do this quarter.",
+   "cls": "SAP roadmap"
   },
   {
    "id": "R-021",
@@ -539,7 +579,9 @@
    "kind": "Semantic layer",
    "short": "One semantic layer as the data foundation",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "One semantic layer is SAP's target architecture: business meaning defined once, reused everywhere.",
+   "cls": "SAP roadmap"
   },
   {
    "id": "R-022",
@@ -564,7 +606,9 @@
    "kind": "Semantic layer",
    "short": "Reusing Datasphere models from Databricks",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "Proof SAP semantics travel to Databricks without re-modelling: the meaning is the asset, not the copy.",
+   "cls": "SAP roadmap"
   },
   {
    "id": "R-023",
@@ -589,7 +633,9 @@
    "kind": "Semantic layer",
    "short": "Building a data model with business meaning",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "How to justify semantic modelling to a sponsor: business meaning is what makes data reusable.",
+   "cls": "SAP roadmap"
   },
   {
    "id": "R-024",
@@ -614,7 +660,9 @@
    "kind": "Semantic layer",
    "short": "26 years of BI semantic layers, in one read",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "Why semantic layers keep being rebuilt, and why owning yours is the durable choice.",
+   "cls": "Practice"
   },
   {
    "id": "R-025",
@@ -638,7 +686,9 @@
    "kind": "AI connection",
    "short": "AI tools inside ABAP development (MCP)",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "AI inside ABAP development via MCP: the official pattern for connecting AI to SAP code.",
+   "cls": "SAP standard"
   },
   {
    "id": "R-026",
@@ -663,7 +713,9 @@
    "kind": "AI connection",
    "short": "Connecting AI agents through Integration Suite (MCP)",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "Integration Suite over MCP: governed AI access to SAP processes without new point-to-point code.",
+   "cls": "SAP standard"
   },
   {
    "id": "R-027",
@@ -688,7 +740,9 @@
    "kind": "AI connection",
    "short": "AI agents administering BTP (MCP)",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "A shipped SAP MCP server: AI administering BTP is now product, not concept.",
+   "cls": "SAP standard"
   },
   {
    "id": "R-028",
@@ -713,7 +767,9 @@
    "kind": "AI connection",
    "short": "Building a secure MCP server on BTP (Python)",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "Securing the MCP seam is what keeps AI access to SAP data auditable.",
+   "cls": "SAP standard"
   },
   {
    "id": "R-029",
@@ -738,7 +794,9 @@
    "kind": "AI connection",
    "short": "Your first MCP server on BTP",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "One hands-on MCP server, so you can speak about AI-to-SAP from experience.",
+   "cls": "Practice"
   },
   {
    "id": "R-030",
@@ -763,7 +821,9 @@
    "kind": "AI connection",
    "short": "MCP explained",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "MCP is becoming the standard socket between AI and enterprise systems; this is SAP's read of it.",
+   "cls": "SAP standard"
   },
   {
    "id": "R-031",
@@ -789,7 +849,9 @@
    "kind": "AI connection",
    "short": "Every SAP API and event, in one catalog",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "Every public SAP API and event: the governed surface AI should use before anyone builds custom.",
+   "cls": "SAP standard"
   },
   {
    "id": "R-032",
@@ -814,7 +876,9 @@
    "kind": "AI agents",
    "short": "SAP Business AI: what shipped in Q2 2026",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "What SAP AI actually shipped this quarter, as opposed to what was demoed. GA is what you can plan on.",
+   "cls": "SAP roadmap"
   },
   {
    "id": "R-033",
@@ -839,7 +903,9 @@
    "kind": "AI agents",
    "short": "Joule Studio: building enterprise agents",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "Joule Studio is where SAP wants custom agents built and governed on your data.",
+   "cls": "SAP roadmap"
   },
   {
    "id": "R-034",
@@ -864,7 +930,9 @@
    "kind": "AI agents",
    "short": "Agentic AI for ABAP",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "Sets the extensibility rules your custom logic, and the data it touches, will be judged against.",
+   "cls": "SAP roadmap"
   },
   {
    "id": "R-035",
@@ -889,7 +957,9 @@
    "kind": "AI agents",
    "short": "Joule for Developers: 2026 roadmap",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "Dated product-group sequencing for Joule: dates you can put in a plan.",
+   "cls": "SAP roadmap"
   },
   {
    "id": "R-036",
@@ -916,7 +986,9 @@
    "kind": "Learning",
    "short": "SAP Learning",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "Free SAP training paths: the cheapest way to build in-house skill on your own data platform.",
+   "cls": "SAP standard"
   },
   {
    "id": "R-037",
@@ -943,7 +1015,9 @@
    "kind": "Learning",
    "short": "SAP Community",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "Where SAP product groups publish first; the peer forum this board points back to.",
+   "cls": "SAP standard"
   },
   {
    "id": "R-038",
@@ -968,7 +1042,9 @@
    "kind": "Learning",
    "short": "API catalog: how to use it",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "How to use the API hub properly, including the S-user parts most teams miss.",
+   "cls": "SAP standard"
   },
   {
    "id": "R-039",
@@ -993,7 +1069,9 @@
    "kind": "Learning",
    "short": "Community round-up",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "One weekly skim of what SAP practitioners are actually discussing.",
+   "cls": "Practice"
   },
   {
    "title": "SAP and Google Cloud launch BDC Connect for BigQuery",
@@ -1020,7 +1098,10 @@
    "kind": "Zero-copy",
    "short": "SAP data in BigQuery without copying (GA Jul 2026)",
    "platform": "Google",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "GA July 2026: SAP data shared into BigQuery with no copy. Google-estate clients keep one governed source.",
+   "cls": "Google standard",
+   "pin": 3
   },
   {
    "title": "Google Cloud Cortex Framework",
@@ -1047,7 +1128,9 @@
    "kind": "Data platform",
    "short": "Ready-made SAP data models for BigQuery",
    "platform": "Google",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "Ready-made SAP models in BigQuery: what your own SAP data can answer before anyone builds.",
+   "cls": "Google standard"
   },
   {
    "title": "Integrating SAP Business Data Cloud with Google BigQuery",
@@ -1074,7 +1157,9 @@
    "kind": "Learning",
    "short": "Combining SAP and Google data (course)",
    "platform": "Google",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "SAP's own lesson on SAP + Google data: both sides of the connection agree on the method.",
+   "cls": "Google standard"
   },
   {
    "title": "Guidance for SAP Data Integration and Management on AWS",
@@ -1101,7 +1186,9 @@
    "kind": "Architecture",
    "short": "Bringing SAP ERP data into AWS",
    "platform": "AWS",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "AWS's reference design for SAP ERP data: the default blueprint when the estate runs on AWS.",
+   "cls": "AWS standard"
   },
   {
    "title": "Guidance for Data Lakes with SAP and Non-SAP Data on AWS",
@@ -1128,7 +1215,9 @@
    "kind": "Architecture",
    "short": "SAP and non-SAP data in one S3 data lake",
    "platform": "AWS",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "SAP and non-SAP data in one S3 lake: the mixed landscape most large programmes now run.",
+   "cls": "AWS standard"
   },
   {
    "title": "Scaling RISE with SAP data and AWS Glue",
@@ -1155,7 +1244,9 @@
    "kind": "Data platform",
    "short": "Pulling RISE data with AWS Glue",
    "platform": "AWS",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "RISE data pulled with AWS Glue: the hands-on step behind an AWS data lake.",
+   "cls": "AWS standard"
   },
   {
    "title": "SAP and Palantir enhance partnership with AI-supported data migration tooling",
@@ -1182,7 +1273,9 @@
    "kind": "Migration",
    "short": "SAP + Palantir: AI-assisted data migration",
    "platform": "Palantir",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "SAP and Palantir: migration planned from the client's actual data. Data quality decides migration cost.",
+   "cls": "Palantir standard"
   },
   {
    "title": "Accelerate enterprise data migration with Palantir AIP",
@@ -1209,7 +1302,9 @@
    "kind": "Migration",
    "short": "Migration from the data up",
    "platform": "Palantir",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "Migration run from the data up: what the client may already be buying.",
+   "cls": "Palantir standard"
   },
   {
    "title": "Accelerating enterprise data migration with Palantir AIP (white paper, PDF)",
@@ -1236,7 +1331,9 @@
    "kind": "Migration",
    "short": "Legacy SAP to S/4HANA (white paper)",
    "platform": "Palantir",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "The long read on legacy SAP to S/4HANA from the data side.",
+   "cls": "Palantir standard"
   },
   {
    "title": "Announcing the General Availability of SAP Business Data Cloud Connect to Databricks",
@@ -1263,7 +1360,9 @@
    "kind": "Zero-copy",
    "short": "SAP data in your own Databricks (GA)",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "GA: SAP data in the client's own Databricks without copying. Zero-copy is now the enterprise default.",
+   "cls": "SAP roadmap"
   },
   {
    "title": "SAP Databricks documentation",
@@ -1290,7 +1389,9 @@
    "kind": "Data platform",
    "short": "Databricks inside Business Data Cloud",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "Databricks inside BDC: what the team works in when the client buys it through SAP.",
+   "cls": "SAP roadmap"
   },
   {
    "title": "Unlocking SAP business context in Databricks with semantic metadata Delta Sharing",
@@ -1317,7 +1418,9 @@
    "kind": "Semantic layer",
    "short": "SAP business meaning carried into Databricks",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "SAP field meaning travels with the data into Databricks, so it stays business data, not raw tables.",
+   "cls": "SAP roadmap"
   },
   {
    "title": "Announcing General Availability of SAP Snowflake and SAP Business Data Cloud Connect for Snowflake",
@@ -1344,7 +1447,9 @@
    "kind": "Zero-copy",
    "short": "Snowflake with SAP data (GA May 2026)",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "GA May 2026: Snowflake inside BDC and to the client's own Snowflake. Data stays where the client chose.",
+   "cls": "SAP roadmap"
   },
   {
    "title": "About Snowflake and SAP zero-copy integration",
@@ -1371,7 +1476,9 @@
    "kind": "Zero-copy",
    "short": "Snowflake's zero-copy SAP integration",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "Snowflake's side of zero-copy SAP sharing: the same governed data, no second copy to reconcile.",
+   "cls": "SAP roadmap"
   },
   {
    "title": "Integration with Snowflake — SAP Architecture Center",
@@ -1398,7 +1505,9 @@
    "kind": "Architecture",
    "short": "SAP data with Snowflake: reference architecture",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "The reference picture for SAP + Snowflake to hold up in a design review.",
+   "cls": "SAP roadmap"
   },
   {
    "title": "SAP and NVIDIA: secure, governed AI agents",
@@ -1425,7 +1534,9 @@
    "kind": "AI agents",
    "short": "SAP + NVIDIA: secure, governed AI agents",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "SAP + NVIDIA: a security layer for agents on SAP data. Agents only scale where data access is governed.",
+   "cls": "SAP roadmap"
   },
   {
    "title": "SAP Business Data Cloud — open data ecosystem",
@@ -1452,7 +1563,9 @@
    "kind": "Zero-copy",
    "short": "Where SAP data can go without copying",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "The map of every outside platform SAP data can reach without copying. Start every data-estate review here.",
+   "cls": "SAP roadmap"
   },
   {
    "title": "Transforming enterprise data strategy with SAP Business Data Cloud — SAP Architecture Center",
@@ -1479,7 +1592,9 @@
    "kind": "Architecture",
    "short": "SAP and outside data in one governed foundation",
    "platform": "SAP",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "SAP and outside data in one governed foundation: SAP's own target for data as a single asset.",
+   "cls": "SAP roadmap"
   },
   {
    "title": "SAP and AWS: bi-directional zero-copy data sharing with SAP Business Data Cloud",
@@ -1506,7 +1621,9 @@
    "kind": "Zero-copy",
    "short": "SAP data in Amazon Athena without copying (planned)",
    "platform": "AWS",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "Planned: live SAP data products in Athena with no copy. AWS estates get the same zero-copy path.",
+   "cls": "AWS roadmap"
   },
   {
    "title": "SAPPHIRE 2026: How AWS is helping SAP customers move faster and build more",
@@ -1533,7 +1650,10 @@
    "kind": "Data platform",
    "short": "AWS for SAP: what changed at Sapphire 2026",
    "platform": "AWS",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "AWS's Sapphire 2026 commitments for SAP: Athena zero-copy, sovereign cloud and Bedrock agents on SAP data.",
+   "cls": "AWS standard",
+   "pin": 2
   },
   {
    "title": "SAP and Microsoft: SAP Business Data Cloud Connect for Microsoft Fabric",
@@ -1560,7 +1680,9 @@
    "kind": "Zero-copy",
    "short": "SAP data in Microsoft Fabric without copying (planned)",
    "platform": "Microsoft",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "Planned zero-copy between BDC and Fabric: Microsoft estates get one governed SAP source.",
+   "cls": "Microsoft roadmap"
   },
   {
    "title": "SAP on Azure product announcements — SAP Sapphire 2026",
@@ -1587,7 +1709,9 @@
    "kind": "Data platform",
    "short": "SAP on Azure: what changed at Sapphire 2026",
    "platform": "Microsoft",
-   "ev": "Vendor"
+   "ev": "Vendor",
+   "cap": "GA Datasphere mirroring into Fabric and Joule with Copilot: SAP data now live inside Microsoft tools.",
+   "cls": "Microsoft standard"
   },
   {
    "id": "R-101",
@@ -1615,7 +1739,9 @@
    "checked": "2026-10-03",
    "status": "live",
    "source": "Vendor case study",
-   "industry": "Retail"
+   "industry": "Retail",
+   "cap": "Retail core moved to RISE: proof a full retail estate can move to SAP cloud and keep running.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-102",
@@ -1643,7 +1769,9 @@
    "checked": "2026-10-03",
    "status": "live",
    "source": "Independent",
-   "industry": "Retail"
+   "industry": "Retail",
+   "cap": "A major grocer converted to S/4HANA under RISE: the conversion path is proven at retail scale.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-103",
@@ -1671,7 +1799,9 @@
    "checked": "2026-10-03",
    "status": "live",
    "source": "Vendor case study",
-   "industry": "Mobility & logistics"
+   "industry": "Mobility & logistics",
+   "cap": "5x faster analysis on 100M+ SAP records with BDC, Databricks and SAC: the BDC stack, working.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-104",
@@ -1699,7 +1829,9 @@
    "checked": "2026-10-03",
    "status": "live",
    "source": "Vendor case study",
-   "industry": "Finance, telecom & public"
+   "industry": "Finance, telecom & public",
+   "cap": "BW footprint cut 80% with one semantic layer: modelling once is cheaper than copying everywhere.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-105",
@@ -1727,7 +1859,9 @@
    "checked": "2026-10-03",
    "status": "live",
    "source": "Vendor case study",
-   "industry": "Finance, telecom & public"
+   "industry": "Finance, telecom & public",
+   "cap": "One set of business semantics across 180+ countries: shared meaning is what makes global data usable.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-106",
@@ -1755,7 +1889,9 @@
    "checked": "2026-10-03",
    "status": "live",
    "source": "Vendor case study",
-   "industry": "Life sciences"
+   "industry": "Life sciences",
+   "cap": "SAP data in an AWS lake at life-sciences scale: the AWS pattern in production.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-107",
@@ -1783,7 +1919,9 @@
    "checked": "2026-10-03",
    "status": "live",
    "source": "Independent",
-   "industry": "Retail"
+   "industry": "Retail",
+   "cap": "SAP and non-SAP data together for warehouse decisions: value comes from the combination.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-108",
@@ -1811,7 +1949,9 @@
    "checked": "2026-10-03",
    "status": "live",
    "source": "Vendor case study",
-   "industry": "Mobility & logistics"
+   "industry": "Mobility & logistics",
+   "cap": "Faster SAP reporting on AWS: better data access, measured in provisioning time.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-109",
@@ -1839,7 +1979,9 @@
    "checked": "2026-10-03",
    "status": "live",
    "source": "Vendor case study",
-   "industry": "Mobility & logistics"
+   "industry": "Mobility & logistics",
+   "cap": "A petabyte of SAP to Azure in six months, then natural-language questions on it.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-110",
@@ -1867,7 +2009,9 @@
    "checked": "2026-10-03",
    "status": "live",
    "source": "Customer",
-   "industry": "Retail"
+   "industry": "Retail",
+   "cap": "4.2M lines of custom code rewritten with AI, S/4 in a weekend: AI now cuts migration cost.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-111",
@@ -1895,7 +2039,9 @@
    "checked": "2026-10-03",
    "status": "live",
    "source": "Independent",
-   "industry": "Retail"
+   "industry": "Retail",
+   "cap": "Finance core moved in five months, keeping 12 years of history: history is an asset worth moving.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-112",
@@ -1923,7 +2069,9 @@
    "checked": "2026-10-03",
    "status": "live",
    "source": "Independent",
-   "industry": "Manufacturing"
+   "industry": "Manufacturing",
+   "cap": "xylem.ai built in-house on its own data: decision intelligence as a company-owned capability.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-113",
@@ -1951,7 +2099,9 @@
    "checked": "2026-10-03",
    "status": "live",
    "source": "Vendor case study",
-   "industry": "Manufacturing"
+   "industry": "Manufacturing",
+   "cap": "BW on HANA to Fabric and Databricks: the classic BW estate re-platformed for open analytics.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-114",
@@ -1979,7 +2129,9 @@
    "checked": "2026-10-03",
    "status": "live",
    "source": "Vendor case study",
-   "industry": "Manufacturing"
+   "industry": "Manufacturing",
+   "cap": "54,000 contracts a year checked against SAP by AI: handling time down 33%.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-115",
@@ -2007,7 +2159,9 @@
    "checked": "2026-10-03",
    "status": "live",
    "source": "Independent",
-   "industry": "Retail"
+   "industry": "Retail",
+   "cap": "56 TB to S/4 in a 14-hour cutover, then SAP data into BigQuery for forecasts.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-116",
@@ -2035,7 +2189,9 @@
    "checked": "2026-10-03",
    "status": "live",
    "source": "Vendor case study",
-   "industry": "Finance, telecom & public"
+   "industry": "Finance, telecom & public",
+   "cap": "S/4 upgrade and cloud move at once at an exchange operator: two programmes, one cutover.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-117",
@@ -2063,7 +2219,9 @@
    "checked": "2026-10-03",
    "status": "live",
    "source": "Vendor case study",
-   "industry": "Consumer goods"
+   "industry": "Consumer goods",
+   "cap": "SAP and Salesforce data in one BigQuery lake: customer and ERP data finally answer together.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-118",
@@ -2091,7 +2249,9 @@
    "checked": "2026-10-03",
    "status": "live",
    "source": "Vendor case study",
-   "industry": "Energy & resources"
+   "industry": "Energy & resources",
+   "cap": "Gemini answering questions on SAP data at a utility: AI on the record, not on a copy.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-119",
@@ -2119,7 +2279,9 @@
    "checked": "2026-10-03",
    "status": "live",
    "source": "Vendor case study",
-   "industry": "Energy & resources"
+   "industry": "Energy & resources",
+   "cap": "SAP performance and data transformation on Google Cloud in mining services.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-120",
@@ -2147,7 +2309,9 @@
    "checked": "2026-10-03",
    "status": "live",
    "source": "Vendor case study",
-   "industry": "Retail"
+   "industry": "Retail",
+   "cap": "Nearly all SAP on Google Cloud, finance and HR included, feeding BigQuery.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-121",
@@ -2175,7 +2339,9 @@
    "checked": "2026-10-03",
    "status": "live",
    "source": "Vendor case study",
-   "industry": "Retail"
+   "industry": "Retail",
+   "cap": "Own team built the data assistant: 75% of queries answered in under two minutes. Company-owned AI.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-122",
@@ -2203,7 +2369,9 @@
    "checked": "2026-10-03",
    "status": "live",
    "source": "Vendor case study",
-   "industry": "Consumer goods"
+   "industry": "Consumer goods",
+   "cap": "20+ markets from ECC to S/4 with data-led tooling: scale without a big bang.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-123",
@@ -2231,7 +2399,9 @@
    "checked": "2026-10-03",
    "status": "live",
    "source": "Independent",
-   "industry": "Manufacturing"
+   "industry": "Manufacturing",
+   "cap": "Several legacy ERPs consolidated to S/4 on Foundry: data harmonised before the move.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-124",
@@ -2259,7 +2429,9 @@
    "checked": "2026-10-03",
    "status": "live",
    "source": "Customer",
-   "industry": "Retail"
+   "industry": "Retail",
+   "cap": "€100M a year on AI to 2030 on a Google partnership: the board-level bet on enterprise data.",
+   "cls": "In flight"
   },
   {
    "id": "R-125",
@@ -2287,7 +2459,9 @@
    "checked": "2026-10-03",
    "status": "live",
    "source": "Vendor case study",
-   "industry": "Retail"
+   "industry": "Retail",
+   "cap": "73 SAP systems to S/4HANA Cloud on Google: consolidation is the data play.",
+   "cls": "In flight"
   },
   {
    "id": "R-126",
@@ -2315,7 +2489,9 @@
    "checked": "2026-10-03",
    "status": "live",
    "source": "Vendor case study",
-   "industry": "Retail"
+   "industry": "Retail",
+   "cap": "100 country finance instances into one S/4: one ledger is one data asset.",
+   "cls": "In flight"
   },
   {
    "id": "R-127",
@@ -2343,7 +2519,9 @@
    "checked": "2026-10-03",
    "status": "live",
    "source": "Independent",
-   "industry": "Retail"
+   "industry": "Retail",
+   "cap": "S/4 for Retail on AWS under RISE: a major grocer's choice of estate.",
+   "cls": "In flight"
   },
   {
    "id": "R-128",
@@ -2371,7 +2549,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "50,000 users in 112 countries on S/4 Private Edition: the largest proof point running.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-129",
@@ -2399,7 +2579,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "103 billion records migrated in 72 hours after a reset: data migration is the critical path.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-130",
@@ -2427,7 +2609,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "Two global ECCs merged into one template, 23 TB downsized: less data, more value.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-131",
@@ -2455,7 +2639,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "27,000 users moved with no major incidents: the cloud move at consumer-goods scale.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-132",
@@ -2483,7 +2669,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "SAP data to Snowflake for 35,000 users during S/4: analytics didn't wait for the migration.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-133",
@@ -2511,7 +2699,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "AI digital twins on the SAP core: 20-30% less waste. Operational data turned into margin.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-134",
@@ -2539,7 +2729,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "Entire SAP estate to Azure in 18 months: 20-30% faster critical processes.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-135",
@@ -2567,7 +2759,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "80-country migration with process mining as the backbone: data on how work actually runs.",
+   "cls": "In flight"
   },
   {
    "id": "R-136",
@@ -2595,7 +2789,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "11 ERPs into one S/4 instance: one instance is one dataset to govern.",
+   "cls": "In flight"
   },
   {
    "id": "R-137",
@@ -2623,7 +2819,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "99.89% of old open records archived first: clean data before migration lowers cost.",
+   "cls": "In flight"
   },
   {
    "id": "R-138",
@@ -2651,7 +2849,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "8-9M custom-code lines replaced; 97% standard: standard keeps data reusable.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-139",
@@ -2679,7 +2879,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "12 ERPs to one S/4 on a new data platform: 97% fewer profit centres. Simplified data, CEO-reported.",
+   "cls": "In flight"
   },
   {
    "id": "R-140",
@@ -2707,7 +2909,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "500+ companies migrated in an industrial factory model: repeatable data migration at scale.",
+   "cls": "In flight"
   },
   {
    "id": "R-141",
@@ -2735,7 +2939,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "2,500+ processes mapped with process intelligence before go-live.",
+   "cls": "In flight"
   },
   {
    "id": "R-142",
@@ -2763,7 +2969,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "Greenfield with only 22 customisations after a merger: standard data from day one.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-143",
@@ -2791,7 +2999,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "SAP maintenance history joined to sensor data: up to 15% fewer maintenance hours. Company-built DI.",
+   "cls": "In flight"
   },
   {
    "id": "R-144",
@@ -2819,7 +3029,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "Built in under a year, no operational downtime at cutover.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-145",
@@ -2847,7 +3059,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "20-year-old systems folded into S/4 in six months with 100% data load.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-146",
@@ -2875,7 +3089,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "60% of reconciliations automated within a month: clean finance data pays back fast.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-147",
@@ -2903,7 +3119,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "Reconciliations down 90%: the finance data dividend of a single ERP.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-148",
@@ -2931,7 +3149,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "A cooperative bank moved to RISE via Bluefield inside a 36-hour window.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-149",
@@ -2959,7 +3179,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "First US federal department fully on S/4: the public-sector standard is set.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-150",
@@ -2987,7 +3209,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "Oracle and ECC consolidated into one S/4 on Azure: mixed-vendor data unified.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-151",
@@ -3015,7 +3239,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "Bluefield in under six months with under 36 hours downtime: selective moves keep history.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-152",
@@ -3043,7 +3269,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "Multi-domain estate converted with near-zero downtime using automation.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-153",
@@ -3071,7 +3299,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "First Italian municipality on S/4 for finance: public finance data on one core.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-154",
@@ -3099,7 +3329,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "Switzerland's largest S/4 programme, division by division.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-155",
@@ -3127,7 +3359,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "83 central SAP applications toward 40 by 2030: fewer systems, one finance dataset.",
+   "cls": "In flight"
   },
   {
    "id": "R-156",
@@ -3155,7 +3389,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "A red-then-amber UK government programme: what happens when the data foundation slips.",
+   "cls": "In flight"
   },
   {
    "id": "R-157",
@@ -3183,7 +3419,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "70,000 users live in nine months, SAP and non-SAP ERP data consolidated.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-158",
@@ -3211,7 +3449,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "550 million records migrated in a big bang without stopping production.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-159",
@@ -3239,7 +3479,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "Selective Bluefield in 10 months, 20-hour cutover over Easter.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-160",
@@ -3267,7 +3509,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "Greenfield in seven months, in scope and on schedule.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-161",
@@ -3295,7 +3539,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "100+ plants and 40+ countries cut over in one weekend.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-162",
@@ -3323,7 +3569,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "S/4 and Transportation Management live together at every site.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-163",
@@ -3351,7 +3599,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "Own data center on Snowflake with SAP data every 20 minutes: 150,000+ hours saved a year.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-164",
@@ -3379,7 +3629,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "Heavy custom ABAP returned to standard: the cost of yesterday's customisation.",
+   "cls": "In flight"
   },
   {
    "id": "R-165",
@@ -3407,7 +3659,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "300,000+ custom objects, one global instance being split: the hardest data separation there is.",
+   "cls": "In flight"
   },
   {
    "id": "R-166",
@@ -3435,7 +3689,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "ECC to S/4 Private Edition on time with cutover cut from 60 to 45 hours.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-167",
@@ -3463,7 +3719,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "97% of custom code auto-converted, reports from 20 to 2 minutes: faster data, no flight disruption.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-168",
@@ -3491,7 +3749,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "150+ locations in 22 countries to S/4 on AWS; data migrated in 26 hours.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-169",
@@ -3519,7 +3779,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "Global logistics core replaced market by market.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-170",
@@ -3547,7 +3809,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "S/4 finance to Google Cloud in three months with zero downtime.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-171",
@@ -3575,7 +3839,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "As-is to RISE after 1,247 test scenarios: move first, simplify after.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-172",
@@ -3603,7 +3869,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "220 logistics and finance processes onto one S/4, with data lakes aimed at one source of truth.",
+   "cls": "In flight"
   },
   {
    "id": "R-173",
@@ -3631,7 +3899,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "Group-wide RISE across plants: a car maker's whole parts chain on one core.",
+   "cls": "In flight"
   },
   {
    "id": "R-174",
@@ -3659,7 +3929,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "Spend data federated on Datasphere without central extraction: use data where it lives.",
+   "cls": "In flight"
   },
   {
    "id": "R-175",
@@ -3687,7 +3959,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "85 TB, history cut from 27 to 5 years, 43-hour cutover: deciding which data is worth moving.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-176",
@@ -3715,7 +3989,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "Five-month Bluefield project with under 20 hours downtime.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-177",
@@ -3743,7 +4019,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "134 SAP systems to RISE two months early: admin time halved.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-178",
@@ -3771,7 +4049,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "S/4 upgrade combined with a new global template across 60+ countries.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-179",
@@ -3799,7 +4079,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "Faster close and lower inventory reported across four countries.",
+   "cls": "Proven outcome"
   },
   {
    "id": "R-180",
@@ -3827,7 +4109,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "160+ systems integrated, 30+ retired so far: retiring systems retires duplicate data.",
+   "cls": "In flight"
   },
   {
    "id": "R-181",
@@ -3855,7 +4139,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "~260 legal entities on greenfield S/4: one data model for the whole group.",
+   "cls": "In flight"
   },
   {
    "id": "R-182",
@@ -3883,7 +4169,9 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "Process mining cut supply-chain hours 10% before go-live: data paid back before S/4.",
+   "cls": "In flight"
   },
   {
    "id": "R-183",
@@ -3911,7 +4199,64 @@
    "credit": null,
    "added": "2026-10-03",
    "checked": "2026-10-03",
-   "status": "live"
+   "status": "live",
+   "cap": "Unified inventory data model on PaPM: provisioning effort down up to 50%.",
+   "cls": "Proven outcome"
+  },
+  {
+   "role": [
+    "PMO/lead",
+    "Functional"
+   ],
+   "format": "News",
+   "level": "Intro",
+   "access": "Free",
+   "credit": null,
+   "added": "2026-10-04",
+   "checked": "2026-10-04",
+   "status": "live",
+   "ev": "Vendor",
+   "priority": 1,
+   "platform": "SAP",
+   "source": "SAP official",
+   "id": "R-184",
+   "title": "SAP Debuts Business Data Cloud with Databricks",
+   "url": "https://news.sap.com/2025/02/sap-business-data-cloud-databricks-turbocharge-business-ai/",
+   "why": "SAP's announcement of Business Data Cloud: SAP data unified and governed as data products, with Databricks embedded for data engineering, ML and AI, and insight apps for analytics and planning across finance and HR.",
+   "lane": "BDC & Datasphere",
+   "product": "Business Data Cloud",
+   "kind": "Data platform",
+   "short": "Business Data Cloud with Databricks: SAP's data strategy",
+   "cap": "SAP's data strategy in one announcement: every SAP process as a governed data product, Databricks built in for AI.",
+   "cls": "SAP roadmap",
+   "pin": 1
+  },
+  {
+   "role": [
+    "PMO/lead",
+    "Functional"
+   ],
+   "format": "News",
+   "level": "Intro",
+   "access": "Free",
+   "credit": null,
+   "added": "2026-10-04",
+   "checked": "2026-10-04",
+   "status": "live",
+   "ev": "Vendor",
+   "priority": 1,
+   "platform": "SAP",
+   "source": "SAP official",
+   "id": "R-185",
+   "title": "Group Reporting - Release 2602 is generally available",
+   "url": "https://community.sap.com/t5/financial-management-blog-posts-by-sap/group-reporting-release-2602-is-generally-available/ba-p/14320823",
+   "why": "SAP's quarterly Group Reporting release: what is now generally available for consolidation and group close.",
+   "lane": "BDC & Datasphere",
+   "product": "S/4HANA Finance for group reporting",
+   "kind": "Roadmap",
+   "short": "Group Reporting 2602: consolidation, now GA",
+   "cap": "Consolidated group figures are the most-audited data a company owns; each quarterly release moves close and consolidation.",
+   "cls": "SAP roadmap"
   }
  ]
 }
