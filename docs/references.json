@@ -2469,7 +2469,7 @@
    "title": "CONA Services (Coca-Cola North America bottlers)",
    "url": "https://www.fivetran.com/case-studies/coke-one-north-america-accelerates-real-time-sap-insights-for-35-000-users",
    "why": "SAP data replicated to Snowflake on Azure during one of the industry's largest S/4HANA migrations; real-time access for ~35,000 users across 11 bottlers, faster close. (2025)",
-   "platform": "Snowflake",
+   "platform": "Other",
    "lane": "Data-first assessment",
    "role": [
     "PMO/lead",
@@ -2553,7 +2553,7 @@
    "title": "Mondelēz International",
    "url": "https://www.theregister.com/software/2026/02/27/mondelz-picks-celonis-as-process-backbone-for-sap-overhaul/4908186",
    "why": "Multi-year ECC-to-S/4HANA migration across ~80 countries in progress; Celonis connected to top 25 systems of record as process backbone. No results reported yet. (2026-02)",
-   "platform": "Mixed",
+   "platform": "Other",
    "lane": "Data-first assessment",
    "role": [
     "PMO/lead",
@@ -2665,7 +2665,7 @@
    "title": "ExxonMobil",
    "url": "https://www.thestack.technology/sap-migration-delivering-exxonmobil-ceo/",
    "why": "Consolidating 12 ERP systems into one S/4HANA instance by 2028 on a new core data platform; CEO reports 97% fewer profit centres and 70% fewer cost centres so far. (2026-02)",
-   "platform": "Not stated",
+   "platform": "Other",
    "lane": "Data-first assessment",
    "role": [
     "PMO/lead",
@@ -2777,7 +2777,7 @@
    "title": "Woodside Energy",
    "url": "https://www.technologyreview.com/2026/07/02/1138433/building-the-foundation-for-an-autonomous-enterprise/",
    "why": "Maintenance Intelligence correlates SAP maintenance history with time-series data-lake equipment data; piloted on one asset, targeting up to 15% fewer maintenance hours over five years; about 50 AI agents in production. (2026-07)",
-   "platform": "Mixed",
+   "platform": "Other",
    "lane": "Data-first assessment",
    "role": [
     "PMO/lead",
@@ -3337,7 +3337,7 @@
    "title": "Siemens Energy",
    "url": "https://www.alteryx.com/blog/domain-expertise-is-the-new-it-how-we-scaled-analytics-across-siemens-energy",
    "why": "Built the SE Data Center on Snowflake with SAP data replicated every 20 minutes; its Procurement Cockpit spans 20+ factories and saves over 150,000 hours a year. (2026)",
-   "platform": "Snowflake",
+   "platform": "Other",
    "lane": "Data-first assessment",
    "role": [
     "PMO/lead",

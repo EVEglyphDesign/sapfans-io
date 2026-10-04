@@ -125,13 +125,14 @@ Held in the open at <a href="https://github.com/EVEglyphDesign/sapfans-io">the S
 </div></footer>
 <script>
 (function(){
-var F=[["ev","Evidence"],["industry","Industry"],["platform","Platform"],["kind","Topic"],["lane","Lane"],["role","Role"],["level","Level"],["priority","Priority"]];
+var F=[["ev","Evidence"],["platform","Platform"],["tech","Technology"],["industry","Industry"],["kind","Topic"],["lane","Lane"],["role","Role"],["level","Level"],["priority","Priority"]];
 var D=[],L=null,sel={priority:"1",ev:"real"},q="",TOP={};
 function esc(t){return String(t==null?"":t).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
 function vals(k){var s={};D.forEach(function(i){[].concat(i[k]||[]).forEach(function(v){s[v]=1})});return Object.keys(s).sort()}
 function match(i){
   if(sel.ev){if(sel.ev==="real"?i.ev==="Vendor":i.ev!==sel.ev)return false}
-  for(var k in sel){if(k==="ev")continue;if(sel[k]&&[].concat(String(i[k]==null?"":i[k])).concat([].concat(i[k]||[]).map(String)).indexOf(sel[k])<0)return false}
+  if(sel.tech&&!techRe(sel.tech).test([i.short,i.title,i.why,i.product].join(" ")))return false
+  for(var k in sel){if(k==="ev"||k==="tech")continue;if(sel[k]&&[].concat(String(i[k]==null?"":i[k])).concat([].concat(i[k]||[]).map(String)).indexOf(sel[k])<0)return false}
   if(q){var h=[i.short,i.title,i.why,i.kind,i.platform,i.lane,[].concat(i.role).join(" "),i.product,i.source].join(" ").toLowerCase();
     if(q.split(/\s+/).some(function(w){return h.indexOf(w)<0}))return false}
   return true}
@@ -141,7 +142,8 @@ function score(i){return TOP[i.id]!=null?TOP[i.id]:0}
 var M="std";
 function tops(){TOP={};if(L)L.platforms.forEach(function(p){var k=M==="str"?"top_s":"top",v=M==="str"?p.sscore:p.score;(p[k]||[]).forEach(function(id,n){TOP[id]=100*v-n})})}
 document.addEventListener("click",function(e){var b=e.target.closest(".mode button");if(!b)return;M=b.dataset.m;
-  document.querySelectorAll(".mode button").forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});tops();land();draw()});
+  document.querySelectorAll(".mode button").forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});tops();land();
+  ["platform","tech"].forEach(function(k){var e=document.getElementById("f-"+k);if(e){var f=F.filter(function(x){return x[0]===k})[0];e.innerHTML='<option value="">'+f[1]+': all</option>'+opts(k);e.value=sel[k]||""}});draw()});
 // real stories first: what happened, weighted by size, ahead of what is underway; independent sources before vendor ones
 function ev(i){return i.ev==="Happened"?2*(i.size||1):i.ev==="Underway"?(i.size||1):0}
 function ind(i){return i.src==="Customer"?2:i.src==="Independent"?1:0}
@@ -183,11 +185,21 @@ function draw(){
   document.getElementById("count").textContent=r.length+" of "+D.length+" shown · updated "+(window._upd||"");
   el.innerHTML=r.length?r.map(function(i,n){return '<li'+(i.status==="stale"?' class="stale"':'')+'><details><summary><span class="rk">'+(n+1)+'</span><span class="kd">'+(i.ev&&i.ev!=="Vendor"?'<b class="evt'+(i.ev==="Underway"?' u':'')+'">'+esc(i.ev)+'</b> ':'')+esc(i.kind)+'</span><span class="sh"><a href="'+esc(i.url)+'" target="_blank" rel="noopener">'+esc(i.short)+'</a></span><span class="pf">'+esc(i.platform)+'</span></summary><div class="dt"><p><b>'+esc(i.title)+'</b></p><p>'+esc(i.why)+'</p><div class="tags"><span>P'+i.priority+'</span><span>'+esc(i.lane)+'</span>'+[].concat(i.role).map(function(x){return '<span>'+esc(x)+'</span>'}).join("")+'<span>'+esc(i.format)+'</span><span>'+esc(i.level)+'</span><span>'+esc(i.access)+'</span><span>'+esc(i.source)+'</span>'+(i.status==="stale"?'<span>Link failed last check</span>':'')+'</div><div class="sig" data-ref="'+esc(i.id)+'" data-label="'+esc(i.short)+'" data-url="'+esc(i.url)+'"></div></div></details></li>'}).join(""):'<li class="empty">Nothing matches. Clear a filter.</li>';
   if(window.egdSig)window.egdSig.paint()}
+// Platform and Technology options mirror the table above: same rows, same order, same tools
+function tableP(){if(!L)return [];var S=M==="str"?"sscore":"score";return L.platforms.slice().sort(function(a,b){return (b[S]-a[S])||a.name.localeCompare(b.name)})}
+function opts(k){
+  if(k==="platform"){var h=tableP().map(function(p){return '<option value="'+esc(p.pf)+'">'+esc(p.name)+'</option>'}).join("");return D.some(function(i){return i.platform==="Other"})?h+'<option value="Other">Other</option>':h}
+  if(k==="tech")return tableP().map(function(p){return '<optgroup label="'+esc(p.name)+'">'+p.tools.map(function(t){var n=techN(t[0]);return '<option value="'+esc(t[0])+'"'+(n?'':' disabled')+'>'+esc(t[0])+' ('+n+')</option>'}).join("")+'</optgroup>'}).join("");
+  var v=k==="priority"?["1","2","3"]:k==="ev"?["Happened","Underway","Vendor"]:vals(k);
+  return v.map(function(x){return '<option value="'+esc(x)+'">'+(k==="priority"?"Priority "+esc(x):esc(x))+'</option>'}).join("")}
+var ALIAS={"Business Data Cloud":"Business Data Cloud|BDC","SAP Analytics Cloud":"Analytics Cloud|SAC","Azure for SAP":"Azure","Cortex Framework":"Cortex","AIP":"AIP|Palantir AI"};
+function techRe(t){var k=ALIAS[t]||t.replace(/^SAP /,"").replace(/[.*+?^${}()[\]\\]/g,"\\$&");return new RegExp("\\b("+k+")\\b","i")}
+function techN(t){var re=techRe(t);return D.filter(function(i){return re.test([i.short,i.title,i.why,i.product].join(" "))}).length}
 function syncF(){document.querySelectorAll("#filters select").forEach(function(s){s.value=sel[s.dataset.k]||""})}
 function build(){
-  document.getElementById("filters").innerHTML=F.map(function(f){var v=f[0]==="priority"?["1","2","3"]:f[0]==="ev"?["Happened","Underway","Vendor"]:vals(f[0]);return '<label class="egd-sr" for="f-'+f[0]+'">'+f[1]+'</label><select id="f-'+f[0]+'" data-k="'+f[0]+'">'+(f[0]==="ev"?'<option value="real">Real stories</option>':'')+'<option value="">'+f[1]+': all</option>'+v.map(function(x){return '<option value="'+esc(x)+'">'+(f[0]==="priority"?"Priority "+esc(x):esc(x))+'</option>'}).join("")+'</select>'}).join("");
+  document.getElementById("filters").innerHTML=F.map(function(f){return '<label class="egd-sr" for="f-'+f[0]+'">'+f[1]+'</label><select id="f-'+f[0]+'" data-k="'+f[0]+'">'+(f[0]==="ev"?'<option value="real">Real stories</option>':'')+'<option value="">'+f[1]+': all</option>'+opts(f[0])+'</select>'}).join("");
   syncF();
-  document.querySelectorAll("#filters select").forEach(function(s){s.addEventListener("change",function(){sel[s.dataset.k]=s.value;draw()})});
+  document.querySelectorAll("#filters select").forEach(function(s){s.addEventListener("change",function(){sel[s.dataset.k]=s.value;if(s.dataset.k==="tech"&&s.value){sel.ev="";sel.priority="";syncF()}draw()})});
   document.getElementById("q").addEventListener("input",function(e){q=e.target.value.trim().toLowerCase();if(q)sel.priority="",syncF();draw()});
   document.getElementById("csv").addEventListener("click",function(e){e.preventDefault();
     var cols=["id","priority","kind","short","title","url","why","platform","lane","role","product","format","level","access","source","status","checked"];
