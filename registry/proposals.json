@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "updated": "2026-10-04",
+ "updated": "2026-10-05",
  "note": "Review queue. ARK and operator pastes land here as state=open. Accept or reject with scripts/refs.py; nothing reaches the live page without a person accepting it.",
  "proposals": [
   {
@@ -1570,6 +1570,25 @@
    "note": "Content Connect Board platform matrix.",
    "decided": "2026-10-04",
    "row": "R-061"
+  },
+  {
+   "id": "P-074",
+   "title": "marianfoo/sap-mcp-servers",
+   "url": "https://github.com/marianfoo/sap-mcp-servers",
+   "why": null,
+   "lane": null,
+   "role": [],
+   "product": null,
+   "format": null,
+   "level": null,
+   "access": null,
+   "source": null,
+   "priority": null,
+   "credit": null,
+   "found_by": "ARK GitHub lane (sap)",
+   "proposed": "2026-10-05",
+   "state": "open",
+   "note": "Monorepo for SAP MCP servers (API Hub, Road Map Explorer, SAP Notes) and their shared SAP authentication module — npm workspaces. · ★19 · community · pushed 2026-10-05"
   }
  ]
 }
