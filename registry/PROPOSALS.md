@@ -1,6 +1,6 @@
 # Review list — proposed references
 
-Updated 2026-10-05. 52 open. Accept: `python3 scripts/refs.py accept P-001 --why "one line"` · Reject: `... reject P-001 --reason "..."`.
+Updated 2026-10-06. 53 open. Accept: `python3 scripts/refs.py accept P-001 --why "one line"` · Reject: `... reject P-001 --reason "..."`.
 Or reply in the session with the IDs to accept or reject.
 
 | ID | Proposed | Title | Lane · Role · Product | Pri | Found by | Note |
@@ -57,6 +57,7 @@ Or reply in the session with the IDs to accept or reject.
 | P-050 | 2026-10-02 | [yzonur/sap-adt-mcp](https://github.com/yzonur/sap-adt-mcp) | — · — · — | — | ARK GitHub lane (sap) | MCP server giving Claude live access to SAP systems via ADT — read, edit, search, test, and diff ABAP across landscapes without installing anything on the SAP s · ★16 · community · pushed 2026-09-28 |
 | P-066 | 2026-10-03 | [SAP-samples/btp-terraform-samples](https://github.com/SAP-samples/btp-terraform-samples) | — · — · — | — | ARK GitHub lane (topic:sap-btp) | Best practices and examples to use the Terraform provider for SAP BTP. · ★68 · SAP official · pushed 2026-10-02 |
 | P-074 | 2026-10-05 | [marianfoo/sap-mcp-servers](https://github.com/marianfoo/sap-mcp-servers) | — · — · — | — | ARK GitHub lane (sap) | Monorepo for SAP MCP servers (API Hub, Road Map Explorer, SAP Notes) and their shared SAP authentication module — npm workspaces. · ★19 · community · pushed 2026-10-05 |
+| P-075 | 2026-10-06 | [HatriGt/hana-mcp-server](https://github.com/HatriGt/hana-mcp-server) | — · — · — | — | ARK GitHub lane (sap) | SAP HANA MCP server — Enterprise Model Context Protocol server for SAP HANA. Use with Claude Code, VS Code. npm: hana-mcp-server · ★70 · community · pushed 2026-10-06 |
 
 ## Stale on the live page (3)
 

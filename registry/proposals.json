@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "updated": "2026-10-05",
+ "updated": "2026-10-06",
  "note": "Review queue. ARK and operator pastes land here as state=open. Accept or reject with scripts/refs.py; nothing reaches the live page without a person accepting it.",
  "proposals": [
   {
@@ -1589,6 +1589,25 @@
    "proposed": "2026-10-05",
    "state": "open",
    "note": "Monorepo for SAP MCP servers (API Hub, Road Map Explorer, SAP Notes) and their shared SAP authentication module — npm workspaces. · ★19 · community · pushed 2026-10-05"
+  },
+  {
+   "id": "P-075",
+   "title": "HatriGt/hana-mcp-server",
+   "url": "https://github.com/HatriGt/hana-mcp-server",
+   "why": null,
+   "lane": null,
+   "role": [],
+   "product": null,
+   "format": null,
+   "level": null,
+   "access": null,
+   "source": null,
+   "priority": null,
+   "credit": null,
+   "found_by": "ARK GitHub lane (sap)",
+   "proposed": "2026-10-06",
+   "state": "open",
+   "note": "SAP HANA MCP server — Enterprise Model Context Protocol server for SAP HANA. Use with Claude Code, VS Code. npm: hana-mcp-server · ★70 · community · pushed 2026-10-06"
   }
  ]
 }
