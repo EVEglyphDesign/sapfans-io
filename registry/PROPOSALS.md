@@ -1,6 +1,6 @@
 # Review list — proposed references
 
-Updated 2026-10-07. 53 open. Accept: `python3 scripts/refs.py accept P-001 --why "one line"` · Reject: `... reject P-001 --reason "..."`.
+Updated 2026-10-08. 55 open. Accept: `python3 scripts/refs.py accept P-001 --why "one line"` · Reject: `... reject P-001 --reason "..."`.
 Or reply in the session with the IDs to accept or reject.
 
 | ID | Proposed | Title | Lane · Role · Product | Pri | Found by | Note |
@@ -58,6 +58,8 @@ Or reply in the session with the IDs to accept or reject.
 | P-066 | 2026-10-03 | [SAP-samples/btp-terraform-samples](https://github.com/SAP-samples/btp-terraform-samples) | — · — · — | — | ARK GitHub lane (topic:sap-btp) | Best practices and examples to use the Terraform provider for SAP BTP. · ★68 · SAP official · pushed 2026-10-02 |
 | P-074 | 2026-10-05 | [marianfoo/sap-mcp-servers](https://github.com/marianfoo/sap-mcp-servers) | — · — · — | — | ARK GitHub lane (sap) | Monorepo for SAP MCP servers (API Hub, Road Map Explorer, SAP Notes) and their shared SAP authentication module — npm workspaces. · ★19 · community · pushed 2026-10-05 |
 | P-075 | 2026-10-06 | [HatriGt/hana-mcp-server](https://github.com/HatriGt/hana-mcp-server) | — · — · — | — | ARK GitHub lane (sap) | SAP HANA MCP server — Enterprise Model Context Protocol server for SAP HANA. Use with Claude Code, VS Code. npm: hana-mcp-server · ★70 · community · pushed 2026-10-06 |
+| P-076 | 2026-10-08 | [SAP/ai-native-architecture-advisor](https://github.com/SAP/ai-native-architecture-advisor) | — · — · — | — | ARK GitHub lane (org:SAP) | Describe an SAP business problem and this Claude Code / Codex plugin helps you design an AI solution for it. It asks a few questions, then writes a clear plan:  · ★0 · SAP official · pushed 2026-10-07 |
+| P-077 | 2026-10-08 | [Muhammad-Abdullah333/SAP-MCP-Bridge](https://github.com/Muhammad-Abdullah333/SAP-MCP-Bridge) | — · — · — | — | ARK GitHub lane (sap) | Application to connect any SAP system with the installed MCP client · ★15 · community · pushed 2026-10-01 |
 
 ## Stale on the live page (3)
 

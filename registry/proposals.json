@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "updated": "2026-10-06",
+ "updated": "2026-10-08",
  "note": "Review queue. ARK and operator pastes land here as state=open. Accept or reject with scripts/refs.py; nothing reaches the live page without a person accepting it.",
  "proposals": [
   {
@@ -1608,6 +1608,44 @@
    "proposed": "2026-10-06",
    "state": "open",
    "note": "SAP HANA MCP server — Enterprise Model Context Protocol server for SAP HANA. Use with Claude Code, VS Code. npm: hana-mcp-server · ★70 · community · pushed 2026-10-06"
+  },
+  {
+   "id": "P-076",
+   "title": "SAP/ai-native-architecture-advisor",
+   "url": "https://github.com/SAP/ai-native-architecture-advisor",
+   "why": null,
+   "lane": null,
+   "role": [],
+   "product": null,
+   "format": null,
+   "level": null,
+   "access": null,
+   "source": null,
+   "priority": null,
+   "credit": null,
+   "found_by": "ARK GitHub lane (org:SAP)",
+   "proposed": "2026-10-08",
+   "state": "open",
+   "note": "Describe an SAP business problem and this Claude Code / Codex plugin helps you design an AI solution for it. It asks a few questions, then writes a clear plan:  · ★0 · SAP official · pushed 2026-10-07"
+  },
+  {
+   "id": "P-077",
+   "title": "Muhammad-Abdullah333/SAP-MCP-Bridge",
+   "url": "https://github.com/Muhammad-Abdullah333/SAP-MCP-Bridge",
+   "why": null,
+   "lane": null,
+   "role": [],
+   "product": null,
+   "format": null,
+   "level": null,
+   "access": null,
+   "source": null,
+   "priority": null,
+   "credit": null,
+   "found_by": "ARK GitHub lane (sap)",
+   "proposed": "2026-10-08",
+   "state": "open",
+   "note": "Application to connect any SAP system with the installed MCP client · ★15 · community · pushed 2026-10-01"
   }
  ]
 }
