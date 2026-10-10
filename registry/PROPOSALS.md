@@ -1,6 +1,6 @@
 # Review list — proposed references
 
-Updated 2026-10-09. 55 open. Accept: `python3 scripts/refs.py accept P-001 --why "one line"` · Reject: `... reject P-001 --reason "..."`.
+Updated 2026-10-10. 56 open. Accept: `python3 scripts/refs.py accept P-001 --why "one line"` · Reject: `... reject P-001 --reason "..."`.
 Or reply in the session with the IDs to accept or reject.
 
 | ID | Proposed | Title | Lane · Role · Product | Pri | Found by | Note |
@@ -60,6 +60,7 @@ Or reply in the session with the IDs to accept or reject.
 | P-075 | 2026-10-06 | [HatriGt/hana-mcp-server](https://github.com/HatriGt/hana-mcp-server) | — · — · — | — | ARK GitHub lane (sap) | SAP HANA MCP server — Enterprise Model Context Protocol server for SAP HANA. Use with Claude Code, VS Code. npm: hana-mcp-server · ★70 · community · pushed 2026-10-06 |
 | P-076 | 2026-10-08 | [SAP/ai-native-architecture-advisor](https://github.com/SAP/ai-native-architecture-advisor) | — · — · — | — | ARK GitHub lane (org:SAP) | Describe an SAP business problem and this Claude Code / Codex plugin helps you design an AI solution for it. It asks a few questions, then writes a clear plan:  · ★0 · SAP official · pushed 2026-10-07 |
 | P-077 | 2026-10-08 | [Muhammad-Abdullah333/SAP-MCP-Bridge](https://github.com/Muhammad-Abdullah333/SAP-MCP-Bridge) | — · — · — | — | ARK GitHub lane (sap) | Application to connect any SAP system with the installed MCP client · ★15 · community · pushed 2026-10-01 |
+| P-078 | 2026-10-10 | [Hochfrequenz/sapgui.mcp](https://github.com/Hochfrequenz/sapgui.mcp) | — · — · — | — | ARK GitHub lane (sap) | an MCP server that interacts with SAP via the Desktop and/or Web GUI · ★10 · community · pushed 2026-10-09 |
 
 ## Stale on the live page (3)
 

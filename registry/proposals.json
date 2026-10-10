@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "updated": "2026-10-08",
+ "updated": "2026-10-10",
  "note": "Review queue. ARK and operator pastes land here as state=open. Accept or reject with scripts/refs.py; nothing reaches the live page without a person accepting it.",
  "proposals": [
   {
@@ -1646,6 +1646,25 @@
    "proposed": "2026-10-08",
    "state": "open",
    "note": "Application to connect any SAP system with the installed MCP client · ★15 · community · pushed 2026-10-01"
+  },
+  {
+   "id": "P-078",
+   "title": "Hochfrequenz/sapgui.mcp",
+   "url": "https://github.com/Hochfrequenz/sapgui.mcp",
+   "why": null,
+   "lane": null,
+   "role": [],
+   "product": null,
+   "format": null,
+   "level": null,
+   "access": null,
+   "source": null,
+   "priority": null,
+   "credit": null,
+   "found_by": "ARK GitHub lane (sap)",
+   "proposed": "2026-10-10",
+   "state": "open",
+   "note": "an MCP server that interacts with SAP via the Desktop and/or Web GUI · ★10 · community · pushed 2026-10-09"
   }
  ]
 }
