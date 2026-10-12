@@ -1,6 +1,6 @@
 # Review list — proposed references
 
-Updated 2026-10-11. 56 open. Accept: `python3 scripts/refs.py accept P-001 --why "one line"` · Reject: `... reject P-001 --reason "..."`.
+Updated 2026-10-12. 56 open. Accept: `python3 scripts/refs.py accept P-001 --why "one line"` · Reject: `... reject P-001 --reason "..."`.
 Or reply in the session with the IDs to accept or reject.
 
 | ID | Proposed | Title | Lane · Role · Product | Pri | Found by | Note |
@@ -64,9 +64,9 @@ Or reply in the session with the IDs to accept or reject.
 
 ## Stale on the live page (3)
 
-- R-021 [Architecting the Unified Semantic Layer — the data foundation](https://learning.sap.com/courses/guiding-ai-driven-transformation-as-an-sap-enterprise-architect/architecting-the-unified-semantic-layer-the-data-foundation) — last checked 2026-10-05
-- R-134 [Unilever](https://www.microsoft.com/en/customers/story/1636966914474684948-unilever-consumer-goods-sap-on-azure) — last checked 2026-10-05
-- R-166 [BMW Group (Regensburg plant)](https://erp.today/case-study-snp-drives-successful-sap-s-4hana-rollout-at-bmw-group-plant-regensburg/) — last checked 2026-10-05
+- R-021 [Architecting the Unified Semantic Layer — the data foundation](https://learning.sap.com/courses/guiding-ai-driven-transformation-as-an-sap-enterprise-architect/architecting-the-unified-semantic-layer-the-data-foundation) — last checked 2026-10-12
+- R-134 [Unilever](https://www.microsoft.com/en/customers/story/1636966914474684948-unilever-consumer-goods-sap-on-azure) — last checked 2026-10-12
+- R-166 [BMW Group (Regensburg plant)](https://erp.today/case-study-snp-drives-successful-sap-s-4hana-rollout-at-bmw-group-plant-regensburg/) — last checked 2026-10-12
 
 ## Decided (22)
 
