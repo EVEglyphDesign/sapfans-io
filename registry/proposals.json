@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "updated": "2026-10-10",
+ "updated": "2026-10-13",
  "note": "Review queue. ARK and operator pastes land here as state=open. Accept or reject with scripts/refs.py; nothing reaches the live page without a person accepting it.",
  "proposals": [
   {
@@ -1665,6 +1665,25 @@
    "proposed": "2026-10-10",
    "state": "open",
    "note": "an MCP server that interacts with SAP via the Desktop and/or Web GUI · ★10 · community · pushed 2026-10-09"
+  },
+  {
+   "id": "P-079",
+   "title": "SAP-samples/btp-service-metadata",
+   "url": "https://github.com/SAP-samples/btp-service-metadata",
+   "why": null,
+   "lane": null,
+   "role": [],
+   "product": null,
+   "format": null,
+   "level": null,
+   "access": null,
+   "source": null,
+   "priority": null,
+   "credit": null,
+   "found_by": "ARK GitHub lane (topic:sap-btp)",
+   "proposed": "2026-10-13",
+   "state": "open",
+   "note": "Contains the metadata of SAP BTP services - in a machine-readable format - available in an SAP BTP pay-as-you-go account. · ★42 · SAP official · pushed 2026-10-13"
   }
  ]
 }
