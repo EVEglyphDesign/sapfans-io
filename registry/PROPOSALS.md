@@ -1,6 +1,6 @@
 # Review list — proposed references
 
-Updated 2026-10-13. 57 open. Accept: `python3 scripts/refs.py accept P-001 --why "one line"` · Reject: `... reject P-001 --reason "..."`.
+Updated 2026-10-14. 59 open. Accept: `python3 scripts/refs.py accept P-001 --why "one line"` · Reject: `... reject P-001 --reason "..."`.
 Or reply in the session with the IDs to accept or reject.
 
 | ID | Proposed | Title | Lane · Role · Product | Pri | Found by | Note |
@@ -62,6 +62,8 @@ Or reply in the session with the IDs to accept or reject.
 | P-077 | 2026-10-08 | [Muhammad-Abdullah333/SAP-MCP-Bridge](https://github.com/Muhammad-Abdullah333/SAP-MCP-Bridge) | — · — · — | — | ARK GitHub lane (sap) | Application to connect any SAP system with the installed MCP client · ★15 · community · pushed 2026-10-01 |
 | P-078 | 2026-10-10 | [Hochfrequenz/sapgui.mcp](https://github.com/Hochfrequenz/sapgui.mcp) | — · — · — | — | ARK GitHub lane (sap) | an MCP server that interacts with SAP via the Desktop and/or Web GUI · ★10 · community · pushed 2026-10-09 |
 | P-079 | 2026-10-13 | [SAP-samples/btp-service-metadata](https://github.com/SAP-samples/btp-service-metadata) | — · — · — | — | ARK GitHub lane (topic:sap-btp) | Contains the metadata of SAP BTP services - in a machine-readable format - available in an SAP BTP pay-as-you-go account. · ★42 · SAP official · pushed 2026-10-13 |
+| P-080 | 2026-10-14 | [aws-solutions-library-samples/guidance-for-deploying-sap-abap-accelerator-for-amazon-q-developer](https://github.com/aws-solutions-library-samples/guidance-for-deploying-sap-abap-accelerator-for-amazon-q-developer) | — · — · — | — | ARK GitHub lane (sap) | ABAP Accelerator is an MCP server that helps organizations create, test, document, and transform SAP ABAP code faster and with higher code accuracy. · ★58 · community · pushed 2026-10-13 |
+| P-081 | 2026-10-14 | [grknylmz/sap-ai-dev-toolkit](https://github.com/grknylmz/sap-ai-dev-toolkit) | — · — · — | — | ARK GitHub lane (sap) | automated MCP addon for SAP Business Application Studio · ★12 · community · pushed 2026-10-13 |
 
 ## Stale on the live page (3)
 

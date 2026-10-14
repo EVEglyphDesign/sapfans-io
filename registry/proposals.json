@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "updated": "2026-10-13",
+ "updated": "2026-10-14",
  "note": "Review queue. ARK and operator pastes land here as state=open. Accept or reject with scripts/refs.py; nothing reaches the live page without a person accepting it.",
  "proposals": [
   {
@@ -1684,6 +1684,44 @@
    "proposed": "2026-10-13",
    "state": "open",
    "note": "Contains the metadata of SAP BTP services - in a machine-readable format - available in an SAP BTP pay-as-you-go account. · ★42 · SAP official · pushed 2026-10-13"
+  },
+  {
+   "id": "P-080",
+   "title": "aws-solutions-library-samples/guidance-for-deploying-sap-abap-accelerator-for-amazon-q-developer",
+   "url": "https://github.com/aws-solutions-library-samples/guidance-for-deploying-sap-abap-accelerator-for-amazon-q-developer",
+   "why": null,
+   "lane": null,
+   "role": [],
+   "product": null,
+   "format": null,
+   "level": null,
+   "access": null,
+   "source": null,
+   "priority": null,
+   "credit": null,
+   "found_by": "ARK GitHub lane (sap)",
+   "proposed": "2026-10-14",
+   "state": "open",
+   "note": "ABAP Accelerator is an MCP server that helps organizations create, test, document, and transform SAP ABAP code faster and with higher code accuracy. · ★58 · community · pushed 2026-10-13"
+  },
+  {
+   "id": "P-081",
+   "title": "grknylmz/sap-ai-dev-toolkit",
+   "url": "https://github.com/grknylmz/sap-ai-dev-toolkit",
+   "why": null,
+   "lane": null,
+   "role": [],
+   "product": null,
+   "format": null,
+   "level": null,
+   "access": null,
+   "source": null,
+   "priority": null,
+   "credit": null,
+   "found_by": "ARK GitHub lane (sap)",
+   "proposed": "2026-10-14",
+   "state": "open",
+   "note": "automated MCP addon for SAP Business Application Studio · ★12 · community · pushed 2026-10-13"
   }
  ]
 }
