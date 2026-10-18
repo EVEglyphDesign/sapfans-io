@@ -1,6 +1,6 @@
 # Review list — proposed references
 
-Updated 2026-10-17. 61 open. Accept: `python3 scripts/refs.py accept P-001 --why "one line"` · Reject: `... reject P-001 --reason "..."`.
+Updated 2026-10-18. 62 open. Accept: `python3 scripts/refs.py accept P-001 --why "one line"` · Reject: `... reject P-001 --reason "..."`.
 Or reply in the session with the IDs to accept or reject.
 
 | ID | Proposed | Title | Lane · Role · Product | Pri | Found by | Note |
@@ -66,6 +66,7 @@ Or reply in the session with the IDs to accept or reject.
 | P-081 | 2026-10-14 | [grknylmz/sap-ai-dev-toolkit](https://github.com/grknylmz/sap-ai-dev-toolkit) | — · — · — | — | ARK GitHub lane (sap) | automated MCP addon for SAP Business Application Studio · ★12 · community · pushed 2026-10-13 |
 | P-082 | 2026-10-16 | [SAP-samples/teched2026-sk-gen](https://github.com/SAP-samples/teched2026-sk-gen) | — · — · — | — | ARK GitHub lane (org:SAP-samples) | Temporary service key facilities for SAP TechEd 2026 Developer Garage · ★0 · SAP official · pushed 2026-10-16 |
 | P-083 | 2026-10-16 | [SUSE/SAPHanaSR](https://github.com/SUSE/SAPHanaSR) | — · — · — | — | ARK GitHub lane (sap) | SAP HANA System Replication Resource Agent for Pacemaker Cluster · ★27 · community · pushed 2026-10-15 |
+| P-084 | 2026-10-18 | [MarioDeFelipe/sap-datasphere-mcp](https://github.com/MarioDeFelipe/sap-datasphere-mcp) | — · — · — | — | ARK GitHub lane (sap) | SAP Datasphere MCP Server - AI-powered access to SAP Datasphere APIs · ★49 · community · pushed 2026-10-12 |
 
 ## Stale on the live page (3)
 

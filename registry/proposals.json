@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "updated": "2026-10-16",
+ "updated": "2026-10-18",
  "note": "Review queue. ARK and operator pastes land here as state=open. Accept or reject with scripts/refs.py; nothing reaches the live page without a person accepting it.",
  "proposals": [
   {
@@ -1760,6 +1760,25 @@
    "proposed": "2026-10-16",
    "state": "open",
    "note": "SAP HANA System Replication Resource Agent for Pacemaker Cluster · ★27 · community · pushed 2026-10-15"
+  },
+  {
+   "id": "P-084",
+   "title": "MarioDeFelipe/sap-datasphere-mcp",
+   "url": "https://github.com/MarioDeFelipe/sap-datasphere-mcp",
+   "why": null,
+   "lane": null,
+   "role": [],
+   "product": null,
+   "format": null,
+   "level": null,
+   "access": null,
+   "source": null,
+   "priority": null,
+   "credit": null,
+   "found_by": "ARK GitHub lane (sap)",
+   "proposed": "2026-10-18",
+   "state": "open",
+   "note": "SAP Datasphere MCP Server - AI-powered access to SAP Datasphere APIs · ★49 · community · pushed 2026-10-12"
   }
  ]
 }
