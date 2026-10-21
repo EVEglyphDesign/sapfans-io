@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "updated": "2026-10-18",
+ "updated": "2026-10-21",
  "note": "Review queue. ARK and operator pastes land here as state=open. Accept or reject with scripts/refs.py; nothing reaches the live page without a person accepting it.",
  "proposals": [
   {
@@ -1779,6 +1779,25 @@
    "proposed": "2026-10-18",
    "state": "open",
    "note": "SAP Datasphere MCP Server - AI-powered access to SAP Datasphere APIs · ★49 · community · pushed 2026-10-12"
+  },
+  {
+   "id": "P-085",
+   "title": "DassianInc/dassian-adt",
+   "url": "https://github.com/DassianInc/dassian-adt",
+   "why": null,
+   "lane": null,
+   "role": [],
+   "product": null,
+   "format": null,
+   "level": null,
+   "access": null,
+   "source": null,
+   "priority": null,
+   "credit": null,
+   "found_by": "ARK GitHub lane (sap)",
+   "proposed": "2026-10-21",
+   "state": "open",
+   "note": "MCP server for SAP ABAP development via ADT API. Connect AI assistants to SAP: read, write, test, and deploy ABAP code without SAP GUI. · ★19 · community · pushed 2026-10-19"
   }
  ]
 }
