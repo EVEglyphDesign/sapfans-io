@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "updated": "2026-10-21",
+ "updated": "2026-10-22",
  "note": "Review queue. ARK and operator pastes land here as state=open. Accept or reject with scripts/refs.py; nothing reaches the live page without a person accepting it.",
  "proposals": [
   {
@@ -1798,6 +1798,44 @@
    "proposed": "2026-10-21",
    "state": "open",
    "note": "MCP server for SAP ABAP development via ADT API. Connect AI assistants to SAP: read, write, test, and deploy ABAP code without SAP GUI. · ★19 · community · pushed 2026-10-19"
+  },
+  {
+   "id": "P-086",
+   "title": "SAP-samples/project-aware-mcp-server",
+   "url": "https://github.com/SAP-samples/project-aware-mcp-server",
+   "why": null,
+   "lane": null,
+   "role": [],
+   "product": null,
+   "format": null,
+   "level": null,
+   "access": null,
+   "source": null,
+   "priority": null,
+   "credit": null,
+   "found_by": "ARK GitHub lane (org:SAP-samples)",
+   "proposed": "2026-10-22",
+   "state": "open",
+   "note": "A demo MCP server that shows how to foster open source and InnerSource to the server project, through dedicated metadata, resources and tools. The demo MCP serv · ★0 · SAP official · pushed 2026-10-21"
+  },
+  {
+   "id": "P-087",
+   "title": "SAP/packerl-v2",
+   "url": "https://github.com/SAP/packerl-v2",
+   "why": null,
+   "lane": null,
+   "role": [],
+   "product": null,
+   "format": null,
+   "level": null,
+   "access": null,
+   "source": null,
+   "priority": null,
+   "credit": null,
+   "found_by": "ARK GitHub lane (org:SAP)",
+   "proposed": "2026-10-22",
+   "state": "open",
+   "note": "[TMLR 2026] Official implementation for \"Towards Near-Real-Time Telemetry-Aware Routing with Neural Routing Algorithms\". · ★0 · SAP official · pushed 2026-10-21"
   }
  ]
 }

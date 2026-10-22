@@ -1,6 +1,6 @@
 # Review list — proposed references
 
-Updated 2026-10-21. 63 open. Accept: `python3 scripts/refs.py accept P-001 --why "one line"` · Reject: `... reject P-001 --reason "..."`.
+Updated 2026-10-22. 65 open. Accept: `python3 scripts/refs.py accept P-001 --why "one line"` · Reject: `... reject P-001 --reason "..."`.
 Or reply in the session with the IDs to accept or reject.
 
 | ID | Proposed | Title | Lane · Role · Product | Pri | Found by | Note |
@@ -68,6 +68,8 @@ Or reply in the session with the IDs to accept or reject.
 | P-083 | 2026-10-16 | [SUSE/SAPHanaSR](https://github.com/SUSE/SAPHanaSR) | — · — · — | — | ARK GitHub lane (sap) | SAP HANA System Replication Resource Agent for Pacemaker Cluster · ★27 · community · pushed 2026-10-15 |
 | P-084 | 2026-10-18 | [MarioDeFelipe/sap-datasphere-mcp](https://github.com/MarioDeFelipe/sap-datasphere-mcp) | — · — · — | — | ARK GitHub lane (sap) | SAP Datasphere MCP Server - AI-powered access to SAP Datasphere APIs · ★49 · community · pushed 2026-10-12 |
 | P-085 | 2026-10-21 | [DassianInc/dassian-adt](https://github.com/DassianInc/dassian-adt) | — · — · — | — | ARK GitHub lane (sap) | MCP server for SAP ABAP development via ADT API. Connect AI assistants to SAP: read, write, test, and deploy ABAP code without SAP GUI. · ★19 · community · pushed 2026-10-19 |
+| P-086 | 2026-10-22 | [SAP-samples/project-aware-mcp-server](https://github.com/SAP-samples/project-aware-mcp-server) | — · — · — | — | ARK GitHub lane (org:SAP-samples) | A demo MCP server that shows how to foster open source and InnerSource to the server project, through dedicated metadata, resources and tools. The demo MCP serv · ★0 · SAP official · pushed 2026-10-21 |
+| P-087 | 2026-10-22 | [SAP/packerl-v2](https://github.com/SAP/packerl-v2) | — · — · — | — | ARK GitHub lane (org:SAP) | [TMLR 2026] Official implementation for "Towards Near-Real-Time Telemetry-Aware Routing with Neural Routing Algorithms". · ★0 · SAP official · pushed 2026-10-21 |
 
 ## Stale on the live page (3)
 
