@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "updated": "2026-10-22",
+ "updated": "2026-10-23",
  "note": "Review queue. ARK and operator pastes land here as state=open. Accept or reject with scripts/refs.py; nothing reaches the live page without a person accepting it.",
  "proposals": [
   {
@@ -1836,6 +1836,25 @@
    "proposed": "2026-10-22",
    "state": "open",
    "note": "[TMLR 2026] Official implementation for \"Towards Near-Real-Time Telemetry-Aware Routing with Neural Routing Algorithms\". · ★0 · SAP official · pushed 2026-10-21"
+  },
+  {
+   "id": "P-088",
+   "title": "SAP-samples/cf-mta-examples",
+   "url": "https://github.com/SAP-samples/cf-mta-examples",
+   "why": null,
+   "lane": null,
+   "role": [],
+   "product": null,
+   "format": null,
+   "level": null,
+   "access": null,
+   "source": null,
+   "priority": null,
+   "credit": null,
+   "found_by": "ARK GitHub lane (topic:sap-btp)",
+   "proposed": "2026-10-23",
+   "state": "open",
+   "note": "The repository contains multitarget application (MTA) examples for SAP BTP, Cloud Foundry environment. Examples demonstrate how to achieve different goals using · ★152 · SAP official · pushed 2026-10-22"
   }
  ]
 }
