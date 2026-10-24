@@ -1,6 +1,6 @@
 # Review list — proposed references
 
-Updated 2026-10-23. 66 open. Accept: `python3 scripts/refs.py accept P-001 --why "one line"` · Reject: `... reject P-001 --reason "..."`.
+Updated 2026-10-24. 67 open. Accept: `python3 scripts/refs.py accept P-001 --why "one line"` · Reject: `... reject P-001 --reason "..."`.
 Or reply in the session with the IDs to accept or reject.
 
 | ID | Proposed | Title | Lane · Role · Product | Pri | Found by | Note |
@@ -71,6 +71,7 @@ Or reply in the session with the IDs to accept or reject.
 | P-086 | 2026-10-22 | [SAP-samples/project-aware-mcp-server](https://github.com/SAP-samples/project-aware-mcp-server) | — · — · — | — | ARK GitHub lane (org:SAP-samples) | A demo MCP server that shows how to foster open source and InnerSource to the server project, through dedicated metadata, resources and tools. The demo MCP serv · ★0 · SAP official · pushed 2026-10-21 |
 | P-087 | 2026-10-22 | [SAP/packerl-v2](https://github.com/SAP/packerl-v2) | — · — · — | — | ARK GitHub lane (org:SAP) | [TMLR 2026] Official implementation for "Towards Near-Real-Time Telemetry-Aware Routing with Neural Routing Algorithms". · ★0 · SAP official · pushed 2026-10-21 |
 | P-088 | 2026-10-23 | [SAP-samples/cf-mta-examples](https://github.com/SAP-samples/cf-mta-examples) | — · — · — | — | ARK GitHub lane (topic:sap-btp) | The repository contains multitarget application (MTA) examples for SAP BTP, Cloud Foundry environment. Examples demonstrate how to achieve different goals using · ★152 · SAP official · pushed 2026-10-22 |
+| P-089 | 2026-10-24 | [SAP/astonish](https://github.com/SAP/astonish) | — · — · — | — | ARK GitHub lane (sap) | Multi-tenant AI agent platform for teams: Studio, CLI, shared memory, reusable flows, generative UI, and secure sandboxes. · ★25 · SAP official · pushed 2026-10-21 |
 
 ## Stale on the live page (3)
 

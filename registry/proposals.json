@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "updated": "2026-10-23",
+ "updated": "2026-10-24",
  "note": "Review queue. ARK and operator pastes land here as state=open. Accept or reject with scripts/refs.py; nothing reaches the live page without a person accepting it.",
  "proposals": [
   {
@@ -1855,6 +1855,25 @@
    "proposed": "2026-10-23",
    "state": "open",
    "note": "The repository contains multitarget application (MTA) examples for SAP BTP, Cloud Foundry environment. Examples demonstrate how to achieve different goals using · ★152 · SAP official · pushed 2026-10-22"
+  },
+  {
+   "id": "P-089",
+   "title": "SAP/astonish",
+   "url": "https://github.com/SAP/astonish",
+   "why": null,
+   "lane": null,
+   "role": [],
+   "product": null,
+   "format": null,
+   "level": null,
+   "access": null,
+   "source": null,
+   "priority": null,
+   "credit": null,
+   "found_by": "ARK GitHub lane (sap)",
+   "proposed": "2026-10-24",
+   "state": "open",
+   "note": "Multi-tenant AI agent platform for teams: Studio, CLI, shared memory, reusable flows, generative UI, and secure sandboxes. · ★25 · SAP official · pushed 2026-10-21"
   }
  ]
 }
