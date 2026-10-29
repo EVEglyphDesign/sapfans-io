@@ -1,6 +1,6 @@
 # Review list — proposed references
 
-Updated 2026-10-28. 67 open. Accept: `python3 scripts/refs.py accept P-001 --why "one line"` · Reject: `... reject P-001 --reason "..."`.
+Updated 2026-10-29. 68 open. Accept: `python3 scripts/refs.py accept P-001 --why "one line"` · Reject: `... reject P-001 --reason "..."`.
 Or reply in the session with the IDs to accept or reject.
 
 | ID | Proposed | Title | Lane · Role · Product | Pri | Found by | Note |
@@ -72,6 +72,7 @@ Or reply in the session with the IDs to accept or reject.
 | P-087 | 2026-10-22 | [SAP/packerl-v2](https://github.com/SAP/packerl-v2) | — · — · — | — | ARK GitHub lane (org:SAP) | [TMLR 2026] Official implementation for "Towards Near-Real-Time Telemetry-Aware Routing with Neural Routing Algorithms". · ★0 · SAP official · pushed 2026-10-21 |
 | P-088 | 2026-10-23 | [SAP-samples/cf-mta-examples](https://github.com/SAP-samples/cf-mta-examples) | — · — · — | — | ARK GitHub lane (topic:sap-btp) | The repository contains multitarget application (MTA) examples for SAP BTP, Cloud Foundry environment. Examples demonstrate how to achieve different goals using · ★152 · SAP official · pushed 2026-10-22 |
 | P-089 | 2026-10-24 | [SAP/astonish](https://github.com/SAP/astonish) | — · — · — | — | ARK GitHub lane (sap) | Multi-tenant AI agent platform for teams: Studio, CLI, shared memory, reusable flows, generative UI, and secure sandboxes. · ★25 · SAP official · pushed 2026-10-21 |
+| P-090 | 2026-10-29 | [SAP-docs/btp-integration-suite](https://github.com/SAP-docs/btp-integration-suite) | — · — · — | — | ARK GitHub lane (topic:sap-btp) | Markdown source for the Integration Suite documentation. Enables feedback and contributions to improve the documentation. · ★52 · SAP official · pushed 2026-10-22 |
 
 ## Stale on the live page (3)
 
