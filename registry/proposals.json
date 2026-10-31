@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "updated": "2026-10-29",
+ "updated": "2026-10-31",
  "note": "Review queue. ARK and operator pastes land here as state=open. Accept or reject with scripts/refs.py; nothing reaches the live page without a person accepting it.",
  "proposals": [
   {
@@ -1893,6 +1893,25 @@
    "proposed": "2026-10-29",
    "state": "open",
    "note": "Markdown source for the Integration Suite documentation. Enables feedback and contributions to improve the documentation. · ★52 · SAP official · pushed 2026-10-22"
+  },
+  {
+   "id": "P-091",
+   "title": "abat-TAO/arc-1-bopf-enh",
+   "url": "https://github.com/abat-TAO/arc-1-bopf-enh",
+   "why": null,
+   "lane": null,
+   "role": [],
+   "product": null,
+   "format": null,
+   "level": null,
+   "access": null,
+   "source": null,
+   "priority": null,
+   "credit": null,
+   "found_by": "ARK GitHub lane (sap)",
+   "proposed": "2026-10-31",
+   "state": "open",
+   "note": "Classic BOPF enhancements for ARC-1, the MCP server for SAP: read, create, change, check and delete enhancement objects of SAP standard business objects without · ★16 · community · pushed 2026-10-31"
   }
  ]
 }
