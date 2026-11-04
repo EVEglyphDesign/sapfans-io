@@ -1,6 +1,6 @@
 # Review list — proposed references
 
-Updated 2026-11-03. 69 open. Accept: `python3 scripts/refs.py accept P-001 --why "one line"` · Reject: `... reject P-001 --reason "..."`.
+Updated 2026-11-04. 70 open. Accept: `python3 scripts/refs.py accept P-001 --why "one line"` · Reject: `... reject P-001 --reason "..."`.
 Or reply in the session with the IDs to accept or reject.
 
 | ID | Proposed | Title | Lane · Role · Product | Pri | Found by | Note |
@@ -74,6 +74,7 @@ Or reply in the session with the IDs to accept or reject.
 | P-089 | 2026-10-24 | [SAP/astonish](https://github.com/SAP/astonish) | — · — · — | — | ARK GitHub lane (sap) | Multi-tenant AI agent platform for teams: Studio, CLI, shared memory, reusable flows, generative UI, and secure sandboxes. · ★25 · SAP official · pushed 2026-10-21 |
 | P-090 | 2026-10-29 | [SAP-docs/btp-integration-suite](https://github.com/SAP-docs/btp-integration-suite) | — · — · — | — | ARK GitHub lane (topic:sap-btp) | Markdown source for the Integration Suite documentation. Enables feedback and contributions to improve the documentation. · ★52 · SAP official · pushed 2026-10-22 |
 | P-091 | 2026-10-31 | [abat-TAO/arc-1-bopf-enh](https://github.com/abat-TAO/arc-1-bopf-enh) | — · — · — | — | ARK GitHub lane (sap) | Classic BOPF enhancements for ARC-1, the MCP server for SAP: read, create, change, check and delete enhancement objects of SAP standard business objects without · ★16 · community · pushed 2026-10-31 |
+| P-092 | 2026-11-04 | [SAP-archive/btp-developer-guide-cap](https://github.com/SAP-archive/btp-developer-guide-cap) | — · — · — | — | ARK GitHub lane (topic:sap-btp) | SAP BTP Developer’s Guide offers developer guidance to software developers on how to implement business applications using SAP Cloud Application Programming Mod · ★101 · community · pushed 2026-11-03 |
 
 ## Stale on the live page (3)
 

@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "updated": "2026-10-31",
+ "updated": "2026-11-04",
  "note": "Review queue. ARK and operator pastes land here as state=open. Accept or reject with scripts/refs.py; nothing reaches the live page without a person accepting it.",
  "proposals": [
   {
@@ -1912,6 +1912,25 @@
    "proposed": "2026-10-31",
    "state": "open",
    "note": "Classic BOPF enhancements for ARC-1, the MCP server for SAP: read, create, change, check and delete enhancement objects of SAP standard business objects without · ★16 · community · pushed 2026-10-31"
+  },
+  {
+   "id": "P-092",
+   "title": "SAP-archive/btp-developer-guide-cap",
+   "url": "https://github.com/SAP-archive/btp-developer-guide-cap",
+   "why": null,
+   "lane": null,
+   "role": [],
+   "product": null,
+   "format": null,
+   "level": null,
+   "access": null,
+   "source": null,
+   "priority": null,
+   "credit": null,
+   "found_by": "ARK GitHub lane (topic:sap-btp)",
+   "proposed": "2026-11-04",
+   "state": "open",
+   "note": "SAP BTP Developer’s Guide offers developer guidance to software developers on how to implement business applications using SAP Cloud Application Programming Mod · ★101 · community · pushed 2026-11-03"
   }
  ]
 }
