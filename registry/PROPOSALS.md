@@ -1,6 +1,6 @@
 # Review list — proposed references
 
-Updated 2026-11-04. 70 open. Accept: `python3 scripts/refs.py accept P-001 --why "one line"` · Reject: `... reject P-001 --reason "..."`.
+Updated 2026-11-05. 72 open. Accept: `python3 scripts/refs.py accept P-001 --why "one line"` · Reject: `... reject P-001 --reason "..."`.
 Or reply in the session with the IDs to accept or reject.
 
 | ID | Proposed | Title | Lane · Role · Product | Pri | Found by | Note |
@@ -75,6 +75,8 @@ Or reply in the session with the IDs to accept or reject.
 | P-090 | 2026-10-29 | [SAP-docs/btp-integration-suite](https://github.com/SAP-docs/btp-integration-suite) | — · — · — | — | ARK GitHub lane (topic:sap-btp) | Markdown source for the Integration Suite documentation. Enables feedback and contributions to improve the documentation. · ★52 · SAP official · pushed 2026-10-22 |
 | P-091 | 2026-10-31 | [abat-TAO/arc-1-bopf-enh](https://github.com/abat-TAO/arc-1-bopf-enh) | — · — · — | — | ARK GitHub lane (sap) | Classic BOPF enhancements for ARC-1, the MCP server for SAP: read, create, change, check and delete enhancement objects of SAP standard business objects without · ★16 · community · pushed 2026-10-31 |
 | P-092 | 2026-11-04 | [SAP-archive/btp-developer-guide-cap](https://github.com/SAP-archive/btp-developer-guide-cap) | — · — · — | — | ARK GitHub lane (topic:sap-btp) | SAP BTP Developer’s Guide offers developer guidance to software developers on how to implement business applications using SAP Cloud Application Programming Mod · ★101 · community · pushed 2026-11-03 |
+| P-093 | 2026-11-05 | [SAP-samples/explaining-sparse-autoencoder-latents-with-domain-adapted-llms](https://github.com/SAP-samples/explaining-sparse-autoencoder-latents-with-domain-adapted-llms) | — · — · — | — | ARK GitHub lane (org:SAP-samples) | "Explaining Sparse Autoencoder Latents With Domain Adapted LLMS" aims to investigate how to best explain features of an LLM. · ★0 · SAP official · pushed 2026-11-04 |
+| P-094 | 2026-11-05 | [SAP/cloud-sdk-java](https://github.com/SAP/cloud-sdk-java) | — · — · — | — | ARK GitHub lane (topic:sap-btp) | Use the SAP Cloud SDK for Java to reduce development effort when building applications on SAP Business Technology Platform that communicate with SAP solutions a · ★41 · SAP official · pushed 2026-11-04 |
 
 ## Stale on the live page (3)
 

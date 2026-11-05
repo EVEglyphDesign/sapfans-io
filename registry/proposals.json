@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "updated": "2026-11-04",
+ "updated": "2026-11-05",
  "note": "Review queue. ARK and operator pastes land here as state=open. Accept or reject with scripts/refs.py; nothing reaches the live page without a person accepting it.",
  "proposals": [
   {
@@ -1931,6 +1931,44 @@
    "proposed": "2026-11-04",
    "state": "open",
    "note": "SAP BTP Developer’s Guide offers developer guidance to software developers on how to implement business applications using SAP Cloud Application Programming Mod · ★101 · community · pushed 2026-11-03"
+  },
+  {
+   "id": "P-093",
+   "title": "SAP-samples/explaining-sparse-autoencoder-latents-with-domain-adapted-llms",
+   "url": "https://github.com/SAP-samples/explaining-sparse-autoencoder-latents-with-domain-adapted-llms",
+   "why": null,
+   "lane": null,
+   "role": [],
+   "product": null,
+   "format": null,
+   "level": null,
+   "access": null,
+   "source": null,
+   "priority": null,
+   "credit": null,
+   "found_by": "ARK GitHub lane (org:SAP-samples)",
+   "proposed": "2026-11-05",
+   "state": "open",
+   "note": "\"Explaining Sparse Autoencoder Latents With Domain Adapted LLMS\" aims to investigate how to best explain features of an LLM. · ★0 · SAP official · pushed 2026-11-04"
+  },
+  {
+   "id": "P-094",
+   "title": "SAP/cloud-sdk-java",
+   "url": "https://github.com/SAP/cloud-sdk-java",
+   "why": null,
+   "lane": null,
+   "role": [],
+   "product": null,
+   "format": null,
+   "level": null,
+   "access": null,
+   "source": null,
+   "priority": null,
+   "credit": null,
+   "found_by": "ARK GitHub lane (topic:sap-btp)",
+   "proposed": "2026-11-05",
+   "state": "open",
+   "note": "Use the SAP Cloud SDK for Java to reduce development effort when building applications on SAP Business Technology Platform that communicate with SAP solutions a · ★41 · SAP official · pushed 2026-11-04"
   }
  ]
 }
