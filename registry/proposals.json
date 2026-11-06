@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "updated": "2026-11-05",
+ "updated": "2026-11-06",
  "note": "Review queue. ARK and operator pastes land here as state=open. Accept or reject with scripts/refs.py; nothing reaches the live page without a person accepting it.",
  "proposals": [
   {
@@ -1969,6 +1969,44 @@
    "proposed": "2026-11-05",
    "state": "open",
    "note": "Use the SAP Cloud SDK for Java to reduce development effort when building applications on SAP Business Technology Platform that communicate with SAP solutions a · ★41 · SAP official · pushed 2026-11-04"
+  },
+  {
+   "id": "P-095",
+   "title": "ysichov/ABAP-AI-Code",
+   "url": "https://github.com/ysichov/ABAP-AI-Code",
+   "why": null,
+   "lane": null,
+   "role": [],
+   "product": null,
+   "format": null,
+   "level": null,
+   "access": null,
+   "source": null,
+   "priority": null,
+   "credit": null,
+   "found_by": "ARK GitHub lane (sap)",
+   "proposed": "2026-11-06",
+   "state": "open",
+   "note": "It is like a Claude Code/Codex but inside SAP system ) - Chat + agentic loop for SAP ABAP. · ★25 · community · pushed 2026-11-05"
+  },
+  {
+   "id": "P-096",
+   "title": "SAP-samples/btp-launchpad-ui-samples",
+   "url": "https://github.com/SAP-samples/btp-launchpad-ui-samples",
+   "why": null,
+   "lane": null,
+   "role": [],
+   "product": null,
+   "format": null,
+   "level": null,
+   "access": null,
+   "source": null,
+   "priority": null,
+   "credit": null,
+   "found_by": "ARK GitHub lane (topic:sap-btp)",
+   "proposed": "2026-11-06",
+   "state": "open",
+   "note": "Sample code of UI projects for SAP BTP Launchpad Service. · ★39 · SAP official · pushed 2026-11-03"
   }
  ]
 }

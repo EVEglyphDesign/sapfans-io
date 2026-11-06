@@ -1,6 +1,6 @@
 # Review list — proposed references
 
-Updated 2026-11-05. 72 open. Accept: `python3 scripts/refs.py accept P-001 --why "one line"` · Reject: `... reject P-001 --reason "..."`.
+Updated 2026-11-06. 74 open. Accept: `python3 scripts/refs.py accept P-001 --why "one line"` · Reject: `... reject P-001 --reason "..."`.
 Or reply in the session with the IDs to accept or reject.
 
 | ID | Proposed | Title | Lane · Role · Product | Pri | Found by | Note |
@@ -77,6 +77,8 @@ Or reply in the session with the IDs to accept or reject.
 | P-092 | 2026-11-04 | [SAP-archive/btp-developer-guide-cap](https://github.com/SAP-archive/btp-developer-guide-cap) | — · — · — | — | ARK GitHub lane (topic:sap-btp) | SAP BTP Developer’s Guide offers developer guidance to software developers on how to implement business applications using SAP Cloud Application Programming Mod · ★101 · community · pushed 2026-11-03 |
 | P-093 | 2026-11-05 | [SAP-samples/explaining-sparse-autoencoder-latents-with-domain-adapted-llms](https://github.com/SAP-samples/explaining-sparse-autoencoder-latents-with-domain-adapted-llms) | — · — · — | — | ARK GitHub lane (org:SAP-samples) | "Explaining Sparse Autoencoder Latents With Domain Adapted LLMS" aims to investigate how to best explain features of an LLM. · ★0 · SAP official · pushed 2026-11-04 |
 | P-094 | 2026-11-05 | [SAP/cloud-sdk-java](https://github.com/SAP/cloud-sdk-java) | — · — · — | — | ARK GitHub lane (topic:sap-btp) | Use the SAP Cloud SDK for Java to reduce development effort when building applications on SAP Business Technology Platform that communicate with SAP solutions a · ★41 · SAP official · pushed 2026-11-04 |
+| P-095 | 2026-11-06 | [ysichov/ABAP-AI-Code](https://github.com/ysichov/ABAP-AI-Code) | — · — · — | — | ARK GitHub lane (sap) | It is like a Claude Code/Codex but inside SAP system ) - Chat + agentic loop for SAP ABAP. · ★25 · community · pushed 2026-11-05 |
+| P-096 | 2026-11-06 | [SAP-samples/btp-launchpad-ui-samples](https://github.com/SAP-samples/btp-launchpad-ui-samples) | — · — · — | — | ARK GitHub lane (topic:sap-btp) | Sample code of UI projects for SAP BTP Launchpad Service. · ★39 · SAP official · pushed 2026-11-03 |
 
 ## Stale on the live page (3)
 
