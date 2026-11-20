@@ -1,6 +1,6 @@
 # Review list — proposed references
 
-Updated 2026-11-19. 74 open. Accept: `python3 scripts/refs.py accept P-001 --why "one line"` · Reject: `... reject P-001 --reason "..."`.
+Updated 2026-11-20. 76 open. Accept: `python3 scripts/refs.py accept P-001 --why "one line"` · Reject: `... reject P-001 --reason "..."`.
 Or reply in the session with the IDs to accept or reject.
 
 | ID | Proposed | Title | Lane · Role · Product | Pri | Found by | Note |
@@ -79,6 +79,8 @@ Or reply in the session with the IDs to accept or reject.
 | P-094 | 2026-11-05 | [SAP/cloud-sdk-java](https://github.com/SAP/cloud-sdk-java) | — · — · — | — | ARK GitHub lane (topic:sap-btp) | Use the SAP Cloud SDK for Java to reduce development effort when building applications on SAP Business Technology Platform that communicate with SAP solutions a · ★41 · SAP official · pushed 2026-11-04 |
 | P-095 | 2026-11-06 | [ysichov/ABAP-AI-Code](https://github.com/ysichov/ABAP-AI-Code) | — · — · — | — | ARK GitHub lane (sap) | It is like a Claude Code/Codex but inside SAP system ) - Chat + agentic loop for SAP ABAP. · ★25 · community · pushed 2026-11-05 |
 | P-096 | 2026-11-06 | [SAP-samples/btp-launchpad-ui-samples](https://github.com/SAP-samples/btp-launchpad-ui-samples) | — · — · — | — | ARK GitHub lane (topic:sap-btp) | Sample code of UI projects for SAP BTP Launchpad Service. · ★39 · SAP official · pushed 2026-11-03 |
+| P-097 | 2026-11-20 | [SAP-samples/teched2025-AI160](https://github.com/SAP-samples/teched2025-AI160) | — · — · — | — | ARK GitHub lane (sap) | Hands-on: Build Your Own AI Agent-Based Solution with the Generative AI Hub · ★28 · SAP official · pushed 2026-11-19 |
+| P-098 | 2026-11-20 | [SAP-samples/btp-generative-ai-hub-use-cases](https://github.com/SAP-samples/btp-generative-ai-hub-use-cases) | — · — · — | — | ARK GitHub lane (topic:sap-btp) | Samples on how to build industry solution leveraging generative AI capabilities on top of SAP BTP and integrated with SAP S/4HANA Cloud. · ★79 · SAP official · pushed 2026-11-19 |
 
 ## Stale on the live page (3)
 

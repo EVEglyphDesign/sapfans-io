@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "updated": "2026-11-06",
+ "updated": "2026-11-20",
  "note": "Review queue. ARK and operator pastes land here as state=open. Accept or reject with scripts/refs.py; nothing reaches the live page without a person accepting it.",
  "proposals": [
   {
@@ -2007,6 +2007,44 @@
    "proposed": "2026-11-06",
    "state": "open",
    "note": "Sample code of UI projects for SAP BTP Launchpad Service. · ★39 · SAP official · pushed 2026-11-03"
+  },
+  {
+   "id": "P-097",
+   "title": "SAP-samples/teched2025-AI160",
+   "url": "https://github.com/SAP-samples/teched2025-AI160",
+   "why": null,
+   "lane": null,
+   "role": [],
+   "product": null,
+   "format": null,
+   "level": null,
+   "access": null,
+   "source": null,
+   "priority": null,
+   "credit": null,
+   "found_by": "ARK GitHub lane (sap)",
+   "proposed": "2026-11-20",
+   "state": "open",
+   "note": "Hands-on: Build Your Own AI Agent-Based Solution with the Generative AI Hub · ★28 · SAP official · pushed 2026-11-19"
+  },
+  {
+   "id": "P-098",
+   "title": "SAP-samples/btp-generative-ai-hub-use-cases",
+   "url": "https://github.com/SAP-samples/btp-generative-ai-hub-use-cases",
+   "why": null,
+   "lane": null,
+   "role": [],
+   "product": null,
+   "format": null,
+   "level": null,
+   "access": null,
+   "source": null,
+   "priority": null,
+   "credit": null,
+   "found_by": "ARK GitHub lane (topic:sap-btp)",
+   "proposed": "2026-11-20",
+   "state": "open",
+   "note": "Samples on how to build industry solution leveraging generative AI capabilities on top of SAP BTP and integrated with SAP S/4HANA Cloud. · ★79 · SAP official · pushed 2026-11-19"
   }
  ]
 }
