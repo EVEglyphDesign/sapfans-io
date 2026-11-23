@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "updated": "2026-11-21",
+ "updated": "2026-11-23",
  "note": "Review queue. ARK and operator pastes land here as state=open. Accept or reject with scripts/refs.py; nothing reaches the live page without a person accepting it.",
  "proposals": [
   {
@@ -2064,6 +2064,25 @@
    "proposed": "2026-11-21",
    "state": "open",
    "note": "In this SAP CodeJam we will look at the Generative AI Hub and how we can  incorporate generative AI into our AI activities in SAP AI Core and SAP AI Launchpad. · ★60 · SAP official · pushed 2026-11-18"
+  },
+  {
+   "id": "P-100",
+   "title": "w1ccc/sap-data-mcp",
+   "url": "https://github.com/w1ccc/sap-data-mcp",
+   "why": null,
+   "lane": null,
+   "role": [],
+   "product": null,
+   "format": null,
+   "level": null,
+   "access": null,
+   "source": null,
+   "priority": null,
+   "credit": null,
+   "found_by": "ARK GitHub lane (sap)",
+   "proposed": "2026-11-23",
+   "state": "open",
+   "note": "Read-only MCP servers that let AI assistants query SAP S/4HANA through RFC/BAPI, private-cloud OData and public-cloud released APIs. Every call audited; credent · ★40 · community · pushed 2026-11-22"
   }
  ]
 }
