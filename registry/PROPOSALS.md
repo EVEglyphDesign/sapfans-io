@@ -1,6 +1,6 @@
 # Review list — proposed references
 
-Updated 2026-11-25. 78 open. Accept: `python3 scripts/refs.py accept P-001 --why "one line"` · Reject: `... reject P-001 --reason "..."`.
+Updated 2026-11-26. 79 open. Accept: `python3 scripts/refs.py accept P-001 --why "one line"` · Reject: `... reject P-001 --reason "..."`.
 Or reply in the session with the IDs to accept or reject.
 
 | ID | Proposed | Title | Lane · Role · Product | Pri | Found by | Note |
@@ -83,6 +83,7 @@ Or reply in the session with the IDs to accept or reject.
 | P-098 | 2026-11-20 | [SAP-samples/btp-generative-ai-hub-use-cases](https://github.com/SAP-samples/btp-generative-ai-hub-use-cases) | — · — · — | — | ARK GitHub lane (topic:sap-btp) | Samples on how to build industry solution leveraging generative AI capabilities on top of SAP BTP and integrated with SAP S/4HANA Cloud. · ★79 · SAP official · pushed 2026-11-19 |
 | P-099 | 2026-11-21 | [SAP-samples/generative-ai-codejam](https://github.com/SAP-samples/generative-ai-codejam) | — · — · — | — | ARK GitHub lane (topic:sap-btp) | In this SAP CodeJam we will look at the Generative AI Hub and how we can  incorporate generative AI into our AI activities in SAP AI Core and SAP AI Launchpad. · ★60 · SAP official · pushed 2026-11-18 |
 | P-100 | 2026-11-23 | [w1ccc/sap-data-mcp](https://github.com/w1ccc/sap-data-mcp) | — · — · — | — | ARK GitHub lane (sap) | Read-only MCP servers that let AI assistants query SAP S/4HANA through RFC/BAPI, private-cloud OData and public-cloud released APIs. Every call audited; credent · ★40 · community · pushed 2026-11-22 |
+| P-101 | 2026-11-26 | [SAP-samples/hana-cloud-learning](https://github.com/SAP-samples/hana-cloud-learning) | — · — · — | — | ARK GitHub lane (topic:sap-btp) | This repository contains sample code and sample data for SAP HANA Cloud learning content such as like learning tracks, tutorials, and missions. · ★43 · SAP official · pushed 2026-11-23 |
 
 ## Stale on the live page (3)
 
