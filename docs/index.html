@@ -3,9 +3,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Content Connect Board · SAPfans.io</title>
-<meta name="description" content="Neutral, curated references for program, PMO and functional leads, with the analytics landscape around SAP: AWS, Microsoft, Google, Palantir, ranked by live deployments.">
+<meta name="description" content="Neutral, curated references for program, PMO and functional leads: one searchable list, each with its class and why it matters.">
 <meta property="og:title" content="Content Connect Board · SAPfans.io">
-<meta property="og:description" content="Education and references, classified and filterable. Paste what you find; it is reviewed and added.">
+<meta property="og:description" content="One searchable list of public references, classified, each with why it matters. Suggest what you find; it is reviewed and added.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -103,19 +103,11 @@
 
 <header><div class="bar">
 <a class="brand" href="index.html">SAPfans<span>.io</span></a>
-<nav><a href="index.html" class='on'>Content Connect Board</a><a href="start.html">GitHub intro</a><a href="repos.html">Repositories</a><a href="heritage.html">Heritage</a></nav><div class="egd-lang" role="group" aria-label="Language" data-i18n-skip><button type="button" data-lang="en" title="English">EN</button><button type="button" data-lang="fr" title="Français" lang="fr">FR</button><button type="button" data-lang="es" title="Español" lang="es">ES</button><button type="button" data-lang="de" title="Deutsch" lang="de">DE</button></div>
+<nav><a href="index.html" class='on'>Content Connect Board</a><a href="about.html">About</a></nav><div class="egd-lang" role="group" aria-label="Language" data-i18n-skip><button type="button" data-lang="en" title="English">EN</button><button type="button" data-lang="fr" title="Français" lang="fr">FR</button><button type="button" data-lang="es" title="Español" lang="es">ES</button><button type="button" data-lang="de" title="Deutsch" lang="de">DE</button></div>
 </div></header>
 <main class="wrap board">
 <h1>Content Connect Board</h1>
 <p class="lede2">Enterprise data is a leverageable capital asset.</p>
-<p class="intro">The decisions were made before you arrived. New SAP technology, AI transformation, governance, data structure: here is what's actually deployed. Peer-to-peer, as SAPfans always was. Everything else happens off-surface. <a href="heritage.html">Why</a></p>
-
-<section class="land" aria-labelledby="land-h">
-<div class="mode" role="group" aria-label="Ranking"><button type="button" data-m="std" aria-pressed="true">Enterprise standard</button><button type="button" data-m="str" aria-pressed="false">Strategic direction</button></div>
-<h2 id="land-h">Where SAP data goes · <span id="land-sub">ranked by what actually happened</span></h2>
-<div id="land" class="dash" role="table"></div>
-<p class="small" id="method"></p>
-</section>
 <div class="sbox"><label for="q" class="egd-sr">Search references</label>
 <input class="search" id="q" type="search" placeholder="Search or speak: zero-copy, BigQuery, migration…" autocomplete="off" list="sugg"><datalist id="sugg"></datalist>
 <button type="button" id="mic" class="mic" title="Speak to search" aria-label="Speak to search" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15a3 3 0 003-3V6a3 3 0 10-6 0v6a3 3 0 003 3zm5-3a5 5 0 01-10 0H5a7 7 0 006 6.92V21h2v-2.08A7 7 0 0019 12h-2z"/></svg></button></div>
@@ -135,106 +127,55 @@ Held in the open at <a href="https://github.com/EVEglyphDesign/sapfans-io">the S
 </div></footer>
 <script>
 (function(){
-var F=[["cls","Class"],["ev","Evidence"],["platform","Platform"],["tech","Technology"],["industry","Industry"],["kind","Topic"],["lane","Lane"],["role","Role"],["level","Level"],["priority","Priority"]];
-var D=[],L=null,sel={priority:"1"},q="",TOP={};
+// v2.23 one-page list: search, one Class filter, one list. No dashboard, no ranking toggle.
+var D=[],sel={},q="",PF=null;
 function esc(t){return String(t==null?"":t).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
-function vals(k){var s={};D.forEach(function(i){[].concat(i[k]||[]).forEach(function(v){s[v]=1})});return Object.keys(s).sort()}
+function vals(k){var s={};D.forEach(function(i){if(i[k])s[i[k]]=1});return Object.keys(s).sort()}
 function match(i){
-  if(sel.ev){if(sel.ev==="real"?i.ev==="Vendor":i.ev!==sel.ev)return false}
-  if(sel.tech&&!techRe(sel.tech).test([i.short,i.title,i.why,i.product].join(" ")))return false
-  for(var k in sel){if(k==="ev"||k==="tech")continue;if(sel[k]&&[].concat(String(i[k]==null?"":i[k])).concat([].concat(i[k]||[]).map(String)).indexOf(sel[k])<0)return false}
+  if(sel.cls&&i.cls!==sel.cls)return false
+  if(PF&&i.platform!==PF)return false
   if(q){var h=[i.cls,i.cap,i.short,i.title,i.why,i.kind,i.platform,i.lane,[].concat(i.role).join(" "),i.product,i.source].join(" ").toLowerCase();
     if(q.split(/\s+/).some(function(w){return h.indexOf(w)<0}))return false}
   return true}
-// rank: priority first, then landscape top reads (in their column order), then the rest by title
-function score(i){return TOP[i.id]!=null?TOP[i.id]:0}
-// ranking mode: std = Enterprise standard (default, only what happened), str = Strategic direction
-var M="std";
-function tops(){TOP={};if(L)L.platforms.forEach(function(p){var k=M==="str"?"top_s":"top",v=M==="str"?p.sscore:p.score;(p[k]||[]).forEach(function(id,n){TOP[id]=100*v-n})})}
-document.addEventListener("click",function(e){var b=e.target.closest(".mode button");if(!b)return;M=b.dataset.m;
-  document.querySelectorAll(".mode button").forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});tops();land();
-  ["platform","tech"].forEach(function(k){var e=document.getElementById("f-"+k);if(e){var f=F.filter(function(x){return x[0]===k})[0];e.innerHTML='<option value="">'+f[1]+': all</option>'+opts(k);e.value=sel[k]||""}});draw()});
-// real stories first: what happened, weighted by size, ahead of what is underway; independent sources before vendor ones
+// order: pinned headliners, what happened (by size), what is underway, independent sources first, then priority and title
 function ev(i){return i.ev==="Happened"?2*(i.size||1):i.ev==="Underway"?(i.size||1):0}
 function ind(i){return i.src==="Customer"?2:i.src==="Independent"?1:0}
 function pin(i){return i.pin?4-i.pin:0}
-function ann(i){return i.ev==="Vendor"?1:0}
-function rows(){return D.filter(match).sort(function(a,b){return (pin(b)-pin(a))||(M==="str"?(ann(b)-ann(a))||(score(b)-score(a)):0)||(ev(b)-ev(a))||(ind(b)-ind(a))||(a.priority-b.priority)||(score(b)-score(a))||(a.status==="stale")-(b.status==="stale")||a.short.localeCompare(b.short)})}
-function cell(c){if(!c)return "";var t=esc(c.t),cls=/^GA/.test(c.t)?"st ga":/^(Planned|Yes|Native|The hub)/.test(c.t)?"st":"";
-  t=cls?'<span class="'+cls+'">'+t+'</span>':t;return c.u?'<a href="'+esc(c.u)+'" target="_blank" rel="noopener">'+t+'</a>':t}
-function land(){
-  if(!L)return;var P=L.platforms.slice(),rk=0;
-  var S=M==="str"?"sscore":"score";P.sort(function(a,b){return (b[S]-a[S])||a.name.localeCompare(b.name)});
-  function lk(t,u){return u?'<a href="'+esc(u)+'" target="_blank" rel="noopener">'+esc(t)+'</a>':esc(t)}
-  function cell(k,sum,full){return '<div class="c c-'+k+'" role="cell"><details><summary>'+sum+'</summary><div class="full">'+full+'</div></details></div>'}
-  var h='<div class="dr dh" role="row"><div class="c c-rk">#</div><div class="c c-pf">Platform</div><div class="c c-cl">Class</div><div class="c c-cn">SAP connectivity</div><div class="c c-tl">Tools</div><div class="c c-wn">'+(M==="str"?"Announced":"Top wins (live)")+'</div><div class="c c-us">Known users</div><div class="c c-sc" title="'+esc(M==="str"?L.method_s:L.method)+'">Score</div><div class="c c-x"></div></div>';
-  h+=P.map(function(p){rk++;var c0=p.conn[0];var WL=M==="str"?p.strat:p.wins;
-    var conn='<ul>'+p.conn.map(function(c){return '<li'+(c.s==="Planned"?' class="pl"':'')+'><span class="st'+(c.s==="Planned"?'':' ga')+'">'+esc(c.s)+'</span> '+lk(c.t,c.u)+'</li>'}).join("")+'</ul>';
-    var tools='<ul>'+p.tools.map(function(t){return '<li>'+lk(t[0],t[1])+'</li>'}).join("")+'</ul>';
-    var wins=WL.length?'<ol>'+WL.map(function(w){return '<li>'+(w.k==="impl"?'<span class="st ga">Fast S/4</span> ':w.k==="di"?'<span class="st ga">DI</span> ':'')+lk(w.n,w.u)+': '+esc(w.t)+'</li>'}).join("")+'</ol>':'None sourced yet';
-    var more=function(n){return n>1?' <span class="mo">+'+(n-1)+'</span>':''};
-    return '<div class="dr" role="row">'+
-      '<div class="c c-rk">'+rk+'</div>'+
-      '<div class="c c-pf"><a href="#list" data-pf="'+esc(p.pf)+'" title="'+esc(p.name)+': show all references"><span class="nl">'+esc(p.name)+'</span><span class="ns">'+esc(p.short)+'</span></a></div>'+
-      cell("cl",esc(p.cs),esc(p["class"]))+
-      cell("cn",'<span class="st'+(c0.s==="Planned"?'':' ga')+'">'+esc(c0.s)+'</span> '+esc(c0.t)+more(p.conn.length),conn)+
-      cell("tl",esc(p.tools[0][0])+more(p.tools.length),tools)+
-      cell("wn",(WL[0]?esc(WL[0].n)+more(WL.length):"—"),wins)+
-      cell("us",esc(p.users.t),lk(p.users.t,p.users.u))+
-      '<div class="c c-sc"><b>'+p[S]+'</b></div>'+
-      '<div class="c c-x"><button type="button" class="ex" aria-label="Expand '+esc(p.name)+'">+</button></div>'+
-      '<div class="c c-sg"><div class="sig sig-mini" data-ref="'+esc(p.id)+'" data-label="'+esc(p.name)+'"></div></div></div>'}).join("");
-  var el=document.getElementById("land");el.innerHTML=h;el.dataset.m=M;
-  document.getElementById("method").textContent=M==="str"?L.method_s:L.method;
-  document.getElementById("land-sub").textContent=M==="str"?"ranked by announced direction":"ranked by what actually happened";
-  el.querySelectorAll(".ex").forEach(function(b){b.addEventListener("click",function(){var r=b.closest(".dr"),o=!r.classList.contains("open");r.classList.toggle("open",o);b.textContent=o?"−":"+";r.querySelectorAll("details").forEach(function(d){d.open=o})})});
-  el.querySelectorAll("[data-pf]").forEach(function(a){a.addEventListener("click",function(){sel.platform=a.dataset.pf;sel.priority="";syncF();draw()})})}
-function sugg(){var s={};D.forEach(function(i){s[i.short]=1;s[i.kind]=1;s[i.platform]=1});
-  if(L)L.platforms.forEach(function(p){s[p.name]=1;p.tools.forEach(function(t){s[t[0]]=1});p.wins.forEach(function(w){if(w.named)s[w.n]=1})});
-  document.getElementById("sugg").innerHTML=Object.keys(s).sort().map(function(k){return '<option value="'+esc(k)+'">'}).join("")}
+function rows(){return D.filter(match).sort(function(a,b){return (pin(b)-pin(a))||(ev(b)-ev(a))||(ind(b)-ind(a))||(a.priority-b.priority)||(a.status==="stale")-(b.status==="stale")||a.short.localeCompare(b.short)})}
 function draw(){
   var r=rows(),el=document.getElementById("list");
-  document.getElementById("count").textContent=r.length+" of "+D.length+" shown · updated "+(window._upd||"");
+  var c=document.getElementById("count");c.textContent=r.length+" of "+D.length+" shown · updated "+(window._upd||"");
+  if(PF){c.appendChild(document.createTextNode(" · "+PF+" · "));var a=document.createElement("a");a.href="#";a.textContent="Show all";a.addEventListener("click",function(e){e.preventDefault();PF=null;history.replaceState(null,"",location.pathname);draw()});c.appendChild(a)}
   el.innerHTML=r.length?'<li class="rrow rhead" aria-hidden="true"><span>#</span><span>Class</span><span>Reference</span><span>Why it matters</span><span>Platform</span><span></span></li>'+r.map(function(i,n){return '<li class="rrow'+(i.pin?' pin':'')+(i.status==="stale"?' stale':'')+'" id="'+esc(i.id)+'"><span class="rk">'+(n+1)+'</span><span class="cl'+(/roadmap|standard/.test(i.cls||"")?' k-rm':'')+'">'+esc(i.cls)+'</span><span class="sh"><a href="'+esc(i.url)+'" target="_blank" rel="noopener">'+esc(i.short)+'</a></span><span class="wy">'+esc(i.cap||"")+'</span><span class="pf">'+esc(i.platform)+'</span><div class="sig sig-line" data-ref="'+esc(i.id)+'" data-label="'+esc(i.short)+'" data-why="'+esc(i.cap||"")+'" data-url="'+esc(i.url)+'"></div></li>'}).join(""):'<li class="empty">Nothing matches. Clear a filter.</li>';
   if(window.egdSig)window.egdSig.paint()}
-// Platform and Technology options mirror the table above: same rows, same order, same tools
-function tableP(){if(!L)return [];var S=M==="str"?"sscore":"score";return L.platforms.slice().sort(function(a,b){return (b[S]-a[S])||a.name.localeCompare(b.name)})}
-function opts(k){
-  if(k==="platform"){var h=tableP().map(function(p){return '<option value="'+esc(p.pf)+'">'+esc(p.name)+'</option>'}).join("");return D.some(function(i){return i.platform==="Other"})?h+'<option value="Other">Other</option>':h}
-  if(k==="tech")return tableP().map(function(p){return '<optgroup label="'+esc(p.name)+'">'+p.tools.map(function(t){var n=techN(t[0]);return '<option value="'+esc(t[0])+'"'+(n?'':' disabled')+'>'+esc(t[0])+' ('+n+')</option>'}).join("")+'</optgroup>'}).join("");
-  var v=k==="priority"?["1","2","3"]:k==="ev"?["Happened","Underway","Vendor"]:vals(k);
-  return v.map(function(x){return '<option value="'+esc(x)+'">'+(k==="priority"?"Priority "+esc(x):esc(x))+'</option>'}).join("")}
-var ALIAS={"Business Data Cloud":"Business Data Cloud|BDC","SAP Analytics Cloud":"Analytics Cloud|SAC","Azure for SAP":"Azure","Cortex Framework":"Cortex","AIP":"AIP|Palantir AI"};
-function techRe(t){var k=ALIAS[t]||t.replace(/^SAP /,"").replace(/[.*+?^${}()[\]\\]/g,"\\$&");return new RegExp("\\b("+k+")\\b","i")}
-function techN(t){var re=techRe(t);return D.filter(function(i){return re.test([i.short,i.title,i.why,i.product].join(" "))}).length}
-function syncF(){document.querySelectorAll("#filters select").forEach(function(s){s.value=sel[s.dataset.k]||""})}
+function sugg(){var s={};D.forEach(function(i){s[i.short]=1;s[i.kind]=1;s[i.platform]=1});
+  document.getElementById("sugg").innerHTML=Object.keys(s).sort().map(function(k){return '<option value="'+esc(k)+'">'}).join("")}
 function build(){
-  document.getElementById("filters").innerHTML=F.map(function(f){return '<label class="egd-sr" for="f-'+f[0]+'">'+f[1]+'</label><select id="f-'+f[0]+'" data-k="'+f[0]+'">'+'<option value="">'+f[1]+': all</option>'+opts(f[0])+'</select>'}).join("");
-  syncF();
-  document.querySelectorAll("#filters select").forEach(function(s){s.addEventListener("change",function(){sel[s.dataset.k]=s.value;if(s.dataset.k==="tech"&&s.value){sel.ev="";sel.priority="";syncF()}draw()})});
-  document.getElementById("q").addEventListener("input",function(e){q=e.target.value.trim().toLowerCase();if(q)sel.priority="",syncF();draw()});
+  document.getElementById("filters").innerHTML='<label class="egd-sr" for="f-cls">Class</label><select id="f-cls" data-k="cls"><option value="">Class: all</option>'+vals("cls").map(function(x){return '<option value="'+esc(x)+'">'+esc(x)+'</option>'}).join("")+'</select>';
+  document.getElementById("f-cls").addEventListener("change",function(e){sel.cls=e.target.value;draw()});
+  document.getElementById("q").addEventListener("input",function(e){q=e.target.value.trim().toLowerCase();draw()});
   document.getElementById("csv").addEventListener("click",function(e){e.preventDefault();
     var cols=["id","cls","cap","priority","kind","short","title","url","why","platform","lane","role","product","format","level","access","source","status","checked"];
     var lines=[cols.join(",")].concat(rows().map(function(i){return cols.map(function(k){return '"'+String([].concat(i[k]==null?"":i[k]).join("; ")).replace(/"/g,'""')+'"'}).join(",")}));
     var a=document.createElement("a");a.href=URL.createObjectURL(new Blob(["\ufeff"+lines.join("\n")],{type:"text/csv"}));a.download="sapfans-references.csv";a.click()});
-  land();sugg();draw();deep();window.addEventListener("hashchange",deep)}
-// deep link: sapfans.io/#R-055 opens that reference; #L-SAP opens that platform row
+  sugg();draw();deep();window.addEventListener("hashchange",deep)}
+// deep links: sapfans.io/#R-055 opens that reference; #L-SAP (platform rows, retired in v2.23) lists that platform's references
+var LP={"L-SAP":"SAP","L-AWS":"AWS","L-MICROSOFT":"Microsoft","L-GOOGLE":"Google","L-PALANTIR":"Palantir"};
 function deep(){var h=decodeURIComponent(location.hash.slice(1)).toUpperCase();if(!/^[RL]-[A-Z0-9]+$/.test(h))return;
-  if(h[0]==="R"){if(!D.some(function(i){return i.id===h})){location.replace("r/"+h+".html");return}sel={ev:""};q="";document.getElementById("q").value="";syncF();draw()}
-  var g=document.querySelector('.sig[data-ref="'+h+'"]');if(!g)return;
-  if(h[0]==="L"){var r=g.closest(".dr");if(!r.classList.contains("open"))r.querySelector(".ex").click();r.scrollIntoView({block:"start"})}
-  else{g.closest("li").scrollIntoView({block:"start"})}}
+  if(h[0]==="L"){PF=LP[h]||null;sel={};q="";document.getElementById("q").value="";document.getElementById("f-cls").value="";draw();document.getElementById("list").scrollIntoView({block:"start"});return}
+  if(!D.some(function(i){return i.id===h})){location.replace("r/"+h+".html");return}
+  PF=null;sel={};q="";document.getElementById("q").value="";document.getElementById("f-cls").value="";draw();
+  var g=document.getElementById(h);if(g)g.scrollIntoView({block:"start"})}
 // voice search: browsers with the Web Speech API only; the button stays hidden elsewhere
 (function(){var SR=window.SpeechRecognition||window.webkitSpeechRecognition,b=document.getElementById("mic");if(!SR||!b)return;b.hidden=false;
   b.addEventListener("click",function(){var r=new SR();r.lang=document.documentElement.lang||"en";r.interimResults=false;b.classList.add("on");
     r.onresult=function(e){var t=e.results[0][0].transcript,i=document.getElementById("q");i.value=t;i.dispatchEvent(new Event("input"))};
     r.onend=function(){b.classList.remove("on")};r.start()})})();
-Promise.all([fetch("references.json",{cache:"no-cache"}).then(function(r){return r.json()}),fetch("landscape.json",{cache:"no-cache"}).then(function(r){return r.json()}).catch(function(){return null})])
- .then(function(x){var j=x[0];L=x[1];window._upd=j.updated;D=j.items.filter(function(i){return i.status!=="retired"});
-   tops();build()})
+fetch("references.json",{cache:"no-cache"}).then(function(r){return r.json()})
+ .then(function(j){window._upd=j.updated;D=j.items.filter(function(i){return i.status!=="retired"});build()})
  .catch(function(){document.getElementById("count").textContent="Could not load the catalog."});
 })();
 </script>
 <script src="i18n.js" defer></script>
-<script src="signatures.js?v=2.22" defer></script>
+<script src="signatures.js?v=2.23" defer></script>
 </body></html>

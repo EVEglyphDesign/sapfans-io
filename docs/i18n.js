@@ -3341,6 +3341,8 @@ window.EGD_I18N={
 "es": "— su frente, su región, cómo contactarle.",
 "fr": "— votre domaine, votre région, comment vous joindre."
 }
+,"Class: all": {"de": "Klasse: alle", "es": "Clase: todas", "fr": "Classe : toutes"},
+"Show all": {"de": "Alle anzeigen", "es": "Mostrar todo", "fr": "Tout afficher"}
 };
 /* EgD i18n — EN default · FR · ES · DE. Originals kept in memory; EN restores them verbatim. */
 (function(){
