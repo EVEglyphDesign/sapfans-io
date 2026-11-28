@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "updated": "2026-11-26",
+ "updated": "2026-11-28",
  "note": "Review queue. ARK and operator pastes land here as state=open. Accept or reject with scripts/refs.py; nothing reaches the live page without a person accepting it.",
  "proposals": [
   {
@@ -2102,6 +2102,25 @@
    "proposed": "2026-11-26",
    "state": "open",
    "note": "This repository contains sample code and sample data for SAP HANA Cloud learning content such as like learning tracks, tutorials, and missions. · ★43 · SAP official · pushed 2026-11-23"
+  },
+  {
+   "id": "P-102",
+   "title": "shrek-abaper/sap-watt",
+   "url": "https://github.com/shrek-abaper/sap-watt",
+   "why": null,
+   "lane": null,
+   "role": [],
+   "product": null,
+   "format": null,
+   "level": null,
+   "access": null,
+   "source": null,
+   "priority": null,
+   "credit": null,
+   "found_by": "ARK GitHub lane (sap)",
+   "proposed": "2026-11-28",
+   "state": "open",
+   "note": "Watt: an evidence-first engineering CLI for SAP lifecycle work. Controlled ADT/ABAP operations with companion Skills for code review, transport risk assessment  · ★51 · community · pushed 2026-11-28"
   }
  ]
 }
